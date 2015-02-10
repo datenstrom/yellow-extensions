@@ -43,7 +43,8 @@
 function sendMail($yellow, $spamFilter)
 {
 	$status = "send";
-	if(empty(trim($_REQUEST["message"]))) $status = "incomplete";
+	$_REQUEST["message"]=trim($_REQUEST["message"]);
+	if(empty($_REQUEST["message"])) $status = "incomplete";
 	if(!empty($_REQUEST["from"]) && !filter_var($_REQUEST["from"], FILTER_VALIDATE_EMAIL)) $status = "invalid";
 	if(!empty($_REQUEST["message"]) && preg_match("/$spamFilter/", $_REQUEST["message"])) $status = "error";
 	$name = preg_replace("/[^\pL\d\-\. ]/u", "-", $_REQUEST["name"]);
