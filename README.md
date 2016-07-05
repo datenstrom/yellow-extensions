@@ -89,10 +89,14 @@ More plugins by Yellow developers:
   WYSIWYG style toolbar for editing a page.
 * [Medialist](https://github.com/nibreh/yellow-plugin-medialist):
   Create a list of MP3/OGG/PDF media files.
+* [Mixcloud](https://github.com/SAMY2K/yellow-plugin-mixcloud):
+  Embed Mixcloud audio tracks.
 * [PageTxt](https://github.com/richi/yellow-plugin-pagetxt):
   Overwrite language entries in a page.
 * [Shariff](https://github.com/schulle4u/yellow-plugin-shariff):
   Privacy-friendly social sharing buttons for your Yellow website.
+* [Splice](https://github.com/SAMY2K/yellow-plugin-splice):
+  Embed Splice audio projects.
 * [Sublime](https://github.com/nashv/YellowBlogExtensions):
   Sublime Text 3 Extensions for blogs based on Yellow.
 * [WebCLI](https://github.com/richi/yellow-plugin-cli):
