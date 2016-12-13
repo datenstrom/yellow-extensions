@@ -37,13 +37,13 @@ Adding an image:
 Adding an image, different styles:
 
     [image picture.jpg Picture left]
-    [image picture.jpg Picture centre]
+    [image picture.jpg Picture centre - - "Caption"]
     [image picture.jpg Picture right]
 
 Adding an image, different sizes:
 
     [image picture.jpg Picture - 64 64]
-    [image picture.jpg Picture - 320 200]
+    [image picture.jpg Picture - 320 200 "Caption line 1<br>Caption line 2"]
     [image picture.jpg Picture - 50%]
 
 ## Developer
