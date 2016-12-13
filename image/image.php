@@ -47,7 +47,7 @@ class YellowImage
 			if(!empty($alt)) $output .= " alt=\"".htmlspecialchars($alt)."\" title=\"".htmlspecialchars($alt)."\"";
 			if(!empty($style)) $output .= " class=\"".htmlspecialchars($style)."\"";
 			$output .= " />";
-			$output .= if(!empty($caption)) $output .= "<br>".htmlspecialchars($caption);
+			if(!empty($caption)) $output .= "<br>".htmlspecialchars($caption);
 			$output .= "</span>";
 		}
 		return $output;
