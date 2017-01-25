@@ -1,4 +1,4 @@
-Feed plugin 0.6.4
+Feed plugin 0.6.5
 =================
 Web feed with recent changes.
 
@@ -15,6 +15,8 @@ To uninstall delete the plugin files.
 ## How to use a feed?
 
 The feed is available on your website as `http://website/feed/` and `http://website/feed/page:feed.xml`. It's a feed for the entire website, only visible pages are included. To make a blog feed open file `system/config/config.ini` and add `FeedFilter: blog`. You can add a link to the feed somewhere on your website. See example below.
+
+By default, the feed displays the whole page content using the `<content:encoded>` tag in the RSS output. If you don't want this, add `[--more--]` somewhere in your page text and the feed will cut off the rest. 
  
 ## Example
 
