@@ -50,7 +50,7 @@ class YellowFeed
 					$output .= "<link>".$page->getUrl()."</link>\r\n";
 					$output .= "<pubDate>".date(DATE_RSS, $timestamp)."</pubDate>\r\n";
 					$output .= "<guid isPermaLink=\"false\">".$page->getUrl()."?".$timestamp."</guid>\r\n";
-					$output .= "<dc:creator>".$page->getHtml("author")."</dc:creator>";
+					$output .= "<dc:creator>".$page->getHtml("author")."</dc:creator>\r\n";
 					$output .= "<description>".$page->getHtml("description")."</description>\r\n";
 					$output .= "<content:encoded><![CDATA[".$content."]]></content:encoded>\r\n";
 					$output .= "</item>\r\n";
