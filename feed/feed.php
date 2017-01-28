@@ -44,7 +44,7 @@ class YellowFeed
 				foreach($pages as $page)
 				{
 					$timestamp = strtotime($page->get($chronologicalOrder ? "modified" : "published"));
-					$content = $this->yellow->toolbox->createTextDescription($page->getContent(), strlenu($page->getContent()), false, "<!--more-->", " <a href=\"".$page->getLocation(true)."\">".$this->yellow->text->getHtml("blogMore")."</a>");
+					$content = $this->yellow->toolbox->createTextDescription($page->getContent(), strlenu($page->getContent()), false, "<!--more-->", " <a href=\"".$page->getUrl()."\">".$this->yellow->text->getHtml("blogMore")."</a>");
 					$output .= "<item>\r\n";
 					$output .= "<title>".$page->getHtml("title")."</title>\r\n";
 					$output .= "<link>".$page->getUrl()."</link>\r\n";
