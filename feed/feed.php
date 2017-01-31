@@ -1,5 +1,5 @@
 <?php
-// Copyright (c) 2013-2017 Datenstrom, http://datenstrom.se
+// Copyright (c) 2013-2016 Datenstrom, http://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
 // Feed plugin
@@ -37,14 +37,14 @@ class YellowFeed
 				$output = "<?xml version=\"1.0\" encoding=\"utf-8\"\077>\r\n";
 				$output .= "<rss version=\"2.0\" xmlns:content=\"http://purl.org/rss/1.0/modules/content/\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\">\r\n";
 				$output .= "<channel>\r\n";
-				$output .= "<title>".$this->yellow->page->getHtml("sitename")."</title>\r\n";
-				$output .= "<link>".$this->yellow->page->serverScheme."://".$this->yellow->page->serverName.$this->yellow->page->base."/"."</link>\r\n";
-				$output .= "<description>".$this->yellow->page->getHtml("tagline")."</description>\r\n";
+				$output .= "<title>".$this->yellow->page->getHtml("titleHeader")."</title>\r\n";
+				$output .= "<description>".$this->yellow->page->getHtml("description")."</description>\r\n";
+				$output .= "<link>".$this->yellow->page->getUrl()."</link>\r\n";
 				$output .= "<language>".$this->yellow->page->getHtml("language")."</language>\r\n";
 				foreach($pages as $page)
 				{
 					$timestamp = strtotime($page->get($chronologicalOrder ? "modified" : "published"));
-					$content = $this->yellow->toolbox->createTextDescription($page->getContent(), strlenu($page->getContent()), false, "<!--more-->", " <a href=\"".$page->getLocation(true)."\">".$this->yellow->text->getHtml("blogMore")."</a>");
+					$content = $this->yellow->toolbox->createTextDescription($page->getContent(), strlenu($page->getContent()), false, "<!--more-->", " <a href=\"".$page->getUrl()."\">".$this->yellow->text->getHtml("blogMore")."</a>");
 					$output .= "<item>\r\n";
 					$output .= "<title>".$page->getHtml("title")."</title>\r\n";
 					$output .= "<link>".$page->getUrl()."</link>\r\n";
