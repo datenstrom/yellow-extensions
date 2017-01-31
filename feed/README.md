@@ -1,4 +1,4 @@
-Feed plugin 0.6.4
+Feed plugin 0.6.5
 =================
 Web feed with recent changes.
 
