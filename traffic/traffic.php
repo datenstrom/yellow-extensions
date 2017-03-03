@@ -1,11 +1,11 @@
 <?php
-// Copyright (c) 2013-2017 Datenstrom, http://datenstrom.se
+// Traffic plugin, https://github.com/datenstrom/yellow-plugins/tree/master/traffic
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Traffic plugin
 class YellowTraffic
 {
-	const VERSION = "0.6.10";
+	const VERSION = "0.6.11";
 	var $yellow;			//access to API
 	var $days;				//detected days
 	var $views;				//detected views
@@ -18,7 +18,7 @@ class YellowTraffic
 		$this->yellow->config->setDefault("trafficLinesMax", 8);
 		$this->yellow->config->setDefault("trafficLogDir", "/var/log/apache2/");
 		$this->yellow->config->setDefault("trafficLogFile", "(.*)access.log");
-		$this->yellow->config->setDefault("trafficLocationIgnore", "media|system|edit");
+		$this->yellow->config->setDefault("trafficLocationIgnore", "/(media|system|edit)/");
 		$this->yellow->config->setDefault("trafficSpamFilter", "bot|crawler|spider");
 	}
 
@@ -54,8 +54,7 @@ class YellowTraffic
 				$statusCode = 500;
 				$this->days = $this->views = 0;
 				$fileName = $this->yellow->config->get("configDir").$this->yellow->config->get("configFile");
-				echo "ERROR checking files: Please configure ServerScheme, ServerName, ServerBase, ServerTime in file '$fileName'!\n";
-				echo "ERROR checking files: Open your website in a web browser, if you want to see your server settings!\n";
+				echo "ERROR checking files: Please configure StaticUrl in file '$fileName'!\n";
 			}
 			echo "Yellow $command: $this->days day".($this->days!=1 ? 's' : '').", ";
 			echo "$this->views view".($this->views!=1 ? 's' : '')."\n";
@@ -94,7 +93,7 @@ class YellowTraffic
 	}
 	
 	// Analyse logfile requests
-	function analyseRequests($days, $locationMatch, $fileNames)
+	function analyseRequests($days, $locationFilter, $fileNames)
 	{
 		$this->days = $this->views = 0;
 		$sites = $content = $search = $errors = $clients = array();
@@ -103,12 +102,13 @@ class YellowTraffic
 			$statusCode = 200;
 			$timeStart = $timeFound = time();
 			$timeStop = time() - (60 * 60 * 24 * $days);
-			$locationSelf = $this->yellow->config->get("serverBase");
+			$staticUrl = $this->yellow->config->get("staticUrl");
+			list($scheme, $address, $base) = $this->yellow->lookup->getUrlInformation($staticUrl);
 			$locationIgnore = $this->yellow->config->get("trafficLocationIgnore");
-			$refererSelf = $this->yellow->config->get("serverName").$this->yellow->config->get("serverBase");
-			$spamFilter = $this->yellow->config->get("trafficSpamFilter");
-			$robotsFile = $this->yellow->config->get("robotsFile");
+			$locationSearch = $this->yellow->config->get("searchLocation");
 			$faviconFile = $this->yellow->config->get("faviconFile");
+			$robotsFile = $this->yellow->config->get("robotsFile");
+			$spamFilter = $this->yellow->config->get("trafficSpamFilter");
 			foreach($fileNames as $fileName)
 			{
 				if(defined("DEBUG") && DEBUG>=1) echo "YellowTraffic::analyseRequests file:$fileName\n";
@@ -124,30 +124,29 @@ class YellowTraffic
 							$timeFound = strtotime($timestamp);
 							if($timeFound<$timeStop) break;
 							$location = $this->getLocation($uri);
-							$referer = $this->getReferer($referer, $refererSelf);
+							$referer = $this->getReferer($referer, "$address$base/");
 							$clientsRequestThrottle = substru($timestamp, 0, 17).$method.$location;
 							if($clients[$ip]==$clientsRequestThrottle) { --$sites[$referer]; continue; }
 							$clients[$ip] = $clientsRequestThrottle;
 							if($this->checkRequestArguments($method, $location, $referer))
 							{
-								if(!preg_match("#^$locationSelf#", $location)) continue;
-								if(!preg_match("#^$locationSelf$locationMatch#", $location)) continue;
-								if($locationMatch=="/")
+								if(!preg_match("#^$base$locationFilter#", $location)) continue;
+								if($locationFilter=="/")
 								{
-									if(preg_match("#^$locationSelf(.*)/($locationIgnore)/#", $location)) continue;
-									if(preg_match("#^$locationSelf(.*)/($robotsFile)$#", $location)) continue;
-									if(preg_match("#^$locationSelf(.*)/($faviconFile)$#", $location)) continue;
+									if(preg_match("#^$base(.*)$locationIgnore#", $location)) continue;
+									if(preg_match("#^$base(.*)/($faviconFile)$#", $location)) continue;
+									if(preg_match("#^$base(.*)/($robotsFile)$#", $location)) continue;
 								}
 								if(preg_match("#$spamFilter#i", $referer.$userAgent)) continue;
 								if($status>=301 && $status<=303) continue;
 								if($status<400)
 								{
-									++$content[$this->getUrl($location)];
+									++$content[$this->getUrl($scheme, $address, $base, $location)];
 									++$sites[$referer];
-									++$search[$this->getSearchUrl($location)];
+									++$search[$this->getSearchUrl($scheme, $address, $base, $location, $locationSearch)];
 									++$this->views;
 								} else {
-									++$errors[$this->getUrl($location)." - ".$this->getStatusFormatted($status)];
+									++$errors[$this->getUrl($scheme, $address, $base, $location)." - ".$this->getStatusFormatted($status)];
 								}
 							}
 						}
@@ -159,7 +158,7 @@ class YellowTraffic
 				}
 			}
 			unset($sites["-"]); unset($search["-"]);
-			if($locationMatch!="/") $search = array();
+			if($locationFilter!="/") $search = array();
 			$this->days = $timeStart!=$timeFound ? $days : 0;
 		} else {
 			$statusCode = 500;
@@ -186,11 +185,8 @@ class YellowTraffic
 	// Check static configuration
 	function checkStaticConfig()
 	{
-		$serverScheme = $this->yellow->config->get("serverScheme");
-		$serverName = $this->yellow->config->get("serverName");
-		$serverBase = $this->yellow->config->get("serverBase");
-		return !empty($serverScheme) && !empty($serverName) &&
-			$this->yellow->lookup->isValidLocation($serverBase) && $serverBase!="/";
+		$staticUrl = $this->yellow->config->get("staticUrl");
+		return !empty($staticUrl);
 	}
 	
 	// Check request arguments
@@ -206,7 +202,7 @@ class YellowTraffic
 		return rawurldecode(($pos = strposu($uri, '?')) ? substru($uri, 0, $pos) : $uri);
 	}
 	
-	// Return referer, ignore referers to self
+	// Return referer, decode logfile-encoding and URL-encoding
 	function getReferer($referer, $refererSelf)
 	{
 		$referer = preg_replace_callback("#(\\\x[0-9a-f]{2})#", function($matches) { return chr(hexdec($matches[1])); }, $referer);
@@ -215,19 +211,17 @@ class YellowTraffic
 		return preg_match("#$refererSelf#", $referer) ? "-" : $referer;
 	}
 	
-	// Return URL, with server scheme and server name
-	function getUrl($location)
+	// Return URL
+	function getUrl($scheme, $address, $base, $location)
 	{
-		return $this->yellow->lookup->normaliseUrl(
-			$this->yellow->config->get("serverScheme"), $this->yellow->config->get("serverName"), "", $location);
+		return "$scheme://$address$location";
 	}
 
 	// Return search URL, if available
-	function getSearchUrl($location)
+	function getSearchUrl($scheme, $address, $base, $location, $locationSearch)
 	{
-		$locationSearch = $this->yellow->config->get("serverBase").$this->yellow->config->get("searchLocation");
-		$locationSearch .= "query".$this->yellow->toolbox->getLocationArgsSeparator();
-		return preg_match("#^$locationSearch([^/]+)/$#", $location) ? $this->getUrl(strtoloweru($location)) : "-";
+		$locationSearch = $base.$locationSearch."query".$this->yellow->toolbox->getLocationArgsSeparator();
+		return preg_match("#^$locationSearch([^/]+)/$#", $location) ? ("$scheme://$address".strtoloweru($location)) : "-";
 	}
 	
 	// Return human readable status

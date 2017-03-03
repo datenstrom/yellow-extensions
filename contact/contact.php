@@ -1,11 +1,11 @@
 <?php
-// Copyright (c) 2013-2016 Datenstrom, http://datenstrom.se
+// Contact plugin, https://github.com/datenstrom/yellow-plugins/tree/master/contact
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Contact plugin
 class YellowContact
 {
-	const VERSION = "0.6.7";
+	const VERSION = "0.6.9";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -43,7 +43,7 @@ class YellowContact
 	{
 		if($this->yellow->page->get("template")=="contact")
 		{
-			if(PHP_SAPI=="cli") $this->yellow->page->error(500, "Static website not supported!");
+			if($this->yellow->isCommandLine()) $this->yellow->page->error(500, "Static website not supported!");
 			if(empty($_REQUEST["referer"]))
 			{
 				$_REQUEST["referer"] = $_SERVER["HTTP_REFERER"];
@@ -53,6 +53,7 @@ class YellowContact
 			if($_REQUEST["status"]=="send")
 			{
 				$status = $this->sendMail();
+				if($status=="config") $this->yellow->page->error(500, "Webmaster configuration not valid!");
 				if($status=="error") $this->yellow->page->error(500, $this->yellow->text->get("contactStatusError"));
 				$this->yellow->page->setHeader("Last-Modified", $this->yellow->toolbox->getHttpDateFormatted(time()));
 				$this->yellow->page->setHeader("Cache-Control", "no-cache, must-revalidate");
@@ -77,7 +78,7 @@ class YellowContact
 		if($this->yellow->page->isExisting("author") && !$this->yellow->page->parserSafeMode) $author = $this->yellow->page->get("author");
 		if($this->yellow->page->isExisting("email") && !$this->yellow->page->parserSafeMode) $email = $this->yellow->page->get("email");
 		if(empty($name) || empty($from) || empty($message)) $status = "incomplete";
-		if(empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) $status = "error";
+		if(empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) $status = "config";
 		if(!empty($from) && !filter_var($from, FILTER_VALIDATE_EMAIL)) $status = "invalid";
 		if(!empty($message) && preg_match("/$spamFilter/i", $message)) $status = "error";
 		if($status=="send")

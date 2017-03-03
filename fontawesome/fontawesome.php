@@ -1,8 +1,8 @@
 <?php
-// Copyright (c) 2013-2016 Datenstrom, http://datenstrom.se
+// Fontawesome plugin, https://github.com/datenstrom/yellow-plugins/tree/master/fontawesome
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Fontawesome plugin
 class YellowFontawesome
 {
 	const VERSION = "0.6.3";

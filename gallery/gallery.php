@@ -1,8 +1,8 @@
 <?php
-// Copyright (c) 2013-2016 Datenstrom, http://datenstrom.se
+// Gallery plugin, https://github.com/datenstrom/yellow-plugins/tree/master/gallery
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Gallery plugin
 class YellowGallery
 {
 	const VERSION = "0.6.7";

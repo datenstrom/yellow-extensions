@@ -3,7 +3,7 @@
 Language: bn
 LanguageDescription: Bangali (Bangladesh)
 LanguageTranslator: Mohammed Nazmul Ferdous
-LanguageVersion: 0.6.13
+LanguageVersion: 0.6.14
 
 BlogBy: লিখেছেন
 BlogFilter: ব্লগ:
@@ -96,6 +96,7 @@ WebinterfaceVersionStatusDone: Your website is up to date.
 WebinterfaceVersionStatusUpdates: Updates available, please contact the webmaster.
 WebinterfaceVersionUpdateNormal: Updates available, update now.
 WebinterfaceVersionUpdateForce: Force update
+WebinterfaceVersionUpdateModified: @software has been modified
 WebinterfaceOkButton: Ok
 WebinterfaceCancelButton: বাতিল
 WebinterfaceCreateButton: তৈরি করুন

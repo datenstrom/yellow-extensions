@@ -3,7 +3,7 @@
 Language: sk
 LanguageDescription: Slovenčina
 LanguageTranslator: Ádám Tuba
-LanguageVersion: 0.6.13
+LanguageVersion: 0.6.14
 
 BlogBy: od
 BlogFilter: Blog:
@@ -96,6 +96,7 @@ WebinterfaceVersionStatusDone: Your website is up to date.
 WebinterfaceVersionStatusUpdates: Updates available, please contact the webmaster.
 WebinterfaceVersionUpdateNormal: Updates available, update now.
 WebinterfaceVersionUpdateForce: Force update
+WebinterfaceVersionUpdateModified: @software has been modified
 WebinterfaceOkButton: Ok
 WebinterfaceCancelButton: Zrušiť
 WebinterfaceCreateButton: Vytvoriť

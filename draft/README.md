@@ -2,6 +2,8 @@ Draft plugin 0.6.1
 ==================
 Support for draft pages.
 
+<p align="center"><img src="draft-screenshot.png?raw=true" alt="Screenshot"></p>
+
 ## How do I install this?
 
 1. [Download and install Yellow](https://github.com/datenstrom/yellow/).

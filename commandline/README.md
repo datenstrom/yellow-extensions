@@ -1,4 +1,4 @@
-Commandline plugin 0.6.17
+Commandline plugin 0.6.18
 =========================
 Run commands in a terminal window.
 
@@ -30,7 +30,7 @@ Clean [static files](https://developers.datenstrom.se/help/web-server-configurat
 **php yellow.php traffic [DAYS LOCATION FILENAME]**  
 Create [traffic analytics with the traffic plugin](https://github.com/datenstrom/yellow-plugins/tree/master/traffic)
 
-**php yellow.php update [FEATURE]**  
+**php yellow.php update [OPTION FEATURE]**  
 Update [website with the update plugin](https://github.com/datenstrom/yellow-plugins/tree/master/update)
 
 **php yellow.php user [EMAIL PASSWORD NAME LANGUAGE]**  
@@ -46,11 +46,11 @@ Showing available commands:
 `php yellow.php`
 
 ~~~~
-Yellow 0.6.5
+Yellow 0.6.8
 Syntax: yellow.php build [DIRECTORY LOCATION]
         yellow.php clean [DIRECTORY LOCATION]
         yellow.php traffic [DAYS LOCATION FILENAME]
-        yellow.php update [FEATURE]
+        yellow.php update [OPTION FEATURE]
         yellow.php user [EMAIL PASSWORD NAME LANGUAGE]
         yellow.php version
 ~~~~

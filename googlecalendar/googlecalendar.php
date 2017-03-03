@@ -1,11 +1,11 @@
 <?php
-// Copyright (c) 2013-2016 Datenstrom, http://datenstrom.se
+// Googlecalendar plugin, https://github.com/datenstrom/yellow-plugins/tree/master/googlecalendar
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Googlecalendar plugin
 class YellowGooglecalendar
 {
-	const VERSION = "0.6.1";
+	const VERSION = "0.6.3";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -30,7 +30,7 @@ class YellowGooglecalendar
 			if(empty($entriesMax)) $entriesMax = $this->yellow->config->get("googlecalendarEntriesMax");
 			if(empty($style)) $style = $this->yellow->config->get("googlecalendarStyle");
 			$language = $page->get("language");
-			$timeZone = $this->yellow->config->get("serverTime");
+			$timeZone = $this->yellow->config->get("timezone");
 			$dateMonths = $this->yellow->text->getText("dateMonths", $language);
 			$dateWeekdays = $this->yellow->text->getText("dateWeekdays", $language);
 			$dateWeekstart = $this->yellow->text->getText("dateWeekstart", $language);
@@ -43,7 +43,7 @@ class YellowGooglecalendar
 			{
 				$output = "<div class=\"".htmlspecialchars($style)."\">";
 				$output .= "<iframe src=\"https://calendar.google.com/calendar/embed?mode=".rawurlencode($mode)."&amp;dates=".rawurlencode($this->getCalendarDate($timestamp, false))."&amp;ctz=".rawurlencode($timeZone)."&amp;wkst=".rawurlencode($this->getCalendarStart($dateWeekdays, $dateWeekstart))."&amp;hl=".rawurlencode($language)."&amp;showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;showDate=1";
-				foreach(preg_split("/,\s*/", $id) as $src)
+				foreach(preg_split("/\s*,\s*/", $id) as $src)
 				{
 					list($src, $color) = $this->getCalendarInformation($src);
 					if(!empty($src)) $output .= "&amp;src=".rawurlencode($src);
@@ -154,7 +154,7 @@ class YellowGooglecalendar
 	// Return calendar start
 	function getCalendarStart($weekdays, $weekstart)
 	{
-		$index = array_search($weekstart, preg_split("/,\s*/", $weekdays));
+		$index = array_search($weekstart, preg_split("/\s*,\s*/", $weekdays));
 		return 1+(($index+1)%7);
 	}
 }

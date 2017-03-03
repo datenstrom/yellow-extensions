@@ -3,7 +3,7 @@
 Language: zh-CN
 LanguageDescription: 简体中文
 LanguageTranslator: Hyson Lee
-LanguageVersion: 0.6.13
+LanguageVersion: 0.6.14
 
 BlogBy: 作者:
 BlogFilter: 博客归档:
@@ -96,6 +96,7 @@ WebinterfaceVersionStatusDone: Your website is up to date.
 WebinterfaceVersionStatusUpdates: Updates available, please contact the webmaster.
 WebinterfaceVersionUpdateNormal: Updates available, update now.
 WebinterfaceVersionUpdateForce: Force update
+WebinterfaceVersionUpdateModified: @software has been modified
 WebinterfaceOkButton: 确定
 WebinterfaceCancelButton: 取消
 WebinterfaceCreateButton: 创建

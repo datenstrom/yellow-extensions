@@ -1,11 +1,11 @@
 <?php
-// Copyright (c) 2013-2016 Datenstrom, http://datenstrom.se
+// Blog plugin, https://github.com/datenstrom/yellow-plugins/tree/master/blog
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Blog plugin
 class YellowBlog
 {
-	const VERSION = "0.6.10";
+	const VERSION = "0.6.12";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -15,20 +15,6 @@ class YellowBlog
 		$this->yellow->config->setDefault("blogLocation", "");
 		$this->yellow->config->setDefault("blogPagesMax", "10");
 		$this->yellow->config->setDefault("blogPaginationLimit", "5");
-		$this->yellow->config->setDefault("blogPageLength", "1024");
-	}
-	
-	// Handle page meta data parsing
-	function onParseMeta($page)
-	{
-		if(!$page->isError())
-		{
-			$location = $this->yellow->config->get("blogLocation");
-			if(!empty($location) && $this->yellow->lookup->getDirectoryLocation($page->location)==$location)
-			{
-				if($page->get("template")==$this->yellow->config->get("template")) $page->set("template", "blog");
-			}
-		}
 	}
 	
 	// Handle page content parsing of custom block
@@ -71,9 +57,10 @@ class YellowBlog
 			$pages->filter("template", "blog");
 			$page->setLastModified($pages->getModified());
 			$authors = array();
-			foreach($pages as $page) if($page->isExisting("author")) foreach(preg_split("/,\s*/", $page->get("author")) as $author) ++$authors[$author];
+			foreach($pages as $page) if($page->isExisting("author")) foreach(preg_split("/\s*,\s*/", $page->get("author")) as $author) ++$authors[$author];
 			if(count($authors))
 			{
+				$authors = $this->yellow->lookup->normaliseUpperLower($authors);
 				uksort($authors, strnatcasecmp);
 				$output = "<div class=\"".htmlspecialchars($name)."\">\n";
 				$output .= "<ul>\n";
@@ -144,9 +131,10 @@ class YellowBlog
 			$pages->filter("template", "blog");
 			$page->setLastModified($pages->getModified());
 			$tags = array();
-			foreach($pages as $page) if($page->isExisting("tag")) foreach(preg_split("/,\s*/", $page->get("tag")) as $tag) ++$tags[$tag];
+			foreach($pages as $page) if($page->isExisting("tag")) foreach(preg_split("/\s*,\s*/", $page->get("tag")) as $tag) ++$tags[$tag];
 			if(count($tags))
 			{
+				$tags = $this->yellow->lookup->normaliseUpperLower($tags);
 				if($pagesMax!=0 && count($tags)>$pagesMax)
 				{
 					uasort($tags, strnatcasecmp);

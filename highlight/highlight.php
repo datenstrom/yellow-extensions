@@ -1,8 +1,8 @@
 <?php
-// Copyright (c) 2013-2016 Datenstrom, http://datenstrom.se
+// Highlight plugin, https://github.com/datenstrom/yellow-plugins/tree/master/highlight
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Highlight plugin
 class YellowHighlight
 {
 	const VERSION = "0.6.5";

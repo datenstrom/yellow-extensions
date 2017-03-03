@@ -1,19 +1,19 @@
 <?php
-// Copyright (c) 2013-2016 Datenstrom, http://datenstrom.se
+// Piwik plugin, https://github.com/datenstrom/yellow-plugins/tree/master/piwik
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Piwik plugin
 class YellowPiwik
 {
-	const VERSION = "0.6.2";
+	const VERSION = "0.6.3";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
 	function onLoad($yellow)
 	{
 		$this->yellow = $yellow;
-		$this->yellow->config->setDefault("piwikServerName", $this->yellow->config->get("serverName"));
-		$this->yellow->config->setDefault("piwikSiteId", "Yellow");
+		$this->yellow->config->setDefault("piwikUrl", "");
+		$this->yellow->config->setDefault("piwikSiteId", "yellow");
 	}
 	
 	// Handle page extra HTML data
@@ -22,11 +22,12 @@ class YellowPiwik
 		$output = NULL;
 		if($name=="footer")
 		{
-			$serverName = $this->yellow->config->get("piwikServerName");
+			$url = $this->yellow->config->get("piwikUrl");
 			$siteId = $this->yellow->config->get("piwikSiteId");
+			if(empty($url)) $url = $this->yellow->toolbox->getServerUrl();
 			$output = "<script type=\"text/javascript\">\n";
 			$output .= "var _paq = _paq || [];\n";
-			$output .= "(function(){ var u=((\"https:\"==document.location.protocol) ? \"https\" : \"http\") + \"://".strencode($serverName)."/\";\n";
+			$output .= "(function(){ var u=\"".strencode($url)."\";\n";
 			$output .= "_paq.push(['setSiteId', '".strencode($siteId)."']);\n";
 			$output .= "_paq.push(['setTrackerUrl', u+'piwik.php']);\n";
 			$output .= "_paq.push(['trackPageView']);\n";

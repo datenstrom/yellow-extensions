@@ -1,11 +1,11 @@
 <?php
-// Copyright (c) 2013-2016 Datenstrom, http://datenstrom.se
+// Search plugin, https://github.com/datenstrom/yellow-plugins/tree/master/search
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Search plugin
 class YellowSearch
 {
-	const VERSION = "0.6.7";
+	const VERSION = "0.6.9";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -40,15 +40,14 @@ class YellowSearch
 	{
 		if($this->yellow->page->get("template")=="search")
 		{
-			if(PHP_SAPI=="cli") $this->yellow->page->error(500, "Static website not supported!");
+			if($this->yellow->isCommandLine()) $this->yellow->page->error(500, "Static website not supported!");
 			$query = trim($_REQUEST["query"]);
-			$tokens = array_slice(array_unique(array_filter(explode(' ', $query), "strlen")), 0, 10);
-			if(!empty($tokens))
+			list($tokens, $filters) = $this->getSearchInformation($query, 10);
+			if(!empty($tokens) || !empty($filters))
 			{
-				$this->yellow->page->set("titleHeader", $query." - ".$this->yellow->page->get("sitename"));
-				$this->yellow->page->set("title", $this->yellow->text->get("searchQuery")." ".$query);
 				$pages = $this->yellow->pages->clean();
-				foreach($this->yellow->pages->index(false, false) as $page)
+				$showSpecialPages = $filters["status"]=="draft" && $this->yellow->getRequestHandler()!="core";
+				foreach($this->yellow->pages->index($showSpecialPages, false) as $page)
 				{
 					$searchScore = 0;
 					$searchTokens = array();
@@ -67,9 +66,18 @@ class YellowSearch
 						$pages->append($page);
 					}
 				}
-				$pages->sort("searchscore");
+				if(!empty($filters))
+				{
+					if($filters["tag"]) $pages->filter("tag", $filters["tag"]);
+					if($filters["author"]) $pages->filter("author", $filters["author"]);
+					if($filters["language"]) $pages->filter("language", $filters["language"]);
+					if($filters["status"]) $pages->filter("status", $filters["status"]);
+				}
+				$pages->sort("modified", false)->sort("searchscore");
 				$pages->pagination($this->yellow->config->get("searchPaginationLimit"));
 				if($_REQUEST["page"] && !$pages->getPaginationNumber()) $this->yellow->page->error(404);
+				$this->yellow->page->set("titleHeader", $query." - ".$this->yellow->page->get("sitename"));
+				$this->yellow->page->set("titleSearch", $this->yellow->text->get("searchQuery")." ".$query);
 				$this->yellow->page->setPages($pages);
 				$this->yellow->page->setLastModified($pages->getModified());
 				$this->yellow->page->setHeader("Cache-Control", "max-age=60");
@@ -78,6 +86,26 @@ class YellowSearch
 				$this->yellow->page->set("status", "none");
 			}
 		}
+	}
+	
+	// Return search information
+	function getSearchInformation($query, $tokensMax)
+	{
+		$tokens = array_unique(array_filter($this->yellow->toolbox->getTextArgs($query), "strlen"));
+		$filters = array_filter($_REQUEST, "strlen");
+		foreach($tokens as $key=>$value)
+		{
+			preg_match("/^(.*?):(.*)$/", $value, $matches);
+			if(!empty($matches[1]) && !strempty($matches[2]))
+			{
+				$filtersInQuery = true;
+				$filters[$matches[1]] = $matches[2];
+				unset($tokens[$key]);
+			}
+		}
+		if($tokensMax) $tokens = array_slice($tokens, 0, $tokensMax);
+		if(empty($tokens) && !$filtersInQuery) $filters = array();
+		return array($tokens, $filters);
 	}
 }
 

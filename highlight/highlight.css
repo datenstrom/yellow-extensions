@@ -1,4 +1,6 @@
-/* Highlight plugin 0.6.5 */
+/* Highlight plugin, https://github.com/datenstrom/yellow-plugins/tree/master/highlight */
+/* Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se */
+/* This file may be used and distributed under the terms of the public license. */
 
 .content .highlight tr, .content .highlight td { padding:0; border:none; }
 .content .highlight td.ln pre { padding-right:0.5em; text-align:right; }

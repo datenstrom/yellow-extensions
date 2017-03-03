@@ -1,11 +1,11 @@
 <?php
-// Copyright (c) 2013-2017 Datenstrom, http://datenstrom.se
+// Language plugin, https://github.com/datenstrom/yellow-plugins/tree/master/language
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Language plugin
 class YellowLanguage
 {
-	const VERSION = "0.6.13";
+	const VERSION = "0.6.14";
 }
 
 $yellow->plugins->register("language", "YellowLanguage", YellowLanguage::VERSION);

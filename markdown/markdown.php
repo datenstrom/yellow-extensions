@@ -1,11 +1,11 @@
 <?php
-// Copyright (c) 2013-2016 Datenstrom, http://datenstrom.se
+// Markdown plugin, https://github.com/datenstrom/yellow-plugins/tree/master/markdown
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Markdown plugin
 class YellowMarkdown
 {
-	const VERSION = "0.6.4";
+	const VERSION = "0.6.5";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -22,7 +22,6 @@ class YellowMarkdown
 	}
 }
 
-// Markdown parser
 class YellowMarkdownParser extends MarkdownExtraParser
 {
 	var $yellow;			//access to API
@@ -37,8 +36,7 @@ class YellowMarkdownParser extends MarkdownExtraParser
 		$this->no_markup = $page->parserSafeMode;
 		$this->url_filter_func = function($url) use ($yellow, $page)
 		{
-			return $yellow->lookup->normaliseLocation($url, $page->base, $page->location,
-				$yellow->config->get("serverBase").$yellow->config->get("imageLocation"),
+			return $yellow->lookup->normaliseLocation($url, $page->location,
 				$page->parserSafeMode && $page->statusCode==200);
 		};
 		parent::__construct();

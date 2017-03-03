@@ -2,7 +2,7 @@ Yellow plugins
 ==============
 [![Yellow](https://raw.githubusercontent.com/datenstrom/yellow-developers/master/media/images/yellow-photo.jpg)](https://datenstrom.se/yellow)
 
-Yellow is for people who make websites. [Get support](https://developers.datenstrom.se/help/support).
+Yellow is for people who make websites.
 
 1. [Download all plugins and unzip them](https://github.com/datenstrom/yellow-plugins/archive/master.zip).  
 2. Copy relevant files to your web hosting.  
@@ -65,7 +65,7 @@ Available plugins:
 * [Traffic](https://github.com/datenstrom/yellow-plugins/tree/master/traffic): 
   Create traffic analytics from web server logfiles.
 * [Update](https://github.com/datenstrom/yellow-plugins/tree/master/update): 
-  Update your website.
+  Keep your website up to date.
 * [Vimeo](https://github.com/datenstrom/yellow-plugins/tree/master/vimeo): 
   Embed Vimeo videos.
 * [Webinterface](https://github.com/datenstrom/yellow-plugins/tree/master/webinterface): 
@@ -79,6 +79,8 @@ Experimental plugins:
 
 * [Audio](https://github.com/schulle4u/yellow-plugin-audio):
   HTML5 audio player.
+* [Burger Menu](https://github.com/richi/yellow-plugin-burger-menu): 
+  A hamburger menu button.
 * [CheetJS](https://github.com/nogginfuel/yellow-plugin-cheetjs): 
   Add easter eggs via key binds.
 * [Comments](https://github.com/nasendackel/yellow-comments):
@@ -122,4 +124,4 @@ Experimental plugins:
 * [YCSSG](https://github.com/dieli/yellow-extension-ycssg):
   Image gallery in CSS only.
 
-Licensed under [GPLv2](https://github.com/datenstrom/yellow-plugins/blob/master/LICENSE.md) unless stated otherwise.
+Licensed under [GPLv2](https://github.com/datenstrom/yellow-plugins/blob/master/LICENSE.md) unless stated otherwise. [Learn more](https://developers.datenstrom.se/help/).

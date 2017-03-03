@@ -1,4 +1,4 @@
-Links plugin 0.6.3
+Links plugin 0.6.6
 ==================
 Add previous/next page to blog. [See demo](https://developers.datenstrom.se/plugins/blog-plugin/blog-example).
 
@@ -23,7 +23,7 @@ The following settings can be configured in file `system/config/config.ini`:
 
 `LinksPagePrevious` = show link to previous page, 1 or 0  
 `LinksPageNext` = show link to next page, 1 or 0  
-`LinksStyle` = links style, e.g. `links`  
+`LinksStyle` = links style, e.g. `entry-links`, `simple`    
 
 ## Developer
 

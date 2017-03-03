@@ -1,11 +1,11 @@
 <?php
-// Copyright (c) 2013-2016 Datenstrom, http://datenstrom.se
+// Wiki plugin, https://github.com/datenstrom/yellow-plugins/tree/master/wiki
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Wiki plugin
 class YellowWiki
 {
-	const VERSION = "0.6.11";
+	const VERSION = "0.6.12";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -17,19 +17,6 @@ class YellowWiki
 		$this->yellow->config->setDefault("wikiPaginationLimit", "30");
 	}
 
-	// Handle page meta data parsing
-	function onParseMeta($page)
-	{
-		if(!$page->isError())
-		{
-			$location = $this->yellow->config->get("wikiLocation");
-			if(!empty($location) && $this->yellow->lookup->getDirectoryLocation($page->location)==$location)
-			{
-				if($page->get("template")==$this->yellow->config->get("template")) $page->set("template", "wiki");
-			}
-		}
-	}
-	
 	// Handle page content parsing of custom block
 	function onParseContentBlock($page, $name, $text, $shortcut)
 	{
@@ -112,9 +99,10 @@ class YellowWiki
 			$pages = $wiki ? $wiki->getChildren(!$wiki->isVisible())->append($wiki) : $this->yellow->pages->clean();
 			$page->setLastModified($pages->getModified());
 			$tags = array();
-			foreach($pages as $page) if($page->isExisting("tag")) foreach(preg_split("/,\s*/", $page->get("tag")) as $tag) ++$tags[$tag];
+			foreach($pages as $page) if($page->isExisting("tag")) foreach(preg_split("/\s*,\s*/", $page->get("tag")) as $tag) ++$tags[$tag];
 			if(count($tags))
 			{
+				$tags = $this->yellow->lookup->normaliseUpperLower($tags);
 				if($pagesMax!=0 && count($tags)>$pagesMax)
 				{
 					uasort($tags, strnatcasecmp);

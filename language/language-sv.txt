@@ -3,7 +3,7 @@
 Language: sv
 LanguageDescription: Svenska
 LanguageTranslator: Adam Engel
-LanguageVersion: 0.6.13
+LanguageVersion: 0.6.14
 
 BlogBy: av
 BlogFilter: Blogg:
@@ -96,6 +96,7 @@ WebinterfaceVersionStatusDone: Your website is up to date.
 WebinterfaceVersionStatusUpdates: Updates available, please contact the webmaster.
 WebinterfaceVersionUpdateNormal: Updates available, update now.
 WebinterfaceVersionUpdateForce: Force update
+WebinterfaceVersionUpdateModified: @software has been modified
 WebinterfaceOkButton: Ok
 WebinterfaceCancelButton: Avbryt
 WebinterfaceCreateButton: Skapa

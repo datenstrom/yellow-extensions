@@ -1,4 +1,4 @@
-Core plugin 0.6.7
+Core plugin 0.6.9
 =================
 Core functionality for your website.
 
@@ -21,13 +21,9 @@ The following settings can be configured in file `system/config/config.ini`:
 `Sitename` = name of the website  
 `Author` = webmaster's name  
 `Email` = webmaster's email  
-`Language` = default language   
+`Language` = default language  
+`Timezone` = default timezone  
 `Theme` = default theme  
-
-`ServerScheme` = server scheme, e.g. `http` or `https`  
-`ServerName` = serve name, e.g. `your.domain.name`  
-`ServerBase` = server base, e.g. name of subfolder or leave empty  
-`ServerTime` = server time zone, e.g. `Europe/Stockholm`  
 
 These are the most important settings. For a complete list see [configuration file](https://github.com/datenstrom/yellow/blob/master/system/config/config.ini).
 
@@ -42,15 +38,13 @@ Title: Example page
 This website is made with [yellow].
 ```
 
-Content file with Yellow server information:
+Content file with Yellow version, including plugins and themes:
 
 ```
 ---
 Title: Example page
 ---
-This page shows server information.
-
-[yellow server]
+This website is made with Yellow:
 
 [yellow version]
 ```

@@ -1,4 +1,4 @@
-Googlecalendar plugin 0.6.1
+Googlecalendar plugin 0.6.3
 ===========================
 Embed Google calendar. [See demo](https://developers.datenstrom.se/plugins/googlecalendar-plugin).
 
@@ -46,8 +46,8 @@ Embedding a calendar:
 Embedding a calendar, multiple calendars together:
 
     [googlecalendar "sv.swedish#holiday, de.german#holiday, fr.french#holiday"]
-    [googlecalendar "sv.swedish#holiday, de.german#holiday, fr.french#holiday" week 2016-01-01]
-    [googlecalendar "sv.swedish#holiday#0044AA, de.german#holiday#AA0000, fr.french#holiday#00AA00" month 2016-01-01]
+    [googlecalendar "sv.swedish#holiday, de.german#holiday, fr.french#holiday" week 2017-01-01]
+    [googlecalendar "sv.swedish#holiday#0044AA, de.german#holiday#AA0000, fr.french#holiday#00AA00" month 2017-01-01]
 
 Embedding a calendar, events and agenda:
 

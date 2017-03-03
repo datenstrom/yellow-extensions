@@ -1,4 +1,4 @@
-Contact plugin 0.6.7
+Contact plugin 0.6.9
 ====================
 Email contact page for your website. [See demo](https://developers.datenstrom.se/plugins/contact-plugin).
 
@@ -14,7 +14,7 @@ To uninstall delete the plugin files.
 
 ## How to use a contact page?
 
-The contact page is available on your website as `http://website/contact/`. The contact email is send to the webmaster, which is defined in file `system/config/config.ini`. You can set a different `Author` and `Email` in the [settings](https://developers.datenstrom.se/help/markdown-cheat-sheet#settings) at the top of a page. To show a contact form add a `[contact]` shortcut to a page. You can also add a link to the contact page somewhere on your website. See example below.
+The contact page is available on your website as `http://website/contact/`. The contact email is send to the webmaster, which is defined in file `system/config/config.ini`. You can set a different `Author` and `Email` in the [settings](https://developers.datenstrom.se/help/markdown-cheat-sheet#settings) at the top of a page. To show a contact form add a `[contact]` shortcut with an optional location. You can also add a link to the contact page somewhere on your website. See example below.
 
 ## How to configure a contact page?
 
@@ -27,11 +27,30 @@ The following settings can be configured in file `system/config/config.ini`:
 
 ## Example
 
+Adding a contact form:
+
+    [contact]
+    [contact /en/contact/]
+    [contact /de/contact/]
+
+Content file with contact form:
+
+    ---
+    Title: Example page
+    ---        
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
+    labore et dolore magna pizza. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit 
+    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt 
+    in culpa qui officia deserunt mollit anim id est laborum.
+
+    [contact]
+
 Footer snippet with contact page:
 
     <div class="footer">
     <div class="siteinfo">
-    <a href="<?php echo $yellow->page->base."/" ?>">&copy; 2016 <?php echo $yellow->page->getHtml("sitename") ?></a>.
+    <a href="<?php echo $yellow->page->base."/" ?>">&copy; 2017 <?php echo $yellow->page->getHtml("sitename") ?></a>.
     <a href="<?php echo $yellow->page->base."/contact/" ?>">Contact</a>.
     <a href="<?php echo $yellow->page->get("pageEdit") ?>">Edit</a>.
     <a href="<?php echo $yellow->text->get("yellowUrl") ?>">Made with Yellow</a>.

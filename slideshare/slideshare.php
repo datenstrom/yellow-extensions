@@ -1,8 +1,8 @@
 <?php
-// Copyright (c) 2013-2015 Datenstrom, http://datenstrom.se
+// Slideshare plugin, https://github.com/datenstrom/yellow-plugins/tree/master/slideshare
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Slideshare plugin
 class YellowSlideshare
 {
 	const VERSION = "0.6.1";

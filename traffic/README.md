@@ -1,4 +1,4 @@
-Traffic plugin 0.6.10
+Traffic plugin 0.6.11
 ====================
 Create traffic analytics from web server logfiles.
 

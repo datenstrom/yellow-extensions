@@ -1,4 +1,4 @@
-Language plugin 0.6.13
+Language plugin 0.6.14
 =====================
 Internationalisation for your website.
 
@@ -14,7 +14,7 @@ To uninstall delete the plugin files.
 
 ## How to add a language?
 
-Copy language file into your `system/plugins` folder. To use the language open file `system/config/config.ini` and change the `Language` setting. A different language can be defined in the settings at the top of each page, for example `Language: en`. [Learn more](https://developers.datenstrom.se/help/language-configuration).
+Download language file and copy it into your `system/plugins` folder. To change the language of your website, open file `system/config/config.ini` and change the `Language` setting. A different language can be defined in the settings at the top of each page, for example `Language: en`. [Learn more](https://developers.datenstrom.se/help/language-configuration).
 
 Available language files:
 

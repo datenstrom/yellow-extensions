@@ -1,7 +1,7 @@
-// Copyright (c) 2013-2016 Datenstrom, http://datenstrom.se
+// Googlecalendar plugin, https://github.com/datenstrom/yellow-plugins/tree/master/googlecalendar
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Googlecalendar plugin 0.6.1
 function GoogleCalender(element, options)
 {
 	this.element = element;

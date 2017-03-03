@@ -1,8 +1,8 @@
 <?php
-// Copyright (c) 2013-2015 Datenstrom, http://datenstrom.se
+// Youtube plugin, https://github.com/datenstrom/yellow-plugins/tree/master/youtube
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Youtube plugin
 class YellowYoutube
 {
 	const VERSION = "0.6.1";

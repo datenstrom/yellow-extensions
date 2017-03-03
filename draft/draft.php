@@ -1,8 +1,8 @@
 <?php
-// Copyright (c) 2013-2015 Datenstrom, http://datenstrom.se
+// Draft plugin, https://github.com/datenstrom/yellow-plugins/tree/master/draft
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Draft status plugin
 class YellowDraft
 {
 	const VERSION = "0.6.1";

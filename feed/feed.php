@@ -1,11 +1,11 @@
 <?php
-// Copyright (c) 2013-2016 Datenstrom, http://datenstrom.se
+// Feed plugin, https://github.com/datenstrom/yellow-plugins/tree/master/feed
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Feed plugin
 class YellowFeed
 {
-	const VERSION = "0.6.4";
+	const VERSION = "0.6.6";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -13,7 +13,6 @@ class YellowFeed
 	{
 		$this->yellow = $yellow;
 		$this->yellow->config->setDefault("feedPaginationLimit", "30");
-		$this->yellow->config->setDefault("feedPageLength", "1024");
 		$this->yellow->config->setDefault("feedLocation", "/feed/");
 		$this->yellow->config->setDefault("feedFileXml", "feed.xml");
 		$this->yellow->config->setDefault("feedFilter", "");
@@ -36,22 +35,24 @@ class YellowFeed
 				$this->yellow->page->setLastModified($pages->getModified());
 				$this->yellow->page->setHeader("Content-Type", "application/rss+xml; charset=utf-8");
 				$output = "<?xml version=\"1.0\" encoding=\"utf-8\"\077>\r\n";
-				$output .= "<rss version=\"2.0\">\r\n";
+				$output .= "<rss version=\"2.0\" xmlns:content=\"http://purl.org/rss/1.0/modules/content/\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\">\r\n";
 				$output .= "<channel>\r\n";
-				$output .= "<title>".$this->yellow->page->getHtml("titleHeader")."</title>\r\n";
-				$output .= "<description>".$this->yellow->page->getHtml("description")."</description>\r\n";
-				$output .= "<link>".$this->yellow->page->getUrl()."</link>\r\n";
+				$output .= "<title>".$this->yellow->page->getHtml("sitename")."</title>\r\n";
+				$output .= "<link>".$this->yellow->page->scheme."://".$this->yellow->page->address.$this->yellow->page->base."/"."</link>\r\n";
+				$output .= "<description>".$this->yellow->page->getHtml("tagline")."</description>\r\n";
 				$output .= "<language>".$this->yellow->page->getHtml("language")."</language>\r\n";
 				foreach($pages as $page)
 				{
 					$timestamp = strtotime($page->get($chronologicalOrder ? "modified" : "published"));
-					$description = $this->yellow->toolbox->createTextDescription($page->getContent(), $this->yellow->config->get("feedPageLength"), false, "<!--more-->");
+					$content = $this->yellow->toolbox->createTextDescription($page->getContent(), 0, false, "<!--more-->", " <a href=\"".$page->getUrl()."\">".$this->yellow->text->getHtml("blogMore")."</a>");
 					$output .= "<item>\r\n";
 					$output .= "<title>".$page->getHtml("title")."</title>\r\n";
 					$output .= "<link>".$page->getUrl()."</link>\r\n";
 					$output .= "<pubDate>".date(DATE_RSS, $timestamp)."</pubDate>\r\n";
 					$output .= "<guid isPermaLink=\"false\">".$page->getUrl()."?".$timestamp."</guid>\r\n";
-					$output .= "<description><![CDATA[".$description."]]></description>\r\n";
+					$output .= "<dc:creator>".$page->getHtml("author")."</dc:creator>\r\n";
+					$output .= "<description>".$page->getHtml("description")."</description>\r\n";
+					$output .= "<content:encoded><![CDATA[".$content."]]></content:encoded>\r\n";
 					$output .= "</item>\r\n";
 				}
 				$output .= "</channel>\r\n";
