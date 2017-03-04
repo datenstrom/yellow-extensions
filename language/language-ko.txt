@@ -3,7 +3,7 @@
 Language: ko
 LanguageDescription: 한국어
 LanguageTranslator: Ludens
-LanguageVersion: 0.6.14
+LanguageVersion: 0.6.15
 
 BlogBy: by
 BlogFilter: 글:
@@ -36,7 +36,7 @@ SearchButton: 검색
 WebinterfaceInstallationTitle: Hello
 WebinterfaceInstallationFeature: What do you want to make?
 WebinterfaceInstallationHomePage: Your website works!\n\nYou can [edit this page] or use your text editor.
-WebinterfaceLoginTitle: Yellow
+WebinterfaceLoginTitle: 환영
 WebinterfaceLoginEmail: Email:
 WebinterfaceLoginPassword: Password:
 WebinterfaceLoginRecover: Forgot your password?
@@ -114,6 +114,6 @@ WikiFilter: 위키:
 WikiTag: 태그:
 WikiSpecialPages: 모든 페이지
 WikiSpecialChanges: 최근 바뀜
-YellowUrl: https://datenstrom.se/yellow
+YellowUrl: https://datenstrom.se/yellow/
 YellowUserHelpUrl: https://developers.datenstrom.se/help/
 YellowMarkdownHelpUrl: https://developers.datenstrom.se/help/markdown-cheat-sheet

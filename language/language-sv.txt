@@ -3,7 +3,7 @@
 Language: sv
 LanguageDescription: Svenska
 LanguageTranslator: Adam Engel
-LanguageVersion: 0.6.14
+LanguageVersion: 0.6.15
 
 BlogBy: av
 BlogFilter: Blogg:
@@ -36,7 +36,7 @@ SearchButton: Sök
 WebinterfaceInstallationTitle: Hej
 WebinterfaceInstallationFeature: What do you want to make?
 WebinterfaceInstallationHomePage: Your website works!\n\nYou can [edit this page] or use your text editor.
-WebinterfaceLoginTitle: Yellow
+WebinterfaceLoginTitle: Välkommen
 WebinterfaceLoginEmail: Email:
 WebinterfaceLoginPassword: Lösenord:
 WebinterfaceLoginRecover: Glömt lösenordet?
@@ -114,6 +114,6 @@ WikiFilter: Wiki:
 WikiTag: Taggar:
 WikiSpecialPages: Alla sidor
 WikiSpecialChanges: Senaste ändringarna
-YellowUrl: https://datenstrom.se/yellow
+YellowUrl: https://datenstrom.se/yellow/
 YellowUserHelpUrl: https://developers.datenstrom.se/help/
 YellowMarkdownHelpUrl: https://developers.datenstrom.se/help/markdown-cheat-sheet

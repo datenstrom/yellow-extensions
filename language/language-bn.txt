@@ -3,7 +3,7 @@
 Language: bn
 LanguageDescription: Bangali (Bangladesh)
 LanguageTranslator: Mohammed Nazmul Ferdous
-LanguageVersion: 0.6.14
+LanguageVersion: 0.6.15
 
 BlogBy: লিখেছেন
 BlogFilter: ব্লগ:
@@ -36,7 +36,7 @@ SearchButton: খোঁজ করুন
 WebinterfaceInstallationTitle: Hello
 WebinterfaceInstallationFeature: What do you want to make?
 WebinterfaceInstallationHomePage: Your website works!\n\nYou can [edit this page] or use your text editor.
-WebinterfaceLoginTitle: Yellow
+WebinterfaceLoginTitle: স্বাগত
 WebinterfaceLoginEmail: Email:
 WebinterfaceLoginPassword: Password:
 WebinterfaceLoginRecover: Forgot your password?
@@ -114,6 +114,6 @@ WikiFilter: Wiki:
 WikiTag: Tags:
 WikiSpecialPages: সমস্ত পৃষ্ঠা
 WikiSpecialChanges: সাম্প্রতিক পরিবর্তন
-YellowUrl: https://datenstrom.se/yellow
+YellowUrl: https://datenstrom.se/yellow/
 YellowUserHelpUrl: https://developers.datenstrom.se/help/
 YellowMarkdownHelpUrl: https://developers.datenstrom.se/help/markdown-cheat-sheet

@@ -3,7 +3,7 @@
 Language: nl
 LanguageDescription: Nederlands (België)
 LanguageTranslator: Robin Vannieuwenhuijse
-LanguageVersion: 0.6.14
+LanguageVersion: 0.6.15
 
 BlogBy: door
 BlogFilter: Blog:
@@ -36,7 +36,7 @@ SearchButton: Zoek
 WebinterfaceInstallationTitle: Hallo
 WebinterfaceInstallationFeature: Wat wil je doen?
 WebinterfaceInstallationHomePage: Je website werkt!\n\nJe kan [edit - deze pagina bewerken] of gebruik maken van de teksteditor.
-WebinterfaceLoginTitle: Yellow
+WebinterfaceLoginTitle: Welkom
 WebinterfaceLoginEmail: E-mail:
 WebinterfaceLoginPassword: Wachtwoord:
 WebinterfaceLoginRecover: Wachtwoord vergeten?
@@ -114,6 +114,6 @@ WikiFilter: Wiki:
 WikiTag: Labels:
 WikiSpecialPages: Alle pagina's
 WikiSpecialChanges: Recente wijzigingen
-YellowUrl: https://datenstrom.se/yellow
+YellowUrl: https://datenstrom.se/yellow/
 YellowUserHelpUrl: https://developers.datenstrom.se/help/
 YellowMarkdownHelpUrl: https://developers.datenstrom.se/help/markdown-cheat-sheet

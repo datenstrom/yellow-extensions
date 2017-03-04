@@ -3,7 +3,7 @@
 Language: zh-CN
 LanguageDescription: 简体中文
 LanguageTranslator: Hyson Lee
-LanguageVersion: 0.6.14
+LanguageVersion: 0.6.15
 
 BlogBy: 作者:
 BlogFilter: 博客归档:
@@ -36,7 +36,7 @@ SearchButton: 查找
 WebinterfaceInstallationTitle: 你好
 WebinterfaceInstallationFeature: 你想做什么做什么呢？
 WebinterfaceInstallationHomePage: 你的网站已正常运行！\n\n现在你可以[edit - 编辑本页]或用你喜欢的文本编辑器修改。
-WebinterfaceLoginTitle: Yellow
+WebinterfaceLoginTitle: 欢迎
 WebinterfaceLoginEmail: 邮箱:
 WebinterfaceLoginPassword: 密码:
 WebinterfaceLoginRecover: 忘了密码？
@@ -114,6 +114,6 @@ WikiFilter: Wiki归档:
 WikiTag: 标签:
 WikiSpecialPages: 所有页面
 WikiSpecialChanges: 最近更改
-YellowUrl: https://datenstrom.se/yellow
+YellowUrl: https://datenstrom.se/yellow/
 YellowUserHelpUrl: https://developers.datenstrom.se/help/
 YellowMarkdownHelpUrl: https://developers.datenstrom.se/help/markdown-cheat-sheet

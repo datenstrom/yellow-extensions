@@ -3,7 +3,7 @@
 Language: id
 LanguageDescription: Bahasa Indonesia
 LanguageTranslator: Jimmy Ofisia
-LanguageVersion: 0.6.14
+LanguageVersion: 0.6.15
 
 BlogBy: oleh
 BlogFilter: Blog:
@@ -36,7 +36,7 @@ SearchButton: Cari
 WebinterfaceInstallationTitle: Hello
 WebinterfaceInstallationFeature: What do you want to make?
 WebinterfaceInstallationHomePage: Your website works!\n\nYou can [edit this page] or use your text editor.
-WebinterfaceLoginTitle: Yellow
+WebinterfaceLoginTitle: Selamat datang
 WebinterfaceLoginEmail: Email:
 WebinterfaceLoginPassword: Password:
 WebinterfaceLoginRecover: Forgot your password?
@@ -114,6 +114,6 @@ WikiFilter: Wiki:
 WikiTag: Label:
 WikiSpecialPages: Semua halaman
 WikiSpecialChanges: Perubahan belakangan ini
-YellowUrl: https://datenstrom.se/yellow
+YellowUrl: https://datenstrom.se/yellow/
 YellowUserHelpUrl: https://developers.datenstrom.se/help/
 YellowMarkdownHelpUrl: https://developers.datenstrom.se/help/markdown-cheat-sheet

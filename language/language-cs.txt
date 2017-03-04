@@ -3,7 +3,7 @@
 Language: cs
 LanguageDescription: Čeština
 LanguageTranslator: Ufo Vyhuleny
-LanguageVersion: 0.6.14
+LanguageVersion: 0.6.15
 
 BlogBy: Vytvořil
 BlogFilter: Blog:
@@ -36,7 +36,7 @@ SearchButton: Hledej
 WebinterfaceInstallationTitle: Ahoj
 WebinterfaceInstallationFeature: Co chcete udělat?
 WebinterfaceInstallationHomePage: Stránka funguje!\n\nMůžete [edit - editovat tuto stránku] nebo použít textový editor.
-WebinterfaceLoginTitle: Yellow
+WebinterfaceLoginTitle: Vítejte
 WebinterfaceLoginEmail: Email:
 WebinterfaceLoginPassword: Heslo:
 WebinterfaceLoginRecover: Zapomněli jste své heslo?
@@ -114,6 +114,6 @@ WikiFilter: Wiki:
 WikiTag: Tags:
 WikiSpecialPages: Všechny stránky
 WikiSpecialChanges: Poslední změny
-YellowUrl: https://datenstrom.se/yellow
+YellowUrl: https://datenstrom.se/yellow/
 YellowUserHelpUrl: https://developers.datenstrom.se/help/
 YellowMarkdownHelpUrl: https://developers.datenstrom.se/help/markdown-cheat-sheet

@@ -3,7 +3,7 @@
 Language: it
 LanguageDescription: Italiano
 LanguageTranslator: Luca Lischetti, Andrea Zanellato
-LanguageVersion: 0.6.14
+LanguageVersion: 0.6.15
 
 BlogBy: per
 BlogFilter: Blog:
@@ -36,7 +36,7 @@ SearchButton: Cerca
 WebinterfaceInstallationTitle: Ciao
 WebinterfaceInstallationFeature: Cosa si vuole fare?
 WebinterfaceInstallationHomePage: Il tuo sito è attivo!\n\nPuoi [edit - modificare questa pagina] o usare il tuo editor di testo.
-WebinterfaceLoginTitle: Yellow
+WebinterfaceLoginTitle: Benvenuto
 WebinterfaceLoginEmail: Email:
 WebinterfaceLoginPassword: Password:
 WebinterfaceLoginRecover: Recupera la tua password
@@ -114,6 +114,6 @@ WikiFilter: Wiki:
 WikiTag: Tag:
 WikiSpecialPages: Tutte le pagine
 WikiSpecialChanges: Modifiche recenti
-YellowUrl: https://datenstrom.se/yellow
+YellowUrl: https://datenstrom.se/yellow/
 YellowUserHelpUrl: https://developers.datenstrom.se/help/
 YellowMarkdownHelpUrl: https://developers.datenstrom.se/help/markdown-cheat-sheet
