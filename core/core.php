@@ -2906,6 +2906,7 @@ class YellowToolbox
 			"svg" => "image/svg+xml",
 			"txt" => "text/plain",
 			"woff" => "application/font-woff",
+			"woff2" => "application/font-woff2",
 			"xml" => "text/xml; charset=utf-8");
 		$contentType = "";
 		$extension = $this->getFileExtension($fileName);
