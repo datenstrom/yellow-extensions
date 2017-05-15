@@ -23,6 +23,7 @@ The following arguments are available:
 `STYLE` = image style, e.g. `left`, `center`, `right`  
 `WIDTH` = image width, pixel or percent  
 `HEIGHT` = image height, pixel or percent   
+`CAPTION` = image caption that appears under the picture, supports multiple lines using `<br>`
 
 The plugin uses [GD graphics library](http://www.libgd.org/) by Thomas Boutell for resizing JPEG and PNG images.
 
@@ -37,13 +38,13 @@ Adding an image:
 Adding an image, different styles:
 
     [image picture.jpg Picture left]
-    [image picture.jpg Picture centre]
+    [image picture.jpg Picture centre - - "Caption"]
     [image picture.jpg Picture right]
 
 Adding an image, different sizes:
 
     [image picture.jpg Picture - 64 64]
-    [image picture.jpg Picture - 320 200]
+    [image picture.jpg Picture - 320 200 "Caption line 1<br>Caption line 2"]
     [image picture.jpg Picture - 50%]
 
 ## Developer

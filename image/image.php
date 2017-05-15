@@ -31,7 +31,7 @@ class YellowImage
 				$this->yellow->page->error(500, "Plugin 'image' requires GD library with JPG and PNG support!");
 				return $output;
 			}
-			list($name, $alt, $style, $width, $height) = $this->yellow->toolbox->getTextArgs($text);
+			list($name, $alt, $style, $width, $height, $caption) = $this->yellow->toolbox->getTextArgs($text);
 			if(!preg_match("/^\w+:/", $name))
 			{
 				if(empty($alt)) $alt = $this->yellow->config->get("imageAlt");
@@ -43,11 +43,13 @@ class YellowImage
 				$src = $this->yellow->lookup->normaliseUrl("", "", "", $name);
 				$width = $height = 0;
 			}
-			$output = "<img src=\"".htmlspecialchars($src)."\"";
+			$output = "<span style=\"display:inline-table\"><img src=\"".htmlspecialchars($src)."\"";
 			if($width && $height) $output .= " width=\"".htmlspecialchars($width)."\" height=\"".htmlspecialchars($height)."\"";
 			if(!empty($alt)) $output .= " alt=\"".htmlspecialchars($alt)."\" title=\"".htmlspecialchars($alt)."\"";
 			if(!empty($style)) $output .= " class=\"".htmlspecialchars($style)."\"";
 			$output .= " />";
+			if(!empty($caption)) $output .= "<br>".htmlspecialchars($caption);
+			$output .= "</span>";
 		}
 		return $output;
 	}
