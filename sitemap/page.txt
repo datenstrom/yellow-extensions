@@ -1,6 +1,6 @@
 ---
 Title: Sitemap
-Template: sitemap
 Description: Sitemap
+Template: sitemap
 ---
 This page is automatically generated.

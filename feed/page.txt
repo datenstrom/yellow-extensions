@@ -1,6 +1,6 @@
 ---
 Title: Feed
-Template: feed
 Description: Feed
+Template: feed
 ---
 This page is automatically generated.

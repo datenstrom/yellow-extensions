@@ -1,0 +1,125 @@
+# Datenstrom Yellow language
+
+Language: ru
+LanguageDescription: Русский
+LanguageTranslator: Сергей Ворон
+LanguageVersion: 0.7.2
+
+BlogBy: автор
+BlogFilter: Блог:
+BlogTag: Тэги:
+BlogMore: Читать далее…
+ContactName: Имя:
+ContactEmail: Email:
+ContactMessage: Сообщение:
+ContactButton: Отправить сообщение
+ContactStatusNone: Привет. Ваше мнение очень приветствуются.
+ContactStatusIncomplete: Пожалуйста, заполните все поля.
+ContactStatusInvalid: Пожалуйста, укажите правильный Email.
+ContactStatusDone: Ваше письмо отправлено. Спасибо!
+ContactStatusError: Письмо не может быть отправлено, попробуйте еще раз позже!
+DateMonths: январь, февраль, март, апрель, май, июнь, июль, август, сентябрь, октябрь, ноябрь, декабрь
+DateWeekdays: понедельник, вторник, среда, четверг, пятница, суббота, воскресенье
+DateWeekstart: понедельник
+DateFormatShort: F Y
+DateFormatMedium: d.m.Y
+DateFormatLong: d.m.Y H:i
+DateFormatTime: H:i
+EditInstallationTitle: Здравствуйте
+EditInstallationFeature: Что вы хотите сделать?
+EditInstallationHomePage: Ваш сайт работает!\n\nВы можете [edit - отредактировать эту страницу] или использовать ваш текстовый редактор.
+EditInstallationAboutPage: This website is made with [yellow]. [Learn more](https://developers.datenstrom.se/help/).
+EditLoginTitle: добро пожаловать
+EditLoginEmail: Email:
+EditLoginPassword: Пароль:
+EditLoginRecover: Забыли пароль?
+EditLoginSignup: Создать учетную запись?
+EditLoginButton: Войти
+EditSignupTitle: Создать учетную запись
+EditSignupName: Имя:
+EditSignupEmail: Email:
+EditSignupPassword: Пароль:
+EditSignupButton: Создать
+EditSignupStatusNone: Здесь вы можете создать новую учетную запись.
+EditSignupStatusIncomplete: Пожалуйста, заполните все поля.
+EditSignupStatusInvalid: Пожалуйста, введите действительный адрес Email.
+EditSignupStatusWeak: Пожалуйста, введите другой пароль.
+EditSignupStatusNext: Учетная запись создана, пожалуйста, проверьте ваш Email.
+EditRecoverTitle: Забыли пароль
+EditRecoverEmail: Email:
+EditRecoverPassword: Пароль:
+EditRecoverStatusNone: Нет проблем, вы можете создать новый пароль.
+EditRecoverStatusInvalid: Пожалуйста, введите действительный адрес Email.
+EditRecoverStatusPassword: Пожалуйста, введите новый пароль.
+EditRecoverStatusWeak: Пожалуйста, введите другой пароль.
+EditRecoverStatusNext: Учетная запись восстановлена, пожалуйста, проверьте ваш Email.
+EditSettingsTitle: Настройки
+EditSettingsStatusInvalid: Please enter a valid email.
+EditSettingsStatusTaken: Please enter a different email.
+EditSettingsStatusWeak: Please enter a different password.
+EditSettingsStatusNext: User account will be changed, please check your emails.
+EditConfirmSubject: Подтверждение учетной записи
+EditConfirmMessage: Привет @usershort, пожалуйста, подтвердите свою учетную запись. Нажмите на ссылку.
+EditConfirmStatusDone: Учетная запись подтверждена и ждет одобрения. Спасибо!
+EditConfirmStatusExpired: Учетная запись не может быть подтверждена. Ссылка устарела!
+EditApproveSubject: Утвердить учетную запись
+EditApproveMessage: Привет @usershort, пожалуйста, утвердите новую учетную запись для @useraccount. Нажмите на ссылку.
+EditApproveStatusDone: Учетная запись утверждена. Спасибо!
+EditApproveStatusExpired: Учетная запись не может быть утверждена. Ссылка устарела!
+EditReactivateSubject: Reactivate user account
+EditReactivateMessage: Hi @usershort, please reactivate your user account. There were too many failed login attempts. Click the following link.
+EditReactivateStatusDone: User account reactivated. Thank you!
+EditReactivateStatusExpired: User account can not be reactivated. Link has expired!
+EditRecoverSubject: Восстановление учетной записи
+EditRecoverMessage: Привет @usershort, пожалуйста, подтвердите, что вы забыли свой пароль. Нажмите на ссылку.
+EditRecoverStatusDone: Учетная запись восстановлена. Спасибо!
+EditRecoverStatusExpired: Учетная запись не может быть восстановлена. Ссылка устарела!
+EditReconfirmSubject: Change user account
+EditReconfirmMessage: Hi @usershort, please confirm a new email for your user account. Click the following link.
+EditReconfirmStatusDone: User account confirmed. Thank you!
+EditReconfirmStatusExpired: User account can not be confirmed. Link has expired!
+EditChangeSubject: Change user account
+EditChangeMessage: Hi @usershort, please confirm that you want to change your user account. Click the following link.
+EditChangeStatusDone: User account changed. Thank you!
+EditChangeStatusExpired: User account can not be changed. Link has expired!
+EditWelcomeSubject: Добро пожаловать
+EditWelcomeMessage: Привет @usershort, ваша учетная запись создана. Получайте удовольствие редактируя сайт.
+EditInformationSubject: С возвращением
+EditInformationMessage: Привет @usershort, ваша учетная запись пользователя была изменена. Теперь вы можете войти.
+EditVersionTitle: About this website
+EditVersionStatusNone: Yellow is for people who make websites.
+EditVersionStatusCheck: Checking for updates…
+EditVersionStatusDone: Your website is up to date.
+EditVersionStatusUpdates: Updates available, please contact the webmaster.
+EditVersionUpdateNormal: Updates available, update now.
+EditVersionUpdateForce: Force update
+EditVersionUpdateModified: @software has been modified
+EditOkButton: Ok
+EditCancelButton: Отмена
+EditCreateButton: Создать
+EditEditButton: Сохранить
+EditDeleteButton: Удалить
+EditEdit: Редактировать
+EditCreate: +
+EditDelete: -
+EditCreateTitle: Создать страницу
+EditDeleteTitle: Удалить страницу
+EditMarkdownHelp: Markdown
+EditUserHelp: Помощь
+EditUserLogout: Выход
+PagePrevious: ← Назад: @title
+PageNext: Далее: @title →
+PaginationPrevious: ← Назад
+PaginationNext: Далее →
+SearchQuery: Поиск:
+SearchResultsNone: Введите слово для поиска.
+SearchResultsEmpty: Ничего не найдено.
+SearchSpecialChanges: Последние изменения
+SearchButton: Искать
+WikiFilter: Вики:
+WikiTag: Тэги:
+WikiSpecialPages: Все страницы
+WikiSpecialChanges: Последние изменения
+YellowUrl: https://datenstrom.se/yellow/
+YellowUserHelpUrl: https://developers.datenstrom.se/help/
+YellowMarkdownHelpUrl: https://developers.datenstrom.se/help/markdown-cheat-sheet

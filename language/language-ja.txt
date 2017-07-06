@@ -1,0 +1,125 @@
+# Datenstrom Yellow language
+
+Language: ja
+LanguageDescription: 日本語
+LanguageTranslator: Yuhko Senuma
+LanguageVersion: 0.7.2
+
+BlogBy: by
+BlogFilter: Blog:
+BlogTag: Tags:
+BlogMore: 全文を表示して見る…
+ContactName: 氏名:
+ContactEmail: 氏名:
+ContactMessage: 送信内容:
+ContactButton: 送信
+ContactStatusNone: ご意見・ご指摘・ご提案・ご要望・ご質問・お問合せ・等お寄せ下さい。
+ContactStatusIncomplete: 全ての項目にご入力下さい。
+ContactStatusInvalid: 正しいメールアドレスをご入力下さい。
+ContactStatusDone: メール送信を完了しました！
+ContactStatusError: メールを送信できませんでした。暫くしてからもう一度お試し下さい！
+DateMonths: １月, ２月, ３月, ４月, ５月, ６月, ７月, ８月, ９月, １０月, １１月, １２月
+DateWeekdays: 月曜日, 火曜日, 水曜日, 木曜日, 金曜日, 土曜日, 日曜日
+DateWeekstart: 月曜日
+DateFormatShort: F Y
+DateFormatMedium: Y-m-d
+DateFormatLong: Y-m-d H:i
+DateFormatTime: H:i
+EditInstallationTitle: こんにちは
+EditInstallationFeature: どのサイト（ウェブ・ブログ・ウィキ）を作成しますか？
+EditInstallationHomePage: インストール完了！\n\n[edit - このページを編集] するか、ＦＴＰソフトとテキストエディタをご使用下さい。
+EditInstallationAboutPage: このウェブサイトは [yellow] で作成されています。[詳しくは](https://developers.datenstrom.se/help/)。
+EditLoginTitle: ようこそ
+EditLoginEmail: メールアドレス:
+EditLoginPassword: パスワード:
+EditLoginRecover: パスワードをお忘れですか？
+EditLoginSignup: ユーザーアカウントを作成しますか？
+EditLoginButton: ログイン
+EditSignupTitle: ユーザーアカウントの作成
+EditSignupName: サイト名:
+EditSignupEmail: メールアドレス:
+EditSignupPassword: パスワード:
+EditSignupButton: 作成
+EditSignupStatusNone: 新しいユーザーアカウントを作成出来ます。
+EditSignupStatusIncomplete: 全ての項目にご入力下さい。
+EditSignupStatusInvalid: 正しいメールアドレスをご入力下さい。
+EditSignupStatusWeak: 別のパスワードをご入力下さい。
+EditSignupStatusNext: ユーザーアカウントの有効化の為、メールをご確認下さい。
+EditRecoverTitle: パスワード忘失申請
+EditRecoverEmail: メールアドレス:
+EditRecoverPassword: パスワード:
+EditRecoverStatusNone: 新しいパスワードを作成する事が出来ます。
+EditRecoverStatusInvalid: 正しいメールアドレスをご入力下さい。
+EditRecoverStatusPassword: 新しいパスワードをご入力下さい。
+EditRecoverStatusWeak: 別のパスワードをご入力下さい。
+EditRecoverStatusNext: ユーザーアカウントを回復する為にメールをご確認下さい。
+EditSettingsTitle: 設定
+EditSettingsStatusInvalid: 正しいメールアドレスをご入力下さい。
+EditSettingsStatusTaken: 別のメールアドレスをご入力下さい。
+EditSettingsStatusWeak: 別のパスワードをご入力下さい。
+EditSettingsStatusNext: ユーザーアカウントを変更する為にメールをご確認下さい。
+EditConfirmSubject: ユーザーアカウントの確認
+EditConfirmMessage: こんにちは @usershort さん。ユーザーアカウントについてのご確認です。宜しければ次のリンクをクリックして下さい。
+EditConfirmStatusDone: ユーザーアカウントが登録され、承認待ちです。有難うございました！
+EditConfirmStatusExpired: ユーザーアカウントを確認できません。リンクの有効期限が切れています！
+EditApproveSubject: ユーザーアカウントの登録承認
+EditApproveMessage: こんにちは @usershort さん。新しいユーザーアカウント登録承認についてのご確認です。 @useraccount。 宜しければ次のリンクをクリックして下さい。
+EditApproveStatusDone: ユーザーアカウントが承認されました。有難うございました！
+EditApproveStatusExpired: ユーザーアカウントを承認する事はできません。リンクの有効期限が切れています！
+EditReactivateSubject: Reactivate user account
+EditReactivateMessage: Hi @usershort, please reactivate your user account. There were too many failed login attempts. Click the following link.
+EditReactivateStatusDone: User account reactivated. Thank you!
+EditReactivateStatusExpired: User account can not be reactivated. Link has expired!
+EditRecoverSubject: ユーザーアカウントを復元
+EditRecoverMessage: こんにちは @usershort さん。パスワード忘失のご確認です。宜しければ次のリンクをクリックして下さい。
+EditRecoverStatusDone: ユーザーアカウントが回復しました。有難うございました！
+EditRecoverStatusExpired: ユーザーアカウントは回復できません。リンクの有効期限が切れています！
+EditReconfirmSubject: ユーザーアカウント情報の変更
+EditReconfirmMessage: こんにちは @usershort さん。ユーザーアカウント情報の変更のご確認です。宜しければ次のリンクをクリックして下さい。
+EditReconfirmStatusDone: ユーザーアカウントが確認されました。有難うございました！
+EditReconfirmStatusExpired: ユーザーアカウントを確認できません。リンクの有効期限が切れています！
+EditChangeSubject: ユーザーアカウントの変更
+EditChangeMessage: こんにちは @usershort さん。ユーザーアカウントを変更する為に、次のリンクをクリックして下さい。
+EditChangeStatusDone: ユーザーアカウントが変更されました。有難うございました！
+EditChangeStatusExpired: ユーザーアカウントは変更できません。リンクの有効期限が切れています！
+EditWelcomeSubject: ようこそ！
+EditWelcomeMessage: こんにちは @usershort さん。あなたのユーザーアカウントが作成されています。ログインしてウェブサイトを完成させて下さい。
+EditInformationSubject: お帰りなさい！
+EditInformationMessage: こんにちは @usershort さん。あなたのユーザーアカウントが変更されました。今直ぐログイン出来ます。
+EditVersionTitle: 最新バージョンの確認
+EditVersionStatusNone: Yellow でウェブサイトを作る
+EditVersionStatusCheck: アップデートの確認中…
+EditVersionStatusDone: 最新のバージョンです。
+EditVersionStatusUpdates: 利用可能なアップデート, ウェブマスターにお問合せ下さい。
+EditVersionUpdateNormal: 利用可能なアップデート有ります。今直ぐアップデートする！
+EditVersionUpdateForce: アップデートする！
+EditVersionUpdateModified: @software が変更されました
+EditOkButton: Ok
+EditCancelButton: キャンセル
+EditCreateButton: 作成
+EditEditButton: 保存
+EditDeleteButton: 削除
+EditEdit: ページの編集
+EditCreate: +
+EditDelete: -
+EditCreateTitle: ページ作成
+EditDeleteTitle: ページ削除
+EditMarkdownHelp: マークダウン記法
+EditUserHelp: ヘルプ
+EditUserLogout: ログアウト
+PagePrevious: ← 前のページへ : @title
+PageNext: 次のページへ : @title →
+PaginationPrevious: ← 戻る
+PaginationNext: 次へ →
+SearchQuery: 検索:
+SearchResultsNone: 検索キーワードをご入力下さい。
+SearchResultsEmpty: 検索結果が見つかりません。
+SearchSpecialChanges: 最近の更新
+SearchButton: 検索
+WikiFilter: Wiki:
+WikiTag: Tags:
+WikiSpecialPages: 全てのページ
+WikiSpecialChanges: 最近の更新状況
+YellowUrl: https://datenstrom.se/yellow/
+YellowUserHelpUrl: https://developers.datenstrom.se/help/
+YellowMarkdownHelpUrl: https://developers.datenstrom.se/help/markdown-cheat-sheet

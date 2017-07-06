@@ -1,11 +1,11 @@
 <?php
-// Copyright (c) 2013-2015 Datenstrom, http://datenstrom.se
+// TOC plugin, https://github.com/datenstrom/yellow-plugins/tree/master/toc
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Table of contents plugin
 class YellowToc
 {
-	const Version = "0.6.1";
+	const VERSION = "0.6.1";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -41,5 +41,5 @@ class YellowToc
 	}
 }
 
-$yellow->plugins->register("toc", "YellowToc", YellowToc::Version);
+$yellow->plugins->register("toc", "YellowToc", YellowToc::VERSION);
 ?>

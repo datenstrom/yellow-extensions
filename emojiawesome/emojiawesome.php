@@ -1,11 +1,11 @@
 <?php
-// Copyright (c) 2013-2016 Datenstrom, http://datenstrom.se
+// Emojiawesome plugin, https://github.com/datenstrom/yellow-plugins/tree/master/emojiawesome
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Emojiawesome plugin
 class YellowEmojiawesome
 {
-	const Version = "0.6.3";
+	const VERSION = "0.7.1";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -13,14 +13,12 @@ class YellowEmojiawesome
 	{
 		$this->yellow = $yellow;
 		$this->yellow->config->setDefault("emojiawesomeCdn", "https://cdnjs.cloudflare.com/ajax/libs/twemoji/2.0.0/");
-		$this->yellow->config->setDefault("emojiawesomeStylesheetGenerate", "0");
-		$this->yellow->config->setDefault("emojiawesomeNormaliseText", "0");
 	}
 	
 	// Handle page content parsing of custom block
 	function onParseContentBlock($page, $name, $text, $shortcut)
 	{
-		$output = NULL;
+		$output = null;
 		if((empty($name) || $name=="ea") && $shortcut)
 		{
 			list($shortname, $style) = $this->yellow->toolbox->getTextArgs($text);
@@ -29,30 +27,30 @@ class YellowEmojiawesome
 			{
 				$class = $this->normaliseClass(trim("ea ea-$shortname $style"));
 				$output = "<i class=\"".htmlspecialchars($class)."\"";
-				$output .= " title=\"".htmlspecialchars(":$shortname:")."\"";
+				$output .= " alt=\"".htmlspecialchars("$shortname")."\"";
+				$output .= " title=\"".htmlspecialchars("$shortname")."\"";
 				$output .= "></i>";
 			}
 		}
 		return $output;
 	}
 	
-	// Handle page content parsing
-	function onParseContentText($page, $text)
+	// Handle content file editing
+	function onEditContentFile($page, $action)
 	{
-		if($this->yellow->config->get("emojiawesomeNormaliseText")) $text = $this->normaliseText($text);
-		return $text;
+		$page->rawData = $this->normaliseText($page->rawData, true, false);
 	}
 
 	// Handle page extra HTML data
 	function onExtra($name)
 	{
-		$output = NULL;
-		if($name == "header")
+		$output = null;
+		if($name=="header")
 		{
 			$locationStylesheet = $this->yellow->config->get("serverBase").$this->yellow->config->get("pluginLocation")."emojiawesome.css";
 			$fileNameStylesheet = $this->yellow->config->get("pluginDir")."emojiawesome.css";
 			if(is_file($fileNameStylesheet)) $output = "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"$locationStylesheet\" />\n";
-			if($this->yellow->config->get("emojiawesomeStylesheetGenerate"))
+			if(defined("DEBUG") && DEBUG>=3)
 			{
 				$cdn = $this->yellow->config->get("emojiawesomeCdn");
 				foreach($this->getLookupData() as $entry)
@@ -103,7 +101,7 @@ class YellowEmojiawesome
 	function isShortname($shortname)
 	{
 		$found = false;
-		foreach($this->getLookupData() as $entry) if($entry["shortname"] == $shortname) { $found = true; break; }
+		foreach($this->getLookupData() as $entry) if($entry["shortname"]==$shortname) { $found = true; break; }
 		return $found;
 	}
 	
@@ -460,7 +458,7 @@ class YellowEmojiawesome
 			array("shortname"=>"closed_umbrella", "utf8"=>"\xf0\x9f\x8c\x82", "image"=>"1f302"),
 			array("shortname"=>"clubs", "utf8"=>"\xe2\x99\xa3", "image"=>"2663"),
 			array("shortname"=>"cocktail", "utf8"=>"\xf0\x9f\x8d\xb8", "image"=>"1f378"),
-			array("shortname"=>"coffee", "utf8"=>"\xe2\x98\x95", "image"=>"2615"),
+			array("shortname"=>"coffee", "utf8"=>"\xe2\x98\x95\xEF\xB8\x8F", "image"=>"2615"),
 			array("shortname"=>"computer", "utf8"=>"\xf0\x9f\x92\xbb", "image"=>"1f4bb"),
 			array("shortname"=>"confetti_ball", "utf8"=>"\xf0\x9f\x8e\x8a", "image"=>"1f38a"),
 			array("shortname"=>"cookie", "utf8"=>"\xf0\x9f\x8d\xaa", "image"=>"1f36a"),
@@ -944,5 +942,5 @@ class YellowEmojiawesome
 	}
 }
 
-$yellow->plugins->register("emojiawesome", "YellowEmojiawesome", YellowEmojiawesome::Version);
+$yellow->plugins->register("emojiawesome", "YellowEmojiawesome", YellowEmojiawesome::VERSION);
 ?>

@@ -1,18 +1,19 @@
 Googlemaps plugin 0.6.1
 =======================
-Embed Google maps. [See demo](http://developers.datenstrom.se/plugins/googlemaps-plugin).
+Embed Google maps. [See demo](https://developers.datenstrom.se/plugins/googlemaps-plugin).
 
-[![Screenshot](googlemaps-plugin.jpg?raw=true)](http://developers.datenstrom.se/plugins/googlemaps-plugin)
+<p align="center"><img src="googlemaps-screenshot.png?raw=true" alt="Screenshot"></p>
 
-How do I install this?
-----------------------
-1. Download and install [Yellow](https://github.com/datenstrom/yellow/).  
-2. Download [googlemaps.php](googlemaps.php?raw=true), copy it into your `system/plugins` folder.  
+## How do I install this?
 
-To uninstall delete the plugin.
+1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
+2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/googlemaps.zip). If you are using Safari, right click and select 'Download file as'.
+3. Copy `googlemaps.zip` into your `system/plugins` folder.
 
-How to embed a map?
--------------------
+To uninstall delete the plugin files.
+
+## How to embed a map?
+
 Create a `[googlemaps]` shortcut.
 
 The following arguments are available:
@@ -23,10 +24,14 @@ The following arguments are available:
 `WIDTH` = map width, pixel or percent  
 `HEIGHT` = map height, pixel or percent  
 
-Example
--------
+## Example
+
 Embedding a map:
 
     [googlemaps Stockholm]
     [googlemaps "Bredgatan 1, Lund, Sweden"]
     [googlemaps "Bredgatan 1, Lund, Sweden" 9 right 320 200]
+
+## Developer
+
+Datenstrom

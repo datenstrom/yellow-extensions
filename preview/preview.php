@@ -1,24 +1,25 @@
 <?php
-// Copyright (c) 2013-2016 Datenstrom, http://datenstrom.se
+// Preview plugin, https://github.com/datenstrom/yellow-plugins/tree/master/preview
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Preview plugin
 class YellowPreview
 {
-	const Version = "0.6.2";
+	const VERSION = "0.7.1";
 	var $yellow;			//access to API
 
 	// Handle initialisation
 	function onLoad($yellow)
 	{
 		$this->yellow = $yellow;
-		$this->yellow->config->setDefault("previewStyle", "preview");
+		$this->yellow->config->setDefault("previewImage", "preview-image.png");
+		$this->yellow->config->setDefault("previewStyle", "stretchable");
 	}
 	
 	// Handle page content parsing of custom block
 	function onParseContentBlock($page, $name, $text, $shortcut)
 	{
-		$output = NULL;
+		$output = null;
 		if($name=="preview" && $shortcut)
 		{
 			list($location, $style, $size) = $this->yellow->toolbox->getTextArgs($text);
@@ -28,28 +29,42 @@ class YellowPreview
 			$content = $this->yellow->pages->find($location);
 			$pages = $content ? $content->getChildren() : $this->yellow->pages->clean();
 			$pages->sort("title");
-			if(count($pages) && $this->yellow->plugins->isExisting("image"))
+			if($this->yellow->plugins->isExisting("image"))
 			{
-				$page->setLastModified($pages->getModified());
-				$output = "<ul class=\"".htmlspecialchars($style)."\">\n";
-				foreach($pages as $page)
+				if(count($pages))
 				{
-					$fileName = $this->yellow->config->get("imageDir").basename($page->location).".jpg";
-					list($src, $width, $height) = $this->yellow->plugins->get("image")->getImageInfo($fileName, $size, $size);
-					$title = $page->get("titlePreview"); if(empty($title)) $title = $page->get("title");
-					if($width && $height)
+					$page->setLastModified($pages->getModified());
+					$output = "<div class=\"".htmlspecialchars($style)."\">\n";
+					$output .= "<ul>\n";
+					foreach($pages as $page)
 					{
-						$output .= "<li><a href=\"".$page->getLocation()."\">";
-						$output .= "<img src=\"".htmlspecialchars($src)."\" width=\"".htmlspecialchars($width)."\" height=\"".
+						foreach(array("gif", "jpg", "png", "svg") as $fileExtension)
+						{
+							$fileName = $this->yellow->config->get("imageDir").basename($page->location).".".$fileExtension;
+							list($src, $width, $height) = $this->yellow->plugins->get("image")->getImageInfo($fileName, $size, $size);
+							if($width && $height) break;
+						}
+						if(!is_readable($fileName))
+						{
+							$fileName = $this->yellow->config->get("imageDir").$this->yellow->config->get("previewImage");
+							list($src, $width, $height) = $this->yellow->plugins->get("image")->getImageInfo($fileName, $size, $size);
+						}
+						$title = $page->get("titlePreview"); if(empty($title)) $title = $page->get("title");
+						$description = $page->get("descriptionPreview"); if(empty($description)) $description = $page->get("description");
+						$output .= "<li><a href=\"".$page->getLocation(true)."\">";
+						$output .= "<span class=\"preview-image\"><img src=\"".htmlspecialchars($src)."\" width=\"".
+							htmlspecialchars($width)."\" height=\"".
 							htmlspecialchars($height)."\" alt=\"".htmlspecialchars($title)."\" title=\"".
-							htmlspecialchars($title)."\" /></a><br />";
-						$output .= "<a href=\"".$page->getLocation()."\">".htmlspecialchars($title)."</a>";
-						$output .= "</li>\n";
+							htmlspecialchars($title)."\" /></span><br />";
+						$output .= "<span class=\"preview-description\">".htmlspecialchars($description)."</span></a></li>\n";
 					}
+					$output .= "</ul>\n";
+					$output .= "</div>\n";
+				} else {
+					$page->error(500, "Preview '$location' does not exist!");
 				}
-				$output .= "</ul>";
 			} else {
-				$page->error(500, "Preview '$location' does not exist!");
+				$page->error(500, "Preview requires 'image' plugin!");
 			}
 		}
 		return $output;
@@ -62,5 +77,5 @@ class YellowPreview
 	}
 }
 
-$yellow->plugins->register("preview", "YellowPreview", YellowPreview::Version);
+$yellow->plugins->register("preview", "YellowPreview", YellowPreview::VERSION);
 ?>

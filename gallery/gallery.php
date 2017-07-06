@@ -1,25 +1,24 @@
 <?php
-// Copyright (c) 2013-2015 Datenstrom, http://datenstrom.se
+// Gallery plugin, https://github.com/datenstrom/yellow-plugins/tree/master/gallery
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Gallery plugin
 class YellowGallery
 {
-	const Version = "0.6.2";
+	const VERSION = "0.6.7";
 	var $yellow;			//access to API
 
 	// Handle initialisation
 	function onLoad($yellow)
 	{
 		$this->yellow = $yellow;
-		$this->yellow->config->setDefault("galleryPhotoswipeCdn", "https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.0/");
 		$this->yellow->config->setDefault("galleryStyle", "photoswipe");
 	}
 	
 	// Handle page content parsing of custom block
 	function onParseContentBlock($page, $name, $text, $shortcut)
 	{
-		$output = NULL;
+		$output = null;
 		if($name=="gallery" && $shortcut)
 		{
 			list($pattern, $style, $size) = $this->yellow->toolbox->getTextArgs($text);
@@ -30,27 +29,32 @@ class YellowGallery
 				$files = $page->getFiles(true);
 			} else {
 				$images = $this->yellow->config->get("imageDir");
-				$files =  $this->yellow->files->index(true, true)->match("#$images$pattern#");
+				$files = $this->yellow->files->index(true, true)->match("#$images$pattern#");
 			}
-			if(count($files) && $this->yellow->plugins->isExisting("image"))
+			if($this->yellow->plugins->isExisting("image"))
 			{
-				$page->setLastModified($files->getModified());
-				$output = "<div class=\"".htmlspecialchars($style)."\" data-fullscreenel=\"false\" data-shareel=\"false\"";
-				if(substru($size, -1, 1) != "%") $output .= " data-thumbsquare=\"true\"";
-				$output .= ">\n";
-				foreach($files as $file)
+				if(count($files))
 				{
-					list($widthInput, $heightInput) = $this->yellow->toolbox->detectImageInfo($file->fileName);
-					list($src, $width, $height) = $this->yellow->plugins->get("image")->getImageInfo($file->fileName, $size, $size);
-					$output .= "<a href=\"".$file->getLocation()."\" data-size=\"{$widthInput}x{$heightInput}\">";
-					$output .= "<img src=\"".htmlspecialchars($src)."\" width=\"".htmlspecialchars($width)."\" height=\"".
-						htmlspecialchars($height)."\" alt=\"".basename($file->getLocation())."\" title=\"".
-						basename($file->getLocation())."\" />";
-					$output .= "</a> \n";
+					$page->setLastModified($files->getModified());
+					$output = "<div class=\"".htmlspecialchars($style)."\" data-fullscreenel=\"false\" data-shareel=\"false\"";
+					if(substru($size, -1, 1)!="%") $output .= " data-thumbsquare=\"true\"";
+					$output .= ">\n";
+					foreach($files as $file)
+					{
+						list($widthInput, $heightInput) = $this->yellow->toolbox->detectImageInfo($file->fileName);
+						list($src, $width, $height) = $this->yellow->plugins->get("image")->getImageInfo($file->fileName, $size, $size);
+						$output .= "<a href=\"".$file->getLocation(true)."\" data-size=\"{$widthInput}x{$heightInput}\">";
+						$output .= "<img src=\"".htmlspecialchars($src)."\" width=\"".htmlspecialchars($width)."\" height=\"".
+							htmlspecialchars($height)."\" alt=\"".basename($file->getLocation(true))."\" title=\"".
+							basename($file->getLocation(true))."\" />";
+						$output .= "</a> \n";
+					}
+					$output .= "</div>";
+				} else {
+					$page->error(500, "Gallery '$pattern' does not exist!");
 				}
-				$output .= "</div>";
 			} else {
-				$page->error(500, "Gallery '$pattern' does not exist!");
+				$page->error(500, "Gallery requires 'image' plugin!");
 			}
 		}
 		return $output;
@@ -59,20 +63,16 @@ class YellowGallery
 	// Handle page extra HTML data
 	function onExtra($name)
 	{
-		$output = NULL;
-		if($name == "header")
+		$output = null;
+		if($name=="header")
 		{
-			$photoswipeCdn = $this->yellow->config->get("galleryPhotoswipeCdn");
 			$pluginLocation = $this->yellow->config->get("serverBase").$this->yellow->config->get("pluginLocation");
-			$output = "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{$photoswipeCdn}photoswipe.css\" />\n";
-			$output .= "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{$photoswipeCdn}default-skin/default-skin.css\" />\n";
-			$output .= "<script type=\"text/javascript\" src=\"{$photoswipeCdn}photoswipe.min.js\"></script>\n";
-			$output .= "<script type=\"text/javascript\" src=\"{$photoswipeCdn}photoswipe-ui-default.min.js\"></script>\n";
+			$output = "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{$pluginLocation}gallery.css\" />\n";
 			$output .= "<script type=\"text/javascript\" src=\"{$pluginLocation}gallery.js\"></script>\n";
 		}
 		return $output;
 	}
 }
 
-$yellow->plugins->register("gallery", "YellowGallery", YellowGallery::Version);
+$yellow->plugins->register("gallery", "YellowGallery", YellowGallery::VERSION);
 ?>

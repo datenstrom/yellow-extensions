@@ -1,11 +1,11 @@
 <?php
-// Copyright (c) 2013-2016 Datenstrom, http://datenstrom.se
+// Fontawesome plugin, https://github.com/datenstrom/yellow-plugins/tree/master/fontawesome
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Fontawesome plugin
 class YellowFontawesome
 {
-	const Version = "0.6.3";
+	const VERSION = "0.6.4";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -17,7 +17,7 @@ class YellowFontawesome
 	// Handle page content parsing of custom block
 	function onParseContentBlock($page, $name, $text, $shortcut)
 	{
-		$output = NULL;
+		$output = null;
 		if($name=="fa" && $shortcut)
 		{
 			list($shortname, $style) = $this->yellow->toolbox->getTextArgs($text);
@@ -31,8 +31,8 @@ class YellowFontawesome
 	// Handle page extra HTML data
 	function onExtra($name)
 	{
-		$output = NULL;
-		if($name == "header")
+		$output = null;
+		if($name=="header")
 		{
 			$locationStylesheet = $this->yellow->config->get("serverBase").$this->yellow->config->get("pluginLocation")."fontawesome.css";
 			$fileNameStylesheet = $this->yellow->config->get("pluginDir")."fontawesome.css";
@@ -42,5 +42,5 @@ class YellowFontawesome
 	}
 }
 
-$yellow->plugins->register("fontawesome", "YellowFontawesome", YellowFontawesome::Version);
+$yellow->plugins->register("fontawesome", "YellowFontawesome", YellowFontawesome::VERSION);
 ?>

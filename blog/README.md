@@ -1,43 +1,62 @@
-Blog plugin 0.6.5
+Blog plugin 0.7.1
 =================
-Blog for your website. [See demo](http://developers.datenstrom.se/plugins/blog-plugin/).
+Blog for your website. [See demo](https://developers.datenstrom.se/plugins/blog-plugin/).
 
-[![Screenshot](blog-plugin.jpg?raw=true)](http://developers.datenstrom.se/plugins/blog-plugin/)
+<p align="center"><img src="blog-screenshot.png?raw=true" alt="Screenshot"></p>
 
-How do I install this?
-----------------------
-1. Download and install [Yellow](https://github.com/datenstrom/yellow/).  
-2. Download [blog.php](blog.php?raw=true), copy it into your `system/plugins` folder.  
-3. Download [blog.html](blog.html?raw=true) and [blogpages.html](blogpages.html?raw=true), copy them into your `system/themes/templates` folder.  
-4. Download [content-blog.php](content-blog.php?raw=true) and [content-blogpages.php](content-blogpages.php?raw=true), copy them into your `system/themes/snippets` folder.  
-5. Download [page-new-blog.txt](page-new-blog.txt?raw=true), copy it into your `system/config` folder.
-6. Create a new folder '3-blog' in your `content` folder.
-7. Add [page.txt](page.txt?raw=true) and [2013-04-07-blog-example.txt](2013-04-07-blog-example.txt?raw=true) to your `/content/3-blog` folder.
+## How do I install this?
+
+1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
+2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/blog.zip). If you are using Safari, right click and select 'Download file as'.
+3. Copy `blog.zip` into your `system/plugins` folder.
 
 To uninstall delete the plugin files.
 
-How to use a blog?
-------------------
-The blog is available on your website as `http://website/blog/`. To make the blog your home page, rename the blog folder to '1-blog' and delete '1-home'. To create a new blog page, add a new file to the blog folder. Set `Published` and other [settings](http://developers.datenstrom.se/help/markdown-cheat-sheet#settings) at the top of an page. Dates should be written in the format YYYY-MM-DD. Use `Tag` to group similar pages together. [Learn more](http://developers.datenstrom.se/help/how-to-make-a-blog).
+## How to use a blog?
 
-How to configure a blog?
-------------------------
+The blog is available on your website as `http://website/blog/`. To show the blog on the home page, go to your `content` folder and delete the `1-home` folder. To create a new blog page, add a new file to the blog folder. Set `Published` and other [settings](https://developers.datenstrom.se/help/markdown-cheat-sheet#settings) at the top of a page. Use `Tag` to group similar pages together. [Learn more](https://developers.datenstrom.se/help/how-to-make-a-blog).
+
+## How to configure a blog?
+
 You can use shortcuts to show information about the blog:
 
 `[blogarchive LOCATION]` for a list of months  
+`[blogauthors LOCATION PAGESMAX]` for a list of authors  
 `[blogrecent LOCATION PAGESMAX]` for recently published pages  
 `[blogrelated LOCATION PAGESMAX]` for related pages to current page  
-`[blogtags LOCATION]` for a list of tags  
+`[blogtags LOCATION PAGESMAX]` for a list of tags  
+`[--more--]` for a page break  
 
 The following arguments are available:
 
 `LOCATION` = blog location  
 `PAGESMAX` = number of pages  
 
-Example
--------
+The following settings can be configured in file `system/config/config.ini`:
+
+`BlogLocation` = blog location  
+`BlogNewLocation` = blog location for new page  
+`BlogPagesMax` = number of pages  
+`BlogPaginationLimit` = number of entries to show per page  
+
+## Example
+
 Showing recently published pages:
 
-    [blogrecent]
-    [blogrecent /blog/ 10]
-    [blogrecent / 10]
+    [blogrecent /blog/]
+    [blogrecent /blog/ 5]
+    [blogrecent /blog/ 20]
+
+Showing list of tags:
+
+    [blogtags /blog/]
+    [blogtags /blog/ 5]
+    [blogtags /blog/ 20]
+
+Showing archive of months:
+
+    [blogarchive /blog/]
+
+## Developer
+
+Datenstrom

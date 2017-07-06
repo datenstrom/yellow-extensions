@@ -1,36 +1,43 @@
-Preview plugin 0.6.2
+Preview plugin 0.7.1
 ====================
-Link pages with image preview.
+Show pages with image preview. [See demo](https://developers.datenstrom.se/plugins/).
 
-How do I install this?
-----------------------
-1. Download and install [Yellow](https://github.com/datenstrom/yellow/).  
-2. Download and install [image plugin](https://github.com/datenstrom/yellow-plugins/tree/master/image).  
-3. Download [preview.php](preview.php?raw=true), copy it into your `system/plugins` folder.  
+<p align="center"><img src="preview-screenshot.png?raw=true" alt="Screenshot"></p>
 
-To uninstall delete the plugin.
+## How do I install this?
 
-How to add a preview?
----------------------
+1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
+2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/preview.zip). If you are using Safari, right click and select 'Download file as'.
+3. Copy `preview.zip` into your `system/plugins` folder.
+
+To uninstall delete the plugin files.
+
+## How to show a preview?
+
 Create a `[preview]` shortcut.
 
 The following arguments are available:
 
-`LOCATION ` = location of parent page  
-`STYLE` = preview list style  
+`LOCATION ` = preview location  
+`STYLE` = preview style, e.g. `stretchable`, `simple`  
 `SIZE` = image size, pixel or percent  
 
-For every page there has to be an jpg-image of similar file name in your `media/images` folder.
+For every page there has to be an image of similar file name in your `media/images` folder.
 
-Example
--------
-Adding a preview:
+## Example
+
+Showing a preview:
 
     [preview]
-    [preview /themes/]
-    [preview /themes/ threepages 33%]
+    [preview /plugins/ - 30%]
+    [preview /plugins/ simple 30%]
 
-CSS for three pages in a row:
+Showing a preview, square thumbnails:
 
-    .content .threepages { margin:0; padding:0; list-style:none; width:100%; }
-    .content .threepages li { padding-bottom:1em; text-align:center; vertical-align:top; display:inline-block; width:32%; }
+    [preview /plugins/ - 64]
+    [preview /plugins/ - 128]
+    [preview /plugins/ simple 150]
+
+## Developer
+
+Datenstrom

@@ -1,33 +1,66 @@
-Contact plugin 0.6.4
+Contact plugin 0.6.9
 ====================
-Email contact page for website.
+Email contact page for your website. [See demo](https://developers.datenstrom.se/plugins/contact-plugin).
 
-How do I install this?
-----------------------
-1. Download and install [Yellow](https://github.com/datenstrom/yellow/).  
-2. Download [contact.php](contact.php?raw=true), copy it into your `system/plugins` folder.  
-3. Download [contact.html](contact.html?raw=true), copy it into your `system/themes/templates` folder.  
-4. Download [content-contact.php](content-contact.php?raw=true), copy it into your `system/themes/snippets` folder.  
-5. Create a new folder 'contact' in your `content` folder.
-6. Add [page.txt](page.txt?raw=true) to your `content/contact` folder.
+<p align="center"><img src="contact-screenshot.png?raw=true" alt="Screenshot"></p>
+
+## How do I install this?
+
+1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
+2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/contact.zip). If you are using Safari, right click and select 'Download file as'.
+3. Copy `contact.zip` into your `system/plugins` folder.
 
 To uninstall delete the plugin files.
 
-How to use a contact page?
---------------------------
-The contact page is available on your website as `http://website/contact/`. The webmaster's email is defined in file `system/config/config.ini`, for example `Email: email@example.com`. A different email can be defined in the settings at the top of a page. There's a spam filter to block advertising. You can add a link to the contact page somewhere on your website. See example below.
+## How to use a contact page?
 
-Example
--------
+The contact page is available on your website as `http://website/contact/`. The contact email is send to the webmaster, which is defined in file `system/config/config.ini`. You can set a different `Author` and `Email` in the [settings](https://developers.datenstrom.se/help/markdown-cheat-sheet#settings) at the top of a page. To show a contact form add a `[contact]` shortcut with an optional location. You can also add a link to the contact page somewhere on your website. See example below.
+
+## How to configure a contact page?
+
+The following settings can be configured in file `system/config/config.ini`:
+
+`Author` = name of the webmaster  
+`Email` = email of the webmaster  
+`ContactLocation` = contact page location  
+`ContactSpamFilter` = spam filter as regular expression  
+
+## Example
+
+Adding a contact form:
+
+    [contact]
+    [contact /en/contact/]
+    [contact /de/contact/]
+
+Content file with contact form:
+
+    ---
+    Title: Example page
+    ---        
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
+    labore et dolore magna pizza. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit 
+    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt 
+    in culpa qui officia deserunt mollit anim id est laborum.
+
+    [contact]
+
 Footer snippet with contact page:
 
     <div class="footer">
-    <a href="<?php echo $yellow->page->base."/" ?>">&copy; 2016 <?php echo $yellow->page->getHtml("sitename") ?></a>.
+    <div class="siteinfo">
+    <a href="<?php echo $yellow->page->base."/" ?>">&copy; 2017 <?php echo $yellow->page->getHtml("sitename") ?></a>.
     <a href="<?php echo $yellow->page->base."/contact/" ?>">Contact</a>.
     <a href="<?php echo $yellow->page->get("pageEdit") ?>">Edit</a>.
     <a href="<?php echo $yellow->text->get("yellowUrl") ?>">Made with Yellow</a>.
     </div>
     </div>
+    </div>
     <?php echo $yellow->page->getExtra("footer") ?>
     </body>
     </html>
+
+## Developer
+
+Datenstrom

@@ -1,11 +1,11 @@
 <?php
-// Copyright (c) 2013-2015 Datenstrom, http://datenstrom.se
+// Image plugin, https://github.com/datenstrom/yellow-plugins/tree/master/image
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Image plugin
 class YellowImage
 {
-	const Version = "0.6.1";
+	const VERSION = "0.7.2";
 	var $yellow;			//access to API
 	var $graphicsLibrary;	//graphics library support? (boolean)
 
@@ -15,20 +15,20 @@ class YellowImage
 		$this->yellow = $yellow;
 		$this->yellow->config->setDefault("imageThumbnailLocation", "/media/thumbnails/");
 		$this->yellow->config->setDefault("imageThumbnailDir", "media/thumbnails/");
+		$this->yellow->config->setDefault("imageThumbnailJpgQuality", 80);
 		$this->yellow->config->setDefault("imageAlt", "Image");
-		$this->yellow->config->setDefault("imageJpegQuality", 80);
 		$this->graphicsLibrary = $this->isGraphicsLibrary();
 	}
 
 	// Handle page content parsing of custom block
 	function onParseContentBlock($page, $name, $text, $shortcut)
 	{
-		$output = NULL;
+		$output = null;
 		if($name=="image" && $shortcut)
 		{
 			if(!$this->graphicsLibrary)
 			{
-				$this->yellow->page->error(500, "Plugin 'image' requires GD library with JPEG and PNG support!");
+				$this->yellow->page->error(500, "Plugin 'image' requires GD library with gif/jpg/png support!");
 				return $output;
 			}
 			list($name, $alt, $style, $width, $height) = $this->yellow->toolbox->getTextArgs($text);
@@ -39,7 +39,8 @@ class YellowImage
 				if(empty($height)) $height = $width;
 				list($src, $width, $height) = $this->getImageInfo($this->yellow->config->get("imageDir").$name, $width, $height);
 			} else {
-				$src = $this->yellow->lookup->normaliseLocation($name, $page->base, $page->location);
+				if(empty($alt)) $alt = $this->yellow->config->get("imageAlt");
+				$src = $this->yellow->lookup->normaliseUrl("", "", "", $name);
 				$width = $height = 0;
 			}
 			$output = "<img src=\"".htmlspecialchars($src)."\"";
@@ -54,7 +55,7 @@ class YellowImage
 	// Handle command
 	function onCommand($args)
 	{
-		list($name, $command) = $args;
+		list($command) = $args;
 		switch($command)
 		{
 			case "clean":	$statusCode = $this->cleanCommand($args); break;
@@ -67,12 +68,16 @@ class YellowImage
 	function cleanCommand($args)
 	{
 		$statusCode = 0;
-		$path = $this->yellow->config->get("imageThumbnailDir");
-		foreach($this->yellow->toolbox->getDirectoryEntries($path, "/.*/", false, false) as $entry)
+		list($command, $path) = $args;
+		if($path=="all")
 		{
-			if(!$this->yellow->toolbox->deleteFile($entry)) $statusCode = 500;
+			$path = $this->yellow->config->get("imageThumbnailDir");
+			foreach($this->yellow->toolbox->getDirectoryEntries($path, "/.*/", false, false) as $entry)
+			{
+				if(!$this->yellow->toolbox->deleteFile($entry)) $statusCode = 500;
+			}
+			if($statusCode==500) echo "ERROR cleaning thumbnails: Can't delete files in directory '$path'!\n";
 		}
-		if($statusCode == 500) echo "ERROR cleaning thumbnails: Can't delete files in directory '$path'!\n";
 		return $statusCode;
 	}
 
@@ -83,10 +88,10 @@ class YellowImage
 		list($widthInput, $heightInput, $type) = $this->yellow->toolbox->detectImageInfo($fileName);
 		$widthOutput = $this->convertValueAndUnit($widthOutput, $widthInput);
 		$heightOutput = $this->convertValueAndUnit($heightOutput, $heightInput);
-		if($widthInput==$widthOutput && $heightInput==$heightOutput)
+		if(($widthInput==$widthOutput && $heightInput==$heightOutput) || $type=="svg")
 		{
 			$src = $this->yellow->config->get("serverBase").$this->yellow->config->get("imageLocation").$fileNameShort;
-			$width = $widthInput; $height = $heightInput;
+			$width = $widthOutput; $height = $heightOutput;
 		} else {
 			$fileNameThumb = ltrim(str_replace(array("/", "\\", "."), "-", dirname($fileNameShort)."/".pathinfo($fileName, PATHINFO_FILENAME)), "-");
 			$fileNameThumb .= "-".$widthOutput."x".$heightOutput;
@@ -95,14 +100,11 @@ class YellowImage
 			if($this->isFileNotUpdated($fileName, $fileNameOutput))
 			{
 				$image = $this->loadImage($fileName, $type);
-				if($image)
+				$image = $this->resizeImage($image, $widthInput, $heightInput, $widthOutput, $heightOutput);
+				if(!$this->saveImage($image, $fileNameOutput, $type) ||
+				   !$this->yellow->toolbox->modifyFile($fileNameOutput, $this->yellow->toolbox->getFileModified($fileName)))
 				{
-					$image = $this->resizeImage($image, $widthInput, $heightInput, $widthOutput, $heightOutput);
-					if(!$this->saveImage($fileNameOutput, $type, $image) ||
-					   !$this->yellow->toolbox->modifyFile($fileNameOutput, filemtime($fileName)))
-					{
-						$this->yellow->page->error(500, "Image '$fileNameOutput' can't be saved!");
-					}
+					$this->yellow->page->error(500, "Image '$fileNameOutput' can't be saved!");
 				}
 			}
 			$src = $this->yellow->config->get("serverBase").$this->yellow->config->get("imageThumbnailLocation").$fileNameThumb;
@@ -117,25 +119,27 @@ class YellowImage
 		$image = false;
 		switch($type)
 		{
+			case "gif":	$image = @imagecreatefromgif($fileName); break;
 			case "jpg":	$image = @imagecreatefromjpeg($fileName); break;
 			case "png":	$image = @imagecreatefrompng($fileName); break;
 		}
 		return $image;
 	}
-
-	// Save image as file
-	function saveImage($fileName, $type, $image)
+	
+	// Save image to file
+	function saveImage($image, $fileName, $type)
 	{
 		$ok = false;
 		switch($type)
 		{
-			case "jpg":	$ok = @imagejpeg($image, $fileName, $this->yellow->config->get("imageJpegQuality")); break;
+			case "gif":	$ok = @imagegif($image, $fileName); break;
+			case "jpg":	$ok = @imagejpeg($image, $fileName, $this->yellow->config->get("imageThumbnailJpgQuality")); break;
 			case "png":	$ok = @imagepng($image, $fileName); break;
 		}
 		return $ok;
 	}
 
-	// Create image
+	// Create image from scratch
 	function createImage($width, $height)
 	{
 		$image = imagecreatetruecolor($width, $height);
@@ -145,50 +149,48 @@ class YellowImage
 	}
 
 	// Resize image
-	function resizeImage($imageInput, $widthInput, $heightInput, $widthOutput, $heightOutput)
+	function resizeImage($image, $widthInput, $heightInput, $widthOutput, $heightOutput)
 	{
 		$widthFit = $widthInput * ($heightOutput / $heightInput);
 		$heightFit = $heightInput * ($widthOutput / $widthInput);
 		$widthDiff = abs($widthOutput - $widthFit);
 		$heightDiff = abs($heightOutput - $heightFit);
 		$imageOutput = $this->createImage($widthOutput, $heightOutput);
-		if($heightFit > $heightOutput)
+		if($heightFit>$heightOutput)
 		{
-			imagecopyresampled($imageOutput, $imageInput, 0, $heightDiff/-2, 0, 0, $widthOutput, $heightFit, $widthInput, $heightInput);
+			imagecopyresampled($imageOutput, $image, 0, $heightDiff/-2, 0, 0, $widthOutput, $heightFit, $widthInput, $heightInput);
 		} else {
-			imagecopyresampled($imageOutput, $imageInput, $widthDiff/-2, 0, 0, 0, $widthFit, $heightOutput, $widthInput, $heightInput);
+			imagecopyresampled($imageOutput, $image, $widthDiff/-2, 0, 0, 0, $widthFit, $heightOutput, $widthInput, $heightInput);
 		}
 		return $imageOutput;
 	}
-
+	
 	// Return value according to unit
 	function convertValueAndUnit($text, $valueBase)
 	{
 		$value = $unit = "";
-		if(preg_match("/(\d+)(\S*)/", $text, $matches))
+		if(preg_match("/([\d\.]+)(\S*)/", $text, $matches))
 		{
 			$value = $matches[1];
 			$unit = $matches[2];
-			if($unit == "%") $value = intval($valueBase * $value / 100);
+			if($unit=="%") $value = $valueBase * $value / 100;
 		}
-		return $value;
+		return intval($value);
 	}
 
 	// Check if file needs to be updated
 	function isFileNotUpdated($fileNameInput, $fileNameOutput)
 	{
-		$fileDateInput = is_file($fileNameInput) ? filemtime($fileNameInput) : 0;
-		$fileDateOutput = is_file($fileNameOutput) ? filemtime($fileNameOutput) : 0;
-		return $fileDateInput != $fileDateOutput;
+		return $this->yellow->toolbox->getFileModified($fileNameInput)!=$this->yellow->toolbox->getFileModified($fileNameOutput);
 	}
 
 	// Check graphics library support
 	function isGraphicsLibrary()
 	{
 		return extension_loaded("gd") && function_exists("gd_info") &&
-			((imagetypes()&(IMG_JPG|IMG_PNG)) == (IMG_JPG|IMG_PNG));
+			((imagetypes()&(IMG_GIF|IMG_JPG|IMG_PNG))==(IMG_GIF|IMG_JPG|IMG_PNG));
 	}
 }
 
-$yellow->plugins->register("image", "YellowImage", YellowImage::Version);
+$yellow->plugins->register("image", "YellowImage", YellowImage::VERSION);
 ?>

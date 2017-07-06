@@ -1,4 +1,3 @@
 <?php $yellow->snippet("header") ?>
-<?php $yellow->snippet("content-sidebar") ?>
-<?php $yellow->snippet($yellow->toolbox->isLocationArgs() ? "content-wikipages" : "content-wiki") ?>
+<?php $yellow->snippet($yellow->page->get("content")) ?>
 <?php $yellow->snippet("footer") ?>

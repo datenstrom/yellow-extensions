@@ -1,11 +1,11 @@
 <?php
-// Copyright (c) 2013-2015 Datenstrom, http://datenstrom.se
+// Soundcloud plugin, https://github.com/datenstrom/yellow-plugins/tree/master/soundcloud
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Soundcloud plugin
 class YellowSoundcloud
 {
-	const Version = "0.6.1";
+	const VERSION = "0.6.1";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -18,7 +18,7 @@ class YellowSoundcloud
 	// Handle page content parsing of custom block
 	function onParseContentBlock($page, $name, $text, $shortcut)
 	{
-		$output = NULL;
+		$output = null;
 		if($name=="soundcloud" && $shortcut)
 		{
 			list($id, $style, $width, $height) = $this->yellow->toolbox->getTextArgs($text);
@@ -34,5 +34,5 @@ class YellowSoundcloud
 	}
 }
 
-$yellow->plugins->register("soundcloud", "YellowSoundcloud", YellowSoundcloud::Version);
+$yellow->plugins->register("soundcloud", "YellowSoundcloud", YellowSoundcloud::VERSION);
 ?>

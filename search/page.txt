@@ -1,6 +1,6 @@
 ---
 Title: Search
-Template: search
 Description: Search
+Template: search
 ---
 This page is automatically generated.

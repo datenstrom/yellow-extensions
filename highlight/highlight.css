@@ -1,10 +1,12 @@
-/* Highlight plugin 0.6.1 */
+/* Highlight plugin, https://github.com/datenstrom/yellow-plugins/tree/master/highlight */
+/* Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se */
+/* This file may be used and distributed under the terms of the public license. */
 
 .content .highlight tr, .content .highlight td { padding:0; border:none; }
 .content .highlight td.ln pre { padding-right:0.5em; text-align:right; }
 .content .highlight td.de1 pre { padding-left:0.5em; }
 
-.c { color:#000; }
+.c { color:inherit; }
 .c .ln { color:#bbb; }
 .c .kw1 { color:#00d; }
 .c .kw2 { color:#00d; }
@@ -19,13 +21,19 @@
 .c .co1 { color:#0a0; }
 .c .coMULTI { color:#0a0; }
 
-.css { color:#000; }
+.css { color:inherit; }
 .css .ln { color:#bbb; }
-.css .kw1 { color:#c00; }
+.css .kw1 { color:#b0b; }
+.css .kw2 { color:#b0b; }
+.css .st0 { color:#c00; }
+.css .nu0 { color:#00d; }
+.css .re0 { color:#00d; }
+.css .re2 { color:#b0b; }
+.css .re3 { color:#00d; }
 .css .co1 { color:#0a0; }
 .css .coMULTI { color:#0a0; }
 
-.cpp { color:#000; }
+.cpp { color:inherit; }
 .cpp .ln { color:#bbb; }
 .cpp .kw1 { color:#00d; }
 .cpp .kw2 { color:#00d; }
@@ -40,16 +48,16 @@
 .cpp .co1 { color:#0a0; }
 .cpp .coMULTI { color:#0a0; }
 
-.html { color:#000; }
+.html { color:inherit; }
 .html .ln { color:#bbb; }
+.html .sc0 { color:#aaa; }
 .html .sc2 { color:#b0b; }
 .html .kw2 { color:#b0b; }
 .html .kw3 { color:#c00; }
 .html .st0 { color:#00d; }
-.html .sc0 { color:#777; }
 .html .sc-1 { color:#0a0; }
 
-.javascript { color:#000; }
+.javascript { color:inherit; }
 .javascript .ln { color:#bbb; }
 .javascript .kw1 { color:#b0b; }
 .javascript .kw2 { color:#b0b; }
@@ -59,7 +67,7 @@
 .javascript .co1 { color:#0a0; }
 .javascript .coMULTI { color:#0a0; }
 
-.php { color:#000; }
+.php { color:inherit; }
 .php .ln { color:#bbb; }
 .php .kw1 { color:#b0b; }
 .php .kw2 { color:#b0b; }
@@ -72,7 +80,7 @@
 .php .co1 { color:#0a0; }
 .php .coMULTI { color:#0a0; }
 
-.python { color:#000; }
+.python { color:inherit; }
 .python .ln { color:#bbb; }
 .python .kw1 { color:#b0b; }
 .python .kw2 { color:#b0b; }
@@ -85,7 +93,7 @@
 .python .co1 { color:#0a0; }
 .python .coMULTI { color:#0a0; }
 
-.ruby { color:#000; }
+.ruby { color:inherit; }
 .ruby .ln { color:#bbb; }
 .ruby .kw1 { color:#b0b; }
 .ruby .kw2 { color:#b0b; }

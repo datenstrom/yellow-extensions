@@ -1,6 +1,6 @@
 ---
 Title: Contact
+Description: Contact
 Template: contact
-Description: Contact page
 ---
 This page is automatically generated.

@@ -1,29 +1,31 @@
-Yellow plugins
-==============
-[![Yellow](https://raw.githubusercontent.com/datenstrom/yellow-developers/master/media/images/yellow-photo.jpg)](http://datenstrom.se/yellow)
+Datenstrom Yellow plugins
+=========================
+[![Yellow](https://raw.githubusercontent.com/datenstrom/yellow-developers/master/media/images/yellow-photo.jpg)](https://datenstrom.se/yellow/)
 
-Yellow is for people who make websites. [Get support](http://developers.datenstrom.se/help/support).
+Yellow is for people who make websites.
 
 1. [Download all plugins and unzip them](https://github.com/datenstrom/yellow-plugins/archive/master.zip).  
-2. Copy relevant files to your web hosting, see individual plugin.  
+2. Copy relevant files to your web hosting.  
 3. Open your website in a web browser.
 
-The following plugins are available:
+Available plugins:
 
 * [Blog](https://github.com/datenstrom/yellow-plugins/tree/master/blog): 
   Blog for your website.
 * [Breadcrumbs](https://github.com/datenstrom/yellow-plugins/tree/master/breadcrumbs): 
-  Breadcrumbs navigation for website.
-* [Commandline](https://github.com/datenstrom/yellow-plugins/tree/master/commandline): 
+  Breadcrumbs navigation.
+* [Command](https://github.com/datenstrom/yellow-plugins/tree/master/command): 
   Run commands in a terminal window.
 * [Contact](https://github.com/datenstrom/yellow-plugins/tree/master/contact): 
-  Email contact page for website.
+  Email contact page for your website.
 * [Core](https://github.com/datenstrom/yellow-plugins/tree/master/core): 
   Core functionality for your website.
 * [Disqus](https://github.com/datenstrom/yellow-plugins/tree/master/disqus): 
   Add Disqus comments to blog.
 * [Draft](https://github.com/datenstrom/yellow-plugins/tree/master/draft): 
   Support for draft pages.
+* [Edit](https://github.com/datenstrom/yellow-plugins/tree/master/edit): 
+  Edit your website in a web browser.
 * [Emojiawesome](https://github.com/datenstrom/yellow-plugins/tree/master/emojiawesome): 
   Lots and lots of emoji.
 * [Feed](https://github.com/datenstrom/yellow-plugins/tree/master/feed): 
@@ -32,47 +34,53 @@ The following plugins are available:
   Icons and symbols.
 * [Gallery](https://github.com/datenstrom/yellow-plugins/tree/master/gallery): 
   Image gallery with popup.
+* [Googlecalendar](https://github.com/datenstrom/yellow-plugins/tree/master/googlecalendar): 
+  Embed Google calendar.
 * [Googlemaps](https://github.com/datenstrom/yellow-plugins/tree/master/googlemaps): 
   Embed Google maps.
 * [Highlight](https://github.com/datenstrom/yellow-plugins/tree/master/highlight): 
   Highlighting for source code.
 * [Image](https://github.com/datenstrom/yellow-plugins/tree/master/image): 
-  Resizable images and thumbnails.
+  Images and thumbnails.
 * [Language](https://github.com/datenstrom/yellow-plugins/tree/master/language): 
   Internationalisation for your website.
+* [Links](https://github.com/datenstrom/yellow-plugins/tree/master/links): 
+  Add links to previous/next page.
 * [Markdown](https://github.com/datenstrom/yellow-plugins/tree/master/markdown): 
   Text formatting for humans.
 * [Piwik](https://github.com/datenstrom/yellow-plugins/tree/master/piwik): 
-  Add Piwik statistics to website.
+  Add Piwik web analytics to website.
 * [Preview](https://github.com/datenstrom/yellow-plugins/tree/master/preview): 
-  Link pages with image preview.
+  Show pages with image preview.
 * [Search](https://github.com/datenstrom/yellow-plugins/tree/master/search): 
-  Full-text search for website.
+  Full-text search.
 * [Sitemap](https://github.com/datenstrom/yellow-plugins/tree/master/sitemap): 
-  Sitemap for website.
+  Sitemap for your website.
 * [Slider](https://github.com/datenstrom/yellow-plugins/tree/master/slider): 
   Image gallery with slider.
 * [Slideshare](https://github.com/datenstrom/yellow-plugins/tree/master/slideshare): 
   Embed Slideshare presentations.
-* [Smartypants](https://github.com/datenstrom/yellow-plugins/tree/master/smartypants): 
-  Better text formatting for humans.
 * [Soundcloud](https://github.com/datenstrom/yellow-plugins/tree/master/soundcloud): 
   Embed Soundcloud audio tracks.
-* [Stats](https://github.com/datenstrom/yellow-plugins/tree/master/stats): 
-  Create statistics from web server logfiles.
 * [Toc](https://github.com/datenstrom/yellow-plugins/tree/master/toc): 
   Table of contents.
+* [Traffic](https://github.com/datenstrom/yellow-plugins/tree/master/traffic): 
+  Create traffic analytics from web server logfiles.
+* [Update](https://github.com/datenstrom/yellow-plugins/tree/master/update): 
+  Keep your website up to date.
 * [Vimeo](https://github.com/datenstrom/yellow-plugins/tree/master/vimeo): 
   Embed Vimeo videos.
-* [Webinterface](https://github.com/datenstrom/yellow-plugins/tree/master/webinterface): 
-  Edit your website in a web browser.
 * [Wiki](https://github.com/datenstrom/yellow-plugins/tree/master/wiki): 
   Wiki for your website.
 * [Youtube](https://github.com/datenstrom/yellow-plugins/tree/master/youtube): 
   Embed Youtube videos.
 
-More plugins by Yellow developers:
+Experimental plugins:
 
+* [Audio](https://github.com/schulle4u/yellow-plugin-audio):
+  HTML5 audio player.
+* [Burger Menu](https://github.com/richi/yellow-plugin-burger-menu): 
+  A hamburger menu button.
 * [CheetJS](https://github.com/nogginfuel/yellow-plugin-cheetjs): 
   Add easter eggs via key binds.
 * [Comments](https://github.com/nasendackel/yellow-comments):
@@ -83,23 +91,41 @@ More plugins by Yellow developers:
   Yellow plugin for easy FAQ handling.
 * [Fotorama](https://github.com/nogginfuel/yellow-plugin-fotorama): 
   A jQuery image gallery with carousel.
+* [Inline Attachment](https://github.com/nibreh/yellow-plugin-inline-attachment): 
+  Drag and Drop Image Upload
 * [jQuery](https://github.com/nogginfuel/yellow-plugin-jquery):
   Add the power of jQuery to Yellow.
+* [Leaflet](https://github.com/nibreh/yellow-plugin-leaflet): 
+  Embed maps and add markers with Leaflet & OpenStreetMap.
 * [Maintenance](https://github.com/nogginfuel/yellow-plugin-maintenance):
   Maintenance status for entire site or single page.
 * [Markbar](https://github.com/nibreh/yellow-plugin-markbar):
   WYSIWYG style toolbar for editing a page.
 * [Medialist](https://github.com/nibreh/yellow-plugin-medialist):
   Create a list of MP3/OGG/PDF media files.
+* [Mixcloud](https://github.com/SAMY2K/yellow-plugin-mixcloud): 
+  Embed Mixcloud audio tracks.
 * [PageTxt](https://github.com/richi/yellow-plugin-pagetxt):
   Overwrite language entries in a page.
 * [Shariff](https://github.com/schulle4u/yellow-plugin-shariff):
   Privacy-friendly social sharing buttons for your Yellow website.
+* [Skipto](https://github.com/schulle4u/yellow-plugin-skipto):
+  Enhance keyboard navigation.
+* [Splice](https://github.com/SAMY2K/yellow-plugin-splice): 
+  Embed Splice projects.
+* [Streamlist](https://github.com/nibreh/yellow-plugin-streamlist):
+  Stream your favorite radios in a playlist with HTML5 audio.
 * [Sublime](https://github.com/nashv/YellowBlogExtensions):
   Sublime Text 3 Extensions for blogs based on Yellow.
+* [Ticker](https://github.com/schulle4u/yellow-plugin-ticker): 
+  Feed parser using SimpleXML or SimplePie.
+* [Twitter](https://github.com/schulle4u/yellow-plugin-twitter): 
+  Embed Twitter timeline.
+* [Video](https://github.com/nibreh/yellow-plugin-video): 
+  HTML5 video player.
 * [WebCLI](https://github.com/richi/yellow-plugin-cli):
   Use the command line interface without shell access.
 * [YCSSG](https://github.com/dieli/yellow-extension-ycssg):
   Image gallery in CSS only.
 
-Created a new plugin? Awesome, add it to the list.
+Licensed under [GPLv2](https://github.com/datenstrom/yellow-plugins/blob/master/LICENSE.md) unless stated otherwise. [Learn more](https://developers.datenstrom.se/help/).

@@ -2,5 +2,6 @@
 Title: Sidebar
 Status: hidden
 ---
-* [Recent changes](/wiki/special:changes/)  
-* [Example](/wiki/tag:example/)  
+* [See all pages](/wiki/special:pages/)
+* [See recent changes](/wiki/special:changes/)
+* [View help](https://developers.datenstrom.se/help/)

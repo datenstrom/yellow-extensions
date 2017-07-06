@@ -1,11 +1,11 @@
 <?php
-// Copyright (c) 2013-2015 Datenstrom, http://datenstrom.se
+// Youtube plugin, https://github.com/datenstrom/yellow-plugins/tree/master/youtube
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Youtube plugin
 class YellowYoutube
 {
-	const Version = "0.6.1";
+	const VERSION = "0.6.1";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -18,7 +18,7 @@ class YellowYoutube
 	// Handle page content parsing of custom block
 	function onParseContentBlock($page, $name, $text, $shortcut)
 	{
-		$output = NULL;
+		$output = null;
 		if($name=="youtube" && $shortcut)
 		{
 			list($id, $style, $width, $height) = $this->yellow->toolbox->getTextArgs($text);
@@ -32,5 +32,5 @@ class YellowYoutube
 	}
 }
 
-$yellow->plugins->register("youtube", "YellowYoutube", YellowYoutube::Version);
+$yellow->plugins->register("youtube", "YellowYoutube", YellowYoutube::VERSION);
 ?>

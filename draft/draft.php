@@ -1,11 +1,11 @@
 <?php
-// Copyright (c) 2013-2015 Datenstrom, http://datenstrom.se
+// Draft plugin, https://github.com/datenstrom/yellow-plugins/tree/master/draft
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Draft status plugin
 class YellowDraft
 {
-	const Version = "0.6.1";
+	const VERSION = "0.6.1";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -18,7 +18,7 @@ class YellowDraft
 	// Handle page meta data parsing
 	function onParseMeta($page)
 	{
-		if($page->get("status") == "draft") $page->visible = false;
+		if($page->get("status")=="draft") $page->visible = false;
 	}
 	
 	// Handle page parsing
@@ -31,5 +31,5 @@ class YellowDraft
 	}
 }
 
-$yellow->plugins->register("draft", "YellowDraft", YellowDraft::Version);
+$yellow->plugins->register("draft", "YellowDraft", YellowDraft::VERSION);
 ?>

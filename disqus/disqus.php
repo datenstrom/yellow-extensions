@@ -1,25 +1,25 @@
 <?php
-// Copyright (c) 2013-2016 Datenstrom, http://datenstrom.se
+// Disqus plugin, https://github.com/datenstrom/yellow-plugins/tree/master/disqus
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Disqus plugin
 class YellowDisqus
 {
-	const Version = "0.6.2";
+	const VERSION = "0.7.1";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
 	function onLoad($yellow)
 	{
 		$this->yellow = $yellow;
-		$this->yellow->config->setDefault("disqusShortname", "Yellow");
+		$this->yellow->config->setDefault("disqusShortname", "yellow");
 	}
 	
-	// Handle page extra HTML data
-	function onExtra($name)
+	// Handle page content parsing of custom block
+	function onParseContentBlock($page, $name, $text, $shortcut)
 	{
-		$output = NULL;
-		if($name=="disqus" || $name=="comments")
+		$output = null;
+		if($name=="disqus" && $shortcut)
 		{
 			$shortname = $this->yellow->config->get("disqusShortname");
 			$url = $this->yellow->page->get("pageRead");
@@ -37,7 +37,18 @@ class YellowDisqus
 		}
 		return $output;
 	}
+	
+	// Handle page extra HTML data
+	function onExtra($name)
+	{
+		$output = null;
+		if($name=="disqus" || $name=="comments")
+		{
+			$output = $this->onParseContentBlock($this->yellow->page, "disqus", "", true);
+		}
+		return $output;
+	}
 }
 
-$yellow->plugins->register("disqus", "YellowDisqus", YellowDisqus::Version);
+$yellow->plugins->register("disqus", "YellowDisqus", YellowDisqus::VERSION);
 ?>

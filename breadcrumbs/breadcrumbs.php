@@ -1,11 +1,11 @@
 <?php
-// Copyright (c) 2013-2015 Datenstrom, http://datenstrom.se
+// Breadcrumbs plugin, https://github.com/datenstrom/yellow-plugins/tree/master/breadcrumbs
+// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-// Breadcrumbs plugin
 class YellowBreadcrumbs
 {
-	const Version = "0.6.1";
+	const VERSION = "0.6.2";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -19,20 +19,20 @@ class YellowBreadcrumbs
 	// Handle page content parsing of custom block
 	function onParseContentBlock($page, $name, $text, $shortcut)
 	{
-		$output = NULL;
+		$output = null;
 		if($name=="breadcrumbs" && $shortcut)
 		{
 			list($separator, $style) = $this->yellow->toolbox->getTextArgs($text);
 			if(empty($separator)) $separator = $this->yellow->config->get("breadcrumbsSeparator");
 			if(empty($style)) $style = $this->yellow->config->get("breadcrumbsStyle");
-			$pages = $this->yellow->pages->path($page->getLocation(), true);
+			$pages = $this->yellow->pages->path($page->getLocation(true), true);
 			$page->setLastModified($pages->getModified());
 			$output = "<div class=\"".htmlspecialchars($style)."\">";
 			$currentPage = $page;
 			foreach($pages as $page)
 			{
-				$output .= "<a href=\"".$page->getLocation()."\">".$page->getHtml("titleNavigation")."</a>";
-				if($page->getLocation() != $currentPage->getLocation()) $output .= " ".htmlspecialchars($separator)." ";
+				$output .= "<a href=\"".$page->getLocation(true)."\">".$page->getHtml("titleNavigation")."</a>";
+				if($page->getLocation(true)!=$currentPage->getLocation(true)) $output .= " ".htmlspecialchars($separator)." ";
 			}
 			$output .= "</div>\n";
 		}
@@ -46,5 +46,5 @@ class YellowBreadcrumbs
 	}
 }
 
-$yellow->plugins->register("breadcrumbs", "YellowBreadcrumbs", YellowBreadcrumbs::Version);
+$yellow->plugins->register("breadcrumbs", "YellowBreadcrumbs", YellowBreadcrumbs::VERSION);
 ?>

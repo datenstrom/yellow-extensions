@@ -1,6 +1,7 @@
 ---
 Title: Blog
-Template: blogpages
 Description: Blog
+Template: blogpages
+TemplateNew: blog
 ---
 This page is automatically generated.

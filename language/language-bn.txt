@@ -1,0 +1,125 @@
+# Datenstrom Yellow language
+
+Language: bn
+LanguageDescription: Bangali (Bangladesh)
+LanguageTranslator: Mohammed Nazmul Ferdous
+LanguageVersion: 0.7.2
+
+BlogBy: লিখেছেন
+BlogFilter: ব্লগ:
+BlogTag: ট্যাগ সমূহ:
+BlogMore: আরো পড়ুন…
+ContactName: নাম:
+ContactEmail: ইমেইল:
+ContactMessage: বার্তা:
+ContactButton: বার্তা পাঠান
+ContactStatusNone: স্বাগতম! আপনার মতামত খুবই গুরুত্বপূর্ণ। 
+ContactStatusIncomplete: অনুগ্রহ করে সকল ঘর পূরণ করুন। 
+ContactStatusInvalid: অনুগ্রহ করে একটি বিদ্যমান ইমেইল দিন। 
+ContactStatusDone: আপনি সফলভাবে ইমেইলটি প্রেরণ করেছেন। ধন্যবাদ! 
+ContactStatusError: ইমেলটি পাঠানো সম্ভব হয়নি, অনুগ্রহ করে একটু পরে আবার চেষ্টা করুন!
+DateMonths: জানুয়ারী, ফেব্রুয়ারি, মার্চ, এপ্রিল, মে, জুন, জুলাই, অগাস্ট, সেপ্টেম্বর, অক্টোবর, নভেম্বর, ডিসেম্বর
+DateWeekdays: সোমবার, মঙ্গলবার, বুধবার, বৃহস্পতিবার, শুক্রবার, শনিবার, রবিবার
+DateWeekstart: সোমবার
+DateFormatShort: F Y
+DateFormatMedium: Y-m-d
+DateFormatLong: Y-m-d H:i
+DateFormatTime: H:i
+EditInstallationTitle: Hello
+EditInstallationFeature: What do you want to make?
+EditInstallationHomePage: Your website works!\n\nYou can [edit this page] or use your text editor.
+EditInstallationAboutPage: This website is made with [yellow]. [Learn more](https://developers.datenstrom.se/help/).
+EditLoginTitle: স্বাগত
+EditLoginEmail: Email:
+EditLoginPassword: Password:
+EditLoginRecover: Forgot your password?
+EditLoginSignup: Create user account?
+EditLoginButton: Log in
+EditSignupTitle: Create user account
+EditSignupName: Name:
+EditSignupEmail: Email:
+EditSignupPassword: Password:
+EditSignupButton: Create
+EditSignupStatusNone: Here you can create a new user account.
+EditSignupStatusIncomplete: Please fill out all fields.
+EditSignupStatusInvalid: Please enter a valid email.
+EditSignupStatusWeak: Please enter a different password.
+EditSignupStatusNext: User account will be created, please check your emails.
+EditRecoverTitle: Forgot your password
+EditRecoverEmail: Email:
+EditRecoverPassword: Password:
+EditRecoverStatusNone: No problem, you can create a new password.
+EditRecoverStatusInvalid: Please enter a valid email.
+EditRecoverStatusPassword: Please enter a new password.
+EditRecoverStatusWeak: Please enter a different password.
+EditRecoverStatusNext: User account will be recovered, please check your emails.
+EditSettingsTitle: Settings
+EditSettingsStatusInvalid: Please enter a valid email.
+EditSettingsStatusTaken: Please enter a different email.
+EditSettingsStatusWeak: Please enter a different password.
+EditSettingsStatusNext: User account will be changed, please check your emails.
+EditConfirmSubject: Confirm user account
+EditConfirmMessage: Hi @usershort, please confirm your user account. Click the following link.
+EditConfirmStatusDone: User account confirmed and waiting for approval. Thank you!
+EditConfirmStatusExpired: User account can not be confirmed. Link has expired!
+EditApproveSubject: Approve user account
+EditApproveMessage: Hi @usershort, please approve a new user account for @useraccount. Click the following link.
+EditApproveStatusDone: User account approved. Thank you!
+EditApproveStatusExpired: User account can not be approved. Link has expired!
+EditReactivateSubject: Reactivate user account
+EditReactivateMessage: Hi @usershort, please reactivate your user account. There were too many failed login attempts. Click the following link.
+EditReactivateStatusDone: User account reactivated. Thank you!
+EditReactivateStatusExpired: User account can not be reactivated. Link has expired!
+EditRecoverSubject: Recover user account
+EditRecoverMessage: Hi @usershort, please confirm that you forgot your password. Click the following link.
+EditRecoverStatusDone: User account recovered. Thank you!
+EditRecoverStatusExpired: User account can not be recovered. Link has expired!
+EditReconfirmSubject: Change user account
+EditReconfirmMessage: Hi @usershort, please confirm a new email for your user account. Click the following link.
+EditReconfirmStatusDone: User account confirmed. Thank you!
+EditReconfirmStatusExpired: User account can not be confirmed. Link has expired!
+EditChangeSubject: Change user account
+EditChangeMessage: Hi @usershort, please confirm that you want to change your user account. Click the following link.
+EditChangeStatusDone: User account changed. Thank you!
+EditChangeStatusExpired: User account can not be changed. Link has expired!
+EditWelcomeSubject: Welcome
+EditWelcomeMessage: Hi @usershort, your user account has been created. Have fun editing the website.
+EditInformationSubject: Welcome back
+EditInformationMessage: Hi @usershort, your user account has been changed. You can now log in.
+EditVersionTitle: About this website
+EditVersionStatusNone: Yellow is for people who make websites.
+EditVersionStatusCheck: Checking for updates…
+EditVersionStatusDone: Your website is up to date.
+EditVersionStatusUpdates: Updates available, please contact the webmaster.
+EditVersionUpdateNormal: Updates available, update now.
+EditVersionUpdateForce: Force update
+EditVersionUpdateModified: @software has been modified
+EditOkButton: Ok
+EditCancelButton: বাতিল
+EditCreateButton: তৈরি করুন
+EditEditButton: সংরক্ষণ করুন
+EditDeleteButton: মুছে ফেলুন
+EditEdit: সম্পাদনা পাতা
+EditCreate: +
+EditDelete: -
+EditCreateTitle: নতুন পাতা
+EditDeleteTitle: পাতা মুছে ফেলুন
+EditMarkdownHelp: Markdown
+EditUserHelp: সাহায্য
+EditUserLogout: প্রস্থান
+PagePrevious: ← পূর্ববর্তী: @title
+PageNext: পরবর্তী: @title →
+PaginationPrevious: ← পূর্ববর্তী
+PaginationNext: পরবর্তী →
+SearchQuery: অনুসন্ধান ফলাফল:
+SearchResultsNone: একটি অনুসন্ধান শব্দ লিখুন।
+SearchResultsEmpty: কোন ফলাফল পাওয়া যায়নি।
+SearchSpecialChanges: সাম্প্রতিক পরিবর্তন
+SearchButton: খোঁজ করুন
+WikiFilter: Wiki:
+WikiTag: Tags:
+WikiSpecialPages: সমস্ত পৃষ্ঠা
+WikiSpecialChanges: সাম্প্রতিক পরিবর্তন
+YellowUrl: https://datenstrom.se/yellow/
+YellowUserHelpUrl: https://developers.datenstrom.se/help/
+YellowMarkdownHelpUrl: https://developers.datenstrom.se/help/markdown-cheat-sheet
