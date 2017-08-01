@@ -1,12 +1,12 @@
 Contact plugin 0.6.9
 ====================
-Email contact page for your website. [See demo](https://developers.datenstrom.se/plugins/contact-plugin).
+Email contact page for your website.
 
 <p align="center"><img src="contact-screenshot.png?raw=true" alt="Screenshot"></p>
 
 ## How do I install this?
 
-1. [Download and install Yellow](https://github.com/datenstrom/yellow/).
+1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/contact.zip). If you are using Safari, right click and select 'Download file as'.
 3. Copy `contact.zip` into your `system/plugins` folder.
 
@@ -23,7 +23,7 @@ The following settings can be configured in file `system/config/config.ini`:
 `Author` = name of the webmaster  
 `Email` = email of the webmaster  
 `ContactLocation` = contact page location  
-`ContactSpamFilter` = spam filter as [regular expression](https://en.wikipedia.org/wiki/Regular_expression)  
+`ContactSpamFilter` = spam filter as regular expression  
 
 ## Example
 

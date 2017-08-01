@@ -5,7 +5,7 @@
 
 class YellowLinks
 {
-	const VERSION = "0.6.6";
+	const VERSION = "0.7.1";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -24,10 +24,7 @@ class YellowLinks
 		if($name=="links" && $shortcut)
 		{
 			$style = $this->yellow->config->get("linksStyle");
-			$publicationOrder = ($page->get("template")=="blog");
-			$parent = $page->getParent();
-			$pages = $parent ? $page->getSiblings(!$parent->isVisible()) : $this->yellow->pages->clean();
-			$pages->sort($publicationOrder ? "published" : "title", true);
+			$pages = $this->getLinkPages($page);
 			$page->setLastModified($pages->getModified());
 			if($this->yellow->config->get("linksPagePrevious")) $pagePrevious = $pages->getPagePrevious($page);
 			if($this->yellow->config->get("linksPageNext")) $pageNext = $pages->getPageNext($page);
@@ -57,6 +54,36 @@ class YellowLinks
 	function onExtra($name)
 	{
 		return $this->onParseContentBlock($this->yellow->page, $name, "", true);
+	}
+	
+	// Return link pages
+	function getLinkPages($page)
+	{
+		switch($page->get("template"))
+		{
+			case "blog":		$blogLocation = $this->yellow->config->get("blogLocation");
+								if(!empty($blogLocation))
+								{
+									$pages = $this->yellow->pages->index(!$page->isVisible());
+								} else {
+									$pages = $page->getSiblings(!$page->isVisible());
+								}
+								$pages->filter("template", "blog")->sort("published", true);
+								break;
+			case "blogpages":	$pages = $this->yellow->pages->clean(); break;
+			case "wiki":		$wikiLocation = $this->yellow->config->get("wikiLocation");
+								if(!empty($wikiLocation))
+								{
+									$pages = $this->yellow->pages->index(!$page->isVisible());
+								} else {
+									$pages = $page->getSiblings(!$page->isVisible());
+								}
+								$pages->filter("template", "wiki")->sort("title", true);
+								break;
+			case "wikipages":	$pages = $this->yellow->pages->clean(); break;
+			default:			$pages = $page->getSiblings(!$page->isVisible());
+		}
+		return $pages;
 	}
 }
 

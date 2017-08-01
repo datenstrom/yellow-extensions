@@ -1,14 +1,14 @@
-Webinterface plugin 0.6.20
-=========================
+Edit plugin 0.7.2
+==================
 Edit your website in a web browser. [See demo](https://developers.datenstrom.se).
 
-<p align="center"><img src="webinterface-screenshot.png?raw=true" alt="Screenshot"></p>
+<p align="center"><img src="edit-screenshot.png?raw=true" alt="Screenshot"></p>
 
 ## How do I install this?
 
-1. [Download and install Yellow](https://github.com/datenstrom/yellow/).
-2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/webinterface.zip). If you are using Safari, right click and select 'Download file as'.
-3. Copy `webinterface.zip` into your `system/plugins` folder.
+1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
+2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/edit.zip). If you are using Safari, right click and select 'Download file as'.
+3. Copy `edit.zip` into your `system/plugins` folder.
 
 To uninstall delete the plugin files.
 
@@ -20,7 +20,7 @@ Click the edit link on a page. You can browse your website, use the normal navig
 
 The first option is to create a user account in a web browser. Click the edit link on a page. You can create a user account and change your password. The webmaster needs to approve new user accounts. The webmaster's email is defined in file `system/config/config.ini`, for example `Email: email@example.com`.
 
-The second option is to create a user account at the [command line](https://github.com/datenstrom/yellow-plugins/tree/master/commandline). Open a terminal window. Go to your Yellow installation, where the `yellow.php` is. Type `php yellow.php user` followed by email and password. You can add optional name and language. All user accounts are stored in file `system/config/user.ini`. See example below.
+The second option is to create a user account at the [command line](https://github.com/datenstrom/yellow-plugins/tree/master/command). Open a terminal window. Go to your installation folder, where the `yellow.php` is. Type `php yellow.php user` followed by email and password. You can add optional name and language. All user accounts are stored in file `system/config/user.ini`. See example below.
 
 ## Example
 

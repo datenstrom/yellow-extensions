@@ -1,12 +1,12 @@
-Wiki plugin 0.6.12
+Wiki plugin 0.7.2
 =================
-Wiki for your website. [See demo](https://developers.datenstrom.se/plugins/wiki-plugin/).
+Wiki for your website. [See demo](https://developers.datenstrom.se/plugins/wiki/).
 
 <p align="center"><img src="wiki-screenshot.png?raw=true" alt="Screenshot"></p>
 
 ## How do I install this?
 
-1. [Download and install Yellow](https://github.com/datenstrom/yellow/).
+1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/wiki.zip). If you are using Safari, right click and select 'Download file as'.
 3. Copy `wiki.zip` into your `system/plugins` folder.
 
@@ -20,6 +20,7 @@ The wiki is available on your website as `http://website/wiki/`. To show the wik
 
 You can use shortcuts to show information about the wiki:
 
+`[wikiauthors LOCATION PAGESMAX]` for a list of authors  
 `[wikipages LOCATION PAGESMAX]` for a list of pages  
 `[wikirecent LOCATION PAGESMAX]` for recently changed pages  
 `[wikirelated LOCATION PAGESMAX]` for related pages to current page  
@@ -28,11 +29,12 @@ You can use shortcuts to show information about the wiki:
 The following arguments are available, all but the first argument are optional:
 
 `LOCATION` = wiki location  
-`PAGESMAX` = number of pages  
+`PAGESMAX` = number of pages, 0 for unlimited  
 
 The following settings can be configured in file `system/config/config.ini`:
 
 `WikiLocation` = wiki location  
+`WikiNewLocation` = wiki location for new page  
 `WikiPagesMax` = number of pages  
 `WikiPaginationLimit` = number of entries to show per page  
 
@@ -52,7 +54,9 @@ Showing list of tags:
 
 Showing list of pages:
 
-    [wikipages /wiki/]
+    [wikipages /wiki/ 0]
+    [wikipages /wiki/ 25]
+    [wikipages /wiki/ 50]
 
 ## Developer
 

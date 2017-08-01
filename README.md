@@ -1,6 +1,6 @@
-Yellow plugins
-==============
-[![Yellow](https://raw.githubusercontent.com/datenstrom/yellow-developers/master/media/images/yellow-photo.jpg)](https://datenstrom.se/yellow)
+Datenstrom Yellow plugins
+=========================
+[![Datenstrom Yellow](https://raw.githubusercontent.com/datenstrom/yellow-developers/master/media/images/datenstrom-yellow-en.jpg)](https://datenstrom.se/yellow/)
 
 Yellow is for people who make websites.
 
@@ -14,7 +14,7 @@ Available plugins:
   Blog for your website.
 * [Breadcrumbs](https://github.com/datenstrom/yellow-plugins/tree/master/breadcrumbs): 
   Breadcrumbs navigation.
-* [Commandline](https://github.com/datenstrom/yellow-plugins/tree/master/commandline): 
+* [Command](https://github.com/datenstrom/yellow-plugins/tree/master/command): 
   Run commands in a terminal window.
 * [Contact](https://github.com/datenstrom/yellow-plugins/tree/master/contact): 
   Email contact page for your website.
@@ -24,6 +24,8 @@ Available plugins:
   Add Disqus comments to blog.
 * [Draft](https://github.com/datenstrom/yellow-plugins/tree/master/draft): 
   Support for draft pages.
+* [Edit](https://github.com/datenstrom/yellow-plugins/tree/master/edit): 
+  Edit your website in a web browser.
 * [Emojiawesome](https://github.com/datenstrom/yellow-plugins/tree/master/emojiawesome): 
   Lots and lots of emoji.
 * [Feed](https://github.com/datenstrom/yellow-plugins/tree/master/feed): 
@@ -39,11 +41,11 @@ Available plugins:
 * [Highlight](https://github.com/datenstrom/yellow-plugins/tree/master/highlight): 
   Highlighting for source code.
 * [Image](https://github.com/datenstrom/yellow-plugins/tree/master/image): 
-  Resizable images and thumbnails.
+  Images and thumbnails.
 * [Language](https://github.com/datenstrom/yellow-plugins/tree/master/language): 
-  Internationalisation for your website.
+  Languages and regions.
 * [Links](https://github.com/datenstrom/yellow-plugins/tree/master/links): 
-  Add previous/next page to blog.
+  Add links to previous/next page.
 * [Markdown](https://github.com/datenstrom/yellow-plugins/tree/master/markdown): 
   Text formatting for humans.
 * [Piwik](https://github.com/datenstrom/yellow-plugins/tree/master/piwik): 
@@ -68,8 +70,6 @@ Available plugins:
   Keep your website up to date.
 * [Vimeo](https://github.com/datenstrom/yellow-plugins/tree/master/vimeo): 
   Embed Vimeo videos.
-* [Webinterface](https://github.com/datenstrom/yellow-plugins/tree/master/webinterface): 
-  Edit your website in a web browser.
 * [Wiki](https://github.com/datenstrom/yellow-plugins/tree/master/wiki): 
   Wiki for your website.
 * [Youtube](https://github.com/datenstrom/yellow-plugins/tree/master/youtube): 
@@ -117,6 +117,10 @@ Experimental plugins:
   Stream your favorite radios in a playlist with HTML5 audio.
 * [Sublime](https://github.com/nashv/YellowBlogExtensions):
   Sublime Text 3 Extensions for blogs based on Yellow.
+* [Ticker](https://github.com/schulle4u/yellow-plugin-ticker): 
+  Feed parser using SimpleXML or SimplePie.
+* [Twitter](https://github.com/schulle4u/yellow-plugin-twitter): 
+  Embed Twitter timeline.
 * [Video](https://github.com/nibreh/yellow-plugin-video): 
   HTML5 video player.
 * [WebCLI](https://github.com/richi/yellow-plugin-cli):

@@ -5,16 +5,16 @@
 
 class YellowSitemap
 {
-	const VERSION = "0.6.3";
+	const VERSION = "0.7.1";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
 	function onLoad($yellow)
 	{
 		$this->yellow = $yellow;
-		$this->yellow->config->setDefault("sitemapPaginationLimit", "30");
 		$this->yellow->config->setDefault("sitemapLocation", "/sitemap/");
 		$this->yellow->config->setDefault("sitemapFileXml", "sitemap.xml");
+		$this->yellow->config->setDefault("sitemapPaginationLimit", "30");
 	}
 
 	// Handle page parsing

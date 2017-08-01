@@ -335,3 +335,7 @@ proprietary programs.  If your program is a subroutine library, you may
 consider it more useful to permit linking proprietary applications with the
 library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.
+
+## Note
+
+Programs by Datenstrom are licensed under GPLv2 unless stated otherwise.

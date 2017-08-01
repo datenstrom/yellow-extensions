@@ -1,12 +1,12 @@
-Blog plugin 0.6.12
+Blog plugin 0.7.2
 =================
-Blog for your website. [See demo](https://developers.datenstrom.se/plugins/blog-plugin/).
+Blog for your website. [See demo](https://developers.datenstrom.se/plugins/blog/).
 
 <p align="center"><img src="blog-screenshot.png?raw=true" alt="Screenshot"></p>
 
 ## How do I install this?
 
-1. [Download and install Yellow](https://github.com/datenstrom/yellow/).
+1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/blog.zip). If you are using Safari, right click and select 'Download file as'.
 3. Copy `blog.zip` into your `system/plugins` folder.
 
@@ -20,20 +20,22 @@ The blog is available on your website as `http://website/blog/`. To show the blo
 
 You can use shortcuts to show information about the blog:
 
-`[blogarchive LOCATION]` for a list of months  
-`[blogauthors LOCATION]` for a list of authors  
+`[blogarchive LOCATION PAGESMAX]` for a list of months  
+`[blogauthors LOCATION PAGESMAX]` for a list of authors  
 `[blogrecent LOCATION PAGESMAX]` for recently published pages  
 `[blogrelated LOCATION PAGESMAX]` for related pages to current page  
 `[blogtags LOCATION PAGESMAX]` for a list of tags  
+`[--more--]` for a page break  
 
 The following arguments are available:
 
 `LOCATION` = blog location  
-`PAGESMAX` = number of pages  
+`PAGESMAX` = number of pages, 0 for unlimited  
 
 The following settings can be configured in file `system/config/config.ini`:
 
 `BlogLocation` = blog location  
+`BlogNewLocation` = blog location for new page  
 `BlogPagesMax` = number of pages  
 `BlogPaginationLimit` = number of entries to show per page  
 
@@ -53,7 +55,9 @@ Showing list of tags:
 
 Showing archive of months:
 
-    [blogarchive /blog/]
+    [blogarchive /blog/ 0]
+    [blogarchive /blog/ 12]
+    [blogarchive /blog/ 24]
 
 ## Developer
 

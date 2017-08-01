@@ -5,7 +5,7 @@
 
 class YellowBlog
 {
-	const VERSION = "0.6.12";
+	const VERSION = "0.7.2";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -13,6 +13,7 @@ class YellowBlog
 	{
 		$this->yellow = $yellow;
 		$this->yellow->config->setDefault("blogLocation", "");
+		$this->yellow->config->setDefault("blogNewLocation", "@title");
 		$this->yellow->config->setDefault("blogPagesMax", "10");
 		$this->yellow->config->setDefault("blogPaginationLimit", "5");
 	}
@@ -23,16 +24,17 @@ class YellowBlog
 		$output = null;
 		if($name=="blogarchive" && $shortcut)
 		{
-			list($location) = $this->yellow->toolbox->getTextArgs($text);
+			list($location, $pagesMax) = $this->yellow->toolbox->getTextArgs($text);
 			if(empty($location)) $location = $this->yellow->config->get("blogLocation");
+			if(strempty($pagesMax)) $pagesMax = $this->yellow->config->get("blogPagesMax");			
 			$blog = $this->yellow->pages->find($location);
-			$pages = $blog ? $blog->getChildren(!$blog->isVisible()) : $this->yellow->pages->clean();
-			$pages->filter("template", "blog");
+			$pages = $this->getBlogPages($location);
 			$page->setLastModified($pages->getModified());
 			$months = array();
 			foreach($pages as $page) if(preg_match("/^(\d+\-\d+)\-/", $page->get("published"), $matches)) ++$months[$matches[1]];
 			if(count($months))
 			{
+				if($pagesMax!=0) $months = array_slice($months, -$pagesMax);
 				uksort($months, strnatcasecmp);
 				$months = array_reverse($months);
 				$output = "<div class=\"".htmlspecialchars($name)."\">\n";
@@ -50,17 +52,22 @@ class YellowBlog
 		}
 		if($name=="blogauthors" && $shortcut)
 		{
-			list($location) = $this->yellow->toolbox->getTextArgs($text);
+			list($location, $pagesMax) = $this->yellow->toolbox->getTextArgs($text);
 			if(empty($location)) $location = $this->yellow->config->get("blogLocation");
+			if(strempty($pagesMax)) $pagesMax = $this->yellow->config->get("blogPagesMax");
 			$blog = $this->yellow->pages->find($location);
-			$pages = $blog ? $blog->getChildren(!$blog->isVisible()) : $this->yellow->pages->clean();
-			$pages->filter("template", "blog");
+			$pages = $this->getBlogPages($location);
 			$page->setLastModified($pages->getModified());
 			$authors = array();
 			foreach($pages as $page) if($page->isExisting("author")) foreach(preg_split("/\s*,\s*/", $page->get("author")) as $author) ++$authors[$author];
 			if(count($authors))
 			{
 				$authors = $this->yellow->lookup->normaliseUpperLower($authors);
+				if($pagesMax!=0 && count($authors)>$pagesMax)
+				{
+					uasort($authors, strnatcasecmp);
+					$authors = array_slice($authors, -$pagesMax);
+				}
 				uksort($authors, strnatcasecmp);
 				$output = "<div class=\"".htmlspecialchars($name)."\">\n";
 				$output .= "<ul>\n";
@@ -79,13 +86,14 @@ class YellowBlog
 		{
 			list($location, $pagesMax) = $this->yellow->toolbox->getTextArgs($text);
 			if(empty($location)) $location = $this->yellow->config->get("blogLocation");
-			if(empty($pagesMax)) $pagesMax = $this->yellow->config->get("blogPagesMax");
+			if(strempty($pagesMax)) $pagesMax = $this->yellow->config->get("blogPagesMax");
 			$blog = $this->yellow->pages->find($location);
-			$pages = $blog ? $blog->getChildren(!$blog->isVisible()) : $this->yellow->pages->clean();
-			$pages->filter("template", "blog")->sort("published", false)->limit($pagesMax);
+			$pages = $this->getBlogPages($location);
+			$pages->sort("published", false);
 			$page->setLastModified($pages->getModified());
 			if(count($pages))
 			{
+				if($pagesMax!=0) $pages->limit($pagesMax);
 				$output = "<div class=\"".htmlspecialchars($name)."\">\n";
 				$output .= "<ul>\n";
 				foreach($pages as $page)
@@ -102,13 +110,14 @@ class YellowBlog
 		{
 			list($location, $pagesMax) = $this->yellow->toolbox->getTextArgs($text);
 			if(empty($location)) $location = $this->yellow->config->get("blogLocation");
-			if(empty($pagesMax)) $pagesMax = $this->yellow->config->get("blogPagesMax");
+			if(strempty($pagesMax)) $pagesMax = $this->yellow->config->get("blogPagesMax");
 			$blog = $this->yellow->pages->find($location);
-			$pages = $blog ? $blog->getChildren(!$blog->isVisible()) : $this->yellow->pages->clean();
-			$pages->filter("template", "blog")->similar($page->getPage("main"))->limit($pagesMax);
+			$pages = $this->getBlogPages($location);
+			$pages->similar($page->getPage("main"));
 			$page->setLastModified($pages->getModified());
 			if(count($pages))
 			{
+				if($pagesMax!=0) $pages->limit($pagesMax);
 				$output = "<div class=\"".htmlspecialchars($name)."\">\n";
 				$output .= "<ul>\n";
 				foreach($pages as $page)
@@ -125,10 +134,9 @@ class YellowBlog
 		{
 			list($location, $pagesMax) = $this->yellow->toolbox->getTextArgs($text);
 			if(empty($location)) $location = $this->yellow->config->get("blogLocation");
-			if(empty($pagesMax)) $pagesMax = 0;
+			if(strempty($pagesMax)) $pagesMax = $this->yellow->config->get("blogPagesMax");
 			$blog = $this->yellow->pages->find($location);
-			$pages = $blog ? $blog->getChildren(!$blog->isVisible()) : $this->yellow->pages->clean();
-			$pages->filter("template", "blog");
+			$pages = $this->getBlogPages($location);
 			$page->setLastModified($pages->getModified());
 			$tags = array();
 			foreach($pages as $page) if($page->isExisting("tag")) foreach(preg_split("/\s*,\s*/", $page->get("tag")) as $tag) ++$tags[$tag];
@@ -162,7 +170,7 @@ class YellowBlog
 	{
 		if($this->yellow->page->get("template")=="blogpages")
 		{
-			$pages = $this->yellow->page->getChildren(!$this->yellow->page->isVisible());
+			$pages = $this->getBlogPages($this->yellow->page->location);
 			$pagesFilter = array();
 			if($_REQUEST["tag"])
 			{
@@ -179,7 +187,7 @@ class YellowBlog
 				$pages->filter("published", $_REQUEST["published"], false);
 				array_push($pagesFilter, $this->yellow->text->normaliseDate($pages->getFilter()));
 			}
-			$pages->sort("published")->filter("template", "blog");
+			$pages->sort("published");
 			$pages->pagination($this->yellow->config->get("blogPaginationLimit"));
 			if(!$pages->getPaginationNumber()) $this->yellow->page->error(404);
 			if(!empty($pagesFilter))
@@ -195,15 +203,34 @@ class YellowBlog
 		if($this->yellow->page->get("template")=="blog")
 		{
 			$location = $this->yellow->config->get("blogLocation");
-			if(!empty($location))
-			{
-				$page = $this->yellow->pages->find($location);
-			} else {
-				$page = $this->yellow->page;
-				if($this->yellow->lookup->isFileLocation($page->location)) $page = $page->getParent();
-			}
-			$this->yellow->page->setPage("blog", $page);
+			if(empty($location)) $location = $this->yellow->lookup->getDirectoryLocation($this->yellow->page->location);
+			$blog = $this->yellow->pages->find($location);
+			$this->yellow->page->setPage("blog", $blog);
 		}
+	}
+	
+	// Handle content file editing
+	function onEditContentFile($page, $action)
+	{
+		if($page->get("template")=="blog") $page->set("pageNewLocation", $this->yellow->config->get("blogNewLocation"));
+	}
+
+	// Return blog pages
+	function getBlogPages($location)
+	{
+		$pages = $this->yellow->pages->clean();
+		$blog = $this->yellow->pages->find($location);
+		if($blog)
+		{
+			if($location==$this->yellow->config->get("blogLocation"))
+			{
+				$pages = $this->yellow->pages->index(!$blog->isVisible());
+			} else {
+				$pages = $blog->getChildren(!$blog->isVisible());
+			}
+			$pages->filter("template", "blog");
+		}
+		return $pages;
 	}
 }
 

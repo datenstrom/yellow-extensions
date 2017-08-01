@@ -1,12 +1,12 @@
 Slider plugin 0.6.7
 ===================
-Image gallery with slider. [See demo](https://developers.datenstrom.se/plugins/slider-plugin).
+Image gallery with slider. [See demo](https://developers.datenstrom.se/plugins/slider).
 
 <p align="center"><img src="slider-screenshot.png?raw=true" alt="Screenshot"></p>
 
 ## How do I install this?
 
-1. [Download and install Yellow](https://github.com/datenstrom/yellow/).
+1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/slider.zip). If you are using Safari, right click and select 'Download file as'.
 3. Copy `slider.zip` into your `system/plugins` folder.
 
@@ -18,7 +18,7 @@ Create a `[slider]` shortcut.
 
 The following arguments are available:
   
-`PATTERN` = file name as [regular expression](https://en.wikipedia.org/wiki/Regular_expression)  
+`PATTERN` = file name as regular expression  
 `STYLE` = gallery style, e.g. `flickity`  
 `SIZE` = image size, pixel or percent  
 `AUTOPLAY` = play images automatically, delay time in milliseconds

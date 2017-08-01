@@ -6,8 +6,9 @@ function GoogleCalender(element, options)
 {
 	this.element = element;
 	this.options = options ? options : this.parseOptions(element,
-		["mode", "timeZone", "dateMonths", "dateWeekdays", "dateFormatShort", "dateFormatMedium", "dateFormatLong",
-		 "dateFormatTime", "timeMin", "entriesMax", "calendar", "apiKey"]);
+		["mode", "timeZone", "timeZoneOffset", "dateMonths", "dateWeekdays", "dateFormatShort",
+		 "dateFormatMedium", "dateFormatLong", "timeFormatShort", "timeFormatMedium", "timeFormatLong",
+		 "timeMin", "entriesMax", "calendar", "apiKey"]);
 	return (this instanceof GoogleCalender ? this : new GoogleCalender());
 }
 
@@ -72,7 +73,7 @@ GoogleCalender.prototype =
 				}
 				var li = document.createElement("li");
 				li.innerHTML =
-				"<span class=\"time\">"+this.encodeHtml(time ? this.formatDate(this.options.dateFormatTime, new Date(time)) : "")+"</span>"+
+				"<span class=\"time\">"+this.encodeHtml(time ? this.formatDate(this.options.timeFormatShort, new Date(time)) : "")+"</span>"+
 				" <span class=\"summary\">"+this.encodeHtml(summary)+"</span>"+
 				(location ? ", <span class=\"location\">"+this.encodeHtml(location)+"</span>" : "");
 				ul.appendChild(li);
@@ -142,6 +143,10 @@ GoogleCalender.prototype =
 	// Format date
 	formatDate: function(format, date)
 	{
+		var timeZone = this.options.timeZone;
+		var timeZoneOffset = this.options.timeZoneOffset;
+		var timeZoneOffsetHours = Math.abs(parseInt(timeZoneOffset/3600))
+		var timeZoneOffsetMinutes = Math.abs(parseInt(timeZoneOffset/60))%60;
 		var dateMonths = this.options.dateMonths.split(/,\s*/);
 		var dateWeekdays = this.options.dateWeekdays.split(/,\s*/);
 		var dateReplace =
@@ -166,6 +171,11 @@ GoogleCalender.prototype =
 			H: function() { return (date.getHours()<10 ? "0" : "")+date.getHours(); },
 			i: function() { return (date.getMinutes()<10 ? "0" : "")+date.getMinutes(); },
 			s: function() { return (date.getSeconds()<10 ? "0" : "")+date.getSeconds(); },
+			e: function() { return timeZone; },
+			O: function() { return (timeZoneOffset<0 ? "-" : "+")+(timeZoneOffsetHours<10 ? "0" : "")+timeZoneOffsetHours+(timeZoneOffsetMinutes<10 ? "0" : "")+timeZoneOffsetMinutes; },
+			P: function() { return (timeZoneOffset<0 ? "-" : "+")+(timeZoneOffsetHours<10 ? "0" : "")+timeZoneOffsetHours+":"+(timeZoneOffsetMinutes<10 ? "0" : "")+timeZoneOffsetMinutes; },
+			T: function() { return "GMT"+(timeZoneOffset<0 ? "-" : "+")+timeZoneOffsetHours; },
+			Z: function() { return timeZoneOffset; },
 		};
 		return format.replace(/(.)/g, function(match) { return dateReplace[match] ? dateReplace[match].call() : match; });
 	},

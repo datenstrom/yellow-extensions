@@ -1,9 +1,9 @@
-# Yellow language file
+# Datenstrom Yellow language
 
 Language: cs
 LanguageDescription: Čeština
 LanguageTranslator: Ufo Vyhuleny
-LanguageVersion: 0.6.14
+LanguageVersion: 0.7.2
 
 BlogBy: Vytvořil
 BlogFilter: Blog:
@@ -13,9 +13,9 @@ ContactName: Jméno:
 ContactEmail: Email:
 ContactMessage: Zpráva:
 ContactButton: Odeslat zprávu
-ContactStatusNone: Napiš vzkaz. Tvůj příspěvek je vítán.
-ContactStatusIncomplete: Vyplňte prosím všechna pole.
-ContactStatusInvalid: Zadejte prosím platný email.
+ContactStatusNone: Zde můžete napsat svoje postřehy.
+ContactStatusIncomplete: Prosím, vyplňte všechna pole.
+ContactStatusInvalid: Zadejte platný email.
 ContactStatusDone: Email úspěšně odeslán. Děkuji!
 ContactStatusError: Email nemůže být odeslán, zkuste to prosím později!
 DateMonths: leden, únor, březen, duben, květen, červen, červenec, srpen, září, říjen, listopad, prosinec
@@ -24,7 +24,88 @@ DateWeekstart: pondělí
 DateFormatShort: F Y
 DateFormatMedium: Y-m-d
 DateFormatLong: Y-m-d H:i
-DateFormatTime: H:i
+EditInstallationTitle: Ahoj
+EditInstallationFeature: Co chcete udělat?
+EditInstallationHomePage: Stránka funguje!\n\n Nyní můžete [edit - upravit tuto stránku] nebo použít textový editor.
+EditInstallationAboutPage: Webová prezentace vytvořena v [yellow]. [Více informací](https://developers.datenstrom.se/help/).
+EditLoginTitle: Vítejte
+EditLoginEmail: Email:
+EditLoginPassword: Heslo:
+EditLoginRecover: Zapomenuté heslo?
+EditLoginSignup: Chcete vytvořit účet?
+EditLoginButton: Přihlásit se
+EditSignupTitle: Vytvořit účet
+EditSignupName: Jméno:
+EditSignupEmail: Email:
+EditSignupPassword: Heslo:
+EditSignupButton: Vytvořit
+EditSignupStatusNone: Zde můžete založit nový uživatelský účet.
+EditSignupStatusIncomplete: Prosím, vyplňte všechny položky.
+EditSignupStatusInvalid: Vložte email ve správném formátu.
+EditSignupStatusWeak: Vložte jiné heslo.
+EditSignupStatusNext: Účet byl vytvořen, podívejte se do emailové schránky.
+EditRecoverTitle: Zapomenuté heslo
+EditRecoverEmail: Email:
+EditRecoverPassword: Heslo:
+EditRecoverStatusNone: Vytvořit nové heslo.
+EditRecoverStatusInvalid: Vložte email ve správném formátu.
+EditRecoverStatusPassword: Vložte nové heslo.
+EditRecoverStatusWeak: Vložte jiné heslo.
+EditRecoverStatusNext: Uživatelský účet byl obnoven, podívejte se do emailové schránky.
+EditSettingsTitle: Nastavení
+EditSettingsStatusInvalid: Vložte email ve správném formátu.
+EditSettingsStatusTaken: Vložte jiný email.
+EditSettingsStatusWeak: Vložte jiné heslo.
+EditSettingsStatusNext: Nastavení uživatelského účtu změněno, podívejte se do emailové schránky.
+EditConfirmSubject: Potvrzení uživatelského účtu
+EditConfirmMessage: Ahoj @usershort, nyní nastal čas potvrdit nový účet. Klikněte na následující odkaz.
+EditConfirmStatusDone: Účet potvrzen a čeká na schválení. Díky!
+EditConfirmStatusExpired: Změna uživatelského účtu nemůže být schválena. Platnost odkazu vypršela!
+EditApproveSubject: Potvrzení nového uživatelského účtu
+EditApproveMessage: Ahoj @usershort, je potřeba schválit nový účet pro @useraccount. Klikněte na následující odkaz.
+EditApproveStatusDone: Uživatelský účet schválen. Díky!
+EditApproveStatusExpired: Změna uživatelského účtu nemůže být schválena. Platnost odkazu vypršela!
+EditReactivateSubject: Reactivate user account
+EditReactivateMessage: Hi @usershort, please reactivate your user account. There were too many failed login attempts. Click the following link.
+EditReactivateStatusDone: User account reactivated. Thank you!
+EditReactivateStatusExpired: User account can not be reactivated. Link has expired!
+EditRecoverSubject: Obnovení uživatelského hesla
+EditRecoverMessage: Ahoj @usershort, je potřeba schválit obnovení hesla. Klikněte na následující odkaz.
+EditRecoverStatusDone: Heslo obnoveno. Díky!
+EditRecoverStatusExpired: Heslo nemůže být obnoveno. Platnost odkazu vypršela!
+EditReconfirmSubject: Změna uživatelského e-mailu
+EditReconfirmMessage: Ahoj @usershort, je potřeba potvrdit změnu e-mailové adresy. Klikněte na následující odkaz.
+EditReconfirmStatusDone: Elektronická adresa změněna. Díky!
+EditReconfirmStatusExpired: Změna uživatelského účtu nemůže být schválena. Platnost odkazu vypršela!
+EditChangeSubject: Změna uživatelského účtu
+EditChangeMessage: Ahoj @usershort, je potřeba potvrdit změny uživatelského účtu. Klikněte na následující odkaz.
+EditChangeStatusDone: Uživatelský účet změněn. Díky!
+EditChangeStatusExpired: Uživatelský účet nemůže být změněn. Platnost odkazu vypršela!
+EditWelcomeSubject: Vítej uživateli
+EditWelcomeMessage: Ahoj @usershort, váš uživatelský účet byl vytvořen. Bavte se dobře.
+EditInformationSubject: Vítej zpět
+EditInformationMessage: Ahoj @usershort, váš uživatelský účet byl změněn. Nyní se můžete přihlásit.
+EditVersionTitle: O těchto stránkách
+EditVersionStatusNone: Yellow je pro lidi, kteří vytváří webové stránky.
+EditVersionStatusCheck: Zjišťuji nové aktualizace…
+EditVersionStatusDone: Tento web je aktuální.
+EditVersionStatusUpdates: Dostupné nové aktualizace, kontaktujte správce.
+EditVersionUpdateNormal: Dostupné nové aktualizace, aktualizovat nyní.
+EditVersionUpdateForce: 'Tvrdá' aktualizace
+EditVersionUpdateModified: @software byl aktualizován
+EditOkButton: Ok
+EditCancelButton: Zrušit
+EditCreateButton: Vytvořit
+EditEditButton: Uložit
+EditDeleteButton: Smazat
+EditEdit: Editovat stránku
+EditCreate: +
+EditDelete: -
+EditCreateTitle: Vytvořit stránku
+EditDeleteTitle: Smazat stránku
+EditMarkdownHelp: Markdown
+EditUserHelp: Nápověda
+EditUserLogout: Odhlásit
 PagePrevious: ← Předchozí: @title
 PageNext: Následující: @title →
 PaginationPrevious: ← Předchozí
@@ -32,88 +113,15 @@ PaginationNext: Následující →
 SearchQuery: Hledej:
 SearchResultsNone: Vlož hledaný text.
 SearchResultsEmpty: Požadovaný text nenalezen.
+SearchSpecialChanges: Poslední změny
 SearchButton: Hledej
-WebinterfaceInstallationTitle: Ahoj
-WebinterfaceInstallationFeature: Co chcete udělat?
-WebinterfaceInstallationHomePage: Stránka funguje!\n\nMůžete [edit - editovat tuto stránku] nebo použít textový editor.
-WebinterfaceLoginTitle: Yellow
-WebinterfaceLoginEmail: Email:
-WebinterfaceLoginPassword: Heslo:
-WebinterfaceLoginRecover: Zapomněli jste své heslo?
-WebinterfaceLoginSignup: Chcete vytvořit účet?
-WebinterfaceLoginButton: Přihlásit se
-WebinterfaceSignupTitle: Vytvořit účet
-WebinterfaceSignupName: Jméno:
-WebinterfaceSignupEmail: Email:
-WebinterfaceSignupPassword: Heslo:
-WebinterfaceSignupButton: Vytvořit
-WebinterfaceSignupStatusNone: Nyní můžete vytvořit nový účet.
-WebinterfaceSignupStatusIncomplete: Prosím vyplňte všechny položky.
-WebinterfaceSignupStatusInvalid: Vložte email ve správném formátu.
-WebinterfaceSignupStatusWeak: Vložte jiné heslo.
-WebinterfaceSignupStatusNext: Účet byl vytvořen, podívejte se do mailové schránky.
-WebinterfaceRecoverTitle: Zapomenuté heslo
-WebinterfaceRecoverEmail: Email:
-WebinterfaceRecoverPassword: Heslo:
-WebinterfaceRecoverStatusNone: Vytvořit nové heslo.
-WebinterfaceRecoverStatusInvalid: Vložte email ve správném formátu.
-WebinterfaceRecoverStatusPassword: Vložte nové heslo.
-WebinterfaceRecoverStatusWeak: Vložte jiné heslo.
-WebinterfaceRecoverStatusNext: Uživatelský účet byl obnoven, podívejte se do mailové schránky.
-WebinterfaceSettingsTitle: Nastavení
-WebinterfaceSettingsStatusInvalid: Please enter a valid email.
-WebinterfaceSettingsStatusTaken: Please enter a different email.
-WebinterfaceSettingsStatusWeak: Please enter a different password.
-WebinterfaceSettingsStatusNext: User account will be changed, please check your emails.
-WebinterfaceConfirmSubject: Potvrzení uživatelského účtu
-WebinterfaceConfirmMessage: Ahoj @usershort, nyní je čas potvrdit nový účet. Klikněte na následující odkaz.
-WebinterfaceConfirmStatusDone: Účet potvrzen a čeká na schválení. Díky!
-WebinterfaceConfirmStatusExpired: Účet nemůže být potvrzen. Platnost odkazu vypršela!
-WebinterfaceApproveSubject: Potvrzení nového uživatelského účtu
-WebinterfaceApproveMessage: Ahoj @usershort, potvrď nový účet pro @useraccount. Klikněte na následující odkaz.
-WebinterfaceApproveStatusDone: Uživatelský účet potvrzen. Díky!
-WebinterfaceApproveStatusExpired: Uživatelský účet nemůže být potvrzen. Platnost odkazu vypršela!
-WebinterfaceRecoverSubject: Obnovení uživatelského účtu
-WebinterfaceRecoverMessage: Ahoj @usershort, potvrď obnovení hesla. Klikni na následující odkaz.
-WebinterfaceRecoverStatusDone: Heslo obnoveno. Díky!
-WebinterfaceRecoverStatusExpired: Heslo nemůže být obnoveno. Platnost odkazu vypršela!
-WebinterfaceReconfirmSubject: Change user account
-WebinterfaceReconfirmMessage: Hi @usershort, please confirm a new email for your user account. Click the following link.
-WebinterfaceReconfirmStatusDone: User account confirmed. Thank you!
-WebinterfaceReconfirmStatusExpired: User account can not be confirmed. Link has expired!
-WebinterfaceChangeSubject: Change user account
-WebinterfaceChangeMessage: Hi @usershort, please confirm that you want to change your user account. Click the following link.
-WebinterfaceChangeStatusDone: User account changed. Thank you!
-WebinterfaceChangeStatusExpired: User account can not be changed. Link has expired!
-WebinterfaceWelcomeSubject: Vítej nový uživateli
-WebinterfaceWelcomeMessage: Ahoj @usershort, tvůj nový účet byl vytvořen. Hodně zábavy s webovem!
-WebinterfaceInformationSubject: Vítej zpět
-WebinterfaceInformationMessage: Ahoj @usershort, účet byl změněn. Nyní se můžete přihlásit.
-WebinterfaceVersionTitle: About this website
-WebinterfaceVersionStatusNone: Yellow is for people who make websites.
-WebinterfaceVersionStatusCheck: Checking for updates…
-WebinterfaceVersionStatusDone: Your website is up to date.
-WebinterfaceVersionStatusUpdates: Updates available, please contact the webmaster.
-WebinterfaceVersionUpdateNormal: Updates available, update now.
-WebinterfaceVersionUpdateForce: Force update
-WebinterfaceVersionUpdateModified: @software has been modified
-WebinterfaceOkButton: Ok
-WebinterfaceCancelButton: Zrušit
-WebinterfaceCreateButton: Vytvořit
-WebinterfaceEditButton: Uložit
-WebinterfaceDeleteButton: Smazat
-WebinterfaceEdit: Editovat stránku
-WebinterfaceCreate: +
-WebinterfaceDelete: -
-WebinterfaceCreateTitle: Vytvořit stránku
-WebinterfaceDeleteTitle: Smazat stránku
-WebinterfaceMarkdownHelp: Markdown
-WebinterfaceUserHelp: Nápověda
-WebinterfaceUserLogout: Odhlásit
+TimeFormatShort: H:i
+TimeFormatMedium: H:i:s
+TimeFormatLong: H:i:s T
 WikiFilter: Wiki:
 WikiTag: Tags:
 WikiSpecialPages: Všechny stránky
 WikiSpecialChanges: Poslední změny
-YellowUrl: https://datenstrom.se/yellow
+YellowUrl: https://datenstrom.se/yellow/
 YellowUserHelpUrl: https://developers.datenstrom.se/help/
 YellowMarkdownHelpUrl: https://developers.datenstrom.se/help/markdown-cheat-sheet

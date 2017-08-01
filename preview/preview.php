@@ -5,15 +5,15 @@
 
 class YellowPreview
 {
-	const VERSION = "0.6.9";
+	const VERSION = "0.7.2";
 	var $yellow;			//access to API
 
 	// Handle initialisation
 	function onLoad($yellow)
 	{
 		$this->yellow = $yellow;
-		$this->yellow->config->setDefault("previewImage", "preview-image.png");
 		$this->yellow->config->setDefault("previewStyle", "stretchable");
+		$this->yellow->config->setDefault("previewDefaultFile", "preview-image.png");
 	}
 	
 	// Handle page content parsing of custom block
@@ -28,7 +28,6 @@ class YellowPreview
 			if(empty($size)) $size = "100%";
 			$content = $this->yellow->pages->find($location);
 			$pages = $content ? $content->getChildren() : $this->yellow->pages->clean();
-			$pages->sort("title");
 			if($this->yellow->plugins->isExisting("image"))
 			{
 				if(count($pages))
@@ -38,15 +37,22 @@ class YellowPreview
 					$output .= "<ul>\n";
 					foreach($pages as $page)
 					{
-						foreach(array("jpg", "png", "svg") as $fileExtension)
+						$image = $page->get("imagePreview"); if(empty($image)) $image = $page->get("image");
+						if(!empty($image))
 						{
-							$fileName = $this->yellow->config->get("imageDir").basename($page->location).".".$fileExtension;
+							$fileName = $this->yellow->config->get("imageDir").$image;
 							list($src, $width, $height) = $this->yellow->plugins->get("image")->getImageInfo($fileName, $size, $size);
-							if($width && $height) break;
+						} else {
+							foreach(array("gif", "jpg", "png", "svg") as $fileExtension)
+							{
+								$fileName = $this->yellow->config->get("imageDir").basename($page->location).".".$fileExtension;
+								list($src, $width, $height) = $this->yellow->plugins->get("image")->getImageInfo($fileName, $size, $size);
+								if($width && $height) break;
+							}
 						}
 						if(!is_readable($fileName))
 						{
-							$fileName = $this->yellow->config->get("imageDir").$this->yellow->config->get("previewImage");
+							$fileName = $this->yellow->config->get("imageDir").$this->yellow->config->get("previewDefaultFile");
 							list($src, $width, $height) = $this->yellow->plugins->get("image")->getImageInfo($fileName, $size, $size);
 						}
 						$title = $page->get("titlePreview"); if(empty($title)) $title = $page->get("title");

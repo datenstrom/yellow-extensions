@@ -5,7 +5,7 @@
 
 class YellowFontawesome
 {
-	const VERSION = "0.6.3";
+	const VERSION = "0.6.4";
 	var $yellow;			//access to API
 	
 	// Handle initialisation

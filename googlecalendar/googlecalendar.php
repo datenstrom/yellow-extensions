@@ -5,7 +5,7 @@
 
 class YellowGooglecalendar
 {
-	const VERSION = "0.6.3";
+	const VERSION = "0.6.4";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -31,13 +31,17 @@ class YellowGooglecalendar
 			if(empty($style)) $style = $this->yellow->config->get("googlecalendarStyle");
 			$language = $page->get("language");
 			$timeZone = $this->yellow->config->get("timezone");
+			$timeZoneHelper = new DateTime(null, new DateTimeZone($timeZone));
+			$timeZoneOffset = $timeZoneHelper->getOffset();
 			$dateMonths = $this->yellow->text->getText("dateMonths", $language);
 			$dateWeekdays = $this->yellow->text->getText("dateWeekdays", $language);
 			$dateWeekstart = $this->yellow->text->getText("dateWeekstart", $language);
 			$dateFormatShort = $this->yellow->text->getText("dateFormatShort", $language);
 			$dateFormatMedium = $this->yellow->text->getText("dateFormatMedium", $language);
 			$dateFormatLong = $this->yellow->text->getText("dateFormatLong", $language);
-			$dateFormatTime = $this->yellow->text->getText("dateFormatTime", $language);
+			$timeFormatShort = $this->yellow->text->getText("timeFormatShort", $language);
+			$timeFormatMedium = $this->yellow->text->getText("timeFormatMedium", $language);
+			$timeFormatLong = $this->yellow->text->getText("timeFormatLong", $language);
 			$apiKey = $this->yellow->config->get("googlecalendarApiKey");
 			if($mode=="week" || $mode=="month")
 			{
@@ -57,7 +61,7 @@ class YellowGooglecalendar
 			{
 				if($style=="flexible") $style = "googlecalendar";
 				list($src) = $this->getCalendarInformation($id);
-				$output = "<div class=\"".htmlspecialchars($style)."\" data-mode=\"".htmlspecialchars($mode)."\" data-timemin=\"".htmlspecialchars($this->getCalendarDate($timestamp))."\" data-timezone=\"".htmlspecialchars($timeZone)."\" data-datemonths=\"".htmlspecialchars($dateMonths)."\" data-dateweekdays=\"".htmlspecialchars($dateWeekdays)."\" data-dateformatshort=\"".htmlspecialchars($dateFormatShort)."\" data-dateformatmedium=\"".htmlspecialchars($dateFormatMedium)."\" data-dateformatlong=\"".htmlspecialchars($dateFormatLong)."\" data-dateformattime=\"".htmlspecialchars($dateFormatTime)."\" data-entriesmax=\"".htmlspecialchars($entriesMax)."\" data-calendar=\"".htmlspecialchars($src)."\" data-apikey=\"".htmlspecialchars($apiKey)."\">";
+				$output = "<div class=\"".htmlspecialchars($style)."\" data-mode=\"".htmlspecialchars($mode)."\" data-timemin=\"".htmlspecialchars($this->getCalendarDate($timestamp))."\" data-timezone=\"".htmlspecialchars($timeZone)."\" data-timezoneOffset=\"".htmlspecialchars($timeZoneOffset)."\" data-datemonths=\"".htmlspecialchars($dateMonths)."\" data-dateweekdays=\"".htmlspecialchars($dateWeekdays)."\" data-dateformatshort=\"".htmlspecialchars($dateFormatShort)."\" data-dateformatmedium=\"".htmlspecialchars($dateFormatMedium)."\" data-dateformatlong=\"".htmlspecialchars($dateFormatLong)."\" data-timeformatshort=\"".htmlspecialchars($timeFormatShort)."\" data-timeformatmedium=\"".htmlspecialchars($timeFormatMedium)."\" data-timeformatLong=\"".htmlspecialchars($timeFormatLong)."\" data-entriesmax=\"".htmlspecialchars($entriesMax)."\" data-calendar=\"".htmlspecialchars($src)."\" data-apikey=\"".htmlspecialchars($apiKey)."\">";
 				$output .= "</div>";
 			}
 		}

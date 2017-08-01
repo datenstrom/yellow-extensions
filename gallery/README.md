@@ -1,12 +1,12 @@
 Gallery plugin 0.6.7
 ====================
-Image gallery with popup. [See demo](https://developers.datenstrom.se/plugins/gallery-plugin).
+Image gallery with popup. [See demo](https://developers.datenstrom.se/plugins/gallery).
 
 <p align="center"><img src="gallery-screenshot.png?raw=true" alt="Screenshot"></p>
 
 ## How do I install this?
 
-1. [Download and install Yellow](https://github.com/datenstrom/yellow/).
+1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/gallery.zip). If you are using Safari, right click and select 'Download file as'.
 3. Copy `gallery.zip` into your `system/plugins` folder.
 
@@ -18,7 +18,7 @@ Create a `[gallery]` shortcut.
 
 The following arguments are available:
   
-`PATTERN` = file name as [regular expression](https://en.wikipedia.org/wiki/Regular_expression)  
+`PATTERN` = file name as regular expression  
 `STYLE` = gallery style, e.g. `photoswipe`, `simple`  
 `SIZE` = image size, pixel or percent
 

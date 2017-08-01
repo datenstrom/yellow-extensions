@@ -1,12 +1,12 @@
-Language plugin 0.6.14
+Language plugin 0.7.2
 =====================
-Internationalisation for your website.
+Languages and regions.
 
 ![Screenshot](language-screenshot.png?raw=true)
 
 ## How do I install this?
 
-1. [Download and install Yellow](https://github.com/datenstrom/yellow/).
+1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/language.zip). If you are using Safari, right click and select 'Download file as'.
 3. Copy `language.zip` into your `system/plugins` folder.
 
@@ -29,10 +29,12 @@ Available language files:
 * [Italiano](language-it.txt?raw=true), `Language: it`
 * [Magyar](language-hu.txt?raw=true), `Language: hu`
 * [Nederlands](language-nl.txt?raw=true), `Language: nl`
+* [Polski](language-pl.txt?raw=true), `Language: pl`
 * [Português](language-pt.txt?raw=true), `Language: pt`
 * [Русский](language-ru.txt?raw=true), `Language: ru`
 * [Slovenčina](language-sk.txt?raw=true), `Language: sk`
 * [Svenska](language-sv.txt?raw=true), `Language: sv`
+* [日本語](language-ja.txt?raw=true), `Language: ja`
 * [한국어](language-ko.txt?raw=true), `Language: ko`
 * [简体中文](language-zh-CN.txt?raw=true), `Language: zh-CN`
 

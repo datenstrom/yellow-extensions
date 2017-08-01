@@ -1,9 +1,9 @@
-# Yellow language file
+# Datenstrom Yellow language
 
 Language: pt
 LanguageDescription: Português
 LanguageTranslator: Al Garcia
-LanguageVersion: 0.6.14
+LanguageVersion: 0.7.2
 
 BlogBy: por
 BlogFilter: Blog:
@@ -24,7 +24,88 @@ DateWeekstart: segunda-feira
 DateFormatShort: F Y
 DateFormatMedium: d-m-Y
 DateFormatLong: d-m-Y H:i
-DateFormatTime: H:i
+EditInstallationTitle: Olá
+EditInstallationFeature: O que você quer fazer?
+EditInstallationHomePage: Seu site funciona!\n\nVocê pode [edit - editar esta página] ou usar o seu editor de texto.
+EditInstallationAboutPage: This website is made with [yellow]. [Learn more](https://developers.datenstrom.se/help/).
+EditLoginTitle: Bem vinda
+EditLoginEmail: Email:
+EditLoginPassword: Senha:
+EditLoginRecover: Esqueceu sua senha?
+EditLoginSignup: Criar conta de usuário?
+EditLoginButton: Entrar
+EditSignupTitle: Criar conta de usuário
+EditSignupName: Nome:
+EditSignupEmail: Email:
+EditSignupPassword: Senha:
+EditSignupButton: Criar
+EditSignupStatusNone: Aqui você pode criar uma nova conta de usuário.
+EditSignupStatusIncomplete: Por favor, preencha todos os campos.
+EditSignupStatusInvalid: Por favor digite um email válido.
+EditSignupStatusWeak: Por favor insira uma senha diferente.
+EditSignupStatusNext: A conta de usuário será criada, por favor, verifique seus e-mails.
+EditRecoverTitle: Esqueceu sua senha
+EditRecoverEmail: Email:
+EditRecoverPassword: Senha:
+EditRecoverStatusNone: Nenhum problema, você pode criar uma nova senha.
+EditRecoverStatusInvalid: Por favor digite um email válido.
+EditRecoverStatusPassword: Por favor digite uma senha válida.
+EditRecoverStatusWeak: Por favor insira uma senha diferente.
+EditRecoverStatusNext: A conta de usuário será recuperada, por favor, verifique seus e-mails.
+EditSettingsTitle: Configurações
+EditSettingsStatusInvalid: Please enter a valid email.
+EditSettingsStatusTaken: Please enter a different email.
+EditSettingsStatusWeak: Please enter a different password.
+EditSettingsStatusNext: User account will be changed, please check your emails.
+EditConfirmSubject: Confirmar conta de usuário
+EditConfirmMessage: Olá @usershort, por favor confirmar a sua conta de usuário. Clique no link abaixo.
+EditConfirmStatusDone: Conta de usuário confirmada e à espera de aprovação. Obrigado!
+EditConfirmStatusExpired: A conta de usuário não pode ser confirmada. O link expirou!
+EditApproveSubject: Aprovar conta de usuário
+EditApproveMessage: Olá @usershort, por favor, aprovar uma nova conta de usuário para @useraccount. Faça click no link abaixo.
+EditApproveStatusDone: Conta de usuário aprovado. Obrigado!
+EditApproveStatusExpired: A conta de usuário não pode ser aprovada. O link expirou!
+EditReactivateSubject: Reactivate user account
+EditReactivateMessage: Hi @usershort, please reactivate your user account. There were too many failed login attempts. Click the following link.
+EditReactivateStatusDone: User account reactivated. Thank you!
+EditReactivateStatusExpired: User account can not be reactivated. Link has expired!
+EditRecoverSubject: Recuperar conta de usuário
+EditRecoverMessage: Oi @usershort, por favor confirme que você esqueceu a sua senha. Clique no seguinte link.
+EditRecoverStatusDone: Conta de usuário recuperada. Obrigado!
+EditRecoverStatusExpired: A conta de usuário não pode ser recuperada. O link expirou!
+EditReconfirmSubject: Change user account
+EditReconfirmMessage: Hi @usershort, please confirm a new email for your user account. Click the following link.
+EditReconfirmStatusDone: User account confirmed. Thank you!
+EditReconfirmStatusExpired: User account can not be confirmed. Link has expired!
+EditChangeSubject: Change user account
+EditChangeMessage: Hi @usershort, please confirm that you want to change your user account. Click the following link.
+EditChangeStatusDone: User account changed. Thank you!
+EditChangeStatusExpired: User account can not be changed. Link has expired!
+EditWelcomeSubject: Bem vindo
+EditWelcomeMessage: Oi @usershort, sua conta de usuário foi criada. Divirta-se na edição do site.
+EditInformationSubject: Bem vindo de volta
+EditInformationMessage: Oi @usershort, sua conta de usuário foi alterada. Agora você pode logar.
+EditVersionTitle: About this website
+EditVersionStatusNone: Yellow is for people who make websites.
+EditVersionStatusCheck: Checking for updates…
+EditVersionStatusDone: Your website is up to date.
+EditVersionStatusUpdates: Updates available, please contact the webmaster.
+EditVersionUpdateNormal: Updates available, update now.
+EditVersionUpdateForce: Force update
+EditVersionUpdateModified: @software has been modified
+EditOkButton: Ok
+EditCancelButton: Cancelar
+EditCreateButton: Criar
+EditEditButton: Gravar
+EditDeleteButton: Apagar
+EditEdit: Editar página
+EditCreate: +
+EditDelete: -
+EditCreateTitle: Criar página
+EditDeleteTitle: Excluir página
+EditMarkdownHelp: Markdown
+EditUserHelp: Ajuda
+EditUserLogout: Sair
 PagePrevious: ← Anterior: @title
 PageNext: Seguinte: @title →
 PaginationPrevious: ← Anterior
@@ -32,88 +113,15 @@ PaginationNext: Seguinte →
 SearchQuery: Pesquisar:
 SearchResultsNone: Introduza um termo de pesquisa.
 SearchResultsEmpty: Não foram encontrados resultados.
+SearchSpecialChanges: Alterações recentes
 SearchButton: Pesquisa
-WebinterfaceInstallationTitle: Olá
-WebinterfaceInstallationFeature: O que você quer fazer?
-WebinterfaceInstallationHomePage: Seu site funciona!\n\nVocê pode [edit - editar esta página] ou usar o seu editor de texto.
-WebinterfaceLoginTitle: Yellow
-WebinterfaceLoginEmail: Email:
-WebinterfaceLoginPassword: Senha:
-WebinterfaceLoginRecover: Esqueceu sua senha?
-WebinterfaceLoginSignup: Criar conta de usuário?
-WebinterfaceLoginButton: Entrar
-WebinterfaceSignupTitle: Criar conta de usuário
-WebinterfaceSignupName: Nome:
-WebinterfaceSignupEmail: Email:
-WebinterfaceSignupPassword: Senha:
-WebinterfaceSignupButton: Criar
-WebinterfaceSignupStatusNone: Aqui você pode criar uma nova conta de usuário.
-WebinterfaceSignupStatusIncomplete: Por favor, preencha todos os campos.
-WebinterfaceSignupStatusInvalid: Por favor digite um email válido.
-WebinterfaceSignupStatusWeak: Por favor insira uma senha diferente.
-WebinterfaceSignupStatusNext: A conta de usuário será criada, por favor, verifique seus e-mails.
-WebinterfaceRecoverTitle: Esqueceu sua senha
-WebinterfaceRecoverEmail: Email:
-WebinterfaceRecoverPassword: Senha:
-WebinterfaceRecoverStatusNone: Nenhum problema, você pode criar uma nova senha.
-WebinterfaceRecoverStatusInvalid: Por favor digite um email válido.
-WebinterfaceRecoverStatusPassword: Por favor digite uma senha válida.
-WebinterfaceRecoverStatusWeak: Por favor insira uma senha diferente.
-WebinterfaceRecoverStatusNext: A conta de usuário será recuperada, por favor, verifique seus e-mails.
-WebinterfaceSettingsTitle: Configurações
-WebinterfaceSettingsStatusInvalid: Please enter a valid email.
-WebinterfaceSettingsStatusTaken: Please enter a different email.
-WebinterfaceSettingsStatusWeak: Please enter a different password.
-WebinterfaceSettingsStatusNext: User account will be changed, please check your emails.
-WebinterfaceConfirmSubject: Confirmar conta de usuário
-WebinterfaceConfirmMessage: Olá @usershort, por favor confirmar a sua conta de usuário. Clique no link abaixo.
-WebinterfaceConfirmStatusDone: Conta de usuário confirmada e à espera de aprovação. Obrigado!
-WebinterfaceConfirmStatusExpired: A conta de usuário não pode ser confirmada. O link expirou!
-WebinterfaceApproveSubject: Aprovar conta de usuário
-WebinterfaceApproveMessage: Olá @usershort, por favor, aprovar uma nova conta de usuário para @useraccount. Faça click no link abaixo.
-WebinterfaceApproveStatusDone: Conta de usuário aprovado. Obrigado!
-WebinterfaceApproveStatusExpired: A conta de usuário não pode ser aprovada. O link expirou!
-WebinterfaceRecoverSubject: Recuperar conta de usuário
-WebinterfaceRecoverMessage: Oi @usershort, por favor confirme que você esqueceu a sua senha. Clique no seguinte link.
-WebinterfaceRecoverStatusDone: Conta de usuário recuperada. Obrigado!
-WebinterfaceRecoverStatusExpired: A conta de usuário não pode ser recuperada. O link expirou!
-WebinterfaceReconfirmSubject: Change user account
-WebinterfaceReconfirmMessage: Hi @usershort, please confirm a new email for your user account. Click the following link.
-WebinterfaceReconfirmStatusDone: User account confirmed. Thank you!
-WebinterfaceReconfirmStatusExpired: User account can not be confirmed. Link has expired!
-WebinterfaceChangeSubject: Change user account
-WebinterfaceChangeMessage: Hi @usershort, please confirm that you want to change your user account. Click the following link.
-WebinterfaceChangeStatusDone: User account changed. Thank you!
-WebinterfaceChangeStatusExpired: User account can not be changed. Link has expired!
-WebinterfaceWelcomeSubject: Bem vindo
-WebinterfaceWelcomeMessage: Oi @usershort, sua conta de usuário foi criada. Divirta-se na edição do site.
-WebinterfaceInformationSubject: Bem vindo de volta
-WebinterfaceInformationMessage: Oi @usershort, sua conta de usuário foi alterada. Agora você pode logar.
-WebinterfaceVersionTitle: About this website
-WebinterfaceVersionStatusNone: Yellow is for people who make websites.
-WebinterfaceVersionStatusCheck: Checking for updates…
-WebinterfaceVersionStatusDone: Your website is up to date.
-WebinterfaceVersionStatusUpdates: Updates available, please contact the webmaster.
-WebinterfaceVersionUpdateNormal: Updates available, update now.
-WebinterfaceVersionUpdateForce: Force update
-WebinterfaceVersionUpdateModified: @software has been modified
-WebinterfaceOkButton: Ok
-WebinterfaceCancelButton: Cancelar
-WebinterfaceCreateButton: Criar
-WebinterfaceEditButton: Gravar
-WebinterfaceDeleteButton: Apagar
-WebinterfaceEdit: Editar página
-WebinterfaceCreate: +
-WebinterfaceDelete: -
-WebinterfaceCreateTitle: Criar página
-WebinterfaceDeleteTitle: Excluir página
-WebinterfaceMarkdownHelp: Markdown
-WebinterfaceUserHelp: Ajuda
-WebinterfaceUserLogout: Sair
+TimeFormatShort: H:i
+TimeFormatMedium: H:i:s
+TimeFormatLong: H:i:s T
 WikiFilter: Wiki:
 WikiTag: Tags:
 WikiSpecialPages: Todas as páginas
 WikiSpecialChanges: Alterações recentes
-YellowUrl: https://datenstrom.se/yellow
+YellowUrl: https://datenstrom.se/yellow/
 YellowUserHelpUrl: https://developers.datenstrom.se/help/
 YellowMarkdownHelpUrl: https://developers.datenstrom.se/help/markdown-cheat-sheet

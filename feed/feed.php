@@ -5,17 +5,17 @@
 
 class YellowFeed
 {
-	const VERSION = "0.6.6";
+	const VERSION = "0.7.1";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
 	function onLoad($yellow)
 	{
 		$this->yellow = $yellow;
-		$this->yellow->config->setDefault("feedPaginationLimit", "30");
 		$this->yellow->config->setDefault("feedLocation", "/feed/");
 		$this->yellow->config->setDefault("feedFileXml", "feed.xml");
 		$this->yellow->config->setDefault("feedFilter", "");
+		$this->yellow->config->setDefault("feedPaginationLimit", "30");
 	}
 
 	// Handle page parsing

@@ -5,7 +5,7 @@
 
 class YellowUpdate
 {
-	const VERSION = "0.6.14";
+	const VERSION = "0.7.4";
 	var $yellow;					//access to API
 	var $updates;					//number of updates
 	
@@ -23,35 +23,44 @@ class YellowUpdate
 	// Handle startup
 	function onStartup($update)
 	{
-		if($this->yellow->config->isExisting("updateNotification")) //TODO: remove later, cleans old config
+		if(!$this->yellow->config->isExisting("startupUpdate")) //TODO: remove later, detects old version
 		{
 			$update = true;
 			$fileNameConfig = $this->yellow->config->get("configDir").$this->yellow->config->get("configFile");
+			$this->yellow->config->update($fileNameConfig, array("startupUpdate" => "none"));
+			$this->yellow->config->setDefault("startupUpdate", "none");
+		}
+		if($update)
+		{
+			$fileNameConfig = $this->yellow->config->get("configDir").$this->yellow->config->get("configFile");
 			$fileData = $this->yellow->toolbox->readFile($fileNameConfig);
+			$configDefaults = new YellowDataCollection();
+			$configDefaults->exchangeArray($this->yellow->config->configDefaults->getArrayCopy());
 			foreach($this->yellow->toolbox->getTextLines($fileData) as $line)
 			{
 				preg_match("/^\s*(.*?)\s*:\s*(.*?)\s*$/", $line, $matches);
-				if(!empty($matches[1]) && is_null($this->yellow->config->configDefaults[$matches[1]]) &&
-				   $line[0]!='#' && substru($line, 0, 5)!="Login")
+				if(substru($line, 0, 12)=="Webinterface")	//TODO: remove later, converts old config
+				{
+					$line = preg_replace("/^Webinterface/i", "Edit", $line);
+					preg_match("/^\s*(.*?)\s*:\s*(.*?)\s*$/", $line, $matches);
+					if(!empty($matches[1]) && !strempty($matches[2])) $this->yellow->config->set($matches[1], $matches[2]);
+				}
+				if(!empty($matches[1]) && !is_null($configDefaults[$matches[1]])) unset($configDefaults[$matches[1]]);
+				if(!empty($matches[1]) && $matches[1][0]!='#' && is_null($this->yellow->config->configDefaults[$matches[1]]))
 				{
 					$fileDataNew .= "# $line";
 				} else {
 					$fileDataNew .= $line;
 				}
 			}
-			$this->yellow->toolbox->createFile($fileNameConfig, $fileDataNew);
-		}
-		if($update)	//TODO: remove later, converts old Yellow version
-		{
-			$fileNameScript = "yellow.php";
-			if(filesize($fileNameScript)==591)
+			unset($configDefaults["configFile"]);
+			foreach($configDefaults as $key=>$value)
 			{
-				$fileData = $this->yellow->toolbox->readFile($fileNameScript);
-				$fileData = preg_replace("#yellow->plugins->load\(\)#", "yellow->load()", $fileData);
-				$this->yellow->toolbox->createFile($fileNameScript, $fileData);
+				$fileDataNew .= ucfirst($key).": $value\n";
 			}
+			if($fileData!=$fileDataNew) $this->yellow->toolbox->createFile($fileNameConfig, $fileDataNew);
 		}
-		if($update)	//TODO: remove later, imports old file format
+		if($update)	//TODO: remove later, converts old theme
 		{
 			$path = $this->yellow->config->get("themeDir");
 			foreach($this->yellow->toolbox->getDirectoryEntries($path, "/^.*\.css$/", true, false) as $entry)
@@ -64,8 +73,75 @@ class YellowUpdate
 					$this->yellow->toolbox->createFile($fileNameAsset, $fileData);
 				}
 				$this->yellow->toolbox->deleteFile($entry, $this->yellow->config->get("trashDir"));
-				$_GET["clean-url"] = "software-has-been-updated";
+				$_GET["clean-url"] = "theme-has-been-updated";
 			}
+		}
+		if($update) //TODO: remove later, converts old script
+		{
+			$fileName = "yellow.php";
+			if(is_file($fileName))
+			{
+				$fileData = $this->yellow->toolbox->readFile($fileName);
+				$fileDataNew = preg_replace("#yellow->plugins->load\(\)#", "yellow->load()", $fileData);
+				if($fileData!=$fileDataNew) $this->yellow->toolbox->createFile($fileName, $fileDataNew);
+			}
+		}
+		if($update)	//TODO: remove later, converts old error page
+		{
+			$fileName = $this->yellow->config->get("configDir")."page-error-500.txt";
+			if(is_file($fileName))
+			{
+				$fileData = $this->yellow->toolbox->readFile($fileName);
+				$fileDataNew = preg_replace("/@pageerror/", "[yellow error]", $fileData);
+				if($fileData!=$fileDataNew) $this->yellow->toolbox->createFile($fileName, $fileDataNew);
+			}
+		}
+		if($update)	//TODO: remove later, converts new blog page
+		{
+			$fileName = $this->yellow->config->get("configDir")."page-new-blog.txt";
+			if(is_file($fileName))
+			{
+				$fileData = $this->yellow->toolbox->readFile($fileName);
+				$fileDataNew = $this->yellow->toolbox->setMetaData($fileData, "template", "blog");
+				if($fileData!=$fileDataNew) $this->yellow->toolbox->createFile($fileName, $fileDataNew);
+			}
+		}
+		if($update)	//TODO: remove later, converts new wiki page
+		{
+			$fileName = $this->yellow->config->get("configDir")."page-new-wiki.txt";
+			if(is_file($fileName))
+			{
+				$fileData = $this->yellow->toolbox->readFile($fileName);
+				$fileDataNew = $this->yellow->toolbox->setMetaData($fileData, "template", "wiki");
+				if($fileData!=$fileDataNew) $this->yellow->toolbox->createFile($fileName, $fileDataNew);
+			}
+		}
+		if($update)	//TODO: remove later, converts template settings
+		{
+			$valueDefault = $this->yellow->config->get("template");
+			foreach($this->yellow->pages->index(true, true) as $page)
+			{
+				preg_match("/^.*\/(.+?)$/", dirname($page->fileName), $matches);
+				$value = $this->yellow->lookup->normaliseName($matches[1], true, false, true);
+				if(!is_file($this->yellow->config->get("templateDir").$value.".html")) $value = $valueDefault;
+				$pageTemplate = $this->yellow->toolbox->getMetaData($page->rawData, "template");
+				if(empty($pageTemplate) && $value!=$valueDefault)
+				{
+					$rawDataNew = $this->yellow->toolbox->setMetaData($page->rawData, "template", $value);
+					if($page->rawData!=$rawDataNew) $this->yellow->toolbox->createFile($page->fileName, $rawDataNew);
+				}
+			}
+			foreach($this->yellow->pages->index(true, true)->filter("template", "blogpages") as $page)
+			{
+				$rawDataNew = $this->yellow->toolbox->setMetaData($page->rawData, "templateNew", "blog");
+				if($page->rawData!=$rawDataNew) $this->yellow->toolbox->createFile($page->fileName, $rawDataNew);
+			}
+			foreach($this->yellow->pages->index(true, true)->filter("template", "wikipages") as $page)
+			{
+				$rawDataNew = $this->yellow->toolbox->setMetaData($page->rawData, "templateNew", "wiki");
+				if($page->rawData!=$rawDataNew) $this->yellow->toolbox->createFile($page->fileName, $rawDataNew);
+			}
+			$this->yellow->pages = new YellowPages($this->yellow);
 		}
 	}
 	
@@ -231,6 +307,7 @@ class YellowUpdate
 	function updateSoftware($force = false)
 	{
 		$statusCode = 200;
+		if(function_exists("opcache_reset")) opcache_reset();
 		$path = $this->yellow->config->get("pluginDir");
 		foreach($this->yellow->toolbox->getDirectoryEntries($path, "/^.*\.zip$/", true, false) as $entry)
 		{
@@ -296,7 +373,7 @@ class YellowUpdate
 				}
 			}
 			$zip->close();
-			if($statusCode==200) $statusCode = $this->updateSoftwareNew($software);
+			if($statusCode==200) $statusCode = $this->updateSoftwareMultiLanguage($software);
 			if($statusCode==200) $statusCode = $this->updateSoftwareNotification($software);
 			++$this->updates;
 		} else {
@@ -335,7 +412,7 @@ class YellowUpdate
 				   !$this->yellow->toolbox->modifyFile($fileName, $modified))
 				{
 					$statusCode = 500;
-					$this->yellow->page->error($statusCode, "Can't update file '$fileName'!");
+					$this->yellow->page->error($statusCode, "Can't write file '$fileName'!");
 				}
 			}
 			if($delete)
@@ -356,11 +433,11 @@ class YellowUpdate
 		return $statusCode;
 	}
 
-	// Update new software
-	function updateSoftwareNew($software)
+	// Update software for multiple languages
+	function updateSoftwareMultiLanguage($software)
 	{
 		$statusCode = 200;
-		if(!$this->isSoftwareExisting($software) && $this->yellow->config->get("multiLanguageMode"))
+		if($this->yellow->config->get("multiLanguageMode") && !$this->isSoftwareExisting($software))
 		{
 			$pathsSource = $pathsTarget = array();
 			$pathBase = $this->yellow->config->get("contentDir");
@@ -413,12 +490,11 @@ class YellowUpdate
 	function updateSoftwareNotification($software)
 	{
 		$statusCode = 200;
-		$startupUpdateNotification = $this->yellow->config->get("startupUpdateNotification");
-		if($startupUpdateNotification=="none") $startupUpdateNotification = "";
-		if(!empty($startupUpdateNotification)) $startupUpdateNotification .= ",";
-		$startupUpdateNotification .= $software;
+		$startupUpdate = $this->yellow->config->get("startupUpdate");
+		if($startupUpdate=="none") $startupUpdate = "YellowUpdate";
+		if($software!="YellowUpdate") $startupUpdate .= ",$software";
 		$fileNameConfig = $this->yellow->config->get("configDir").$this->yellow->config->get("configFile");
-		if(!$this->yellow->config->update($fileNameConfig, array("startupUpdateNotification" => $startupUpdateNotification)))
+		if(!$this->yellow->config->update($fileNameConfig, array("startupUpdate" => $startupUpdate)))
 		{
 			$statusCode = 500;
 			$this->yellow->page->error(500, "Can't write file '$fileNameConfig'!");
@@ -448,6 +524,24 @@ class YellowUpdate
 			foreach($this->yellow->toolbox->getDirectoryEntries($path, $regex, true, false) as $entry)
 			{
 				$this->yellow->toolbox->deleteFile($entry);
+			}
+		}
+		return $statusCode;
+	}
+	
+	// Update installation page
+	function updateInstallationPage($fileName, $name, $language)
+	{
+		$statusCode = 200;
+		if($language!="en")
+		{
+			$fileData = strreplaceu("\r\n", "\n", $this->yellow->toolbox->readFile($fileName));
+			$rawDataOld = strreplaceu("\\n", "\n", $this->yellow->text->getText("editInstallation{$name}Page", "en"));
+			$rawDataNew = strreplaceu("\\n", "\n", $this->yellow->text->getText("editInstallation{$name}Page", $language));
+			if(!$this->yellow->toolbox->createFile($fileName, strreplaceu($rawDataOld, $rawDataNew, $fileData)))
+			{
+				$statusCode = 500;
+				$this->yellow->page->error($statusCode, "Can't write file '$fileName'!");
 			}
 		}
 		return $statusCode;
@@ -504,20 +598,10 @@ class YellowUpdate
 			if($status=="install")
 			{
 				$status = "ok";
-				$fileNameHome = $this->yellow->lookup->findFileFromLocation("/");
-				$fileData = strreplaceu("\r\n", "\n", $this->yellow->toolbox->readFile($fileNameHome));
-				if($fileData==$this->getRawDataHome("en") && $language!="en")
+				if(!empty($email) && !empty($password) && $this->yellow->plugins->isExisting("edit"))
 				{
-					$status = $this->yellow->toolbox->createFile($fileNameHome, $this->getRawDataHome($language)) ? "ok" : "error";
-					if($status=="error") $this->yellow->page->error(500, "Can't write file '$fileNameHome'!");
-				}
-			}
-			if($status=="ok")
-			{
-				if(!empty($email) && !empty($password) && $this->yellow->plugins->isExisting("webinterface"))
-				{
-					$fileNameUser = $this->yellow->config->get("configDir").$this->yellow->config->get("webinterfaceUserFile");
-					$status = $this->yellow->plugins->get("webinterface")->users->update($fileNameUser, $email, $password, $name, $language) ? "ok" : "error";
+					$fileNameUser = $this->yellow->config->get("configDir").$this->yellow->config->get("editUserFile");
+					$status = $this->yellow->plugins->get("edit")->users->update($fileNameUser, $email, $password, $name, $language) ? "ok" : "error";
 					if($status=="error") $this->yellow->page->error(500, "Can't write file '$fileNameUser'!");
 				}
 			}
@@ -528,6 +612,18 @@ class YellowUpdate
 					$status = $this->updateInstallationFeatures($feature)==200 ? "ok" : "error";
 					if($status=="error") $this->yellow->page->error(500, "Can't install feature '$feature'!");
 				}
+			}
+			if($status=="ok")
+			{
+				$fileNameHome = $this->yellow->lookup->findFileFromLocation("/");
+				$status = $this->updateInstallationPage($fileNameHome, "Home", $language)==200 ? "ok" : "error";
+				if($status=="error") $this->yellow->page->error(500, "Can't write file '$fileNameHome'!");
+			}
+			if($status=="ok")
+			{
+				$fileNameAbout = $this->yellow->lookup->findFileFromLocation("/about/");
+				$status = $this->updateInstallationPage($fileNameAbout, "About", $language)==200 ? "ok" : "error";
+				if($status=="error") $this->yellow->page->error(500, "Can't write file '$fileNameAbout'!");
 			}
 			if($status=="ok")
 			{
@@ -552,16 +648,16 @@ class YellowUpdate
 	function getRawDataInstallation()
 	{
 		$language = $this->yellow->toolbox->detectBrowserLanguage($this->yellow->text->getLanguages(), $this->yellow->config->get("language"));
-		$fileName = strreplaceu("(.*)", "installation", $this->yellow->config->get("configDir").$this->yellow->config->get("webinterfaceNewFile"));
+		$fileName = strreplaceu("(.*)", "installation", $this->yellow->config->get("configDir").$this->yellow->config->get("editNewFile"));
 		$rawData = $this->yellow->toolbox->readFile($fileName);
 		if(empty($rawData))
 		{
 			$this->yellow->text->setLanguage($language);
-			$rawData = "---\nTitle:".$this->yellow->text->get("webinterfaceInstallationTitle")."\nLanguage:$language\nNavigation:navigation\n---\n";
+			$rawData = "---\nTitle:".$this->yellow->text->get("editInstallationTitle")."\nLanguage:$language\nNavigation:navigation\n---\n";
 			$rawData .= "<form class=\"installation-form\" action=\"".$this->yellow->page->getLocation(true)."\" method=\"post\">\n";
-			$rawData .= "<p><label for=\"name\">".$this->yellow->text->get("webinterfaceSignupName")."</label><br /><input class=\"form-control\" type=\"text\" maxlength=\"64\" name=\"name\" id=\"name\" value=\"\"></p>\n";
-			$rawData .= "<p><label for=\"email\">".$this->yellow->text->get("webinterfaceSignupEmail")."</label><br /><input class=\"form-control\" type=\"text\" maxlength=\"64\" name=\"email\" id=\"email\" value=\"\"></p>\n";
-			$rawData .= "<p><label for=\"password\">".$this->yellow->text->get("webinterfaceSignupPassword")."</label><br /><input class=\"form-control\" type=\"password\" maxlength=\"64\" name=\"password\" id=\"password\" value=\"\"></p>\n";
+			$rawData .= "<p><label for=\"name\">".$this->yellow->text->get("editSignupName")."</label><br /><input class=\"form-control\" type=\"text\" maxlength=\"64\" name=\"name\" id=\"name\" value=\"\"></p>\n";
+			$rawData .= "<p><label for=\"email\">".$this->yellow->text->get("editSignupEmail")."</label><br /><input class=\"form-control\" type=\"text\" maxlength=\"64\" name=\"email\" id=\"email\" value=\"\"></p>\n";
+			$rawData .= "<p><label for=\"password\">".$this->yellow->text->get("editSignupPassword")."</label><br /><input class=\"form-control\" type=\"password\" maxlength=\"64\" name=\"password\" id=\"password\" value=\"\"></p>\n";
 			if(count($this->yellow->text->getLanguages())>1)
 			{
 				$rawData .= "<p>";
@@ -574,7 +670,7 @@ class YellowUpdate
 			}
 			if(count($this->getInstallationFeatures())>1)
 			{
-				$rawData .= "<p>".$this->yellow->text->get("webinterfaceInstallationFeature")."<p>";
+				$rawData .= "<p>".$this->yellow->text->get("editInstallationFeature")."<p>";
 				foreach($this->getInstallationFeatures() as $feature)
 				{
 					$checked = $feature=="website" ? " checked=\"checked\"" : "";
@@ -582,17 +678,10 @@ class YellowUpdate
 				}
 				$rawData .= "</p>\n";
 			}
-			$rawData .= "<input class=\"btn\" type=\"submit\" value=\"".$this->yellow->text->get("webinterfaceOkButton")."\" />\n";
+			$rawData .= "<input class=\"btn\" type=\"submit\" value=\"".$this->yellow->text->get("editOkButton")."\" />\n";
 			$rawData .= "<input type=\"hidden\" name=\"status\" value=\"install\" />\n";
 			$rawData .= "</form>\n";
 		}
-		return $rawData;
-	}
-	
-	// Return raw data for home page
-	function getRawDataHome($language)
-	{
-		$rawData = "---\nTitle: Home\n---\n".strreplaceu("\\n", "\n", $this->yellow->text->getText("webinterfaceInstallationHomePage", $language));
 		return $rawData;
 	}
 	
@@ -721,7 +810,8 @@ class YellowUpdate
 				$fileData = $rawData;
 			} else if($statusCode==0) {
 				$statusCode = 500;
-				$this->yellow->page->error($statusCode, "Can't connect to server!");
+				list($scheme, $address) = $this->yellow->lookup->getUrlInformation($url);
+				$this->yellow->page->error($statusCode, "Can't connect to server '$scheme://$address'!");
 			} else {
 				$statusCode = 500;
 				$this->yellow->page->error($statusCode, "Can't download file '$url'!");

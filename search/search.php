@@ -5,7 +5,7 @@
 
 class YellowSearch
 {
-	const VERSION = "0.6.9";
+	const VERSION = "0.6.12";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -46,8 +46,8 @@ class YellowSearch
 			if(!empty($tokens) || !empty($filters))
 			{
 				$pages = $this->yellow->pages->clean();
-				$showSpecialPages = $filters["status"]=="draft" && $this->yellow->getRequestHandler()!="core";
-				foreach($this->yellow->pages->index($showSpecialPages, false) as $page)
+				$showInvisible = $filters["status"]=="draft" && $this->yellow->getRequestHandler()!="core";
+				foreach($this->yellow->pages->index($showInvisible, false) as $page)
 				{
 					$searchScore = 0;
 					$searchTokens = array();
@@ -73,21 +73,23 @@ class YellowSearch
 					if($filters["language"]) $pages->filter("language", $filters["language"]);
 					if($filters["status"]) $pages->filter("status", $filters["status"]);
 				}
-				$pages->sort("modified", false)->sort("searchscore");
+				$pages->sort("modified")->sort("searchscore");
 				$pages->pagination($this->yellow->config->get("searchPaginationLimit"));
 				if($_REQUEST["page"] && !$pages->getPaginationNumber()) $this->yellow->page->error(404);
-				$this->yellow->page->set("titleHeader", $query." - ".$this->yellow->page->get("sitename"));
-				$this->yellow->page->set("titleSearch", $this->yellow->text->get("searchQuery")." ".$query);
+				$title = empty($query) ? $this->yellow->text->get("searchSpecialChanges") : $query;
+				$this->yellow->page->set("titleHeader", $title." - ".$this->yellow->page->get("sitename"));
+				$this->yellow->page->set("titleSearch", $this->yellow->text->get("searchQuery")." ".$title);
 				$this->yellow->page->setPages($pages);
 				$this->yellow->page->setLastModified($pages->getModified());
 				$this->yellow->page->setHeader("Cache-Control", "max-age=60");
 				$this->yellow->page->set("status", count($pages) ? "done" : "empty");
 			} else {
+				$this->yellow->page->set("titleSearch", $this->yellow->page->get("title"));
 				$this->yellow->page->set("status", "none");
 			}
 		}
 	}
-	
+		
 	// Return search information
 	function getSearchInformation($query, $tokensMax)
 	{
@@ -104,7 +106,7 @@ class YellowSearch
 			}
 		}
 		if($tokensMax) $tokens = array_slice($tokens, 0, $tokensMax);
-		if(empty($tokens) && !$filtersInQuery) $filters = array();
+		if(empty($tokens) && !$filtersInQuery && !$filters["special"]) $filters = array();
 		return array($tokens, $filters);
 	}
 }

@@ -5,14 +5,14 @@
 
 class YellowDisqus
 {
-	const VERSION = "0.6.3";
+	const VERSION = "0.7.2";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
 	function onLoad($yellow)
 	{
 		$this->yellow = $yellow;
-		$this->yellow->config->setDefault("disqusShortname", "Yellow");
+		$this->yellow->config->setDefault("disqusShortname", "yellow");
 	}
 	
 	// Handle page content parsing of custom block
@@ -23,10 +23,12 @@ class YellowDisqus
 		{
 			$shortname = $this->yellow->config->get("disqusShortname");
 			$url = $this->yellow->page->get("pageRead");
+			$language = $this->yellow->page->get("language");
 			$output = "<div id=\"disqus_thread\"></div>\n";
 			$output .= "<script type=\"text/javascript\">\n";
 			$output .= "var disqus_shortname = '".strencode($shortname)."';\n";
 			$output .= "var disqus_url = '".strencode($url)."';\n";
+			$output .= "var disqus_config = function () { this.language = '".strencode($language)."'; };\n";
 			$output .= "(function() {\n";
 			$output .= "var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;\n";
 			$output .= "dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';\n";

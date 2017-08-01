@@ -5,7 +5,7 @@
 
 class YellowTraffic
 {
-	const VERSION = "0.6.11";
+	const VERSION = "0.7.2";
 	var $yellow;			//access to API
 	var $days;				//detected days
 	var $views;				//detected views
@@ -19,7 +19,7 @@ class YellowTraffic
 		$this->yellow->config->setDefault("trafficLogDir", "/var/log/apache2/");
 		$this->yellow->config->setDefault("trafficLogFile", "(.*)access.log");
 		$this->yellow->config->setDefault("trafficLocationIgnore", "/(media|system|edit)/");
-		$this->yellow->config->setDefault("trafficSpamFilter", "bot|crawler|spider");
+		$this->yellow->config->setDefault("trafficSpamFilter", "bot|crawler|spider|localhost");
 	}
 
 	// Handle command help
@@ -125,11 +125,12 @@ class YellowTraffic
 							if($timeFound<$timeStop) break;
 							$location = $this->getLocation($uri);
 							$referer = $this->getReferer($referer, "$address$base/");
-							$clientsRequestThrottle = substru($timestamp, 0, 17).$method.$location;
-							if($clients[$ip]==$clientsRequestThrottle) { --$sites[$referer]; continue; }
-							$clients[$ip] = $clientsRequestThrottle;
-							if($this->checkRequestArguments($method, $location, $referer))
+							if($status<400)
 							{
+								$clientsRequestThrottle = substru($timestamp, 0, 17).$method.$location;
+								if($clients[$ip]==$clientsRequestThrottle) { --$sites[$referer]; continue; }
+								$clients[$ip] = $clientsRequestThrottle;
+								if(!$this->checkRequestArguments($method, $location, $referer)) continue;
 								if(!preg_match("#^$base$locationFilter#", $location)) continue;
 								if($locationFilter=="/")
 								{
@@ -139,15 +140,13 @@ class YellowTraffic
 								}
 								if(preg_match("#$spamFilter#i", $referer.$userAgent)) continue;
 								if($status>=301 && $status<=303) continue;
-								if($status<400)
-								{
-									++$content[$this->getUrl($scheme, $address, $base, $location)];
-									++$sites[$referer];
-									++$search[$this->getSearchUrl($scheme, $address, $base, $location, $locationSearch)];
-									++$this->views;
-								} else {
-									++$errors[$this->getUrl($scheme, $address, $base, $location)." - ".$this->getStatusFormatted($status)];
-								}
+								++$content[$this->getUrl($scheme, $address, $base, $location)];
+								++$sites[$referer];
+								++$search[$this->getSearchUrl($scheme, $address, $base, $location, $locationSearch)];
+								++$this->views;
+							} else {
+								if(preg_match("#$spamFilter#i", $referer.$userAgent) && $status==404) continue;
+								++$errors[$this->getUrl($scheme, $address, $base, $location)." - ".$this->getStatusFormatted($status)];
 							}
 						}
 					}
@@ -220,8 +219,9 @@ class YellowTraffic
 	// Return search URL, if available
 	function getSearchUrl($scheme, $address, $base, $location, $locationSearch)
 	{
-		$locationSearch = $base.$locationSearch."query".$this->yellow->toolbox->getLocationArgsSeparator();
-		return preg_match("#^$locationSearch([^/]+)/$#", $location) ? ("$scheme://$address".strtoloweru($location)) : "-";
+		$locationSearch = $base."(.*)".$locationSearch."query".$this->yellow->toolbox->getLocationArgsSeparator();
+		$searchUrl = preg_match("#^$locationSearch([^/]+)/$#", $location) ? ("$scheme://$address".strtoloweru($location)) : "-";
+		return strreplaceu(array("%", "\x1c", "\x1d", "\x1e", "\x20"), array("%25", "%1C", "%1D", "%1E", "%20"), $searchUrl);
 	}
 	
 	// Return human readable status
