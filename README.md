@@ -109,6 +109,8 @@ Experimental plugins:
   Embed Mixcloud audio tracks.
 * [PageTxt](https://github.com/richi/yellow-plugin-pagetxt):
   Overwrite language entries in a page.
+* [Random](https://github.com/schulle4u/yellow-plugin-random): 
+  Display random pages from specified location.
 * [Shariff](https://github.com/schulle4u/yellow-plugin-shariff):
   Privacy-friendly social sharing buttons for your Yellow website.
 * [Skipto](https://github.com/schulle4u/yellow-plugin-skipto):
