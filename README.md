@@ -115,6 +115,8 @@ Experimental plugins:
   Embed Mixcloud audio tracks.
 * [PageTxt](https://github.com/richi/yellow-plugin-pagetxt):
   Overwrite language entries in a page.
+* [Podcast](https://github.com/schulle4u/yellow-plugin-podcast): 
+  A fork of the original feed plugin optimized for podcast publishing.
 * [Random](https://github.com/schulle4u/yellow-plugin-random): 
   Display random pages from specified location.
 * [Shariff](https://github.com/schulle4u/yellow-plugin-shariff):
