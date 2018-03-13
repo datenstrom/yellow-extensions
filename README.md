@@ -127,6 +127,8 @@ Experimental plugins:
   Sublime Text 3 Extensions for blogs based on Yellow.
 * [Ticker](https://github.com/schulle4u/yellow-plugin-ticker): 
   Feed parser using SimpleXML or SimplePie.
+* [TuneIn Radio](https://github.com/schulle4u/yellow-plugin-tunein): 
+  Embed radio stations from TuneIn.
 * [Video](https://github.com/nibreh/yellow-plugin-video): 
   HTML5 video player.
 * [WebCLI](https://github.com/richi/yellow-plugin-cli):
