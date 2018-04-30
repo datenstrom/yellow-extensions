@@ -121,6 +121,8 @@ Experimental plugins:
   Privacy-friendly social sharing buttons for your Yellow website.
 * [Skipto](https://github.com/schulle4u/yellow-plugin-skipto):
   Enhance keyboard navigation.
+* [Spoiler](https://github.com/schulle4u/yellow-plugin-spoiler):
+  Hide certain page elements.
 * [Streamlist](https://github.com/nibreh/yellow-plugin-streamlist):
   Stream your favorite radios in a playlist with HTML5 audio.
 * [Sublime](https://github.com/nashv/YellowBlogExtensions):
