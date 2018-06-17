@@ -5,7 +5,7 @@ LanguageDescription: Русский
 LanguageTranslator: Сергей Ворон
 LanguageVersion: 0.7.11
 
-BlogBy: автор
+BlogBy: Автор
 BlogTag: Тэги:
 BlogMore: Читать далее…
 ContactName: Имя:
@@ -13,13 +13,13 @@ ContactEmail: Email:
 ContactMessage: Сообщение:
 ContactConsent: Я согласен, что этот сайт хранит мои личные данные.
 ContactButton: Отправить сообщение
-ContactStatusNone: Привет. Ваше мнение очень приветствуются.
+ContactStatusNone: Привет. Ваши отзывы очень приветствуются.
 ContactStatusIncomplete: Пожалуйста, заполните все поля.
 ContactStatusInvalid: Пожалуйста, укажите правильный Email.
 ContactStatusDone: Ваше письмо отправлено. Спасибо!
 ContactStatusError: Письмо не может быть отправлено, попробуйте еще раз позже!
-DatePast: today, yesterday, @x days ago, 1 month ago, @x months ago, 1 year ago, @x years ago
-DateFuture: soon, tomorrow, in @x days, in 1 month, in @x months, in 1 year, in @x years
+DatePast: сегодня, вчера, @x дней назад, 1 месяц назад, @x месяцев назад, 1 год назад, @x лет назад
+DateFuture: скоро, завтра, через @x дней, через 1 месяц, через @x месяцев, через 1 год, через @x лет
 DateMonths: январь, февраль, март, апрель, май, июнь, июль, август, сентябрь, октябрь, ноябрь, декабрь
 DateWeekdays: понедельник, вторник, среда, четверг, пятница, суббота, воскресенье
 DateWeekstart: понедельник
@@ -30,7 +30,7 @@ EditInstallationTitle: Здравствуйте
 EditInstallationFeature: Что вы хотите сделать?
 EditInstallationHomePage: Ваш сайт работает!\n\n[edit - Вы можете отредактировать эту страницу] или использовать ваш текстовый редактор.
 EditInstallationAboutPage: Этот сайт создан с помощью [Datenstrom Yellow](https://datenstrom.se/yellow/). [edit - Войти].
-EditLoginTitle: добро пожаловать
+EditLoginTitle: Добро пожаловать
 EditLoginEmail: Email:
 EditLoginPassword: Пароль:
 EditLoginForgot: Забыли пароль?
@@ -57,50 +57,50 @@ EditRecoverPassword: Пароль:
 EditRecoverStatusPassword: Пожалуйста, введите новый пароль.
 EditRecoverStatusWeak: Пожалуйста, введите другой пароль.
 EditSettingsTitle: Настройки
-EditSettingsQuit: You can delete your user account anytime.
-EditSettingsMore: More…
-EditSettingsStatusInvalid: Please enter a valid email.
-EditSettingsStatusTaken: Please enter a different email.
-EditSettingsStatusWeak: Please enter a different password.
-EditSettingsStatusNext: User account will be changed, please check your emails.
-EditQuitTitle: Delete user account
-EditQuitStatusNone: Please enter your name to confirm.
-EditQuitStatusMismatch: Please enter a different name.
-EditQuitStatusNext: User account will be deleted, please check your emails.
+EditSettingsQuit: Вы можете удалить свою учетную запись в любое время.
+EditSettingsMore: Больше…
+EditSettingsStatusInvalid: Пожалуйста, введите действительный адрес Email.
+EditSettingsStatusTaken: Введите другой адрес электронной почты.
+EditSettingsStatusWeak: Введите другой пароль.
+EditSettingsStatusNext: Учетная запись пользователя будет изменена, проверьте электронную почту.
+EditQuitTitle: Удалить учетную запись пользователя
+EditQuitStatusNone: Введите свое имя для подтверждения.
+EditQuitStatusMismatch: Введите другое имя.
+EditQuitStatusNext: Учетная запись пользователя будет удалена, проверьте электронную почту.
 EditConfirmSubject: Подтверждение учетной записи
 EditConfirmMessage: Привет @usershort,\n\nпожалуйста, подтвердите свою учетную запись. Нажмите на ссылку.
 EditConfirmStatusDone: Учетная запись подтверждена и ждет одобрения. Спасибо!
-EditApproveSubject: Утвердить учетную запись
-EditApproveMessage: Привет @usershort,\n\nпожалуйста, утвердите новую учетную запись для @useraccount. Нажмите на ссылку.
-EditApproveStatusDone: Учетная запись утверждена. Спасибо!
-EditReactivateSubject: Reactivate user account
-EditReactivateMessage: Hi @usershort,\n\nplease reactivate your user account. There were too many failed login attempts. Click the following link.
-EditReactivateStatusDone: User account reactivated. Thank you!
+EditApproveSubject: Подтвердите учетную запись
+EditApproveMessage: Привет @usershort,\n\nпожалуйста, подтвердите новую учетную запись для @useraccount. Нажмите на ссылку.
+EditApproveStatusDone: Учетная запись подтверждена. Спасибо!
+EditReactivateSubject: Повторная активация учетной записи
+EditReactivateMessage: Привет @usershort,\n\nпожалуйста, повторно активируйте свою учетную запись. Было слишком много неудачных попыток входа в систему. Нажмите следующую ссылку.
+EditReactivateStatusDone: Аккаунт пользователя активирован. Спасибо!
 EditRecoverSubject: Восстановление учетной записи
-EditRecoverMessage: Привет @usershort,\n\nпожалуйста, подтвердите, что вы забыли свой пароль. Нажмите на ссылку.
+EditRecoverMessage: Привет @usershort,\n\nподтвердите, что вы забыли свой пароль. Нажмите на ссылку.
 EditRecoverStatusDone: Учетная запись восстановлена. Спасибо!
-EditVerifySubject: Confirm user account
-EditVerifyMessage: Hi @usershort,\n\nplease confirm a new email for your user account. Click the following link.
-EditVerifyStatusDone: User account confirmed. Thank you!
-EditChangeSubject: Change user account
-EditChangeMessage: Hi @usershort,\n\nplease confirm that you want to change your user account. Click the following link.
-EditChangeStatusDone: User account changed. Thank you!
-EditRemoveSubject: Delete user account
-EditRemoveMessage: Hi @usershort,\n\nplease confirm that you want to delete your user account. Click the following link.
-EditRemoveStatusDone: User account deleted. Thank you!
+EditVerifySubject: Подтверждение учетной записи
+EditVerifyMessage: Привет @usershort,\n\nпожалуйста, подтвердите новый email для своей учетной записи. Нажмите следующую ссылку.
+EditVerifyStatusDone: Учетная запись подтверждена. Спасибо!
+EditChangeSubject: Изменение учетной записи
+EditChangeMessage: Привет @usershort,\n\nподтвердите, что хотите изменить свою учетную запись. Нажмите следующую ссылку.
+EditChangeStatusDone: Учетная запись изменена. Спасибо!
+EditRemoveSubject: Удалить учетную запись
+EditRemoveMessage: Привет @usershort,\n\nподтвердите, что хотите удалить свою учетную запись. Нажмите следующую ссылку.
+EditRemoveStatusDone: Учетная запись удалена. Спасибо!
 EditWelcomeSubject: Добро пожаловать
 EditWelcomeMessage: Привет @usershort,\n\nваша учетная запись создана. Получайте удовольствие редактируя сайт.
-EditGoodbyeSubject: Goodbye
-EditGoodbyeMessage: Hi @usershort,\n\nyour user account has been deleted. Take care.
-EditVersionTitle: About this website
-EditVersionStatusNone: Datenstrom Yellow is for people who make websites.
-EditVersionStatusCheck: Checking for updates…
-EditVersionStatusDone: Your website is up to date.
-EditVersionStatusUpdates: Updates available, please contact the webmaster.
-EditVersionUpdateNormal: Updates available, update now.
-EditVersionUpdateForce: Force update
-EditVersionUpdateModified: @software has been modified
-EditUploadProgress: [Uploading file…]
+EditGoodbyeSubject: До свидания
+EditGoodbyeMessage: Привет @usershort,\n\nваша учетная запись была удалена. Берегите себя.
+EditVersionTitle: Об этом сайте
+EditVersionStatusNone: Datenstrom Yellow предназначен для людей, создающих веб-сайты.
+EditVersionStatusCheck: Проверка обновлений…
+EditVersionStatusDone: Ваш сайт обновлен.
+EditVersionStatusUpdates: Доступны обновления, пожалуйста, свяжитесь с веб-мастером.
+EditVersionUpdateNormal: Доступны обновления, обновить сейчас.
+EditVersionUpdateForce: Принудительно обновить
+EditVersionUpdateModified: @software был изменен
+EditUploadProgress: [Загрузка файла ...]
 EditOkButton: Ok
 EditCancelButton: Отмена
 EditCreateButton: Создать
@@ -109,30 +109,30 @@ EditDeleteButton: Удалить
 EditEdit: Редактировать
 EditCreate: +
 EditDelete: -
-EditToolbarPreview: Лросмотр
-EditToolbarFormat: Format
-EditToolbarHeading: Heading
-EditToolbarH1: Heading 1
-EditToolbarH2: Heading 2
-EditToolbarH3: Heading 3
-EditToolbarParagraph: Normal text
-EditToolbarPre: Source code
-EditToolbarQuote: Quote
-EditToolbarBold: Bold
-EditToolbarItalic: Italic
-EditToolbarStrikethrough: Strikethrough
-EditToolbarCode: Code
-EditToolbarList: List
-EditToolbarUl: • Unordered list
-EditToolbarOl: 1. Ordered list
-EditToolbarTl: ✓ Task list
-EditToolbarLink: Link
-EditToolbarFile: File
+EditToolbarPreview: Просмотр
+EditToolbarFormat: Формат
+EditToolbarHeading: Заголовок
+EditToolbarH1: Заголовок 1
+EditToolbarH2: Заголовок 2
+EditToolbarH3: Заголовок 3
+EditToolbarParagraph: Обычный текст
+EditToolbarPre: Исходный код
+EditToolbarQuote: Цитата
+EditToolbarBold: Жирный
+EditToolbarItalic: Курсивный
+EditToolbarStrikethrough: Зачеркнутый
+EditToolbarCode: Код
+EditToolbarList: Список
+EditToolbarUl: • Неупорядоченный список
+EditToolbarOl: 1. Упорядоченный список
+EditToolbarTl: ✓ Список заданий
+EditToolbarLink: Ссылка
+EditToolbarFile: Файл
 EditToolbarEmojiawesome: Emoji
-EditToolbarFontawesome: Icon
-EditToolbarDraft: Draft
-EditToolbarUndo: Undo
-EditToolbarRedo: Redo
+EditToolbarFontawesome: Иконка
+EditToolbarDraft: Черновик
+EditToolbarUndo: Отменить
+EditToolbarRedo: Повторить
 EditToolbarMarkdown: Markdown
 EditToolbarHelp: Помощь
 EditUserHelp: Помощь
