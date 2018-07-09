@@ -81,6 +81,8 @@ Available plugins:
 
 Experimental plugins:
 
+* [Antispam](https://github.com/schulle4u/yellow-plugin-antispam):
+  email address obfuscator using ROT13 and css rtl direction.
 * [Audio](https://github.com/schulle4u/yellow-plugin-audio):
   HTML5 audio player.
 * [BurgerMenu](https://github.com/richi/yellow-plugin-burger-menu): 
