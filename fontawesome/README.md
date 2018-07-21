@@ -1,4 +1,4 @@
-Fontawesome plugin 0.6.4
+Fontawesome plugin 0.7.2
 ========================
 Icons and symbols.
 
@@ -10,11 +10,13 @@ Icons and symbols.
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/fontawesome.zip). If you are using Safari, right click and select 'Download file as'.
 3. Copy `fontawesome.zip` into your `system/plugins` folder.
 
-To uninstall delete the plugin files.
+To uninstall delete the [plugin files](update.ini).
 
 ## How to add an icon?
 
-Create a `[fa NAME]` shortcut or use HTML `<i class="fa NAME"></i>`. Here's a [complete list of icons](http://fortawesome.github.io/Font-Awesome/icons/).
+Add `:shortcode:` to the text of a page. Here's a [complete list of icons](https://fontawesome.com/icons).
+
+It's also possible to create a `[fa NAME]` shortcut or use HTML `<i class="fa NAME"></i>`. 
 
 You can add an additional style to the name, for example `fa-lg`, `fa-2x`, `fa-3x`, `fa-4x` and `fa-5x`.
 
@@ -24,15 +26,19 @@ The plugin uses [Font Awesome v4.5.0](https://github.com/FortAwesome/Font-Awesom
 
 Adding an icon:
 
-    [fa fa-envelope-o] Email
-    [fa fa-twitter] Twitter
-    [fa fa-github] GitHub
+    :fa-envelope-o:
+    :fa-twitter:
+    :fa-github:
 
-Adding an icon, double size:
+Adding an icon, normal and double size:
 
-    [fa fa-envelope-o fa-2x] Email
-    [fa fa-twitter fa-2x] Twitter
-    [fa fa-github fa-2x] GitHub
+    [fa fa-envelope-o]
+    [fa fa-twitter]
+    [fa fa-github]
+    
+    [fa fa-envelope-o fa-2x]
+    [fa fa-twitter fa-2x]
+    [fa fa-github fa-2x]
 
 Navigation snippet with social media icons:
 
@@ -45,11 +51,11 @@ Navigation snippet with social media icons:
     <?php endforeach ?>
     <li><a href="https://twitter.com/datenstromse"><i class="fa fa-twitter fa-lg"></i></a></li>
     <li><a href="https://github.com/datenstrom"><i class="fa fa-github fa-lg"></i></a></li>
-    <li><a href="https://instagram.com/datenstromse"><i class="fa fa-instagram fa-lg"></i></a></li>
+    <li><a href="https://datenstrom.se"><i class="fa fa-heart fa-lg"></i></a></li>
     </ul>
     </div>
     <div class="navigation-banner"></div>
 
 ## Developer
 
-Datenstrom
+Datenstrom. [Get support](https://developers.datenstrom.se/help/support).

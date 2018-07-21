@@ -1,4 +1,4 @@
-Emojiawesome plugin 0.7.1
+Emojiawesome plugin 0.7.2
 =========================
 Lots and lots of emoji.
 
@@ -10,7 +10,7 @@ Lots and lots of emoji.
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/emojiawesome.zip). If you are using Safari, right click and select 'Download file as'.
 3. Copy `emojiawesome.zip` into your `system/plugins` folder.
 
-To uninstall delete the plugin files.
+To uninstall delete the [plugin files](update.ini).
 
 ## How to add an emoji?
 
@@ -43,10 +43,8 @@ Footer snippet with heart emoji:
 
     <div class="footer">
     <div class="siteinfo">
-    <a href="<?php echo $yellow->page->base."/" ?>">&copy; 2017 <?php echo $yellow->page->getHtml("sitename") ?></a>.
-    <a href="<?php echo $yellow->page->get("pageEdit") ?>">Edit</a>.
-    <a href="<?php echo $yellow->text->get("yellowUrl") ?>">Made with Yellow</a>.
-    <a href="https://developers.datenstrom.se/">We <i class="ea ea-heart"></i> developers</a>.
+    <a href="<?php echo $yellow->page->base."/" ?>">&copy; 2018 <?php echo $yellow->page->getHtml("sitename") ?></a>.
+    <a href="<?php echo $yellow->text->get("yellowUrl") ?>">Made with <i class="ea ea-heart"></i> and Datenstrom Yellow</a>.
     </div>
     </div>
     </div>
@@ -56,4 +54,4 @@ Footer snippet with heart emoji:
 
 ## Developer
 
-Datenstrom
+Datenstrom. [Get support](https://developers.datenstrom.se/help/support).

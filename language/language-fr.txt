@@ -3,21 +3,23 @@
 Language: fr
 LanguageDescription: Français
 LanguageTranslator: Juh Nibreh
-LanguageVersion: 0.7.2
+LanguageVersion: 0.7.13
 
 BlogBy: par
-BlogFilter: Blog:
 BlogTag: Tags:
 BlogMore: Lire la suite…
 ContactName: Nom:
 ContactEmail: Email:
 ContactMessage: Message:
-ContactButton: Envoyer
+ContactConsent: Je consens que ce site stocke mon message.
+ContactButton: Envoyer le message
 ContactStatusNone: Dites bonjour! Vos commentaires sont les bienvenus.
 ContactStatusIncomplete: S'il vous plaît, veuillez remplir tous les champs.
 ContactStatusInvalid: S'il vous plaît, veuillez entrer une adresse email valide.
 ContactStatusDone: Votre message a bien été envoyé. Merci!
 ContactStatusError: Votre message n'a pas pu être envoyé, réessayez plus tard s'il vous plaît!
+DatePast: aujourd'hui, hier, il y a @x jours, il ya 1 mois, il y a @x mois, il y a 1 an, il y a @x ans
+DateFuture: bientôt, demain, dans @x jours, en 1 mois, dans @x mois, en 1 an, dans @x ans
 DateMonths: janvier, février, mars, avril, mai, juin, juillet, août, septembre, octobre, novembre, décembre
 DateWeekdays: lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche
 DateWeekstart: lundi
@@ -26,73 +28,79 @@ DateFormatMedium: d/m/Y
 DateFormatLong: d/m/Y H:i
 EditInstallationTitle: Bonjour
 EditInstallationFeature: Que voulez-vous faire?
-EditInstallationHomePage: Votre site web fonctionne!\n\nVous pouvez [edit - modifier cette page] ou utiliser un éditeur de texte.
-EditInstallationAboutPage: Ce site web est fait avec [yellow]. [Apprenez-en plus](https://developers.datenstrom.se/fr/help/).
+EditInstallationHomePage: Votre site web fonctionne!\n\n[edit - Vous pouvez modifier cette page] ou utiliser un éditeur de texte.
+EditInstallationAboutPage: Ce site web est fait avec [Datenstrom Yellow](https://datenstrom.se/fr/yellow/). [edit - Se connecter].
 EditLoginTitle: Bienvenue
 EditLoginEmail: Email:
 EditLoginPassword: Mot de passe:
-EditLoginRecover: Mot de passe oublié?
+EditLoginForgot: Mot de passe oublié?
 EditLoginSignup: Créer un compte utilisateur?
 EditLoginButton: Se connecter
 EditSignupTitle: Créer un compte utilisateur
 EditSignupName: Nom:
 EditSignupEmail: Email:
 EditSignupPassword: Mot de passe:
+EditSignupConsent: Je consens que ce site web stocke mes données personnelles.
 EditSignupButton: Créer
 EditSignupStatusNone: Ici, vous pouvez créer un nouveau compte utilisateur.
 EditSignupStatusIncomplete: Veuillez remplir tous les champs.
 EditSignupStatusInvalid: S'il vous plaît, veuillez entrer une adresse email valide.
 EditSignupStatusWeak: S'il vous plaît, choisissez un mot de passe différent.
 EditSignupStatusNext: Votre compte a été créé, vérifiez vos emails.
+EditForgotTitle: Mot de passe oublié
+EditForgotEmail: Email:
+EditForgotStatusNone: Pas de problème, vous pouvez créer un nouveau mot de passe.
+EditForgotStatusInvalid: S'il vous plaît, veuillez entrer une adresse email valide.
+EditForgotStatusNext: Votre compte est à nouveau disponible, vérifiez vos emails.
 EditRecoverTitle: Mot de passe oublié
-EditRecoverEmail: Email:
 EditRecoverPassword: Mot de passe:
-EditRecoverStatusNone: Pas de problème, vous pouvez créer un nouveau mot de passe.
-EditRecoverStatusInvalid: S'il vous plaît, veuillez entrer une adresse email valide.
 EditRecoverStatusPassword: S'il vous plaît, choisissez un nouveau mot de passe.
 EditRecoverStatusWeak: S'il vous plaît, choisissez un mot de passe différent.
-EditRecoverStatusNext: Votre compte est à nouveau disponible, vérifiez vos emails.
 EditSettingsTitle: Paramètres
+EditSettingsQuit: Vous pouvez supprimer votre compte d'utilisateur.
+EditSettingsMore: Plus…
 EditSettingsStatusInvalid: S'il vous plaît, veuillez entrer une adresse email valide.
 EditSettingsStatusTaken: S'il vous plaît, veuillez entrer une adresse email différent.
 EditSettingsStatusWeak: S'il vous plaît, choisissez un mot de passe différent.
 EditSettingsStatusNext: Votre compte a été changé, vérifiez vos emails.
+EditQuitTitle: Supprimer le compte d'utilisateur
+EditQuitStatusNone: S'il vous plaît entrez votre nom pour confirmer.
+EditQuitStatusMismatch: S'il vous plaît entrer un nom différent.
+EditQuitStatusNext: Votre compte sera supprimé, vérifier vos emails.
 EditConfirmSubject: Confirmation d'un compte utilisateur
-EditConfirmMessage: Bonjour @usershort, veuillez confirmer votre compte utilisateur. Cliquez sur le lien suivant.
+EditConfirmMessage: Bonjour @usershort,\n\nveuillez confirmer votre compte utilisateur. Cliquez sur le lien suivant.
 EditConfirmStatusDone: Votre compte utilisateur est confirmé et en attente d'approbation. Merci!
-EditConfirmStatusExpired: Le compte ne peut pas être créé. Le lien de confirmation a expiré!
 EditApproveSubject: Approuver un nouvel utilisateur
-EditApproveMessage: Bonjour @usershort, veuillez approuver la création d'un nouveau compte utilisateur pour @useraccount. Cliquez sur le lien suivant.
+EditApproveMessage: Bonjour @usershort,\n\nveuillez approuver la création d'un nouveau compte utilisateur pour @useraccount. Cliquez sur le lien suivant.
 EditApproveStatusDone: Compte utilisateur approuvé. Merci!
-EditApproveStatusExpired: Le compte ne peut pas être approuvé. Le lien de confirmation a expiré!
 EditReactivateSubject: Réactivation d'un compte utilisateur
-EditReactivateMessage: Bonjour @usershort, veuillez réactivér votre compte utilisateur. Il y a eu trop de tentatives de connexion échouées. Cliquez sur le lien suivant.
+EditReactivateMessage: Bonjour @usershort,\n\nveuillez réactivér votre compte utilisateur. Il y a eu trop de tentatives de connexion échouées. Cliquez sur le lien suivant.
 EditReactivateStatusDone: Compte d'utilisateur réactivé. Merci!
-EditReactivateStatusExpired: Le compte ne peut pas être réctivé. Le lien de confirmation a expiré!
 EditRecoverSubject: Restauration d'un compte utilisateur
-EditRecoverMessage: Bonjour @usershort, veuillez confirmer que vous avez oublié votre mot de passe. Cliquez sur le lien suivant.
+EditRecoverMessage: Bonjour @usershort,\n\nveuillez confirmer que vous avez oublié votre mot de passe. Cliquez sur le lien suivant.
 EditRecoverStatusDone: Compte utilisateur restauré. Merci!
-EditRecoverStatusExpired: Le compte ne peut pas être restauré. Le lien de confirmation a expiré!
-EditReconfirmSubject: Changement d'un compte utilisateur
-EditReconfirmMessage: Bonjour @usershort, veuillez confirmer une nouvelle adresse email pour votre compte utilisateur. Cliquez sur le lien suivant.
-EditReconfirmStatusDone: Votre compte utilisateur est confirmé. Merci!
-EditReconfirmStatusExpired: Le compte ne peut pas être créé. Le lien de confirmation a expiré!
+EditVerifySubject: Confirmation d'un compte utilisateur
+EditVerifyMessage: Bonjour @usershort,\n\nveuillez confirmer une nouvelle adresse email pour votre compte utilisateur. Cliquez sur le lien suivant.
+EditVerifyStatusDone: Votre compte utilisateur est confirmé. Merci!
 EditChangeSubject: Changement d'un compte utilisateur
-EditChangeMessage: Bonjour @usershort, veuillez confirmer que vous souhaitez modifier votre compte utilisateur. Cliquez sur le lien suivant.
+EditChangeMessage: Bonjour @usershort,\n\nveuillez confirmer que vous souhaitez modifier votre compte utilisateur. Cliquez sur le lien suivant.
 EditChangeStatusDone: Compte utilisateur changé. Merci!
-EditChangeStatusExpired: Le compte ne peut pas être changé. Le lien de confirmation a expiré!
+EditRemoveSubject: Supprimer le compte d'utilisateur
+EditRemoveMessage: Bonjour @usershort,\n\nveuillez confirmer que vous souhaitez supprimer votre compte d'utilisateur. Cliquez sur le lien suivant.
+EditRemoveStatusDone: Compte d'utilisateur supprimé. Merci!
 EditWelcomeSubject: Bienvenue
-EditWelcomeMessage: Bonjour @usershort, votre compte utilisateur a bien été créé. Amusez-vous bien en éditant le site web.
-EditInformationSubject: Bienvenue à nouveau
-EditInformationMessage: Bonjour @usershort, votre compte utilisateur a bien été changé. Vous pouvez maintenant vous connecter.
+EditWelcomeMessage: Bonjour @usershort,\n\nvotre compte utilisateur a bien été créé. Amusez-vous bien en éditant le site web.
+EditGoodbyeSubject: Au revoir
+EditGoodbyeMessage: Bonjour @usershort,\n\nvotre compte utilisateur a bien été supprimé. Prends soin.
 EditVersionTitle: A propos de ce site
-EditVersionStatusNone: Yellow est fait pour les gens qui font des sites web.
+EditVersionStatusNone: Datenstrom Yellow est fait pour les gens qui font des sites web.
 EditVersionStatusCheck: Vérification des mises à jour…
-EditVersionStatusDone: Votre site est à jour.
-EditVersionStatusUpdates: Mises à jour disponibles, s'il vous plaît contacter le webmestre.
-EditVersionUpdateNormal: Mises à jour disponibles, mettre à jour maintenant.
+EditVersionStatusDone: Votre site web est à jour.
+EditVersionStatusWarning: Mises à jour disponibles, veuillez mettre à jour votre site web.
+EditVersionStatusUpdates: Mises à jour disponibles, mettre à jour maintenant.
 EditVersionUpdateForce: Forcer mise à jour
 EditVersionUpdateModified: @software a été modifié
+EditUploadProgress: [Téléchargement du fichier…]
 EditOkButton: Ok
 EditCancelButton: Annuler
 EditCreateButton: Créer
@@ -101,16 +109,38 @@ EditDeleteButton: Supprimer
 EditEdit: Éditer page
 EditCreate: +
 EditDelete: -
-EditCreateTitle: Créer page
-EditDeleteTitle: Supprimer page
-EditMarkdownHelp: Markdown
+EditToolbarPreview: Aperçu
+EditToolbarFormat: Format
+EditToolbarHeading: Titre
+EditToolbarH1: Titre 1
+EditToolbarH2: Titre 2
+EditToolbarH3: Titre 3
+EditToolbarParagraph: Texte normal
+EditToolbarPre: Code source
+EditToolbarQuote: Citation
+EditToolbarBold: Gras
+EditToolbarItalic: Italique
+EditToolbarStrikethrough: Barré
+EditToolbarCode: Code
+EditToolbarList: Liste
+EditToolbarUl: • Liste non ordonnée
+EditToolbarOl: 1. Liste commandée
+EditToolbarTl: ✓ Liste des tâches
+EditToolbarLink: Lien
+EditToolbarFile: Fichier
+EditToolbarEmojiawesome: Emoji
+EditToolbarFontawesome: Icone
+EditToolbarDraft: Brouillon
+EditToolbarUndo: Annuler
+EditToolbarRedo: Refaire
+EditToolbarMarkdown: Markdown
+EditToolbarHelp: Aide
 EditUserHelp: Aide
 EditUserLogout: Déconnexion
 PagePrevious: ← Précédent: @title
 PageNext: Suivant: @title →
 PaginationPrevious: ← Précédent
 PaginationNext: Suivant →
-SearchQuery: Rechercher:
 SearchResultsNone: Entrez un mot dans le champ de recherche.
 SearchResultsEmpty: Pas de résultats.
 SearchSpecialChanges: Changements récents
@@ -118,10 +148,9 @@ SearchButton: Rechercher
 TimeFormatShort: H:i
 TimeFormatMedium: H:i:s
 TimeFormatLong: H:i:s T
-WikiFilter: Wiki:
 WikiTag: Tags:
 WikiSpecialPages: Toutes les pages
 WikiSpecialChanges: Changements récents
 YellowUrl: https://datenstrom.se/fr/yellow/
-YellowUserHelpUrl: https://developers.datenstrom.se/fr/help/
-YellowMarkdownHelpUrl: https://developers.datenstrom.se/fr/help/markdown-cheat-sheet
+YellowHelpUrl: https://developers.datenstrom.se/fr/help/
+YellowMarkdownUrl: https://developers.datenstrom.se/fr/help/markdown-cheat-sheet

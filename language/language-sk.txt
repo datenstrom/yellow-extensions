@@ -3,21 +3,23 @@
 Language: sk
 LanguageDescription: Slovenčina
 LanguageTranslator: Ádám Tuba
-LanguageVersion: 0.7.2
+LanguageVersion: 0.7.13
 
 BlogBy: od
-BlogFilter: Blog:
 BlogTag: Štítky:
 BlogMore: Čítať ďalej…
 ContactName: Meno:
 ContactEmail: Email:
 ContactMessage: Správa:
+ContactConsent: Soglašam, da ta spletna stran shrani moje sporočilo.
 ContactButton: Poslať správu
 ContactStatusNone: Napíš pár slov. Ceníme tvoj názor.
 ContactStatusIncomplete: Prosím vyplň všetky pole.
 ContactStatusInvalid: Prosím napíš platný email.
 ContactStatusDone: Správa odoslaná. Ďakujem.
 ContactStatusError: Nepodarilo sa poslať správu. Skús to neskôr!
+DatePast: today, yesterday, @x days ago, 1 month ago, @x months ago, 1 year ago, @x years ago
+DateFuture: soon, tomorrow, in @x days, in 1 month, in @x months, in 1 year, in @x years
 DateMonths: Január, Február, Marec, Apríl, Máj, Jún, Júl, August, September, Octóber, November, December
 DateWeekdays: Pondelok, Utorok, Streda, Štvrtok, Piatok, Sobota, Nedeľa
 DateWeekstart: Pondelok
@@ -26,73 +28,79 @@ DateFormatMedium: d-m-Y
 DateFormatLong: d-m-Y H:i
 EditInstallationTitle: Hello
 EditInstallationFeature: What do you want to make?
-EditInstallationHomePage: Your website works!\n\nYou can [edit this page] or use your text editor.
-EditInstallationAboutPage: This website is made with [yellow]. [Learn more](https://developers.datenstrom.se/help/).
+EditInstallationHomePage: Your website works!\n\n[edit - You can edit this page] or use your text editor.
+EditInstallationAboutPage: This website is made with [Datenstrom Yellow](https://datenstrom.se/yellow/). [edit - Log in].
 EditLoginTitle: Vitajte
 EditLoginEmail: Email:
 EditLoginPassword: Password:
-EditLoginRecover: Forgot your password?
+EditLoginForgot: Forgot your password?
 EditLoginSignup: Create user account?
 EditLoginButton: Log in
 EditSignupTitle: Create user account
 EditSignupName: Name:
 EditSignupEmail: Email:
 EditSignupPassword: Password:
+EditSignupConsent: I consent that this website stores my personal data.
 EditSignupButton: Create
 EditSignupStatusNone: Here you can create a new user account.
 EditSignupStatusIncomplete: Please fill out all fields.
 EditSignupStatusInvalid: Please enter a valid email.
 EditSignupStatusWeak: Please enter a different password.
 EditSignupStatusNext: User account will be created, please check your emails.
+EditForgotTitle: Forgot your password
+EditForgotEmail: Email:
+EditForgotStatusNone: No problem, you can create a new password.
+EditForgotStatusInvalid: Please enter a valid email.
+EditForgotStatusNext: User account will be recovered, please check your emails.
 EditRecoverTitle: Forgot your password
-EditRecoverEmail: Email:
 EditRecoverPassword: Password:
-EditRecoverStatusNone: No problem, you can create a new password.
-EditRecoverStatusInvalid: Please enter a valid email.
 EditRecoverStatusPassword: Please enter a new password.
 EditRecoverStatusWeak: Please enter a different password.
-EditRecoverStatusNext: User account will be recovered, please check your emails.
 EditSettingsTitle: Settings
+EditSettingsQuit: You can delete your user account anytime.
+EditSettingsMore: More…
 EditSettingsStatusInvalid: Please enter a valid email.
 EditSettingsStatusTaken: Please enter a different email.
 EditSettingsStatusWeak: Please enter a different password.
 EditSettingsStatusNext: User account will be changed, please check your emails.
+EditQuitTitle: Delete user account
+EditQuitStatusNone: Please enter your name to confirm.
+EditQuitStatusMismatch: Please enter a different name.
+EditQuitStatusNext: User account will be deleted, please check your emails.
 EditConfirmSubject: Confirm user account
-EditConfirmMessage: Hi @usershort, please confirm your user account. Click the following link.
+EditConfirmMessage: Hi @usershort,\n\nplease confirm your user account. Click the following link.
 EditConfirmStatusDone: User account confirmed and waiting for approval. Thank you!
-EditConfirmStatusExpired: User account can not be confirmed. Link has expired!
 EditApproveSubject: Approve user account
-EditApproveMessage: Hi @usershort, please approve a new user account for @useraccount. Click the following link.
+EditApproveMessage: Hi @usershort,\n\nplease approve a new user account for @useraccount. Click the following link.
 EditApproveStatusDone: User account approved. Thank you!
-EditApproveStatusExpired: User account can not be approved. Link has expired!
 EditReactivateSubject: Reactivate user account
-EditReactivateMessage: Hi @usershort, please reactivate your user account. There were too many failed login attempts. Click the following link.
+EditReactivateMessage: Hi @usershort,\n\nplease reactivate your user account. There were too many failed login attempts. Click the following link.
 EditReactivateStatusDone: User account reactivated. Thank you!
-EditReactivateStatusExpired: User account can not be reactivated. Link has expired!
 EditRecoverSubject: Recover user account
-EditRecoverMessage: Hi @usershort, please confirm that you forgot your password. Click the following link.
+EditRecoverMessage: Hi @usershort,\n\nplease confirm that you forgot your password. Click the following link.
 EditRecoverStatusDone: User account recovered. Thank you!
-EditRecoverStatusExpired: User account can not be recovered. Link has expired!
-EditReconfirmSubject: Change user account
-EditReconfirmMessage: Hi @usershort, please confirm a new email for your user account. Click the following link.
-EditReconfirmStatusDone: User account confirmed. Thank you!
-EditReconfirmStatusExpired: User account can not be confirmed. Link has expired!
+EditVerifySubject: Confirm user account
+EditVerifyMessage: Hi @usershort,\n\nplease confirm a new email for your user account. Click the following link.
+EditVerifyStatusDone: User account confirmed. Thank you!
 EditChangeSubject: Change user account
-EditChangeMessage: Hi @usershort, please confirm that you want to change your user account. Click the following link.
+EditChangeMessage: Hi @usershort,\n\nplease confirm that you want to change your user account. Click the following link.
 EditChangeStatusDone: User account changed. Thank you!
-EditChangeStatusExpired: User account can not be changed. Link has expired!
+EditRemoveSubject: Delete user account
+EditRemoveMessage: Hi @usershort,\n\nplease confirm that you want to delete your user account. Click the following link.
+EditRemoveStatusDone: User account deleted. Thank you!
 EditWelcomeSubject: Welcome
-EditWelcomeMessage: Hi @usershort, your user account has been created. Have fun editing the website.
-EditInformationSubject: Welcome back
-EditInformationMessage: Hi @usershort, your user account has been changed. You can now log in.
+EditWelcomeMessage: Hi @usershort,\n\nyour user account has been created. Have fun editing the website.
+EditGoodbyeSubject: Goodbye
+EditGoodbyeMessage: Hi @usershort,\n\nyour user account has been deleted. Take care.
 EditVersionTitle: About this website
-EditVersionStatusNone: Yellow is for people who make websites.
+EditVersionStatusNone: Datenstrom Yellow is for people who make websites.
 EditVersionStatusCheck: Checking for updates…
 EditVersionStatusDone: Your website is up to date.
-EditVersionStatusUpdates: Updates available, please contact the webmaster.
-EditVersionUpdateNormal: Updates available, update now.
+EditVersionStatusWarning: Updates available, please update your website.
+EditVersionStatusUpdates: Updates available, update now.
 EditVersionUpdateForce: Force update
 EditVersionUpdateModified: @software has been modified
+EditUploadProgress: [Uploading file…]
 EditOkButton: Ok
 EditCancelButton: Zrušiť
 EditCreateButton: Vytvoriť
@@ -101,16 +109,38 @@ EditDeleteButton: Zmazať
 EditEdit: Upraviť stránku
 EditCreate: +
 EditDelete: -
-EditCreateTitle: Vytvoriť stránku
-EditDeleteTitle: Zmazať stránku
-EditMarkdownHelp: Markdown
+EditToolbarPreview: Predogled
+EditToolbarFormat: Format
+EditToolbarHeading: Heading
+EditToolbarH1: Heading 1
+EditToolbarH2: Heading 2
+EditToolbarH3: Heading 3
+EditToolbarParagraph: Normal text
+EditToolbarPre: Source code
+EditToolbarQuote: Quote
+EditToolbarBold: Bold
+EditToolbarItalic: Italic
+EditToolbarStrikethrough: Strikethrough
+EditToolbarCode: Code
+EditToolbarList: List
+EditToolbarUl: • Unordered list
+EditToolbarOl: 1. Ordered list
+EditToolbarTl: ✓ Task list
+EditToolbarLink: Link
+EditToolbarFile: File
+EditToolbarEmojiawesome: Emoji
+EditToolbarFontawesome: Icon
+EditToolbarDraft: Draft
+EditToolbarUndo: Undo
+EditToolbarRedo: Redo
+EditToolbarMarkdown: Markdown
+EditToolbarHelp: Pomoc
 EditUserHelp: Pomoc
 EditUserLogout: Odhlásiť sa
 PagePrevious: ← Predchádzajúci: @title
 PageNext: Nasledujúci: @title →
 PaginationPrevious: ← Predchádzajúci
 PaginationNext: Nasledujúci →
-SearchQuery: Vyhľadávanie :
 SearchResultsNone: Hľadaný výraz.
 SearchResultsEmpty: Židne výsledky.
 SearchSpecialChanges: Posledné zmeny
@@ -118,10 +148,9 @@ SearchButton: Hľadať
 TimeFormatShort: H:i
 TimeFormatMedium: H:i:s
 TimeFormatLong: H:i:s T
-WikiFilter: Wiki:
 WikiTag: Štítky:
 WikiSpecialPages: Vse strani
 WikiSpecialChanges: Posledné zmeny
 YellowUrl: https://datenstrom.se/yellow/
-YellowUserHelpUrl: https://developers.datenstrom.se/help/
-YellowMarkdownHelpUrl: https://developers.datenstrom.se/help/markdown-cheat-sheet
+YellowHelpUrl: https://developers.datenstrom.se/help/
+YellowMarkdownUrl: https://developers.datenstrom.se/help/markdown-cheat-sheet

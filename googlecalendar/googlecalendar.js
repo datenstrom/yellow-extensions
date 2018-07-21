@@ -2,17 +2,17 @@
 // Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-function GoogleCalender(element, options)
+function GoogleCalendar(element, options)
 {
 	this.element = element;
 	this.options = options ? options : this.parseOptions(element,
 		["mode", "timeZone", "timeZoneOffset", "dateMonths", "dateWeekdays", "dateFormatShort",
 		 "dateFormatMedium", "dateFormatLong", "timeFormatShort", "timeFormatMedium", "timeFormatLong",
 		 "timeMin", "entriesMax", "calendar", "apiKey"]);
-	return (this instanceof GoogleCalender ? this : new GoogleCalender());
+	return (this instanceof GoogleCalendar ? this : new GoogleCalendar());
 }
 
-GoogleCalender.prototype =
+GoogleCalendar.prototype =
 {
 	// Show calendar events
 	onShowEvents: function(responseText, status)
@@ -89,7 +89,7 @@ GoogleCalender.prototype =
 		this.element.appendChild(node);
 	},
 	
-	// Request data
+	// Request calendar data
 	request: function()
 	{
 		var url = "https://www.googleapis.com/calendar/v3/calendars/"+encodeURIComponent(this.options.calendar)+"/events?timeZone="+encodeURIComponent(this.options.timeZone)+"&timeMin="+encodeURIComponent(this.options.timeMin)+"&maxResults="+encodeURIComponent(this.options.entriesMax)+"&singleEvents=true&orderBy=startTime&fields=items(description%2Csummary%2Clocation%2Cstart)&key="+encodeURIComponent(this.options.apiKey);
@@ -101,11 +101,11 @@ GoogleCalender.prototype =
 	},
 	
 	// Request URL with GET method
-	requestUrl: function(url, callback, callbackError)
+	requestUrl: function(url, callback, error)
 	{
 		var thisObject = this;
-		var request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
-		request.onreadystatechange = function() { if(this.readyState==4 && this.status==200) callback.call(thisObject, this.responseText, this.status); if(this.readyState==4 && this.status>=400) callbackError.call(thisObject, this.responseText,this.status); };
+		var request = new XMLHttpRequest();
+		request.onload = function() { if(this.status==200) { callback.call(thisObject, this.responseText, this.status) } else { error.call(thisObject, this.responseText, this.status); } };
 		request.open("GET", url, true);
 		request.send();
 	},
@@ -194,16 +194,12 @@ GoogleCalender.prototype =
 var initGoogleCalendarFromDOM = function()
 {
 	var calendars = {};
-	var calendarElements = document.querySelectorAll(".googlecalendar");
-	for(var i=0, l=calendarElements.length; i<l; i++)
+	var elements = document.querySelectorAll(".googlecalendar");
+	for(var i=0, l=elements.length; i<l; i++)
 	{
-		calendars[i] = new GoogleCalender(calendarElements[i]);
+		calendars[i] = new GoogleCalendar(elements[i]);
 		calendars[i].request();
 	}
 };
 
-if(window.addEventListener) {
-	window.addEventListener("load", initGoogleCalendarFromDOM, false);
-} else {
-	window.attachEvent("onload", initGoogleCalendarFromDOM);
-}
+window.addEventListener("load", initGoogleCalendarFromDOM, false);

@@ -10,7 +10,7 @@ Embed Google maps. [See demo](https://developers.datenstrom.se/plugins/googlemap
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/googlemaps.zip). If you are using Safari, right click and select 'Download file as'.
 3. Copy `googlemaps.zip` into your `system/plugins` folder.
 
-To uninstall delete the plugin files.
+To uninstall delete the [plugin files](update.ini).
 
 ## How to embed a map?
 
@@ -34,4 +34,4 @@ Embedding a map:
 
 ## Developer
 
-Datenstrom
+Datenstrom. [Get support](https://developers.datenstrom.se/help/support).

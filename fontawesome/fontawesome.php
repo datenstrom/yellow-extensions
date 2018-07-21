@@ -1,29 +1,33 @@
 <?php
 // Fontawesome plugin, https://github.com/datenstrom/yellow-plugins/tree/master/fontawesome
-// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
+// Copyright (c) 2013-2018 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
 class YellowFontawesome
 {
-	const VERSION = "0.6.4";
+	const VERSION = "0.7.2";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
 	function onLoad($yellow)
 	{
 		$this->yellow = $yellow;
+		$this->yellow->config->setDefault("fontawesomeToolbarButtons", ":fa-star: :fa-heart: :fa-exclamation-triangle: :fa-tag: :fa-comment: :fa-file-o: :fa-file-text-o: :fa-file-picture-o: :fa-envelope-o: :fa-phone: :fa-twitter: :fa-github: :fa-calendar: :fa-clock-o: :fa-map-marker: :fa-check:");
 	}
 	
 	// Handle page content parsing of custom block
 	function onParseContentBlock($page, $name, $text, $shortcut)
 	{
 		$output = null;
-		if($name=="fa" && $shortcut)
+		if((empty($name) || $name=="fa") && $shortcut)
 		{
 			list($shortname, $style) = $this->yellow->toolbox->getTextArgs($text);
-			if(preg_match("/fa-(.+)/", $shortname, $matches)) $shortname = $matches[1];
-			$class = trim("fa fa-$shortname $style");
-			$output = "<i class=\"".htmlspecialchars($class)."\"></i>";
+			if(preg_match("/fa-(.+)/", $shortname, $matches))
+			{
+				$shortname = $matches[1];
+				$class = trim("fa fa-$shortname $style");
+				$output = "<i class=\"".htmlspecialchars($class)."\"></i>";
+			}
 		}
 		return $output;
 	}

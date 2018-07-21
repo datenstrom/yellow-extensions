@@ -3,21 +3,23 @@
 Language: nl
 LanguageDescription: Nederlands (België)
 LanguageTranslator: Robin Vannieuwenhuijse
-LanguageVersion: 0.7.2
+LanguageVersion: 0.7.13
 
 BlogBy: door
-BlogFilter: Blog:
 BlogTag: Labels:
 BlogMore: Lees meer…
 ContactName: Naam:
 ContactEmail: Email:
 ContactMessage: Bericht:
+ContactConsent: Ik ga ermee akkoord dat deze website mijn bericht opslaat.
 ContactButton: Verstuur bericht
 ContactStatusNone: Zeg hallo. Uw feedback is zeer welkom.
 ContactStatusIncomplete: Vul alle velden in.
 ContactStatusInvalid: Vul een geldig email.
 ContactStatusDone: Je email is succesvol verzonden. Bedankt!
 ContactStatusError: E-mail kon niet worden verzonden, probeer het later opnieuw!
+DatePast: today, yesterday, @x days ago, 1 month ago, @x months ago, 1 year ago, @x years ago
+DateFuture: soon, tomorrow, in @x days, in 1 month, in @x months, in 1 year, in @x years
 DateMonths: januari, februari, maart, april, mei, juni, juli, augustus, september, oktober, november, december
 DateWeekdays: maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag
 DateWeekstart: maandag
@@ -26,73 +28,79 @@ DateFormatMedium: Y-m-d
 DateFormatLong: Y-m-d H:i
 EditInstallationTitle: Hallo
 EditInstallationFeature: Wat wil je doen?
-EditInstallationHomePage: Je website werkt!\n\nJe kan [edit - deze pagina bewerken] of gebruik maken van de teksteditor.
-EditInstallationAboutPage: This website is made with [yellow]. [Learn more](https://developers.datenstrom.se/help/).
+EditInstallationHomePage: Je website werkt!\n\n[edit - Je kan deze pagina bewerken] of gebruik maken van de teksteditor.
+EditInstallationAboutPage: Deze website is gemaakt met [Datenstrom Yellow](https://datenstrom.se/yellow/). [edit - Aanmelden].
 EditLoginTitle: Welkom
 EditLoginEmail: E-mail:
 EditLoginPassword: Wachtwoord:
-EditLoginRecover: Wachtwoord vergeten?
+EditLoginForgot: Wachtwoord vergeten?
 EditLoginSignup: Gebruikersaccount aanmaken?
 EditLoginButton: Aanmelden
 EditSignupTitle: Gebruikersaccount aanmaken
 EditSignupName: Naam:
 EditSignupEmail: E-mail:
 EditSignupPassword: Wachtwoord:
+EditSignupConsent: Ik ga ermee akkoord dat deze website mijn persoonlijke gegevens opslaat.
 EditSignupButton: Aanmaken
 EditSignupStatusNone: Hier kan je een nieuw gebruikersaccount aanmaken.
 EditSignupStatusIncomplete: Gelieve alle velden in te vullen.
 EditSignupStatusInvalid: Gelieve een geldig e-mailadres in te vullen.
 EditSignupStatusWeak: Gelieve een ander wachtwoord in te vullen.
 EditSignupStatusNext: Gebruikersaccount zal worden aangemaakt, gelieve je mail te bekijken.
+EditForgotTitle: Wachtwoord vergeten
+EditForgotEmail: E-mail:
+EditForgotStatusNone: Geen probleem, je kan een nieuw wachtwoord aanmaken.
+EditForgotStatusInvalid: Gelieve een geldig e-mailadres in te vullen.
+EditForgotStatusNext: Gebruikersaccount zal worden herstelt, gelieve je mail te bekijken.
 EditRecoverTitle: Wachtwoord vergeten
-EditRecoverEmail: E-mail:
 EditRecoverPassword: Wachtwoord:
-EditRecoverStatusNone: Geen probleem, je kan een nieuw wachtwoord aanmaken.
-EditRecoverStatusInvalid: Gelieve een geldig e-mailadres in te vullen.
-EditRecoverStatusPassword: Gelieve een nieuw e-mailadres in te vullen.
+EditRecoverStatusPassword: Gelieve een nieuw wachtwoord in te vullen.
 EditRecoverStatusWeak: Gelieve een ander wachtwoord in te vullen.
-EditRecoverStatusNext: Gebruikersaccount zal worden herstelt, gelieve je mail te bekijken.
 EditSettingsTitle: Instellingen
+EditSettingsQuit: You can delete your user account anytime.
+EditSettingsMore: More…
 EditSettingsStatusInvalid: Please enter a valid email.
 EditSettingsStatusTaken: Please enter a different email.
 EditSettingsStatusWeak: Please enter a different password.
 EditSettingsStatusNext: User account will be changed, please check your emails.
+EditQuitTitle: Delete user account
+EditQuitStatusNone: Please enter your name to confirm.
+EditQuitStatusMismatch: Please enter a different name.
+EditQuitStatusNext: User account will be deleted, please check your emails.
 EditConfirmSubject: Gebruikersaccount bevestigen
-EditConfirmMessage: Hallo @usershort, gelieve je gebruikersaccount te bevestigen. Klik op volgende link.
+EditConfirmMessage: Hallo @usershort,\n\ngelieve je gebruikersaccount te bevestigen. Klik op volgende link.
 EditConfirmStatusDone: Gebruikersaccount bevestigd en wachten op goedkeuring. Bedankt!
-EditConfirmStatusExpired: Gebruikersaccount kan niet worden bevestigd. Link is verlopen!
 EditApproveSubject: Gebruikersaccount toestaan
-EditApproveMessage: Hallo @usershort, gelieve de aanmaak van een nieuw gebruikersaccount voor @useraccount te bevestigen. Klik op volgende link.
+EditApproveMessage: Hallo @usershort,\n\ngelieve de aanmaak van een nieuw gebruikersaccount voor @useraccount te bevestigen. Klik op volgende link.
 EditApproveStatusDone: Gebruikersaccount toegestaan. Bedankt!
-EditApproveStatusExpired: Gebruikersaccount kan niet worden toegestaan. Link is verlopen!
 EditReactivateSubject: Reactivate user account
-EditReactivateMessage: Hi @usershort, please reactivate your user account. There were too many failed login attempts. Click the following link.
+EditReactivateMessage: Hi @usershort,\n\nplease reactivate your user account. There were too many failed login attempts. Click the following link.
 EditReactivateStatusDone: User account reactivated. Thank you!
-EditReactivateStatusExpired: User account can not be reactivated. Link has expired!
 EditRecoverSubject: Gebruikersaccount herstellen
-EditRecoverMessage: Hallo @usershort, gelieve te bevestigen dat je het wachtwoord vergeten bent. Klik op volgende link.
+EditRecoverMessage: Hallo @usershort,\n\ngelieve te bevestigen dat je het wachtwoord vergeten bent. Klik op volgende link.
 EditRecoverStatusDone: Gebruikersaccount herstelt. Bedankt!
-EditRecoverStatusExpired: Gebruikersaccount kan niet worden herstelt. Link is verlopen!
-EditReconfirmSubject: Change user account
-EditReconfirmMessage: Hi @usershort, please confirm a new email for your user account. Click the following link.
-EditReconfirmStatusDone: User account confirmed. Thank you!
-EditReconfirmStatusExpired: User account can not be confirmed. Link has expired!
+EditVerifySubject: Confirm user account
+EditVerifyMessage: Hi @usershort,\n\nplease confirm a new email for your user account. Click the following link.
+EditVerifyStatusDone: User account confirmed. Thank you!
 EditChangeSubject: Change user account
-EditChangeMessage: Hi @usershort, please confirm that you want to change your user account. Click the following link.
+EditChangeMessage: Hi @usershort,\n\nplease confirm that you want to change your user account. Click the following link.
 EditChangeStatusDone: User account changed. Thank you!
-EditChangeStatusExpired: User account can not be changed. Link has expired!
+EditRemoveSubject: Delete user account
+EditRemoveMessage: Hi @usershort,\n\nplease confirm that you want to delete your user account. Click the following link.
+EditRemoveStatusDone: User account deleted. Thank you!
 EditWelcomeSubject: Welkom
-EditWelcomeMessage: Hallo @usershort, je gebruikersaccount is aangemaakt. Veel plezier met het aanpassen van je website.
-EditInformationSubject: Welkom terug
-EditInformationMessage: Hallo @usershort, je gebruikersaccount is gewijzigd. U kunt zich nu aanmelden.
+EditWelcomeMessage: Hallo @usershort,\n\nje gebruikersaccount is aangemaakt. Veel plezier met het aanpassen van je website.
+EditGoodbyeSubject: Goodbye
+EditGoodbyeMessage: Hi @usershort,\n\nyour user account has been deleted. Take care.
 EditVersionTitle: About this website
-EditVersionStatusNone: Yellow is for people who make websites.
+EditVersionStatusNone: Datenstrom Yellow is for people who make websites.
 EditVersionStatusCheck: Checking for updates…
 EditVersionStatusDone: Your website is up to date.
-EditVersionStatusUpdates: Updates available, please contact the webmaster.
-EditVersionUpdateNormal: Updates available, update now.
+EditVersionStatusWarning: Updates available, please update your website.
+EditVersionStatusUpdates: Updates available, update now.
 EditVersionUpdateForce: Force update
 EditVersionUpdateModified: @software has been modified
+EditUploadProgress: [Uploading file…]
 EditOkButton: Ok
 EditCancelButton: Annuleren
 EditCreateButton: Nieuw
@@ -101,16 +109,38 @@ EditDeleteButton: Verwijderen
 EditEdit: Bewerk pagina
 EditCreate: +
 EditDelete: -
-EditCreateTitle: Nieuwe pagina
-EditDeleteTitle: Pagina verwijderen
-EditMarkdownHelp: Markdown
+EditToolbarPreview: Voorbeeld
+EditToolbarFormat: Format
+EditToolbarHeading: Heading
+EditToolbarH1: Heading 1
+EditToolbarH2: Heading 2
+EditToolbarH3: Heading 3
+EditToolbarParagraph: Normal text
+EditToolbarPre: Source code
+EditToolbarQuote: Quote
+EditToolbarBold: Bold
+EditToolbarItalic: Italic
+EditToolbarStrikethrough: Strikethrough
+EditToolbarCode: Code
+EditToolbarList: List
+EditToolbarUl: • Unordered list
+EditToolbarOl: 1. Ordered list
+EditToolbarTl: ✓ Task list
+EditToolbarLink: Link
+EditToolbarFile: File
+EditToolbarEmojiawesome: Emoji
+EditToolbarFontawesome: Icon
+EditToolbarDraft: Draft
+EditToolbarUndo: Undo
+EditToolbarRedo: Redo
+EditToolbarMarkdown: Markdown
+EditToolbarHelp: Help
 EditUserHelp: Help
 EditUserLogout: Afmelden
 PagePrevious: ← Vorige: @title
 PageNext: Volgende: @title →
 PaginationPrevious: ← Vorige
 PaginationNext: Volgende →
-SearchQuery: Zoek:
 SearchResultsNone: Voer een zoekterm in.
 SearchResultsEmpty: Geen resultaten gevonden.
 SearchSpecialChanges: Recente wijzigingen
@@ -118,10 +148,9 @@ SearchButton: Zoek
 TimeFormatShort: H:i
 TimeFormatMedium: H:i:s
 TimeFormatLong: H:i:s T
-WikiFilter: Wiki:
 WikiTag: Labels:
 WikiSpecialPages: Alle pagina's
 WikiSpecialChanges: Recente wijzigingen
 YellowUrl: https://datenstrom.se/yellow/
-YellowUserHelpUrl: https://developers.datenstrom.se/help/
-YellowMarkdownHelpUrl: https://developers.datenstrom.se/help/markdown-cheat-sheet
+YellowHelpUrl: https://developers.datenstrom.se/help/
+YellowMarkdownUrl: https://developers.datenstrom.se/help/markdown-cheat-sheet

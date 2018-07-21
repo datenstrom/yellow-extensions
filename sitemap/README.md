@@ -1,4 +1,4 @@
-Sitemap plugin 0.7.1
+Sitemap plugin 0.7.3
 ====================
 Sitemap for your website. [See demo](https://developers.datenstrom.se/sitemap/).
 
@@ -10,7 +10,7 @@ Sitemap for your website. [See demo](https://developers.datenstrom.se/sitemap/).
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/sitemap.zip). If you are using Safari, right click and select 'Download file as'.
 3. Copy `sitemap.zip` into your `system/plugins` folder.
 
-To uninstall delete the plugin files.
+To uninstall delete the [plugin files](update.ini).
 
 ## How to use a sitemap?
 
@@ -30,10 +30,9 @@ Footer snippet with sitemap:
 
     <div class="footer">
     <div class="siteinfo">
-    <a href="<?php echo $yellow->page->base."/" ?>">&copy; 2017 <?php echo $yellow->page->getHtml("sitename") ?></a>.
+    <a href="<?php echo $yellow->page->base."/" ?>">&copy; 2018 <?php echo $yellow->page->getHtml("sitename") ?></a>.
     <a href="<?php echo $yellow->page->base."/sitemap/" ?>">Sitemap</a>. 
-    <a href="<?php echo $yellow->page->get("pageEdit") ?>">Edit</a>.
-    <a href="<?php echo $yellow->text->get("yellowUrl") ?>">Made with Yellow</a>.
+    <a href="<?php echo $yellow->text->get("yellowUrl") ?>">Made with Datenstrom Yellow</a>.
     </div>
     </div>
     </div>
@@ -43,4 +42,4 @@ Footer snippet with sitemap:
 
 ## Developer
 
-Datenstrom
+Datenstrom. [Get support](https://developers.datenstrom.se/help/support).

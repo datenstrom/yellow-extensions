@@ -1,4 +1,4 @@
-Wiki plugin 0.7.2
+Wiki plugin 0.7.5
 =================
 Wiki for your website. [See demo](https://developers.datenstrom.se/plugins/wiki/).
 
@@ -10,41 +10,52 @@ Wiki for your website. [See demo](https://developers.datenstrom.se/plugins/wiki/
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/wiki.zip). If you are using Safari, right click and select 'Download file as'.
 3. Copy `wiki.zip` into your `system/plugins` folder.
 
-To uninstall delete the plugin files.
+To uninstall delete the [plugin files](update.ini).
 
 ## How to use a wiki?
 
 The wiki is available on your website as `http://website/wiki/`. To show the wiki on the home page, go to your `content` folder and delete the `1-home` folder. To create a new wiki page, add a new file to the wiki folder. Set `Title` and other [settings](https://developers.datenstrom.se/help/markdown-cheat-sheet#settings) at the top of a page. Use `Tag` to group similar pages together. [Learn more](https://developers.datenstrom.se/help/how-to-make-a-wiki).
 
-## How to configure a wiki?
+## How to show wiki information?
 
 You can use shortcuts to show information about the wiki:
 
 `[wikiauthors LOCATION PAGESMAX]` for a list of authors  
-`[wikipages LOCATION PAGESMAX]` for a list of pages  
-`[wikirecent LOCATION PAGESMAX]` for recently changed pages  
-`[wikirelated LOCATION PAGESMAX]` for related pages to current page  
 `[wikitags LOCATION PAGESMAX]` for a list of tags  
+`[wikipages LOCATION PAGESMAX AUTHOR TAG]` for a list of pages, alphabetic order  
+`[wikichanges LOCATION PAGESMAX AUTHOR TAG]` for a list of pages, modified order  
+`[wikirelated LOCATION PAGESMAX]` for a list of pages related to the current page    
 
 The following arguments are available, all but the first argument are optional:
 
 `LOCATION` = wiki location  
 `PAGESMAX` = number of pages, 0 for unlimited  
+`AUTHOR` = show pages by a specific author  
+`TAG` = show pages with a specific tag  
+
+## How to configure a wiki?
 
 The following settings can be configured in file `system/config/config.ini`:
 
 `WikiLocation` = wiki location  
 `WikiNewLocation` = wiki location for new page  
 `WikiPagesMax` = number of pages  
+`WikiPagesMain` = include wiki main page in pages, 1 or 0  
 `WikiPaginationLimit` = number of entries to show per page  
+
+The following files can be configured:
+
+`system/config/page-new-wiki.txt` = content file for new wiki page  
+`system/themes/snippets/content-wiki.php` = source code for wiki page  
+`system/themes/snippets/content-wikipages.php` = source code for main page  
 
 ## Example
 
-Showing recently changed pages:
+Showing latest wiki pages:
 
-    [wikirecent /wiki/]
-    [wikirecent /wiki/ 5]
-    [wikirecent /wiki/ 20]
+    [wikichanges /wiki/]
+    [wikichanges /wiki/ 5]
+    [wikichanges /wiki/ 20]
 
 Showing list of tags:
 
@@ -54,10 +65,10 @@ Showing list of tags:
 
 Showing list of pages:
 
-    [wikipages /wiki/ 0]
-    [wikipages /wiki/ 25]
-    [wikipages /wiki/ 50]
+    [wikipages /wiki/]
+    [wikipages /wiki/ 5]
+    [wikipages /wiki/ 20 - example]
 
 ## Developer
 
-Datenstrom
+Datenstrom. [Get support](https://developers.datenstrom.se/help/support).

@@ -1,11 +1,11 @@
 <?php
 // Emojiawesome plugin, https://github.com/datenstrom/yellow-plugins/tree/master/emojiawesome
-// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
+// Copyright (c) 2013-2018 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
 class YellowEmojiawesome
 {
-	const VERSION = "0.7.1";
+	const VERSION = "0.7.2";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -13,6 +13,7 @@ class YellowEmojiawesome
 	{
 		$this->yellow = $yellow;
 		$this->yellow->config->setDefault("emojiawesomeCdn", "https://cdnjs.cloudflare.com/ajax/libs/twemoji/2.0.0/");
+		$this->yellow->config->setDefault("emojiawesomeToolbarButtons", ":grinning: :smile: :angry: :frowning: :heart_eyes: :kissing_heart: :stuck_out_tongue_winking_eye: :joy: :heart: :fire: :sunny: :coffee: :ok_hand: :hand: :+1: :-1:");
 	}
 	
 	// Handle page content parsing of custom block

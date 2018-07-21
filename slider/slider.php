@@ -5,7 +5,7 @@
 
 class YellowSlider
 {
-	const VERSION = "0.6.7";
+	const VERSION = "0.7.4";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -13,7 +13,7 @@ class YellowSlider
 	{
 		$this->yellow = $yellow;
 		$this->yellow->config->setDefault("sliderStyle", "flickity");
-		$this->yellow->config->setDefault("sliderAutoplay", "false");
+		$this->yellow->config->setDefault("sliderAutoplay", "0");
 	}
 	
 	// Handle page content parsing of custom block
@@ -28,7 +28,7 @@ class YellowSlider
 			if(empty($autoplay)) $autoplay = $this->yellow->config->get("sliderAutoplay");
 			if(empty($pattern))
 			{
-				$files = $page->getFiles(true);
+				$files = $this->yellow->files->clean();
 			} else {
 				$images = $this->yellow->config->get("imageDir");
 				$files = $this->yellow->files->index(true, true)->match("#$images$pattern#");
@@ -38,7 +38,9 @@ class YellowSlider
 				if(count($files))
 				{
 					$page->setLastModified($files->getModified());
-					$output = "<div class=\"".htmlspecialchars($style)."\" data-prevnextbuttons=\"false\" data-clickable=\"true\" data-wraparound=\"true\" data-autoplay=\"".htmlspecialchars($autoplay)."\">\n";
+					$output = "<div class=\"".htmlspecialchars($style)."\" data-prevnextbuttons=\"false\" data-clickable=\"true\" data-wraparound=\"true\"";
+					if($autoplay!=0) $output .= " data-autoplay=\"".htmlspecialchars($autoplay)."\"";
+					$output .= ">\n";
 					foreach($files as $file)
 					{
 						list($src, $width, $height) = $this->yellow->plugins->get("image")->getImageInfo($file->fileName, $size, $size);

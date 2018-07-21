@@ -1,11 +1,11 @@
 <?php
 // Draft plugin, https://github.com/datenstrom/yellow-plugins/tree/master/draft
-// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
+// Copyright (c) 2013-2018 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
 class YellowDraft
 {
-	const VERSION = "0.6.1";
+	const VERSION = "0.7.1";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -26,7 +26,12 @@ class YellowDraft
 	{
 		if($this->yellow->page->get("status")=="draft" && $this->yellow->getRequestHandler()=="core")
 		{
-			$this->yellow->page->error($this->yellow->config->get("draftStatusCode"), "Page has 'draft' status!");
+			$pageError = "Can't show draft page!";
+			if($this->yellow->plugins->isExisting("edit"))
+			{
+				$pageError .= " <a href=\"".$this->yellow->page->get("pageEdit")."\">Please log in</a>.";
+			}
+			$this->yellow->page->error($this->yellow->config->get("draftStatusCode"), $pageError);
 		}
 	}
 }

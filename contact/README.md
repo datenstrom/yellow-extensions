@@ -1,6 +1,6 @@
-Contact plugin 0.6.9
+Contact plugin 0.7.2
 ====================
-Email contact page for your website.
+Email contact page.
 
 <p align="center"><img src="contact-screenshot.png?raw=true" alt="Screenshot"></p>
 
@@ -10,7 +10,7 @@ Email contact page for your website.
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/contact.zip). If you are using Safari, right click and select 'Download file as'.
 3. Copy `contact.zip` into your `system/plugins` folder.
 
-To uninstall delete the plugin files.
+To uninstall delete the [plugin files](update.ini).
 
 ## How to use a contact page?
 
@@ -37,7 +37,7 @@ Content file with contact form:
 
     ---
     Title: Example page
-    ---        
+    ---
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
     labore et dolore magna pizza. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
     nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit 
@@ -50,10 +50,9 @@ Footer snippet with contact page:
 
     <div class="footer">
     <div class="siteinfo">
-    <a href="<?php echo $yellow->page->base."/" ?>">&copy; 2017 <?php echo $yellow->page->getHtml("sitename") ?></a>.
+    <a href="<?php echo $yellow->page->base."/" ?>">&copy; 2018 <?php echo $yellow->page->getHtml("sitename") ?></a>.
     <a href="<?php echo $yellow->page->base."/contact/" ?>">Contact</a>.
-    <a href="<?php echo $yellow->page->get("pageEdit") ?>">Edit</a>.
-    <a href="<?php echo $yellow->text->get("yellowUrl") ?>">Made with Yellow</a>.
+    <a href="<?php echo $yellow->text->get("yellowUrl") ?>">Made with Datenstrom Yellow</a>.
     </div>
     </div>
     </div>
@@ -63,4 +62,4 @@ Footer snippet with contact page:
 
 ## Developer
 
-Datenstrom
+Datenstrom. [Get support](https://developers.datenstrom.se/help/support).

@@ -5,7 +5,7 @@
 
 class YellowGooglecalendar
 {
-	const VERSION = "0.6.4";
+	const VERSION = "0.7.2";
 	var $yellow;			//access to API
 	
 	// Handle initialisation

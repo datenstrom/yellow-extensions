@@ -1,11 +1,11 @@
 <?php
 // Wiki plugin, https://github.com/datenstrom/yellow-plugins/tree/master/wiki
-// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
+// Copyright (c) 2013-2018 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
 class YellowWiki
 {
-	const VERSION = "0.7.2";
+	const VERSION = "0.7.5";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -15,6 +15,7 @@ class YellowWiki
 		$this->yellow->config->setDefault("wikiLocation", "");
 		$this->yellow->config->setDefault("wikiNewLocation", "@title");
 		$this->yellow->config->setDefault("wikiPagesMax", "10");
+		$this->yellow->config->setDefault("wikiPagesMain", "1");
 		$this->yellow->config->setDefault("wikiPaginationLimit", "30");
 	}
 
@@ -37,10 +38,10 @@ class YellowWiki
 				$authors = $this->yellow->lookup->normaliseUpperLower($authors);
 				if($pagesMax!=0 && count($authors)>$pagesMax)
 				{
-					uasort($authors, strnatcasecmp);
+					uasort($authors, "strnatcasecmp");
 					$authors = array_slice($authors, -$pagesMax);
 				}
-				uksort($authors, strnatcasecmp);
+				uksort($authors, "strnatcasecmp");
 				$output = "<div class=\"".htmlspecialchars($name)."\">\n";
 				$output .= "<ul>\n";
 				foreach($authors as $key=>$value)
@@ -56,11 +57,13 @@ class YellowWiki
 		}
 		if($name=="wikipages" && $shortcut)
 		{
-			list($location, $pagesMax) = $this->yellow->toolbox->getTextArgs($text);
+			list($location, $pagesMax, $author, $tag) = $this->yellow->toolbox->getTextArgs($text);
 			if(empty($location)) $location = $this->yellow->config->get("wikiLocation");
 			if(strempty($pagesMax)) $pagesMax = $this->yellow->config->get("wikiPagesMax");
 			$wiki = $this->yellow->pages->find($location);
 			$pages = $this->getWikiPages($location);
+			if(!empty($author)) $pages->filter("author", $author);
+			if(!empty($tag)) $pages->filter("tag", $tag);
 			$pages->sort("title");
 			$page->setLastModified($pages->getModified());
 			if(count($pages))
@@ -70,7 +73,8 @@ class YellowWiki
 				$output .= "<ul>\n";
 				foreach($pages as $page)
 				{
-					$output .= "<li><a href=\"".$page->getLocation(true)."\">".$page->getHtml("titleNavigation")."</a></li>\n";
+					$output .= "<li><a".($page->isExisting("tag") ? " class=\"".$this->getWikiClass($page)."\"" : "");
+					$output .= " href=\"".$page->getLocation(true)."\">".$page->getHtml("title")."</a></li>\n";
 				}
 				$output .= "</ul>\n";
 				$output .= "</div>\n";
@@ -78,13 +82,15 @@ class YellowWiki
 				$page->error(500, "Wikipages '$location' does not exist!");
 			}
 		}
-		if($name=="wikirecent" && $shortcut)
+		if(($name=="wikichanges" || $name=="wikirecent") && $shortcut)
 		{
-			list($location, $pagesMax) = $this->yellow->toolbox->getTextArgs($text);
+			list($location, $pagesMax, $author, $tag) = $this->yellow->toolbox->getTextArgs($text);
 			if(empty($location)) $location = $this->yellow->config->get("wikiLocation");
 			if(strempty($pagesMax)) $pagesMax = $this->yellow->config->get("wikiPagesMax");
 			$wiki = $this->yellow->pages->find($location);
 			$pages = $this->getWikiPages($location);
+			if(!empty($author)) $pages->filter("author", $author);
+			if(!empty($tag)) $pages->filter("tag", $tag);
 			$pages->sort("modified", false);
 			$page->setLastModified($pages->getModified());
 			if(count($pages))
@@ -94,12 +100,13 @@ class YellowWiki
 				$output .= "<ul>\n";
 				foreach($pages as $page)
 				{
-					$output .= "<li><a href=\"".$page->getLocation(true)."\">".$page->getHtml("titleNavigation")."</a></li>\n";
+					$output .= "<li><a".($page->isExisting("tag") ? " class=\"".$this->getWikiClass($page)."\"" : "");
+					$output .= " href=\"".$page->getLocation(true)."\">".$page->getHtml("title")."</a></li>\n";
 				}
 				$output .= "</ul>\n";
 				$output .= "</div>\n";
 			} else {
-				$page->error(500, "Wikirecent '$location' does not exist!");
+				$page->error(500, "Wikichanges '$location' does not exist!");
 			}
 		}
 		if($name=="wikirelated" && $shortcut)
@@ -118,7 +125,8 @@ class YellowWiki
 				$output .= "<ul>\n";
 				foreach($pages as $page)
 				{
-					$output .= "<li><a href=\"".$page->getLocation(true)."\">".$page->getHtml("titleNavigation")."</a></li>\n";
+					$output .= "<li><a".($page->isExisting("tag") ? " class=\"".$this->getWikiClass($page)."\"" : "");
+					$output .= " href=\"".$page->getLocation(true)."\">".$page->getHtml("title")."</a></li>\n";
 				}
 				$output .= "</ul>\n";
 				$output .= "</div>\n";
@@ -141,10 +149,10 @@ class YellowWiki
 				$tags = $this->yellow->lookup->normaliseUpperLower($tags);
 				if($pagesMax!=0 && count($tags)>$pagesMax)
 				{
-					uasort($tags, strnatcasecmp);
+					uasort($tags, "strnatcasecmp");
 					$tags = array_slice($tags, -$pagesMax);
 				}				
-				uksort($tags, strnatcasecmp);
+				uksort($tags, "strnatcasecmp");
 				$output = "<div class=\"".htmlspecialchars($name)."\">\n";
 				$output .= "<ul>\n";
 				foreach($tags as $key=>$value)
@@ -199,7 +207,7 @@ class YellowWiki
 			{
 				$title = implode(' ', $pagesFilter);
 				$this->yellow->page->set("titleHeader", $title." - ".$this->yellow->page->get("sitename"));
-				$this->yellow->page->set("titleWiki", $this->yellow->text->get("wikiFilter")." ".$title);
+				$this->yellow->page->set("titleWiki", $this->yellow->page->get("title").": ".$title);
 				$this->yellow->page->set("wikipagesChronologicalOrder", $chronologicalOrder);
 			}
 			$this->yellow->page->set("content", !empty($pagesFilter) ? "content-wikipages" : "content-wiki");
@@ -235,9 +243,18 @@ class YellowWiki
 			} else {
 				$pages = $wiki->getChildren(!$wiki->isVisible());
 			}
-			$pages->filter("template", "wiki")->append($wiki);
+			$pages->filter("template", "wiki");
+			if($this->yellow->config->get("wikiPagesMain")) $pages->append($wiki);
 		}
 		return $pages;
+	}
+	
+	// Return wiki class for page
+	function getWikiClass($page)
+	{
+		if($page->isExisting("tag")) foreach(preg_split("/\s*,\s*/", $page->get("tag")) as $tag)
+			$class .= " tag-".$this->yellow->toolbox->normaliseArgs($tag, false);
+		return trim($class);
 	}
 }
 

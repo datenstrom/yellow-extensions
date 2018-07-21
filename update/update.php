@@ -1,11 +1,11 @@
 <?php
 // Update plugin, https://github.com/datenstrom/yellow-plugins/tree/master/update
-// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
+// Copyright (c) 2013-2018 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
 class YellowUpdate
 {
-	const VERSION = "0.7.4";
+	const VERSION = "0.7.14";
 	var $yellow;					//access to API
 	var $updates;					//number of updates
 	
@@ -23,13 +23,6 @@ class YellowUpdate
 	// Handle startup
 	function onStartup($update)
 	{
-		if(!$this->yellow->config->isExisting("startupUpdate")) //TODO: remove later, detects old version
-		{
-			$update = true;
-			$fileNameConfig = $this->yellow->config->get("configDir").$this->yellow->config->get("configFile");
-			$this->yellow->config->update($fileNameConfig, array("startupUpdate" => "none"));
-			$this->yellow->config->setDefault("startupUpdate", "none");
-		}
 		if($update)
 		{
 			$fileNameConfig = $this->yellow->config->get("configDir").$this->yellow->config->get("configFile");
@@ -39,12 +32,6 @@ class YellowUpdate
 			foreach($this->yellow->toolbox->getTextLines($fileData) as $line)
 			{
 				preg_match("/^\s*(.*?)\s*:\s*(.*?)\s*$/", $line, $matches);
-				if(substru($line, 0, 12)=="Webinterface")	//TODO: remove later, converts old config
-				{
-					$line = preg_replace("/^Webinterface/i", "Edit", $line);
-					preg_match("/^\s*(.*?)\s*:\s*(.*?)\s*$/", $line, $matches);
-					if(!empty($matches[1]) && !strempty($matches[2])) $this->yellow->config->set($matches[1], $matches[2]);
-				}
 				if(!empty($matches[1]) && !is_null($configDefaults[$matches[1]])) unset($configDefaults[$matches[1]]);
 				if(!empty($matches[1]) && $matches[1][0]!='#' && is_null($this->yellow->config->configDefaults[$matches[1]]))
 				{
@@ -125,6 +112,8 @@ class YellowUpdate
 				$value = $this->yellow->lookup->normaliseName($matches[1], true, false, true);
 				if(!is_file($this->yellow->config->get("templateDir").$value.".html")) $value = $valueDefault;
 				$pageTemplate = $this->yellow->toolbox->getMetaData($page->rawData, "template");
+				$pagePublished = $this->yellow->toolbox->getMetaData($page->rawData, "published");
+				if(empty($pagePublished) && $value=="blog") $value = $valueDefault;
 				if(empty($pageTemplate) && $value!=$valueDefault)
 				{
 					$rawDataNew = $this->yellow->toolbox->setMetaData($page->rawData, "template", $value);
@@ -494,7 +483,7 @@ class YellowUpdate
 		if($startupUpdate=="none") $startupUpdate = "YellowUpdate";
 		if($software!="YellowUpdate") $startupUpdate .= ",$software";
 		$fileNameConfig = $this->yellow->config->get("configDir").$this->yellow->config->get("configFile");
-		if(!$this->yellow->config->update($fileNameConfig, array("startupUpdate" => $startupUpdate)))
+		if(!$this->yellow->config->save($fileNameConfig, array("startupUpdate" => $startupUpdate)))
 		{
 			$statusCode = 500;
 			$this->yellow->page->error(500, "Can't write file '$fileNameConfig'!");
@@ -507,7 +496,7 @@ class YellowUpdate
 	{
 		$statusCode = 200;
 		$path = $this->yellow->config->get("pluginDir");
-		$regex = "/^.*\\".$this->yellow->config->get("installationExtension")."$/";
+		$regex = "/^.*\.installation$/";
 		foreach($this->yellow->toolbox->getDirectoryEntries($path, $regex, true, false) as $entry)
 		{
 			if(preg_match("/^(.*?)-(.*?)\./", basename($entry), $matches))
@@ -569,9 +558,8 @@ class YellowUpdate
 			$statusCode = $this->updateSoftware();
 			if($statusCode==200)
 			{
-				$statusCode = 303;
 				$location = $this->yellow->lookup->normaliseUrl($scheme, $address, $base, $location);
-				$this->yellow->sendStatus($statusCode, $location);
+				$statusCode = $this->yellow->sendStatus(303, $location);
 			}
 		}
 		return $statusCode;
@@ -597,11 +585,16 @@ class YellowUpdate
 			$status = trim($_REQUEST["status"]);
 			if($status=="install")
 			{
-				$status = "ok";
+				$serverVersion = $this->yellow->toolbox->getServerVersion(true);
+				$status = $this->checkServerRewrite($scheme, $address, $base, $location, $fileName) ? "ok" : "error";
+				if($status=="error") $this->yellow->page->error(500, "Rewrite module not working on $serverVersion web server!");
+			}
+			if($status=="ok")
+			{
 				if(!empty($email) && !empty($password) && $this->yellow->plugins->isExisting("edit"))
 				{
 					$fileNameUser = $this->yellow->config->get("configDir").$this->yellow->config->get("editUserFile");
-					$status = $this->yellow->plugins->get("edit")->users->update($fileNameUser, $email, $password, $name, $language) ? "ok" : "error";
+					$status = $this->yellow->plugins->get("edit")->users->save($fileNameUser, $email, $password, $name, $language) ? "ok" : "error";
 					if($status=="error") $this->yellow->page->error(500, "Can't write file '$fileNameUser'!");
 				}
 			}
@@ -629,14 +622,13 @@ class YellowUpdate
 			{
 				if($this->yellow->config->get("sitename")=="Yellow") $_REQUEST["sitename"] = $name;
 				$fileNameConfig = $this->yellow->config->get("configDir").$this->yellow->config->get("configFile");
-				$status = $this->yellow->config->update($fileNameConfig, $this->getConfigData()) ? "done" : "error";
+				$status = $this->yellow->config->save($fileNameConfig, $this->getConfigData()) ? "done" : "error";
 				if($status=="error") $this->yellow->page->error(500, "Can't write file '$fileNameConfig'!");
 			}
 			if($status=="done")
 			{
-				$statusCode = 303;
 				$location = $this->yellow->lookup->normaliseUrl($scheme, $address, $base, $location);
-				$this->yellow->sendStatus($statusCode, $location);
+				$statusCode = $this->yellow->sendStatus(303, $location);
 			} else {
 				$statusCode = $this->yellow->sendPage();
 			}
@@ -644,11 +636,27 @@ class YellowUpdate
 		return $statusCode;
 	}
 	
+	// Check web server rewrite
+	function checkServerRewrite($scheme, $address, $base, $location, $fileName)
+	{
+		$curlHandle = curl_init();
+		$location = $this->yellow->config->get("assetLocation").$this->yellow->page->get("theme").".css";
+		$url = $this->yellow->lookup->normaliseUrl($scheme, $address, $base, $location);
+		curl_setopt($curlHandle, CURLOPT_URL, $url);
+		curl_setopt($curlHandle, CURLOPT_USERAGENT, "Mozilla/5.0 (compatible; YellowCore/".YellowCore::VERSION).")";
+		curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($curlHandle, CURLOPT_CONNECTTIMEOUT, 30);
+		$rawData = curl_exec($curlHandle);
+		$statusCode = curl_getinfo($curlHandle, CURLINFO_HTTP_CODE);
+		curl_close($curlHandle);
+		return !empty($rawData) && $statusCode==200;
+	}
+	
 	// Return raw data for installation page
 	function getRawDataInstallation()
 	{
 		$language = $this->yellow->toolbox->detectBrowserLanguage($this->yellow->text->getLanguages(), $this->yellow->config->get("language"));
-		$fileName = strreplaceu("(.*)", "installation", $this->yellow->config->get("configDir").$this->yellow->config->get("editNewFile"));
+		$fileName = strreplaceu("(.*)", "installation", $this->yellow->config->get("configDir").$this->yellow->config->get("newFile"));
 		$rawData = $this->yellow->toolbox->readFile($fileName);
 		if(empty($rawData))
 		{
@@ -705,7 +713,7 @@ class YellowUpdate
 	{
 		$data = array("website");
 		$path = $this->yellow->config->get("pluginDir");
-		$regex = "/^.*\\".$this->yellow->config->get("installationExtension")."$/";
+		$regex = "/^.*\.installation$/";
 		foreach($this->yellow->toolbox->getDirectoryEntries($path, $regex, true, false, false) as $entry)
 		{
 			if(preg_match("/^(.*?)-(.*?)\./", $entry, $matches))
@@ -789,38 +797,35 @@ class YellowUpdate
 	// Return software file
 	function getSoftwareFile($url)
 	{
-		$fileData = "";
-		if(extension_loaded("curl"))
+		$urlRequest = $url;
+		if(preg_match("#^https://github.com/(.+)/raw/(.+)$#", $url, $matches))
 		{
-			$urlRequest = $url;
-			if(preg_match("#^https://github.com/(.+)/raw/(.+)$#", $url, $matches))
-			{
-				$urlRequest = "https://raw.githubusercontent.com/".$matches[1]."/".$matches[2];
-			}
-			$curlHandle = curl_init();
-			curl_setopt($curlHandle, CURLOPT_URL, $urlRequest);
-			curl_setopt($curlHandle, CURLOPT_USERAGENT, "Mozilla/5.0 (compatible; YellowCore/".YellowCore::VERSION).")";
-			curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, 1);
-			curl_setopt($curlHandle, CURLOPT_CONNECTTIMEOUT, 30);
-			$rawData = curl_exec($curlHandle);
-			$statusCode = curl_getinfo($curlHandle, CURLINFO_HTTP_CODE);
-			curl_close($curlHandle);
-			if($statusCode==200)
-			{
-				$fileData = $rawData;
-			} else if($statusCode==0) {
-				$statusCode = 500;
-				list($scheme, $address) = $this->yellow->lookup->getUrlInformation($url);
-				$this->yellow->page->error($statusCode, "Can't connect to server '$scheme://$address'!");
-			} else {
-				$statusCode = 500;
-				$this->yellow->page->error($statusCode, "Can't download file '$url'!");
-			}
-			if(defined("DEBUG") && DEBUG>=2) echo "YellowUpdate::getSoftwareFile status:$statusCode url:$url<br/>\n";
+			$urlRequest = "https://raw.githubusercontent.com/".$matches[1]."/".$matches[2];
+		}
+		if(preg_match("#^https://github.com/(.+)/archive/master.zip$#", $url, $matches))
+		{
+			$urlRequest = "https://codeload.github.com/".$matches[1]."/zip/master";
+		}
+		$curlHandle = curl_init();
+		curl_setopt($curlHandle, CURLOPT_URL, $urlRequest);
+		curl_setopt($curlHandle, CURLOPT_USERAGENT, "Mozilla/5.0 (compatible; DatenstromYellow/".YellowCore::VERSION."; SoftwareUpdater)");
+		curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($curlHandle, CURLOPT_CONNECTTIMEOUT, 30);
+		$rawData = curl_exec($curlHandle);
+		$statusCode = curl_getinfo($curlHandle, CURLINFO_HTTP_CODE);
+		curl_close($curlHandle);
+		if($statusCode==200)
+		{
+			$fileData = $rawData;
+		} else if($statusCode==0) {
+			$statusCode = 500;
+			list($scheme, $address) = $this->yellow->lookup->getUrlInformation($url);
+			$this->yellow->page->error($statusCode, "Can't connect to server '$scheme://$address'!");
 		} else {
 			$statusCode = 500;
-			$this->yellow->page->error($statusCode, "Plugin 'update' requires cURL library!");
+			$this->yellow->page->error($statusCode, "Can't download file '$url'!");
 		}
+		if(defined("DEBUG") && DEBUG>=2) echo "YellowUpdate::getSoftwareFile status:$statusCode url:$url<br/>\n";
 		return array($statusCode, $fileData);
 	}
 	

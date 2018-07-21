@@ -1,6 +1,6 @@
-Search plugin 0.6.12
+Search plugin 0.7.4
 ===================
-Full-text search. [See demo](https://developers.datenstrom.se/search/).
+Full-text search. [See demo](https://developers.datenstrom.se/plugins/search).
 
 <p align="center"><img src="search-screenshot.png?raw=true" alt="Screenshot"></p>
 
@@ -10,7 +10,7 @@ Full-text search. [See demo](https://developers.datenstrom.se/search/).
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/search.zip). If you are using Safari, right click and select 'Download file as'.
 3. Copy `search.zip` into your `system/plugins` folder.
 
-To uninstall delete the plugin files.
+To uninstall delete the [plugin files](update.ini).
 
 ## How to use a search?
 
@@ -36,7 +36,7 @@ Content file with search field:
 
     ---
     Title: Example page
-    ---        
+    ---
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
     labore et dolore magna pizza. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
     nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit 
@@ -49,10 +49,9 @@ Footer snippet with search page:
 
     <div class="footer">
     <div class="siteinfo">
-    <a href="<?php echo $yellow->page->base."/" ?>">&copy; 2017 <?php echo $yellow->page->getHtml("sitename") ?></a>.
+    <a href="<?php echo $yellow->page->base."/" ?>">&copy; 2018 <?php echo $yellow->page->getHtml("sitename") ?></a>.
     <a href="<?php echo $yellow->page->base."/search/" ?>">Search</a>.
-    <a href="<?php echo $yellow->page->get("pageEdit") ?>">Edit</a>.
-    <a href="<?php echo $yellow->text->get("yellowUrl") ?>">Made with Yellow</a>.
+    <a href="<?php echo $yellow->text->get("yellowUrl") ?>">Made with Datenstrom Yellow</a>.
     </div>
     </div>
     </div>
@@ -62,4 +61,4 @@ Footer snippet with search page:
 
 ## Developer
 
-Datenstrom
+Datenstrom. [Get support](https://developers.datenstrom.se/help/support).

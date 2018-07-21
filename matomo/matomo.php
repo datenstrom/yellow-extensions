@@ -1,19 +1,19 @@
 <?php
-// Piwik plugin, https://github.com/datenstrom/yellow-plugins/tree/master/piwik
-// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
+// Matomo plugin, https://github.com/datenstrom/yellow-plugins/tree/master/matomo
+// Copyright (c) 2013-2018 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
-class YellowPiwik
+class YellowMatomo
 {
-	const VERSION = "0.6.3";
+	const VERSION = "0.6.4";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
 	function onLoad($yellow)
 	{
 		$this->yellow = $yellow;
-		$this->yellow->config->setDefault("piwikUrl", "");
-		$this->yellow->config->setDefault("piwikSiteId", "yellow");
+		$this->yellow->config->setDefault("matomoUrl", "");
+		$this->yellow->config->setDefault("matomoSiteId", "yellow");
 	}
 	
 	// Handle page extra HTML data
@@ -22,8 +22,8 @@ class YellowPiwik
 		$output = NULL;
 		if($name=="footer")
 		{
-			$url = $this->yellow->config->get("piwikUrl");
-			$siteId = $this->yellow->config->get("piwikSiteId");
+			$url = $this->yellow->config->get("matomoUrl");
+			$siteId = $this->yellow->config->get("matomoSiteId");
 			if(empty($url)) $url = $this->yellow->toolbox->getServerUrl();
 			$output = "<script type=\"text/javascript\">\n";
 			$output .= "var _paq = _paq || [];\n";
@@ -40,5 +40,5 @@ class YellowPiwik
 	}
 }
 
-$yellow->plugins->register("piwik", "YellowPiwik", YellowPiwik::VERSION);
+$yellow->plugins->register("matomo", "YellowMatomo", YellowMatomo::VERSION);
 ?>

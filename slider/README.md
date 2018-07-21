@@ -1,4 +1,4 @@
-Slider plugin 0.6.7
+Slider plugin 0.7.4
 ===================
 Image gallery with slider. [See demo](https://developers.datenstrom.se/plugins/slider).
 
@@ -10,7 +10,7 @@ Image gallery with slider. [See demo](https://developers.datenstrom.se/plugins/s
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/slider.zip). If you are using Safari, right click and select 'Download file as'.
 3. Copy `slider.zip` into your `system/plugins` folder.
 
-To uninstall delete the plugin files.
+To uninstall delete the [plugin files](update.ini).
 
 ## How to add a gallery?
 
@@ -23,15 +23,15 @@ The following arguments are available:
 `SIZE` = image size, pixel or percent  
 `AUTOPLAY` = play images automatically, delay time in milliseconds
 
-The plugins uses [Flickity v1.2.1](http://flickity.metafizzy.co) by David DeSandro. It's licensed under [GPLv3](https://opensource.org/licenses/GPL-3.0). Flickity supports most web browsers, including Chrome, Firefox, Safari, Opera and IE.
+The plugins uses [Flickity v2.0.9](http://flickity.metafizzy.co) by David DeSandro. It's licensed under [GPLv3](https://opensource.org/licenses/GPL-3.0). Flickity supports most web browsers, including Chrome, Firefox, Safari, Opera and IE.
 
 ## Example
 
 Adding an image gallery:
 
-    [slider]
     [slider photo.*jpg]
     [slider photo.*jpg - 20%]
+    [slider photo.*jpg simple 20%]
 
 Adding an image gallery, play automatically:
 
@@ -47,4 +47,4 @@ Adding an image gallery from a subfolder, play automatically:
 
 ## Developer
 
-Datenstrom featuring David DeSandro
+Datenstrom featuring David DeSandro. [Get support](https://developers.datenstrom.se/help/support).

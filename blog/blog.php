@@ -1,11 +1,11 @@
 <?php
 // Blog plugin, https://github.com/datenstrom/yellow-plugins/tree/master/blog
-// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
+// Copyright (c) 2013-2018 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
 class YellowBlog
 {
-	const VERSION = "0.7.2";
+	const VERSION = "0.7.5";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -35,7 +35,7 @@ class YellowBlog
 			if(count($months))
 			{
 				if($pagesMax!=0) $months = array_slice($months, -$pagesMax);
-				uksort($months, strnatcasecmp);
+				uksort($months, "strnatcasecmp");
 				$months = array_reverse($months);
 				$output = "<div class=\"".htmlspecialchars($name)."\">\n";
 				$output .= "<ul>\n";
@@ -65,10 +65,10 @@ class YellowBlog
 				$authors = $this->yellow->lookup->normaliseUpperLower($authors);
 				if($pagesMax!=0 && count($authors)>$pagesMax)
 				{
-					uasort($authors, strnatcasecmp);
+					uasort($authors, "strnatcasecmp");
 					$authors = array_slice($authors, -$pagesMax);
 				}
-				uksort($authors, strnatcasecmp);
+				uksort($authors, "strnatcasecmp");
 				$output = "<div class=\"".htmlspecialchars($name)."\">\n";
 				$output .= "<ul>\n";
 				foreach($authors as $key=>$value)
@@ -82,13 +82,42 @@ class YellowBlog
 				$page->error(500, "Blogauthors '$location' does not exist!");
 			}
 		}
-		if($name=="blogrecent" && $shortcut)
+		if($name=="blogpages" && $shortcut)
 		{
-			list($location, $pagesMax) = $this->yellow->toolbox->getTextArgs($text);
+			list($location, $pagesMax, $author, $tag) = $this->yellow->toolbox->getTextArgs($text);
 			if(empty($location)) $location = $this->yellow->config->get("blogLocation");
 			if(strempty($pagesMax)) $pagesMax = $this->yellow->config->get("blogPagesMax");
 			$blog = $this->yellow->pages->find($location);
 			$pages = $this->getBlogPages($location);
+			if(!empty($author)) $pages->filter("author", $author);
+			if(!empty($tag)) $pages->filter("tag", $tag);
+			$pages->sort("title");
+			$page->setLastModified($pages->getModified());
+			if(count($pages))
+			{
+				if($pagesMax!=0) $pages->limit($pagesMax);
+				$output = "<div class=\"".htmlspecialchars($name)."\">\n";
+				$output .= "<ul>\n";
+				foreach($pages as $page)
+				{
+					$output .= "<li><a".($page->isExisting("tag") ? " class=\"".$this->getBlogClass($page)."\"" : "");
+					$output .=" href=\"".$page->getLocation(true)."\">".$page->getHtml("title")."</a></li>\n";
+				}
+				$output .= "</ul>\n";
+				$output .= "</div>\n";
+			} else {
+				$page->error(500, "Blogpages '$location' does not exist!");
+			}
+		}
+		if(($name=="blogchanges" || $name=="blogrecent") && $shortcut)
+		{
+			list($location, $pagesMax, $author, $tag) = $this->yellow->toolbox->getTextArgs($text);
+			if(empty($location)) $location = $this->yellow->config->get("blogLocation");
+			if(strempty($pagesMax)) $pagesMax = $this->yellow->config->get("blogPagesMax");
+			$blog = $this->yellow->pages->find($location);
+			$pages = $this->getBlogPages($location);
+			if(!empty($author)) $pages->filter("author", $author);
+			if(!empty($tag)) $pages->filter("tag", $tag);
 			$pages->sort("published", false);
 			$page->setLastModified($pages->getModified());
 			if(count($pages))
@@ -98,12 +127,13 @@ class YellowBlog
 				$output .= "<ul>\n";
 				foreach($pages as $page)
 				{
-					$output .= "<li><a href=\"".$page->getLocation(true)."\">".$page->getHtml("titleNavigation")."</a></li>\n";
+					$output .= "<li><a".($page->isExisting("tag") ? " class=\"".$this->getBlogClass($page)."\"" : "");
+					$output .=" href=\"".$page->getLocation(true)."\">".$page->getHtml("title")."</a></li>\n";
 				}
 				$output .= "</ul>\n";
 				$output .= "</div>\n";
 			} else {
-				$page->error(500, "Blogrecent '$location' does not exist!");
+				$page->error(500, "Blogchanges '$location' does not exist!");
 			}
 		}
 		if($name=="blogrelated" && $shortcut)
@@ -122,7 +152,8 @@ class YellowBlog
 				$output .= "<ul>\n";
 				foreach($pages as $page)
 				{
-					$output .= "<li><a href=\"".$page->getLocation(true)."\">".$page->getHtml("titleNavigation")."</a></li>\n";
+					$output .= "<li><a".($page->isExisting("tag") ? " class=\"".$this->getBlogClass($page)."\"" : "");
+					$output .= " href=\"".$page->getLocation(true)."\">".$page->getHtml("title")."</a></li>\n";
 				}
 				$output .= "</ul>\n";
 				$output .= "</div>\n";
@@ -145,10 +176,10 @@ class YellowBlog
 				$tags = $this->yellow->lookup->normaliseUpperLower($tags);
 				if($pagesMax!=0 && count($tags)>$pagesMax)
 				{
-					uasort($tags, strnatcasecmp);
+					uasort($tags, "strnatcasecmp");
 					$tags = array_slice($tags, -$pagesMax);
 				}
-				uksort($tags, strnatcasecmp);
+				uksort($tags, "strnatcasecmp");
 				$output = "<div class=\"".htmlspecialchars($name)."\">\n";
 				$output .= "<ul>\n";
 				foreach($tags as $key=>$value)
@@ -194,7 +225,7 @@ class YellowBlog
 			{
 				$title = implode(' ', $pagesFilter);
 				$this->yellow->page->set("titleHeader", $title." - ".$this->yellow->page->get("sitename"));
-				$this->yellow->page->set("titleBlog", $this->yellow->text->get("blogFilter")." ".$title);
+				$this->yellow->page->set("titleBlog", $this->yellow->page->get("title").": ".$title);
 			}
 			$this->yellow->page->setPages($pages);
 			$this->yellow->page->setLastModified($pages->getModified());
@@ -231,6 +262,14 @@ class YellowBlog
 			$pages->filter("template", "blog");
 		}
 		return $pages;
+	}
+	
+	// Return blog class for page
+	function getBlogClass($page)
+	{
+		if($page->isExisting("tag")) foreach(preg_split("/\s*,\s*/", $page->get("tag")) as $tag)
+			$class .= " tag-".$this->yellow->toolbox->normaliseArgs($tag, false);
+		return trim($class);
 	}
 }
 

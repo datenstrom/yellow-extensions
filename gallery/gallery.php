@@ -5,7 +5,7 @@
 
 class YellowGallery
 {
-	const VERSION = "0.6.7";
+	const VERSION = "0.7.3";
 	var $yellow;			//access to API
 
 	// Handle initialisation
@@ -26,7 +26,7 @@ class YellowGallery
 			if(empty($size)) $size = "100%";
 			if(empty($pattern))
 			{
-				$files = $page->getFiles(true);
+				$files = $this->yellow->files->clean();
 			} else {
 				$images = $this->yellow->config->get("imageDir");
 				$files = $this->yellow->files->index(true, true)->match("#$images$pattern#");

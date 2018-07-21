@@ -11,7 +11,7 @@ Add links to previous/next page. [See demo](https://developers.datenstrom.se/plu
 3. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/links.zip). If you are using Safari, right click and select 'Download file as'.
 4. Copy `links.zip` into your `system/plugins` folder.
 
-To uninstall delete the plugin files.
+To uninstall delete the [plugin files](update.ini).
 
 ## How to show links?
 
@@ -27,4 +27,4 @@ The following settings can be configured in file `system/config/config.ini`:
 
 ## Developer
 
-Datenstrom
+Datenstrom. [Get support](https://developers.datenstrom.se/help/support).

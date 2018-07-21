@@ -1,11 +1,11 @@
 <?php
 // Core plugin, https://github.com/datenstrom/yellow-plugins/tree/master/core
-// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
+// Copyright (c) 2013-2018 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
 class YellowCore
 {
-	const VERSION = "0.7.1";
+	const VERSION = "0.7.4";
 	var $page;				//current page
 	var $pages;				//pages from file system
 	var $files;				//files from file system
@@ -38,11 +38,13 @@ class YellowCore
 		$this->config->setDefault("staticErrorFile", "404.html");
 		$this->config->setDefault("staticDir", "cache/");
 		$this->config->setDefault("mediaLocation", "/media/");
+		$this->config->setDefault("downloadLocation", "/media/downloads/");
 		$this->config->setDefault("imageLocation", "/media/images/");
 		$this->config->setDefault("pluginLocation", "/media/plugins/");
 		$this->config->setDefault("themeLocation", "/media/themes/");
 		$this->config->setDefault("assetLocation", "/media/themes/assets/");
 		$this->config->setDefault("mediaDir", "media/");
+		$this->config->setDefault("downloadDir", "media/downloads/");
 		$this->config->setDefault("imageDir", "media/images/");
 		$this->config->setDefault("systemDir", "system/");
 		$this->config->setDefault("configDir", "system/config/");
@@ -60,11 +62,11 @@ class YellowCore
 		$this->config->setDefault("contentExtension", ".txt");
 		$this->config->setDefault("configExtension", ".ini");
 		$this->config->setDefault("downloadExtension", ".download");
-		$this->config->setDefault("installationExtension", ".installation");
 		$this->config->setDefault("configFile", "config.ini");
 		$this->config->setDefault("textFile", "text.ini");
 		$this->config->setDefault("languageFile", "language-(.*).txt");
 		$this->config->setDefault("errorFile", "page-error-(.*).txt");
+		$this->config->setDefault("newFile", "page-new-(.*).txt");
 		$this->config->setDefault("robotsFile", "robots.txt");
 		$this->config->setDefault("faviconFile", "favicon.ico");
 		$this->config->setDefault("serverUrl", "");
@@ -136,7 +138,7 @@ class YellowCore
 		if($this->page->isExisting("pageError")) $statusCode = $this->processRequestError();
 		$this->toolbox->timerStop($time);
 		ob_end_flush();
-		if(defined("DEBUG") && DEBUG>=1)
+		if(defined("DEBUG") && DEBUG>=1 && $this->lookup->isContentFile($fileName))
 		{
 			$handler = $this->getRequestHandler();
 			echo "YellowCore::request status:$statusCode handler:$handler time:$time ms<br/>\n";
@@ -152,18 +154,16 @@ class YellowCore
 		{
 			if($this->toolbox->isRequestCleanUrl($location))
 			{
-				$statusCode = 303;
 				$location = $location.$this->getRequestLocationArgsClean();
 				$location = $this->lookup->normaliseUrl($scheme, $address, $base, $location);
-				$this->sendStatus($statusCode, $location);
+				$statusCode = $this->sendStatus(303, $location);
 			}
 		} else {
 			if($this->lookup->isRedirectLocation($location))
 			{
-				$statusCode = 301;
 				$location = $this->lookup->isFileLocation($location) ? "$location/" : "/".$this->getRequestLanguage()."/";
 				$location = $this->lookup->normaliseUrl($scheme, $address, $base, $location);
-				$this->sendStatus($statusCode, $location);
+				$statusCode = $this->sendStatus(301, $location);
 			}
 		}
 		if($statusCode==0)
@@ -178,7 +178,10 @@ class YellowCore
 				$statusCode = $this->sendFile(200, $fileName, true);
 			}
 		}
-		if(defined("DEBUG") && DEBUG>=1) echo "YellowCore::processRequest file:$fileName<br/>\n";
+		if(defined("DEBUG") && DEBUG>=1 && $this->lookup->isContentFile($fileName))
+		{
+			echo "YellowCore::processRequest file:$fileName<br/>\n";
+		}
 		return $statusCode;
 	}
 	
@@ -258,6 +261,17 @@ class YellowCore
 		}
 		return $statusCode;
 	}
+	
+	// Send data response
+	function sendData($statusCode, $rawData, $fileName, $cacheable)
+	{
+		@header($this->toolbox->getHttpStatusFormatted($statusCode));
+		if(!$cacheable) @header("Cache-Control: no-cache, must-revalidate");
+		@header("Content-Type: ".$this->toolbox->getMimeContentType($fileName));
+		@header("Last-Modified: ".$this->toolbox->getHttpDateFormatted(time()));
+		echo $rawData;
+		return $statusCode;
+	}
 
 	// Send status response
 	function sendStatus($statusCode, $location = "")
@@ -269,6 +283,7 @@ class YellowCore
 		{
 			foreach($this->page->headerData as $key=>$value) echo "YellowCore::sendStatus $key: $value<br/>\n";
 		}
+		return $statusCode;
 	}
 	
 	// Handle command
@@ -316,7 +331,7 @@ class YellowCore
 		if($this->config->get("startupUpdate")!="none")
 		{
 			$fileNameConfig = $this->config->get("configDir").$this->config->get("configFile");
-			$this->config->update($fileNameConfig, array("startupUpdate" => "none"));
+			$this->config->save($fileNameConfig, array("startupUpdate" => "none"));
 		}
 	}
 	
@@ -483,7 +498,6 @@ class YellowPage
 			if(!$this->isExisting("titleContent")) $this->set("titleContent", $this->get("title"));
 			if(!$this->isExisting("titleNavigation")) $this->set("titleNavigation", $this->get("title"));
 			if(!$this->isExisting("titleHeader")) $this->set("titleHeader", $titleHeader);
-			if(!$this->isExisting("status") && !is_readable($this->fileName)) $this->set("status", "ignore");
 			if($this->get("status")=="hidden") $this->available = false;
 			$this->set("pageRead", $this->yellow->lookup->normaliseUrl(
 				$this->yellow->config->get("serverScheme"),
@@ -494,11 +508,10 @@ class YellowPage
 				$this->yellow->config->get("serverAddress"),
 				$this->yellow->config->get("serverBase"),
 				rtrim($this->yellow->config->get("editLocation"), '/').$this->location));
-			$this->set("pageFile", $this->yellow->lookup->getPageFile($this->fileName));
 		} else {
-			$this->set("type", $this->yellow->toolbox->getFileExtension($this->fileName));
+			$this->set("type", $this->yellow->toolbox->getFileType($this->fileName));
+			$this->set("group", $this->yellow->toolbox->getFileGroup($this->fileName, $this->yellow->config->get("mediaDir")));
 			$this->set("modified", date("Y-m-d H:i:s", $this->yellow->toolbox->getFileModified($this->fileName)));
-			$this->set("pageFile", $this->yellow->lookup->getPageFile($this->fileName, true));
 		}
 		if(!empty($pageError)) $this->set("pageError", $pageError);
 		foreach($this->yellow->plugins->plugins as $key=>$value)
@@ -643,7 +656,11 @@ class YellowPage
 		{
 			$this->error(500, "Folder '".dirname($this->fileName)."' may not contain subfolders!");
 		}
-		if($this->yellow->toolbox->isRequestSelf()) $this->error(500, "Rewrite module not enabled on this server!");
+		if($this->yellow->toolbox->isRequestSelf())
+		{
+			$serverVersion = $this->yellow->toolbox->getServerVersion(true);
+			$this->error(500, "Rewrite module not working on $serverVersion web server!");
+		}
 		if($this->yellow->getRequestHandler()=="core" && $this->isExisting("redirect") && $this->statusCode==200)
 		{
 			$location = $this->yellow->lookup->normaliseLocation($this->get("redirect"), $this->location);
@@ -723,6 +740,24 @@ class YellowPage
 		return htmlspecialchars($this->getDate($key, $format));
 	}
 
+	// Return page meta data as language specific date and relative to today
+	function getDateRelative($key, $format = "", $daysLimit = 0)
+	{
+		if(!empty($format))
+		{
+			$format = $this->yellow->text->get($format);
+		} else {
+			$format = $this->yellow->text->get("dateFormatMedium");
+		}
+		return $this->yellow->text->getDateRelative(strtotime($this->get($key)), $format, $daysLimit);
+	}
+	
+	// Return page meta data as language specific date and relative to today, HTML encoded
+	function getDateRelativeHtml($key, $format = "", $daysLimit = 0)
+	{
+		return htmlspecialchars($this->getDateRelative($key, $format, $daysLimit));
+	}
+
 	// Return page meta data as custom date
 	function getDateFormatted($key, $format)
 	{
@@ -784,12 +819,6 @@ class YellowPage
 	function getChildrenRecursive($showInvisible = false, $levelMax = 0)
 	{
 		return $this->yellow->pages->getChildrenRecursive($this->location, $showInvisible, $levelMax);
-	}
-	
-	// Return page collection with media files for current page
-	function getFiles($showInvisible = false)
-	{
-		return $this->yellow->files->index($showInvisible, true)->filter("pageFile", $this->get("pageFile"));
 	}
 	
 	// Set page collection with additional pages for current page
@@ -1388,15 +1417,7 @@ class YellowPages
 	function top($showInvisible = false)
 	{
 		$rootLocation = $this->getRootLocation($this->yellow->page->location);
-		$pages = new YellowPageCollection($this->yellow);
-		foreach($this->scanLocation($rootLocation) as $page)
-		{
-			if($page->isAvailable() && ($page->isVisible() || $showInvisible))
-			{
-				if(is_readable($page->fileName)) $pages->append($page);
-			}
-		}
-		return $pages;
+		return $this->getChildren($rootLocation, $showInvisible);
 	}
 	
 	// Return page collection with path ancestry
@@ -1461,7 +1482,7 @@ class YellowPages
 		{
 			if($page->isAvailable() && ($page->isVisible() || $showInvisible))
 			{
-				if(!$this->yellow->lookup->isRootLocation($page->location)) $pages->append($page);
+				if(!$this->yellow->lookup->isRootLocation($page->location) && is_readable($page->fileName)) $pages->append($page);
 			}
 		}
 		return $pages;
@@ -1476,7 +1497,7 @@ class YellowPages
 		{
 			if($page->isAvailable() && ($page->isVisible() || $showInvisible))
 			{
-				if(!$this->yellow->lookup->isRootLocation($page->location)) $pages->append($page);
+				if(!$this->yellow->lookup->isRootLocation($page->location) && is_readable($page->fileName)) $pages->append($page);
 				if(!$this->yellow->lookup->isFileLocation($page->location) && $levelMax!=0)
 				{
 					$pages->merge($this->getChildrenRecursive($page->location, $showInvisible, $levelMax));
@@ -1679,11 +1700,6 @@ class YellowPlugins
 	// Load plugins
 	function load($path = "")
 	{
-		if(count($this->yellow->config->config)==0) //TODO: remove later, backwards compability for old version
-		{
-			$this->yellow->load();
-			return;
-		}
 		$path = empty($path) ? $this->yellow->config->get("pluginDir") : $path;
 		foreach($this->yellow->toolbox->getDirectoryEntries($path, "/^.*\.php$/", true, false) as $entry)
 		{
@@ -1733,7 +1749,7 @@ class YellowPlugins
 			if(empty($value["plugin"]) || empty($value["version"])) continue;
 			$data[$value["plugin"]] = $value["version"];
 		}
-		uksort($data, strnatcasecmp);
+		uksort($data, "strnatcasecmp");
 		return $data;
 	}
 	
@@ -1821,7 +1837,7 @@ class YellowThemes
 			if(empty($value["theme"]) || empty($value["version"])) continue;
 			$data[$value["theme"]] = $value["version"];
 		}
-		uksort($data, strnatcasecmp);
+		uksort($data, "strnatcasecmp");
 		return $data;
 	}
 	
@@ -1871,8 +1887,8 @@ class YellowConfig
 		}
 	}
 	
-	// Update configuration in file
-	function update($fileName, $config)
+	// Save configuration to file
+	function save($fileName, $config)
 	{
 		$configNew = new YellowDataCollection();
 		foreach($config as $key=>$value)
@@ -2076,6 +2092,36 @@ class YellowText
 		$format = preg_replace("/(?<!\\\)l/", addcslashes($weekday, 'A..Za..z'), $format);
 		$format = preg_replace("/(?<!\\\)T/", addcslashes($timeZoneAbbreviation, 'A..Za..z'), $format);
 		return date($format, $timestamp);
+	}
+	
+	// Return human readable date, relative to today
+	function getDateRelative($timestamp, $format, $daysLimit)
+	{
+		$timeDifference = time() - $timestamp;
+		$days = abs(intval($timeDifference / 86400));
+		if($days<=$daysLimit || $daysLimit==0)
+		{
+			$tokens = preg_split("/\s*,\s*/", $this->get($timeDifference>=0 ? "datePast" : "dateFuture"));
+			if($days==0)
+			{
+				$output = $tokens[0];
+			} else if($days==1) {
+				$output = $tokens[1];
+			} else if($days>=2 && $days<=29) {
+				$output = preg_replace("/@x/i", $days, $tokens[2]);
+			} else if($days>=30 && $days<=59) {
+				$output = $tokens[3];
+			} else if($days>=60 && $days<=364) {
+				$output = preg_replace("/@x/i", intval($days/30), $tokens[4]);
+			} else if($days>=365 && $days<=729) {
+				$output = $tokens[5];
+			} else {
+				$output = preg_replace("/@x/i", intval($days/365.25), $tokens[6]);
+			}
+		} else {
+			$output = $this->getDateFormatted($timestamp, $format);
+		}
+		return $output;
 	}
 	
 	// Return languages
@@ -2504,6 +2550,7 @@ class YellowLookup
 			} else if(!preg_match("#^($pageBase|$mediaBase)#", $location)) {
 				$location = $pageBase.$location;
 			}
+			$location = strreplaceu("/./", "/", $location);
 			$location = strreplaceu(':', $this->yellow->toolbox->getLocationArgsSeparator(), $location);
 		} else {
 			if($filterStrict && !preg_match("/^(http|https|ftp|mailto):/", $location)) $location = "error-xss-filter";
@@ -2534,18 +2581,6 @@ class YellowLookup
 			$base = $matches[3];
 		}
 		return array($scheme, $address, $base);
-	}
-	
-	// Return page file name
-	function getPageFile($fileName, $convertExtension = false)
-	{
-		$fileName = basename($fileName);
-		if($convertExtension)
-		{
-			$fileName = ($pos = strposu($fileName, '.')) ? substru($fileName, 0, $pos) : $fileName;
-			$fileName .= $this->yellow->config->get("contentExtension");
-		}
-		return $fileName;
 	}
 	
 	// Return directory location
@@ -2663,10 +2698,11 @@ class YellowLookup
 class YellowToolbox
 {
 	// Return server version from current HTTP request
-	function getServerVersion()
+	function getServerVersion($shortFormat = false)
 	{
 		$serverVersion = strtoupperu(PHP_SAPI)." ".PHP_OS;
 		if(preg_match("/^(\S+)/", $_SERVER["SERVER_SOFTWARE"], $matches)) $serverVersion = $matches[1]." ".PHP_OS;
+		if($shortFormat && preg_match("/^(\pL+)/u", $serverVersion, $matches)) $serverVersion = $matches[1];
 		return $serverVersion;
 	}
 	
@@ -2903,8 +2939,8 @@ class YellowToolbox
 			case 400:	$text = "Bad request"; break;
 			case 403:	$text = "Forbidden"; break;
 			case 404:	$text = "Not found"; break;
-			case 424:	$text = "Not existing"; break;
 			case 430:	$text = "Login failed"; break;
+			case 434:	$text = "Not existing"; break;
 			case 500:	$text = "Server error"; break;
 			case 503:	$text = "Service unavailable"; break;
 			default:	$text = "Error $statusCode";
@@ -2923,12 +2959,14 @@ class YellowToolbox
 	// Return MIME content type
 	function getMimeContentType($fileName)
 	{
-		$mimeTypes = array(
+		$contentType = "";
+		$contentTypes = array(
 			"css" => "text/css",
 			"gif" => "image/gif",
 			"html" => "text/html; charset=utf-8",
 			"ico" => "image/x-icon",
 			"js" => "application/javascript",
+			"json" => "application/json",
 			"jpg" => "image/jpeg",
 			"png" => "image/png",
 			"svg" => "image/svg+xml",
@@ -2936,15 +2974,40 @@ class YellowToolbox
 			"woff" => "application/font-woff",
 			"woff2" => "application/font-woff2",
 			"xml" => "text/xml; charset=utf-8");
-		$contentType = "";
-		$extension = $this->getFileExtension($fileName);
-		if(empty($extension))
+		$fileType = $this->getFileType($fileName);
+		if(empty($fileType))
 		{
-			$contentType = $mimeTypes["html"];
-		} else if(array_key_exists($extension, $mimeTypes)) {
-			$contentType = $mimeTypes[$extension];
+			$contentType = $contentTypes["html"];
+		} else if(array_key_exists($fileType, $contentTypes)) {
+			$contentType = $contentTypes[$fileType];
 		}
 		return $contentType;
+	}
+	
+	// Return file type
+	function getFileType($fileName)
+	{
+		return strtoloweru(($pos = strrposu($fileName, '.')) ? substru($fileName, $pos+1) : "");
+	}
+	
+	// Return file group
+	function getFileGroup($fileName, $path)
+	{
+		preg_match("#^$path(.+?)\/#", $fileName, $matches);
+		return strtoloweru($matches[1]);
+	}
+	
+	// Return number of bytes
+	function getNumberBytes($string)
+	{
+		$bytes = intval($string);
+		switch(strtoupperu(substru($string, -1)))
+		{
+			case 'G': $bytes *= 1024*1024*1024; break;
+			case 'M': $bytes *= 1024*1024; break;
+			case 'K': $bytes *= 1024; break;
+		}
+		return $bytes;
 	}
 	
 	// Return files and directories
@@ -3031,27 +3094,27 @@ class YellowToolbox
 	}
 	
 	// Copy file
-	function copyFile($fileNameSource, $fileNameDest, $mkdir = false)
+	function copyFile($fileNameSource, $fileNameDestination, $mkdir = false)
 	{
 		clearstatcache();
 		if($mkdir)
 		{
-			$path = dirname($fileNameDest);
+			$path = dirname($fileNameDestination);
 			if(!empty($path) && !is_dir($path)) @mkdir($path, 0777, true);
 		}
-		return @copy($fileNameSource, $fileNameDest);
+		return @copy($fileNameSource, $fileNameDestination);
 	}
 	
 	// Rename file
-	function renameFile($fileNameSource, $fileNameDest, $mkdir = false)
+	function renameFile($fileNameSource, $fileNameDestination, $mkdir = false)
 	{
 		clearstatcache();
 		if($mkdir)
 		{
-			$path = dirname($fileNameDest);
+			$path = dirname($fileNameDestination);
 			if(!empty($path) && !is_dir($path)) @mkdir($path, 0777, true);
 		}
-		return @rename($fileNameSource, $fileNameDest);
+		return @rename($fileNameSource, $fileNameDestination);
 	}
 	
 	// Delete file
@@ -3063,11 +3126,11 @@ class YellowToolbox
 			$ok = @unlink($fileName);
 		} else {
 			if(!is_dir($pathTrash)) @mkdir($pathTrash, 0777, true);
-			$fileNameDest = $pathTrash;
-			$fileNameDest .= pathinfo($fileName, PATHINFO_FILENAME);
-			$fileNameDest .= "-".str_replace(array(" ", ":"), "-", date("Y-m-d H:i:s", filemtime($fileName)));
-			$fileNameDest .= ".".pathinfo($fileName, PATHINFO_EXTENSION);
-			$ok = @rename($fileName, $fileNameDest);
+			$fileNameDestination = $pathTrash;
+			$fileNameDestination .= pathinfo($fileName, PATHINFO_FILENAME);
+			$fileNameDestination .= "-".str_replace(array(" ", ":"), "-", date("Y-m-d H:i:s", filemtime($fileName)));
+			$fileNameDestination .= ".".pathinfo($fileName, PATHINFO_EXTENSION);
+			$ok = @rename($fileName, $fileNameDestination);
 		}
 		return $ok;
 	}
@@ -3092,10 +3155,10 @@ class YellowToolbox
 			$ok = @rmdir($path);
 		} else {
 			if(!is_dir($pathTrash)) @mkdir($pathTrash, 0777, true);
-			$pathDest = $pathTrash;
-			$pathDest .= basename($path);
-			$pathDest .= "-".str_replace(array(" ", ":"), "-", date("Y-m-d H:i:s", filemtime($path)));
-			$ok = @rename($path, $pathDest);
+			$pathDestination = $pathTrash;
+			$pathDestination .= basename($path);
+			$pathDestination .= "-".str_replace(array(" ", ":"), "-", date("Y-m-d H:i:s", filemtime($path)));
+			$ok = @rename($path, $pathDestination);
 		}
 		return $ok;
 	}
@@ -3113,19 +3176,12 @@ class YellowToolbox
 		return is_file($fileName) ? filemtime($fileName) : 0;
 	}
 	
-	// Return file extension
-	function getFileExtension($fileName)
-	{
-		return strtoloweru(($pos = strrposu($fileName, '.')) ? substru($fileName, $pos+1) : "");
-	}
-	
 	// Return lines from text string, including newline
 	function getTextLines($text)
 	{
-		$lines = array();
-		$split = preg_split("/(\R)/u", $text, -1, PREG_SPLIT_DELIM_CAPTURE);
-		for($i=0; $i<count($split)-1; $i+=2) array_push($lines, $split[$i].$split[$i+1]);
-		if($split[$i]!="") array_push($lines, $split[$i]."\n");
+		$lines = preg_split("/\n/", $text);
+		foreach($lines as &$line) $line = $line."\n";
+		if(strempty($text) || substru($text, -1, 1)=="\n") array_pop($lines);
 		return $lines;
 	}
 	
@@ -3136,6 +3192,14 @@ class YellowToolbox
 		$tokens = str_getcsv($text, ' ', '"');
 		foreach($tokens as $key=>$value) if($value==$optional) $tokens[$key] = "";
 		return $tokens;
+	}
+
+	// Return number of words in text string
+	function getTextWords($text)
+	{
+		$text = preg_replace("/([\p{Han}\p{Hiragana}\p{Katakana}]{3})/u", "$1 ", $text);
+		$text = preg_replace("/(\pL|\p{N})/u", "x", $text);
+		return str_word_count($text);
 	}
 	
 	// Create description from text string
@@ -3287,14 +3351,26 @@ class YellowToolbox
 							break;
 			case "sha256":	if(substrb($hash, 0, 4)=="$5y$")
 							{
-								$prefix = substrb($hash, 0, 4);
+								$prefix = "$5y$";
 								$salt = substrb($hash, 4, 32);
 								$hashCalculated = "$prefix$salt".hash("sha256", $salt.$text);
 							}
 							break;
 		}
-		$ok = !empty($hashCalculated) && strlenb($hashCalculated)==strlenb($hash);
-		if($ok) for($i=0; $i<strlenb($hashCalculated); ++$i) $ok &= $hashCalculated[$i]==$hash[$i];
+		return $this->verifyToken($hashCalculated, $hash);
+	}
+	
+	// Verify that token is not empty and identical, timing attack safe text string comparison
+	function verifyToken($tokenExpected, $tokenReceived)
+	{
+		$ok = false;
+		$lengthExpected = strlenb($tokenExpected);
+		$lengthReceived = strlenb($tokenReceived);
+		if($lengthExpected!=0 && $lengthReceived!=0)
+		{
+			$ok = $lengthExpected==$lengthReceived;
+			for($i=0; $i<$lengthReceived; ++$i) $ok &= $tokenExpected[$i<$lengthExpected ? $i : 0]==$tokenReceived[$i];
+		}
 		return $ok;
 	}
 	
@@ -3396,7 +3472,7 @@ class YellowToolbox
 							$dataBufferDiff = min($dataBufferSizeMax, $dataBufferSize*2) - $dataBufferSize;
 							$dataBufferSize += $dataBufferDiff;
 							$dataBufferChunk = fread($fileHandle, $dataBufferDiff);
-							if(feof($fileHandle) || $dataBufferChunk===null) { $dataBufferSize = 0; break; }
+							if(feof($fileHandle) || $dataBufferChunk===false) { $dataBufferSize = 0; break; }
 							$dataBuffer .= $dataBufferChunk;
 						}
 					}

@@ -1,11 +1,11 @@
 <?php
 // Contact plugin, https://github.com/datenstrom/yellow-plugins/tree/master/contact
-// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
+// Copyright (c) 2013-2018 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
 class YellowContact
 {
-	const VERSION = "0.6.9";
+	const VERSION = "0.7.2";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -29,6 +29,7 @@ class YellowContact
 			$output .= "<p class=\"contact-name\"><label for=\"name\">".$this->yellow->text->getHtml("contactName")."</label><br /><input type=\"text\" class=\"form-control\" name=\"name\" id=\"name\" value=\"\" /></p>\n";
 			$output .= "<p class=\"contact-from\"><label for=\"from\">".$this->yellow->text->getHtml("contactEmail")."</label><br /><input type=\"text\" class=\"form-control\" name=\"from\" id=\"from\" value=\"\" /></p>\n";
 			$output .= "<p class=\"contact-message\"><label for=\"message\">".$this->yellow->text->getHtml("contactMessage")."</label><br /><textarea class=\"form-control\" name=\"message\" id=\"message\" rows=\"7\" cols=\"70\"></textarea></p>\n";
+			$output .= "<p class=\"contact-consent\"><input type=\"checkbox\" name=\"consent\" value=\"consent\" id=\"consent\"> <label for=\"consent\">".$this->yellow->text->getHtml("contactConsent")."</label></p>\n";
 			$output .= "<input type=\"hidden\" name=\"referer\" value=\"".$page->getUrl()."\" />\n";
 			$output .= "<input type=\"hidden\" name=\"status\" value=\"send\" />\n";
 			$output .= "<input type=\"submit\" value=\"".$this->yellow->text->getHtml("contactButton")."\" class=\"btn contact-btn\" />\n";
@@ -71,13 +72,14 @@ class YellowContact
 		$name = trim(preg_replace("/[^\pL\d\-\. ]/u", "-", $_REQUEST["name"]));
 		$from = trim($_REQUEST["from"]);
 		$message = trim($_REQUEST["message"]);
+		$consent = trim($_REQUEST["consent"]);
 		$referer = trim($_REQUEST["referer"]);
 		$spamFilter = $this->yellow->config->get("contactSpamFilter");
 		$author = $this->yellow->config->get("author");
 		$email = $this->yellow->config->get("email");
 		if($this->yellow->page->isExisting("author") && !$this->yellow->page->parserSafeMode) $author = $this->yellow->page->get("author");
 		if($this->yellow->page->isExisting("email") && !$this->yellow->page->parserSafeMode) $email = $this->yellow->page->get("email");
-		if(empty($name) || empty($from) || empty($message)) $status = "incomplete";
+		if(empty($name) || empty($from) || empty($message) || empty($consent)) $status = "incomplete";
 		if(empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) $status = "config";
 		if(!empty($from) && !filter_var($from, FILTER_VALIDATE_EMAIL)) $status = "invalid";
 		if(!empty($message) && preg_match("/$spamFilter/i", $message)) $status = "error";
@@ -88,7 +90,6 @@ class YellowContact
 			$mailHeaders = mb_encode_mimeheader("From: $name")." <$from>\r\n";
 			$mailHeaders .= mb_encode_mimeheader("X-Referer-Url: ".$referer)."\r\n";
 			$mailHeaders .= mb_encode_mimeheader("X-Request-Url: ".$this->yellow->page->getUrl())."\r\n";
-			$mailHeaders .= mb_encode_mimeheader("X-Remote-Addr: $_SERVER[REMOTE_ADDR]")."\r\n";
 			$mailHeaders .= "Mime-Version: 1.0\r\n";
 			$mailHeaders .= "Content-Type: text/plain; charset=utf-8\r\n";
 			$mailMessage = "$message\r\n-- \r\n$name";

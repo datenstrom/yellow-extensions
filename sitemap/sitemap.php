@@ -1,11 +1,11 @@
 <?php
 // Sitemap plugin, https://github.com/datenstrom/yellow-plugins/tree/master/sitemap
-// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
+// Copyright (c) 2013-2018 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
 class YellowSitemap
 {
-	const VERSION = "0.7.1";
+	const VERSION = "0.7.3";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -22,10 +22,9 @@ class YellowSitemap
 	{
 		if($this->yellow->page->get("template")=="sitemap")
 		{
-			$pagination = $this->yellow->config->get("contentPagination");
-			if($_REQUEST[$pagination]==$this->yellow->config->get("sitemapFileXml"))
+			$pages = $this->yellow->pages->index(false, false);
+			if($this->isRequestXml())
 			{
-				$pages = $this->yellow->pages->index(false, false);
 				$this->yellow->page->setLastModified($pages->getModified());
 				$this->yellow->page->setHeader("Content-Type", "text/xml; charset=utf-8");
 				$output = "<?xml version=\"1.0\" encoding=\"utf-8\"\077>\r\n";
@@ -34,7 +33,6 @@ class YellowSitemap
 				$output .= "</urlset>\r\n";
 				$this->yellow->page->setOutput($output);
 			} else {
-				$pages = $this->yellow->pages->index(false, false);
 				$pages->sort("title", false);
 				$pages->pagination($this->yellow->config->get("sitemapPaginationLimit"));
 				if(!$pages->getPaginationNumber()) $this->yellow->page->error(404);
@@ -56,6 +54,13 @@ class YellowSitemap
 			$output = "<link rel=\"sitemap\" type=\"text/xml\" href=\"$locationSitemap\" />\n";
 		}
 		return $output;
+	}
+	
+	// Check if XML requested
+	function isRequestXml()
+	{
+		$pagination = $this->yellow->config->get("contentPagination");
+		return $_REQUEST[$pagination]==$this->yellow->config->get("sitemapFileXml");
 	}
 }
 
