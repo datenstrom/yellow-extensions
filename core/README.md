@@ -1,10 +1,10 @@
-Core plugin 0.7.4
+Core plugin 0.7.5
 =================
 Core functionality for your website.
 
 <p align="center"><img src="core-screenshot.png?raw=true" alt="Screenshot"></p>
 
-## How do I install this?
+## How to install plugin
 
 1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/core.zip). If you are using Safari, right click and select 'Download file as'.
@@ -12,11 +12,11 @@ Core functionality for your website.
 
 Do not delete the [plugin files](update.ini), they are always required.
 
-## How to use the core?
+## How to use the core
 
 The plugin provides the core functionality for your website. It takes care of requests from the web browser and access to the file system. You can use the [web browser](https://github.com/datenstrom/yellow-plugins/tree/master/edit) or the [command line](https://github.com/datenstrom/yellow-plugins/tree/master/command) to show software version and updates. To show more information about your website add a `[yellow]` shortcut to a page. See example below.
 
-## How to configure the core?
+## How to configure the core
 
 The following settings can be configured in file `system/config/config.ini`:
 

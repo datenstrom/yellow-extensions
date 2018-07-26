@@ -4,7 +4,7 @@ Edit your website in a web browser. [See demo](https://developers.datenstrom.se)
 
 <p align="center"><img src="edit-screenshot.png?raw=true" alt="Screenshot"></p>
 
-## How do I install this?
+## How to install plugin
 
 1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/edit.zip). If you are using Safari, right click and select 'Download file as'.
@@ -12,17 +12,17 @@ Edit your website in a web browser. [See demo](https://developers.datenstrom.se)
 
 To uninstall delete the [plugin files](update.ini).
 
-## How to edit a website?
+## How to edit a website
 
 The login page is available on your website as `http://website/edit/`. Log in with your user account. You can browse your website, make some changes and see the result immediately. It's a great way to update your website. To show an edit link add an `[edit]` shortcut to a page. See example below.
 
-## How to create a user account?
+## How to create a user account
 
 The first option is to create a user account in a web browser. Go to the login page. You can create a user account and change your password. The webmaster needs to approve new user accounts. The webmaster's email is defined in file `system/config/config.ini`.
 
 The second option is to create a user account at the [command line](https://github.com/datenstrom/yellow-plugins/tree/master/command). Open a terminal window. Go to your installation folder, where the `yellow.php` is. Type `php yellow.php user add` followed by email, password and an optional name. All user accounts are stored in file `system/config/user.ini`. See example below.
 
-## How to configure a website?
+## How to configure a website
 
 The following settings can be configured in file `system/config/config.ini`:
 

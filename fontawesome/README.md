@@ -4,7 +4,7 @@ Icons and symbols.
 
 ![Screenshot](fontawesome-screenshot.jpg?raw=true)
 
-## How do I install this?
+## How to install plugin
 
 1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/fontawesome.zip). If you are using Safari, right click and select 'Download file as'.
@@ -12,7 +12,7 @@ Icons and symbols.
 
 To uninstall delete the [plugin files](update.ini).
 
-## How to add an icon?
+## How to add an icon
 
 Add `:shortcode:` to the text of a page. Here's a [complete list of icons](https://fontawesome.com/icons).
 

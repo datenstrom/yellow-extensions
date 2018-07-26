@@ -4,7 +4,7 @@ Lots and lots of emoji.
 
 ![Screenshot](emojiawesome-screenshot.jpg?raw=true)
 
-## How do I install this?
+## How to install plugin
 
 1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/emojiawesome.zip). If you are using Safari, right click and select 'Download file as'.
@@ -12,7 +12,7 @@ Lots and lots of emoji.
 
 To uninstall delete the [plugin files](update.ini).
 
-## How to add an emoji?
+## How to add an emoji
 
 Add `:shortcode:` to the text of a page. Here's an [emoji cheat sheet](http://www.emoji-cheat-sheet.com). 
 

@@ -4,7 +4,7 @@ Languages and regions.
 
 ![Screenshot](language-screenshot.png?raw=true)
 
-## How do I install this?
+## How to install plugin
 
 1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/language.zip). If you are using Safari, right click and select 'Download file as'.
@@ -12,15 +12,15 @@ Languages and regions.
 
 To uninstall delete the [plugin files](update.ini).
 
-## How to add a language?
+## How to add a language
 
 Download a [language file](https://github.com/datenstrom/yellow-plugins/tree/master/language) and copy it into your `system/plugins` folder. To change the language of your website, open file `system/config/config.ini` and change the `Language` setting. A different language can be defined in the settings at the top of each page, for example `Language: en`. [Learn more](https://developers.datenstrom.se/help/adjusting-system#system-settings).
 
-## How to configure text?
+## How to configure text
 
 The text settings can be configured in file `system/config/text.ini`. For example text that is displayed on your website and the date format. The default text is defined in the corresponding language file. This text can be customised in the text settings. [Learn more](https://developers.datenstrom.se/help/adjusting-system#text-settings).
 
-## Which languages are available?
+## Languages
 
 The following languages are available:
 

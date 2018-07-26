@@ -4,7 +4,7 @@ Breadcrumbs navigation.
 
 <p align="center"><img src="breadcrumbs-screenshot.png?raw=true" alt="Screenshot"></p>
 
-## How do I install this?
+## How to install plugin
 
 1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/breadcrumbs.zip). If you are using Safari, right click and select 'Download file as'.
@@ -12,7 +12,7 @@ Breadcrumbs navigation.
 
 To uninstall delete the [plugin files](update.ini).
 
-## How to add breadcrumbs?
+## How to add breadcrumbs
 
 Create a `[breadcrumbs]` shortcut. 
 

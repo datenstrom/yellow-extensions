@@ -4,7 +4,7 @@ Highlight source code.
 
 <p align="center"><img src="highlight-screenshot.png?raw=true" alt="Screenshot"></p>
 
-## How do I install this?
+## How to install plugin
 
 1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/highlight.zip). If you are using Safari, right click and select 'Download file as'.
@@ -12,7 +12,7 @@ Highlight source code.
 
 To uninstall delete the [plugin files](update.ini).
 
-## How to highlight source code?
+## How to highlight source code
 
 Wrap your code blocks in \`\`\`, add an optional language identifier for highlighting. For line numbers add a colon separated number to the language. The visual design of programming languages can be adjusted in your theme.
 

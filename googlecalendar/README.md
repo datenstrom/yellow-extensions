@@ -4,7 +4,7 @@ Embed Google calendar.
 
 <p align="center"><img src="googlecalendar-screenshot.png?raw=true" alt="Screenshot"></p>
 
-## How do I install this?
+## How to install plugin
 
 1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/googlecalendar.zip). If you are using Safari, right click and select 'Download file as'.
@@ -12,7 +12,7 @@ Embed Google calendar.
 
 To uninstall delete the [plugin files](update.ini).
 
-## How to embed a calendar?
+## How to embed a calendar
 
 Create a `[googlecalendar]` shortcut.
 
@@ -25,7 +25,7 @@ The following arguments are available:
 `WIDTH` = calendar width, pixel or percent  
 `HEIGHT` = calendar height, pixel or percent  
 
-## How to configure a calendar?
+## How to configure a calendar
 
 The following settings can be configured in file `system/config/config.ini`:
 

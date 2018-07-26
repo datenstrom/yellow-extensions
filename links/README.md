@@ -4,7 +4,7 @@ Add links to previous/next page. [See demo](https://developers.datenstrom.se/plu
 
 <p align="center"><img src="links-screenshot.png?raw=true" alt="Screenshot"></p>
 
-## How do I install this?
+## How to install plugin
 
 1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
 2. [Download and install blog plugin](https://github.com/datenstrom/yellow-plugins/tree/master/blog).
@@ -13,11 +13,11 @@ Add links to previous/next page. [See demo](https://developers.datenstrom.se/plu
 
 To uninstall delete the [plugin files](update.ini).
 
-## How to show links?
+## How to show links
 
 The plugin adds links to previous/next page, which allows users to navigate between pages. Links are shown on blog and wiki pages. To show links on other pages add a `[links]` shortcut to a page.
 
-## How to configure links?
+## How to configure links
 
 The following settings can be configured in file `system/config/config.ini`:
 

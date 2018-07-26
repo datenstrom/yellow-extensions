@@ -5,7 +5,7 @@
 
 class YellowRelease
 {
-	const VERSION = "0.7.7";
+	const VERSION = "0.7.9";
 
 	// Handle plugin initialisation
 	function onLoad($yellow)
@@ -40,11 +40,10 @@ class YellowRelease
 	{
 		$statusCode = 0;
 		list($command, $path) = $args;
+		$pathSoftware = rtrim($this->yellow->config->get("releaseSoftwareDir"), '/').'/';
 		$pathPlugins = rtrim($this->yellow->config->get("releasePluginsDir"), '/').'/';
 		$pathThemes = rtrim($this->yellow->config->get("releaseThemesDir"), '/').'/';
-		$path = rtrim(empty($path) ? $this->yellow->config->get("releaseSoftwareDir") : $path, '/').'/';
-		if($path=="plugins/") $path = $pathPlugins;
-		if($path=="themes/") $path = $pathThemes;
+		$path = rtrim((preg_match("/[\/\\\\]/", $path) ? $path : $pathSoftware.$path), '/').'/';
 		if(is_dir($path))
 		{
 			$statusCode = max($statusCode, $this->updateSoftwareRepository($path, $pathPlugins, $pathThemes));

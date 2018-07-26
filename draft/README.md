@@ -4,7 +4,7 @@ Support for draft pages.
 
 <p align="center"><img src="draft-screenshot.png?raw=true" alt="Screenshot"></p>
 
-## How do I install this?
+## How to install plugin
 
 1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/draft.zip). If you are using Safari, right click and select 'Download file as'.
@@ -12,7 +12,7 @@ Support for draft pages.
 
 To uninstall delete the [plugin files](update.ini).
 
-## How to make a draft page?
+## How to make a draft page
 
 Set `Status: draft` in the settings at the top of a page. The page will no longer be public visible. You can continue to edit a draft page in the web browser and the file system.
 

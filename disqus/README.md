@@ -4,7 +4,7 @@ Add Disqus comments to blog. [See demo](https://developers.datenstrom.se/plugins
 
 <p align="center"><img src="disqus-screenshot.png?raw=true" alt="Screenshot"></p>
 
-## How do I install this?
+## How to install plugin
 
 1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
 2. [Download and install blog plugin](https://github.com/datenstrom/yellow-plugins/tree/master/blog).
@@ -13,7 +13,7 @@ Add Disqus comments to blog. [See demo](https://developers.datenstrom.se/plugins
 
 To uninstall delete the [plugin files](update.ini).
 
-## How to show comments?
+## How to show comments
 
 [Disqus](http://disqus.com) is a comment service for websites. To use the plugin open file `system/config/config.ini` and change `DisqusShortname: website`. You can find the name of your website in the Disqus dashboard. Comments are shown on blog pages. To show comments on other pages add a `[disqus]` shortcut to a page.
 

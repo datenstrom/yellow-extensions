@@ -4,7 +4,7 @@ Full-text search. [See demo](https://developers.datenstrom.se/plugins/search).
 
 <p align="center"><img src="search-screenshot.png?raw=true" alt="Screenshot"></p>
 
-## How do I install this?
+## How to install plugin
 
 1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/search.zip). If you are using Safari, right click and select 'Download file as'.
@@ -12,11 +12,11 @@ Full-text search. [See demo](https://developers.datenstrom.se/plugins/search).
 
 To uninstall delete the [plugin files](update.ini).
 
-## How to use a search?
+## How to use a search
 
 The search is available on your website as `http://website/search/`. It searches trough content of the entire website, only visible pages are included. You can use a [custom navigation](https://developers.datenstrom.se/help/customising-templates#custom-navigation), open file `system/config/config.ini` and change `Navigation: navigation-search`. To show a search field add a `[search]` shortcut with optional location. You can also add a link to the search somewhere on your website. See example below.
 
-## How to configure a search?
+## How to configure a search
 
 The following settings can be configured in file `system/config/config.ini`:
 

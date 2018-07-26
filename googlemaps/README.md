@@ -4,7 +4,7 @@ Embed Google maps. [See demo](https://developers.datenstrom.se/plugins/googlemap
 
 <p align="center"><img src="googlemaps-screenshot.png?raw=true" alt="Screenshot"></p>
 
-## How do I install this?
+## How to install plugin
 
 1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/googlemaps.zip). If you are using Safari, right click and select 'Download file as'.
@@ -12,7 +12,7 @@ Embed Google maps. [See demo](https://developers.datenstrom.se/plugins/googlemap
 
 To uninstall delete the [plugin files](update.ini).
 
-## How to embed a map?
+## How to embed a map
 
 Create a `[googlemaps]` shortcut.
 

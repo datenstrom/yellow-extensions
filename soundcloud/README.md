@@ -4,7 +4,7 @@ Embed Soundcloud audio tracks. [See demo](https://developers.datenstrom.se/plugi
 
 <p align="center"><img src="soundcloud-screenshot.png?raw=true" alt="Screenshot"></p>
 
-## How do I install this?
+## How to install plugin
 
 1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/soundcloud.zip). If you are using Safari, right click and select 'Download file as'.
@@ -12,7 +12,7 @@ Embed Soundcloud audio tracks. [See demo](https://developers.datenstrom.se/plugi
 
 To uninstall delete the [plugin files](update.ini).
 
-## How to embed an audio track?
+## How to embed an audio track
 
 Create a `[soundcloud]` shortcut.
  

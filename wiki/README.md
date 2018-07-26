@@ -4,7 +4,7 @@ Wiki for your website. [See demo](https://developers.datenstrom.se/plugins/wiki/
 
 <p align="center"><img src="wiki-screenshot.png?raw=true" alt="Screenshot"></p>
 
-## How do I install this?
+## How to install plugin
 
 1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/wiki.zip). If you are using Safari, right click and select 'Download file as'.
@@ -12,11 +12,11 @@ Wiki for your website. [See demo](https://developers.datenstrom.se/plugins/wiki/
 
 To uninstall delete the [plugin files](update.ini).
 
-## How to use a wiki?
+## How to use a wiki
 
 The wiki is available on your website as `http://website/wiki/`. To show the wiki on the home page, go to your `content` folder and delete the `1-home` folder. To create a new wiki page, add a new file to the wiki folder. Set `Title` and other [settings](https://developers.datenstrom.se/help/markdown-cheat-sheet#settings) at the top of a page. Use `Tag` to group similar pages together. [Learn more](https://developers.datenstrom.se/help/how-to-make-a-wiki).
 
-## How to show wiki information?
+## How to show wiki information
 
 You can use shortcuts to show information about the wiki:
 

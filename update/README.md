@@ -4,7 +4,7 @@ Keep your website up to date.
 
 <p align="center"><img src="update-screenshot.png?raw=true" alt="Screenshot"></p>
 
-## How do I install this?
+## How to install plugin
 
 1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/update.zip). If you are using Safari, right click and select 'Download file as'.
@@ -12,7 +12,7 @@ Keep your website up to date.
 
 Do not delete the [plugin files](update.ini), they are always required.
 
-## How to update a website?
+## How to update a website
 
 The first option is to update your website in a [web browser](https://github.com/datenstrom/yellow-plugins/tree/master/edit). Log in with your user account. Go to the settings and check for updates. Your website will show when updates are available. Only the webmaster can update the website. The webmaster's email is defined in file `system/config/config.ini`.
 

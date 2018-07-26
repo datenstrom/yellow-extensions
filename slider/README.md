@@ -4,7 +4,7 @@ Image gallery with slider. [See demo](https://developers.datenstrom.se/plugins/s
 
 <p align="center"><img src="slider-screenshot.png?raw=true" alt="Screenshot"></p>
 
-## How do I install this?
+## How to install plugin
 
 1. [Download and install Datenstrom Yellow](https://github.com/datenstrom/yellow/).
 2. [Download plugin](https://github.com/datenstrom/yellow-plugins/raw/master/zip/slider.zip). If you are using Safari, right click and select 'Download file as'.
@@ -12,7 +12,7 @@ Image gallery with slider. [See demo](https://developers.datenstrom.se/plugins/s
 
 To uninstall delete the [plugin files](update.ini).
 
-## How to add a gallery?
+## How to add a gallery
 
 Create a `[slider]` shortcut.
 
