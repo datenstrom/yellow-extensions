@@ -16,7 +16,7 @@ To uninstall delete the [plugin files](update.ini).
 
 Create an `[instagram]` shortcut. 
 
-The following arguments are available:
+The following arguments are available, all but the first argument are optional:
  
 `ID` = middle part of an [Instagram](https://www.instagram.com) link, e.g. `https://www.instagram.com/p/BISN9ngjV2-/?taken-by=rick_ande`  
 `THEME` = photo theme, currently `light` only  

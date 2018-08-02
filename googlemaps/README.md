@@ -16,7 +16,7 @@ To uninstall delete the [plugin files](update.ini).
 
 Create a `[googlemaps]` shortcut.
 
-The following arguments are available:
+The following arguments are available, all but the first argument are optional:
 
 `ADDRESS` = text you enter on [Google maps](https://maps.google.com/), wrap multiple words into quotes  
 `ZOOM` = zoom value, the default zoom is 15  

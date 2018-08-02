@@ -16,7 +16,7 @@ To uninstall delete the [plugin files](update.ini).
 
 Create a `[breadcrumbs]` shortcut. 
 
-The following arguments are available:
+The following arguments are available, all arguments are optional:
  
 `SEPARATOR ` = text used between pages  
 `STYLE` = breadcrumbs style, e.g. `breadcrumbs`  

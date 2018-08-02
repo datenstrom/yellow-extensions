@@ -16,7 +16,7 @@ To uninstall delete the [plugin files](update.ini).
 
 Create a `[googlecalendar]` shortcut.
 
-The following arguments are available:
+The following arguments are available, all but the first argument are optional:
 
 `ID` = [public Google calendar](https://calendar.google.com/), wrap multiple calendars into quotes  
 `MODE` = calendar mode, e.g. `week`, `month`, `events`, `agenda`  

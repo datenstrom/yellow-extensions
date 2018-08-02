@@ -16,7 +16,7 @@ To uninstall delete the [plugin files](update.ini).
 
 Create an `[image]` shortcut.
 
-The following arguments are available:
+The following arguments are available, all but the first argument are optional:
  
 `NAME` = file name  
 `TEXT` = text description  

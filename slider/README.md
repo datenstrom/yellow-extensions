@@ -16,7 +16,7 @@ To uninstall delete the [plugin files](update.ini).
 
 Create a `[slider]` shortcut.
 
-The following arguments are available:
+The following arguments are available, all but the first argument are optional:
   
 `PATTERN` = file name as regular expression  
 `STYLE` = gallery style, e.g. `flickity`  

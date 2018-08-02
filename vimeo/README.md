@@ -16,7 +16,7 @@ To uninstall delete the [plugin files](update.ini).
 
 Create a `[vimeo]` shortcut.
  
-The following arguments are available:
+The following arguments are available, all but the first argument are optional:
 
 `ID` = last part of a [Vimeo](https://www.vimeo.com) link, e.g. `https://vimeo.com/5606758`  
 `STYLE` = video style, e.g. `left`, `center`, `right`  

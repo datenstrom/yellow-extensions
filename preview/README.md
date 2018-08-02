@@ -16,7 +16,7 @@ To uninstall delete the [plugin files](update.ini).
 
 Create a `[preview]` shortcut.
 
-The following arguments are available:
+The following arguments are available, all arguments are optional:
 
 `LOCATION ` = preview location  
 `STYLE` = preview style, e.g. `stretchable`, `simple`  

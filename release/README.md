@@ -12,7 +12,7 @@ Create software releases.
 
 To uninstall delete the [plugin files](update.ini).
 
-## How to release a plugin or theme
+## How to create a software release
 
 First increase the version number in your code. Then create a software release at the [command line](https://github.com/datenstrom/yellow-plugins/tree/master/command). Open a terminal window. Go to your installation folder, where the `yellow.php` is. Type `php yellow.php release`, you can optionally add a directory. This will update all necessary files. Upload the changes and send a pull request. See example below.
 
@@ -48,7 +48,7 @@ Creating software releases at the command line:
 `php yellow.php release yellow-plugin-example`  
 `php yellow.php release yellow-theme-example`  
 
-Settings for a plugin:
+Update settings for a plugin:
 
 ~~~
 # Datenstrom Yellow update
@@ -61,7 +61,7 @@ Developer: Datenstrom
 YellowExample/example.php: system/plugins/example.php,create,update
 ~~~
 
-Settings for a theme:
+Update settings for a theme:
 
 ~~~
 # Datenstrom Yellow update

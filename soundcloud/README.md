@@ -16,7 +16,7 @@ To uninstall delete the [plugin files](update.ini).
 
 Create a `[soundcloud]` shortcut.
  
-The following arguments are available:
+The following arguments are available, all but the first argument are optional:
 
 `ID` = last part of a [Soundcloud](http://www.soundcloud.com/) link, e.g. `http://api.soundcloud.com/tracks/101175715`  
 `STYLE` = audio track style, e.g. `left`, `center`, `right`  

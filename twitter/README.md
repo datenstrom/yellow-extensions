@@ -16,7 +16,7 @@ To uninstall delete the [plugin files](update.ini).
 
 Create a `[twitter]` shortcut. 
 
-The following arguments are available:
+The following arguments are available, all but the first argument are optional:
  
 `ID` = last part of a [Twitter](https://www.twitter.com) link, e.g. `https://twitter.com/datenstromse/status/581449759493398528`  
 `THEME` = message theme, e.g. `light`, `dark`  

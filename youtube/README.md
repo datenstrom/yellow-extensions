@@ -16,7 +16,7 @@ To uninstall delete the [plugin files](update.ini).
 
 Create a `[youtube]` shortcut. 
 
-The following arguments are available:
+The following arguments are available, all but the first argument are optional:
  
 `ID` = last part of a [Youtube](https://www.youtube.com) link, e.g. `https://www.youtube.com/watch?v=fhs55HEl-Gc`  
 `STYLE` = video style, e.g. `left`, `center`, `right`  
