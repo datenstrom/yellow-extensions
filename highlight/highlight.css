@@ -1,107 +1,65 @@
 /* Highlight plugin, https://github.com/datenstrom/yellow-plugins/tree/master/highlight */
-/* Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se */
+/* Copyright (c) 2013-2018 Datenstrom, https://datenstrom.se */
 /* This file may be used and distributed under the terms of the public license. */
 
-.content .highlight tr, .content .highlight td { padding:0; border:none; }
-.content .highlight td.ln pre { padding-right:0.5em; text-align:right; }
-.content .highlight td.de1 pre { padding-left:0.5em; }
-
-.c { color:inherit; }
-.c .ln { color:#bbb; }
-.c .kw1 { color:#00d; }
-.c .kw2 { color:#00d; }
-.c .kw3 { color:#00d; }
-.c .kw4 { color:#00d; }
-.c .co2 { color:#00d; }
-.c .st0 { color:#c00; }
-.c .nu0 { color:#c00; }
-.c .nu6 { color:#c00; }
-.c .nu8 { color:#c00; }
-.c .nu12 { color:#c00; }
-.c .co1 { color:#0a0; }
-.c .coMULTI { color:#0a0; }
-
-.css { color:inherit; }
-.css .ln { color:#bbb; }
-.css .kw1 { color:#b0b; }
-.css .kw2 { color:#b0b; }
-.css .st0 { color:#c00; }
-.css .nu0 { color:#00d; }
-.css .re0 { color:#00d; }
-.css .re2 { color:#b0b; }
-.css .re3 { color:#00d; }
-.css .co1 { color:#0a0; }
-.css .coMULTI { color:#0a0; }
-
-.cpp { color:inherit; }
-.cpp .ln { color:#bbb; }
-.cpp .kw1 { color:#00d; }
-.cpp .kw2 { color:#00d; }
-.cpp .kw3 { color:#00d; }
-.cpp .kw4 { color:#00d; }
-.cpp .co2 { color:#00d; }
-.cpp .st0 { color:#c00; }
-.cpp .nu0 { color:#c00; }
-.cpp .nu6 { color:#c00; }
-.cpp .nu8 { color:#c00; }
-.cpp .nu12 { color:#c00; }
-.cpp .co1 { color:#0a0; }
-.cpp .coMULTI { color:#0a0; }
-
-.html { color:inherit; }
-.html .ln { color:#bbb; }
-.html .sc0 { color:#aaa; }
-.html .sc2 { color:#b0b; }
-.html .kw2 { color:#b0b; }
-.html .kw3 { color:#c00; }
-.html .st0 { color:#00d; }
-.html .sc-1 { color:#0a0; }
-
-.javascript { color:inherit; }
-.javascript .ln { color:#bbb; }
-.javascript .kw1 { color:#b0b; }
-.javascript .kw2 { color:#b0b; }
-.javascript .kw3 { color:#b0b; }
-.javascript .st0 { color:#c00; }
-.javascript .nu0 { color:#00d; }
-.javascript .co1 { color:#0a0; }
-.javascript .coMULTI { color:#0a0; }
-
-.php { color:inherit; }
-.php .ln { color:#bbb; }
-.php .kw1 { color:#b0b; }
-.php .kw2 { color:#b0b; }
-.php .kw3 { color:#b0b; }
-.php .kw4 { color:#b0b; }
-.php .sy1 { color:#b0b; }
-.php .st0 { color:#c00; }
-.php .st_h { color:#00d; }
-.php .nu0 { color:#00d; }
-.php .co1 { color:#0a0; }
-.php .coMULTI { color:#0a0; }
-
-.python { color:inherit; }
-.python .ln { color:#bbb; }
-.python .kw1 { color:#b0b; }
-.python .kw2 { color:#b0b; }
-.python .kw3 { color:#b0b; }
-.python .kw4 { color:#b0b; }
-.python .sy1 { color:#b0b; }
-.python .st0 { color:#c00; }
-.python .st_h { color:#00d; }
-.python .nu0 { color:#00d; }
-.python .co1 { color:#0a0; }
-.python .coMULTI { color:#0a0; }
-
-.ruby { color:inherit; }
-.ruby .ln { color:#bbb; }
-.ruby .kw1 { color:#b0b; }
-.ruby .kw2 { color:#b0b; }
-.ruby .kw3 { color:#b0b; }
-.ruby .kw4 { color:#b0b; }
-.ruby .sy1 { color:#b0b; }
-.ruby .st0 { color:#c00; }
-.ruby .st_h { color:#00d; }
-.ruby .nu0 { color:#00d; }
-.ruby .co1 { color:#0a0; }
-.ruby .coMULTI { color:#0a0; }
+.hljs-comment,
+.hljs-quote {
+    color: #999;
+}
+.hljs-meta,
+.hljs-keyword,
+.hljs-literal {
+    color: #c00;
+}
+.hljs-attr,
+.hljs-attribute,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-pseudo {
+    color: #c00;
+}
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-params {
+    color: #c00;
+}
+.hljs-string {
+    color: #00c;
+}
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-number {
+    color: #00c;
+}
+.hljs-section {
+    font-weight: bold;
+}
+.hljs-addition {
+    background-color: #baeeba;
+}
+.hljs-deletion {
+    background-color: #ffc8bd;
+}
+.hljs-with-line-number {
+    counter-reset: line-number;
+}
+.hljs-line-number {
+    counter-increment: line-number;
+}
+.hljs-line-number::before {
+    color: #bbb;
+    content: counter(line-number);
+    display: inline-block;
+    text-align: right;
+    padding-right: 1.5em;
+    width: 1.5em;
+    letter-spacing: -1px;
+    white-space: nowrap;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

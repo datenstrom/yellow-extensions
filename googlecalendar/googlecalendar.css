@@ -2,5 +2,9 @@
 /* Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se */
 /* This file may be used and distributed under the terms of the public license. */
 
-.googlecalendar .events .description { display:block; }
-.googlecalendar .events .date { display:block; }
+.googlecalendar .events .description {
+    display: block;
+}
+.googlecalendar .events .date {
+    display: block;
+}

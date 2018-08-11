@@ -18,8 +18,8 @@ Create a `[breadcrumbs]` shortcut.
 
 The following arguments are available, all arguments are optional:
  
-`SEPARATOR ` = text used between pages  
-`STYLE` = breadcrumbs style, e.g. `breadcrumbs`  
+`Separator ` = text used between pages  
+`Style` = breadcrumbs style, e.g. `breadcrumbs`  
  
 ## Example
 

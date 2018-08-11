@@ -1,4 +1,4 @@
-Traffic plugin 0.7.6
+Traffic plugin 0.7.7
 ====================
 Create traffic analytics from web server logfiles.
 
@@ -39,25 +39,26 @@ Creating traffic analytics at the command line:
 ~~~~
 Referring sites
 
-- 97 https://github.com/myles/awesome-static-generators
-- 38 http://alternativeto.net/software/yellow-1/
-- 37 http://trendschau.net/blog/uebersicht-flat-file-cms
-- 18 https://blog.mrwebmaster.it/2016/11/21/7-cms-flat-file-da-considerare.html
+- 58 https://github.com/datenstrom/yellow
+- 43 https://github.com/myles/awesome-static-generators
+- 17 https://medium.com/@nampara17/whats-the-best-cms-for-static-websites-12364ab911ef
+- 9 https://github.com/
 
 Popular content
 
-- 4514 https://datenstrom.se/
-- 1144 https://datenstrom.se/yellow/
-- 198 https://datenstrom.se/ideas/
-- 166 https://datenstrom.se/de/yellow/
+- 3447 https://datenstrom.se/
+- 927 https://datenstrom.se/yellow/
+- 239 https://datenstrom.se/blue/
+- 179 https://datenstrom.se/ideas/
 
 Error pages
 
-- 85 https://datenstrom.se/media/images/icon.png - Not found
-- 20 https://datenstrom.se/index.php - Not found
-- 12 https://datenstrom.se/admin/admin.php - Not found
+- 57 https://datenstrom.se/media/images/datenstrom-yellow.png - Not found
+- 54 https://datenstrom.se/ - Bad request
+- 27 https://datenstrom.se/ads.txt - Not found
+- 6 https://datenstrom.se//wordpress/wp-includes/wlwmanifest.xml - Bad request
 
-Yellow traffic: 30 days, 6502 views
+Yellow traffic: 30 days, 5280 views
 ~~~~
 
 ## Developer

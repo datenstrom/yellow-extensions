@@ -16,7 +16,7 @@ To uninstall delete the [plugin files](update.ini).
 
 Add `:shortcode:` to the text of a page. Here's a [complete list of icons](https://fontawesome.com/icons).
 
-It's also possible to create a `[fa NAME]` shortcut or use HTML `<i class="fa NAME"></i>`. 
+It's also possible to create a `[fa]` shortcut or use HTML `<i class="fa fa-name"></i>`. 
 
 You can add an additional style to the name, for example `fa-lg`, `fa-2x`, `fa-3x`, `fa-4x` and `fa-5x`.
 

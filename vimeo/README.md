@@ -18,10 +18,10 @@ Create a `[vimeo]` shortcut.
  
 The following arguments are available, all but the first argument are optional:
 
-`ID` = last part of a [Vimeo](https://www.vimeo.com) link, e.g. `https://vimeo.com/5606758`  
-`STYLE` = video style, e.g. `left`, `center`, `right`  
-`WIDTH` = video width, pixel or percent  
-`HEIGHT` = video height, pixel or percent   
+`Id` = last part of a [Vimeo](https://www.vimeo.com) link, e.g. `https://vimeo.com/5606758`  
+`Style` = video style, e.g. `left`, `center`, `right`  
+`Width` = video width, pixel or percent  
+`Height` = video height, pixel or percent   
  
 ## Example
 

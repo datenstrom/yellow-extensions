@@ -20,18 +20,18 @@ The wiki is available on your website as `http://website/wiki/`. To show the wik
 
 You can use shortcuts to show information about the wiki:
 
-`[wikiauthors LOCATION PAGESMAX]` for a list of authors  
-`[wikitags LOCATION PAGESMAX]` for a list of tags  
-`[wikipages LOCATION PAGESMAX AUTHOR TAG]` for a list of pages, alphabetic order  
-`[wikichanges LOCATION PAGESMAX AUTHOR TAG]` for a list of pages, modified order  
-`[wikirelated LOCATION PAGESMAX]` for a list of pages related to the current page    
+`[wikiauthors]` for a list of authors  
+`[wikitags]` for a list of tags  
+`[wikirelated]` for a list of pages, related to the current page    
+`[wikipages]` for a list of pages, alphabetic order  
+`[wikichanges]` for a list of pages, modified order  
 
 The following arguments are available, all but the first argument are optional:
 
-`LOCATION` = wiki location  
-`PAGESMAX` = number of pages, 0 for unlimited  
-`AUTHOR` = show pages by a specific author  
-`TAG` = show pages with a specific tag  
+`Location` = wiki location  
+`PagesMax` = number of pages, 0 for unlimited  
+`Author` = show pages by a specific author, `[wikipages]` or `[wikichanges]` only  
+`Tag` = show pages with a specific tag, `[wikipages]` or `[wikichanges`] only  
 
 ## How to configure a wiki?
 

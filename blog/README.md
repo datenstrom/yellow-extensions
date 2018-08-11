@@ -20,19 +20,19 @@ The blog is available on your website as `http://website/blog/`. To show the blo
 
 You can use shortcuts to show information about the blog:
 
-`[blogauthors LOCATION PAGESMAX]` for a list of authors  
-`[blogtags LOCATION PAGESMAX]` for a list of tags  
-`[blogarchive LOCATION PAGESMAX]` for a list of months  
-`[blogpages LOCATION PAGESMAX AUTHOR TAG]` for a list of pages, alphabetic order  
-`[blogchanges LOCATION PAGESMAX AUTHOR TAG]` for a list of pages, published order  
-`[blogrelated LOCATION PAGESMAX]` for a list of pages related to the current page  
+`[blogauthors]` for a list of authors  
+`[blogtags]` for a list of tags  
+`[blogarchive]` for a list of months  
+`[blogrelated]` for a list of pages, related to the current page  
+`[blogpages]` for a list of pages, alphabetic order  
+`[blogchanges]` for a list of pages, published order  
 
 The following arguments are available, all but the first argument are optional:
 
-`LOCATION` = blog location  
-`PAGESMAX` = number of pages, 0 for unlimited  
-`AUTHOR` = show pages by a specific author  
-`TAG` = show pages with a specific tag  
+`Location` = blog location  
+`PagesMax` = number of pages, 0 for unlimited  
+`Author` = show pages by a specific author, `[blogpages]` or `[blogchanges]` only  
+`Tag` = show pages with a specific tag, `[blogpages]` or `[blogchanges]` only  
 
 ## How to configure a blog
 

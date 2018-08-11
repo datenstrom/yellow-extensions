@@ -1,4 +1,4 @@
-Command plugin 0.7.7
+Command plugin 0.7.8
 =====================
 Run commands in a terminal window.
 
@@ -25,25 +25,25 @@ The following commands are available:
 **php yellow.php**  
 Show available commands
 
-**php yellow.php build [DIRECTORY LOCATION]**  
+**php yellow.php build [directory location]**  
 Build static website
 
-**php yellow.php check [DIRECTORY LOCATION]**  
+**php yellow.php check [directory location]**  
 Check static files for broken links
 
-**php yellow.php clean [DIRECTORY LOCATION]**  
+**php yellow.php clean [directory location]**  
 Clean static files
 
-**php yellow.php release [DIRECTORY]**  
+**php yellow.php release [directory]**  
 Create software releases with the [release plugin](https://github.com/datenstrom/yellow-plugins/tree/master/release)
 
-**php yellow.php traffic [DAYS LOCATION FILENAME]**  
+**php yellow.php traffic [days location filename]**  
 Create traffic analytics with the [traffic plugin](https://github.com/datenstrom/yellow-plugins/tree/master/traffic)
 
-**php yellow.php update [OPTION FEATURE]**  
+**php yellow.php update [option feature]**  
 Update website with the [update plugin](https://github.com/datenstrom/yellow-plugins/tree/master/update)
 
-**php yellow.php user [OPTION EMAIL PASSWORD NAME]**  
+**php yellow.php user [option email password name]**  
 Update user account with the [edit plugin](https://github.com/datenstrom/yellow-plugins/tree/master/edit)
 
 **php yellow.php version**  
@@ -57,13 +57,13 @@ Showing available commands:
 
 ~~~~
 Datenstrom Yellow 0.7.5
-Syntax: yellow.php build [DIRECTORY LOCATION]
-        yellow.php check [DIRECTORY LOCATION]
-        yellow.php clean [DIRECTORY LOCATION]
-        yellow.php release [DIRECTORY]
-        yellow.php traffic [DAYS LOCATION FILENAME]
-        yellow.php update [OPTION FEATURE]
-        yellow.php user [OPTION EMAIL PASSWORD NAME]
+Syntax: yellow.php build [directory location]
+        yellow.php check [directory location]
+        yellow.php clean [directory location]
+        yellow.php release [directory]
+        yellow.php traffic [days location filename]
+        yellow.php update [option feature]
+        yellow.php user [option email password name]
         yellow.php version
 ~~~~
 

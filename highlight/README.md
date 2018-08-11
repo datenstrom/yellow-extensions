@@ -1,4 +1,4 @@
-Highlight plugin 0.7.2
+Highlight plugin 0.7.4
 ======================
 Highlight source code.
 
@@ -14,9 +14,9 @@ To uninstall delete the [plugin files](update.ini).
 
 ## How to highlight source code
 
-Wrap your code blocks in \`\`\`, add an optional language identifier for highlighting. For line numbers add a colon separated number to the language. The visual design of programming languages can be adjusted in your theme.
+Wrap your code blocks in \`\`\` and add a language identifier. The appearance of highlighted source code can be adjusted in your theme.
 
-The plugin uses [GeSHi 1.0.9.0](https://github.com/GeSHi/geshi-1.0) by Benny Baumann and Nigel McNie, which supports about 200 programming languages. It's licensed under [GPLv2](https://opensource.org/licenses/GPL-2.0). The following languages are included: C, CPP, CSS, HTML, JavaScript, PHP, Python, Ruby. You can download more [language files](https://github.com/GeSHi/geshi-1.0/tree/master/src/geshi), copy them into your `system/plugins` folder.
+The plugin uses [highlight.php 9.12.0](https://github.com/scrivo/highlight.php) by Ivan Sagalaev and Geert Bergman, which supports about 170 programming languages. It's licensed under [BSD license](https://opensource.org/licenses/BSD-3-Clause). The following languages are included: C, CPP, CSS, HTML, JavaScript, JSON, PHP, Python, YAML. You can download more [language files](https://github.com/scrivo/highlight.php/tree/master/Highlight/languages), rename and copy them into your `system/plugins` folder.
 
 ## Example
 
@@ -31,15 +31,15 @@ Highlighting of JavaScript code:
     window.addEventListener('load', ready, false);
     ```
 
-Highlighting of HTML code, with and without line numbers:
+Highlighting of HTML code, without and with line number:
     
-    ``` html:1
+    ``` html
     <body>
     <p>Hello world!</p>
     </body>
     ```
 
-    ``` html
+    ``` html {.with-line-number}
     <body>
     <p>Hello world!</p>
     </body>
@@ -47,4 +47,4 @@ Highlighting of HTML code, with and without line numbers:
 
 ## Developer
 
-Datenstrom featuring Benny Baumann and Nigel McNie. [Get support](https://developers.datenstrom.se/help/support).
+Datenstrom featuring Ivan Sagalaev and Geert Bergman. [Get support](https://developers.datenstrom.se/help/support).

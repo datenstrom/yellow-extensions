@@ -18,11 +18,11 @@ Create a `[googlemaps]` shortcut.
 
 The following arguments are available, all but the first argument are optional:
 
-`ADDRESS` = text you enter on [Google maps](https://maps.google.com/), wrap multiple words into quotes  
-`ZOOM` = zoom value, the default zoom is 15  
-`STYLE` = map style, e.g. `left`, `center`, `right`  
-`WIDTH` = map width, pixel or percent  
-`HEIGHT` = map height, pixel or percent  
+`Address` = text you enter on [Google maps](https://maps.google.com/), wrap multiple words into quotes  
+`Zoom` = zoom value, the default zoom is 15  
+`Style` = map style, e.g. `left`, `center`, `right`  
+`Width` = map width, pixel or percent  
+`Height` = map height, pixel or percent  
 
 ## Example
 
