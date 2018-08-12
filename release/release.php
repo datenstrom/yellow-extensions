@@ -4,8 +4,10 @@
 // This file may be used and distributed under the terms of the public license.
 
 class YellowRelease {
-    const VERSION = "0.7.12";
+    const VERSION = "0.7.13";
     public $yellow;         //access to API
+    public $plugins;        //number of plugins
+    public $themes;         //number of archives
 
     // Handle plugin initialisation
     public function onLoad($yellow) {
@@ -40,15 +42,18 @@ class YellowRelease {
         $pathThemes = rtrim($this->yellow->config->get("releaseThemesDir"), "/")."/";
         $path = rtrim((preg_match("/[\/\\\\]/", $path) ? $path : $pathSoftware.$path), "/")."/";
         if (is_dir($path)) {
+            $this->plugins = $this->themes = 0;
             $statusCode = max($statusCode, $this->updateSoftwareRepository($path, $pathPlugins, $pathThemes));
             foreach ($this->yellow->toolbox->getDirectoryEntries($path, "/.*/", true, true) as $entry) {
                 $statusCode = max($statusCode, $this->updateSoftwareRepository("$entry/", $pathPlugins, $pathThemes));
             }
         } else {
             $statusCode = 500;
+            $this->plugins = $this->themes = 0;
             echo "ERROR updating files: Can't find directory '$path'!\n";
         }
-        echo "Yellow $command: Release files ".($statusCode!=200 ? "not " : "")."updated\n";
+        echo "Yellow $command: $this->plugins plugin".($this->plugins!=1 ? "s" : "");
+        echo ", $this->themes theme".($this->themes!=1 ? "s" : "")."\n";
         return $statusCode;
     }
     
@@ -146,7 +151,7 @@ class YellowRelease {
         $fileNameInformation = $pathSource.$this->yellow->config->get("updateInformationFile");
         if (is_file($fileNameInformation) && !empty($software)) {
             $zip = new ZipArchive();
-            $softwareName = $this->getSoftwareName($software);
+            list($softwareName, $softwareType) = $this->getSoftwareInformation($software);
             $fileNameZipArchive = $pathDestination."zip/$softwareName.zip";
             if ($zip->open($fileNameZipArchive, ZIPARCHIVE::CREATE|ZIPARCHIVE::OVERWRITE)===true) {
                 $modified = 0;
@@ -167,6 +172,13 @@ class YellowRelease {
                 if (!$zip->close() || !$this->yellow->toolbox->modifyFile($fileNameZipArchive, $modified)) {
                     $statusCode = 500;
                     echo "ERROR updating files: Can't write file '$fileNameZipArchive'!\n";
+                }
+                if ($statusCode==200) {
+                    if ($softwareType=="plugin") {
+                         ++$this->plugins;
+                    } else {
+                        ++$this->themes;
+                    }
                 }
             } else {
                 $statusCode = 500;
@@ -195,9 +207,10 @@ class YellowRelease {
                 }
             }
             if (!$found) {
-                $softwareName = $this->getSoftwareName($software);
-                $fileDataNew .= "\n# Datenstrom Yellow version, new\n\n";
-                $fileDataNew .= "$software: $version,https://github.com/datenstrom/yellow-plugins/raw/master/zip/$softwareName.zip\n";
+                list($softwareName, $softwareType) = $this->getSoftwareInformation($software);
+                $url = "https://github.com/datenstrom/yellow-{$softwareType}s/raw/master/zip/$softwareName.zip";
+                $fileDataNew .= "\n# Datenstrom Yellow version, new $softwareType\n\n";
+                $fileDataNew .= "$software: $version,$url\n";
             }
             if ($fileData!=$fileDataNew) {
                 if (!$this->yellow->toolbox->createFile($fileNameVersion, $fileDataNew)) {
@@ -229,7 +242,8 @@ class YellowRelease {
                 }
             }
             if (!$found) {
-                $fileDataNew .= "\n# Datenstrom Yellow resource, new\n\n";
+                list($softwareName, $softwareType) = $this->getSoftwareInformation($software);
+                $fileDataNew .= "\n# Datenstrom Yellow resource, new $softwareType\n\n";
                 $fileDataNew .= $resource;
             }
             if ($fileData!=$fileDataNew) {
@@ -305,10 +319,11 @@ class YellowRelease {
     }
     
     // Return software name
-    public function getSoftwareName($software) {
+    public function getSoftwareInformation($software) {
         $softwareName = $this->yellow->lookup->normaliseName($software, true, false, true);
         $softwareName = preg_replace("/yellowtheme|yellow/", "", $softwareName);
-        return $softwareName;
+        $softwareType = preg_match("/^YellowTheme/", $software) ? "theme" : "plugin";
+        return array($softwareName, $softwareType);
     }
 }
 
