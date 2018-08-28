@@ -120,11 +120,7 @@ Experimental plugins:
 * [Random](https://github.com/schulle4u/yellow-plugin-random): 
   Display random pages from specified location.
 * [Shariff](https://github.com/schulle4u/yellow-plugin-shariff):
-<<<<<<< HEAD
-  Privacy-friendly social sharing buttons for your Yellow website.
-=======
   Privacy-friendly social sharing buttons.
->>>>>>> upstream/master
 * [Spoiler](https://github.com/schulle4u/yellow-plugin-spoiler):
   Hide certain page elements.
 * [Streamlist](https://github.com/nibreh/yellow-plugin-streamlist):
