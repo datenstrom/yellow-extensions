@@ -87,13 +87,13 @@ Experimental plugins:
   Email address obfuscator using ROT13 and CSS.
 * [Audio](https://github.com/schulle4u/yellow-plugin-audio):
   HTML5 audio player.
-* [BurgerMenu](https://github.com/richi/yellow-plugin-burger-menu): 
+* [Burgermenu](https://github.com/richi/yellow-plugin-burger-menu): 
   A hamburger menu button.
-* [CheetJS](https://github.com/nogginfuel/yellow-plugin-cheetjs): 
+* [Cheetjs](https://github.com/nogginfuel/yellow-plugin-cheetjs): 
   Add easter eggs via key binds.
 * [Comments](https://github.com/wunderfeyd/yellow-comments):
   Get in touch with users of your website directly.
-* [DynamicCss](https://github.com/richi/yellow-plugin-dynamiccss):
+* [Dynamiccss](https://github.com/richi/yellow-plugin-dynamiccss):
   A (very) small CSS preprocessor.
 * [Events](https://github.com/Xrizzy/yellow-plugin-events):
   Yellow plugin for events that you have organised.
@@ -101,7 +101,7 @@ Experimental plugins:
   Yellow plugin for easy FAQ handling.
 * [Fotorama](https://github.com/nogginfuel/yellow-plugin-fotorama): 
   A jQuery image gallery with carousel.
-* [GlobalContent](https://github.com/schulle4u/yellow-plugin-global): 
+* [Global](https://github.com/schulle4u/yellow-plugin-global): 
   Includes page content into another page.
 * [Imgpop](https://github.com/bsnosi/yellow-plugin-imgpop):
   CSS only image popup with dimmed background and subtitle.
@@ -113,14 +113,18 @@ Experimental plugins:
   Maintenance status for entire site or single page.
 * [Medialist](https://github.com/nibreh/yellow-plugin-medialist):
   Create a list of MP3/OGG/PDF media files.
-* [PageTxt](https://github.com/richi/yellow-plugin-pagetxt):
+* [Pagetxt](https://github.com/richi/yellow-plugin-pagetxt):
   Overwrite language entries in a page.
 * [Podcast](https://github.com/schulle4u/yellow-plugin-podcast): 
   A fork of the original feed plugin optimized for podcast publishing.
 * [Random](https://github.com/schulle4u/yellow-plugin-random): 
   Display random pages from specified location.
 * [Shariff](https://github.com/schulle4u/yellow-plugin-shariff):
+<<<<<<< HEAD
   Privacy-friendly social sharing buttons for your Yellow website.
+=======
+  Privacy-friendly social sharing buttons.
+>>>>>>> upstream/master
 * [Spoiler](https://github.com/schulle4u/yellow-plugin-spoiler):
   Hide certain page elements.
 * [Streamlist](https://github.com/nibreh/yellow-plugin-streamlist):
@@ -133,7 +137,7 @@ Experimental plugins:
   Embed radio stations from TuneIn.
 * [Video](https://github.com/nibreh/yellow-plugin-video): 
   HTML5 video player.
-* [WebCLI](https://github.com/richi/yellow-plugin-cli):
+* [Webcli](https://github.com/richi/yellow-plugin-cli):
   Use the command line interface without shell access.
 * [YCSSG](https://github.com/dieli/yellow-extension-ycssg):
   Image gallery in CSS only.
