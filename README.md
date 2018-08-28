@@ -121,8 +121,6 @@ Experimental plugins:
   Display random pages from specified location.
 * [Shariff](https://github.com/schulle4u/yellow-plugin-shariff):
   Privacy-friendly social sharing buttons for your Yellow website.
-* [Skipto](https://github.com/schulle4u/yellow-plugin-skipto):
-  Enhance keyboard navigation.
 * [Spoiler](https://github.com/schulle4u/yellow-plugin-spoiler):
   Hide certain page elements.
 * [Streamlist](https://github.com/nibreh/yellow-plugin-streamlist):
@@ -146,5 +144,7 @@ Obsolete plugins:
   Drag and drop image upload for editing a page.
 * [Markbar](https://github.com/nibreh/yellow-plugin-markbar):
   WYSIWYG style toolbar for editing a page.
+* [Skipto](https://github.com/schulle4u/yellow-plugin-skipto):
+  Enhance keyboard navigation.
 
 We have a developer kit and an API for developers. [Learn more](https://developers.datenstrom.se/help/).
