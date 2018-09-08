@@ -125,6 +125,8 @@ Experimental plugins:
   Display random pages from specified location.
 * [Shariff](https://github.com/schulle4u/yellow-plugin-shariff):
   Privacy-friendly social sharing buttons.
+* [Socialtags](https://github.com/schulle4u/yellow-plugin-socialtags):
+  Adds Twitter and Open Graph meta tags.
 * [Spoiler](https://github.com/schulle4u/yellow-plugin-spoiler):
   Hide certain page elements.
 * [Streamlist](https://github.com/nibreh/yellow-plugin-streamlist):
