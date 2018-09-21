@@ -115,6 +115,8 @@ Experimental plugins:
   Maintenance status for entire site or single page.
 * [Medialist](https://github.com/nibreh/yellow-plugin-medialist):
   Create a list of MP3/OGG/PDF media files.
+* [Minishare](https://github.com/GiovanniSalmeri/yellow-minishare):
+  Light and accessible social-sharing links.
 * [MOTD](https://github.com/schulle4u/yellow-plugin-motd):
   Message of the day.
 * [Pagetxt](https://github.com/richi/yellow-plugin-pagetxt):
