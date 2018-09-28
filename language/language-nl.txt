@@ -18,8 +18,8 @@ ContactStatusIncomplete: Vul alle velden in.
 ContactStatusInvalid: Vul een geldig email.
 ContactStatusDone: Je email is succesvol verzonden. Bedankt!
 ContactStatusError: E-mail kon niet worden verzonden, probeer het later opnieuw!
-DatePast: today, yesterday, @x days ago, 1 month ago, @x months ago, 1 year ago, @x years ago
-DateFuture: soon, tomorrow, in @x days, in 1 month, in @x months, in 1 year, in @x years
+DatePast: vandaag, gisteren, @x dagen geleden, 1 maand geleden, @x maanden geleden, 1 jaar geleden, @x jaar geleden
+DateFuture: binnenkort, morgen, binnen @x dagen, binnen 1 maand, binnen @x maanden, binnen 1 jaar, binnen @x jaar
 DateMonths: januari, februari, maart, april, mei, juni, juli, augustus, september, oktober, november, december
 DateWeekdays: maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag
 DateWeekstart: maandag
@@ -53,49 +53,49 @@ EditRecoverPassword: Wachtwoord:
 EditRecoverStatusPassword: Gelieve een nieuw wachtwoord in te vullen.
 EditRecoverStatusWeak: Gelieve een ander wachtwoord in te vullen.
 EditSettingsTitle: Instellingen
-EditSettingsQuit: You can delete your user account anytime.
-EditSettingsMore: More…
-EditSettingsStatusInvalid: Please enter a valid email.
-EditSettingsStatusTaken: Please enter a different email.
-EditSettingsStatusWeak: Please enter a different password.
-EditSettingsStatusNext: User account will be changed, please check your emails.
-EditQuitTitle: Delete user account
-EditQuitStatusNone: Please enter your name to confirm.
-EditQuitStatusMismatch: Please enter a different name.
-EditQuitStatusNext: User account will be deleted, please check your emails.
+EditSettingsQuit: Je kan je gebruikersaccount op eender welk moment verwijderen.
+EditSettingsMore: Meer…
+EditSettingsStatusInvalid: Gelieve een geldig e-mailadres in te voeren.
+EditSettingsStatusTaken: Gelieve een ander e-mailadres in te voeren.
+EditSettingsStatusWeak: Gelieve een ander wachtwoord in te voeren.
+EditSettingsStatusNext: Gebruikersaccount zal worden gewijzigd, hou je mailbox in de gaten.
+EditQuitTitle: Gebruikersaccount verwijderen
+EditQuitStatusNone: Gelieve je naam op te geven ter verificatie.
+EditQuitStatusMismatch: Gelieve een andere naam op te geven.
+EditQuitStatusNext: Gebruikersaccount zal worden verwijderd, hou je mailbox in de gaten.
 EditConfirmSubject: Gebruikersaccount bevestigen
 EditConfirmMessage: Hallo @usershort,\n\ngelieve je gebruikersaccount te bevestigen. Klik op volgende link.
 EditConfirmStatusDone: Gebruikersaccount bevestigd en wachten op goedkeuring. Bedankt!
 EditApproveSubject: Gebruikersaccount toestaan
 EditApproveMessage: Hallo @usershort,\n\ngelieve de aanmaak van een nieuw gebruikersaccount voor @useraccount te bevestigen. Klik op volgende link.
 EditApproveStatusDone: Gebruikersaccount toegestaan. Bedankt!
-EditReactivateSubject: Reactivate user account
+EditReactivateSubject: Gebruikersaccount heractiveren
 EditReactivateMessage: Hi @usershort,\n\nplease reactivate your user account. There were too many failed login attempts. Click the following link.
-EditReactivateStatusDone: User account reactivated. Thank you!
+EditReactivateStatusDone: Gebruikersaccount is opnieuw actief. Bedankt!
 EditRecoverSubject: Gebruikersaccount herstellen
 EditRecoverMessage: Hallo @usershort,\n\ngelieve te bevestigen dat je het wachtwoord vergeten bent. Klik op volgende link.
 EditRecoverStatusDone: Gebruikersaccount herstelt. Bedankt!
-EditVerifySubject: Confirm user account
-EditVerifyMessage: Hi @usershort,\n\nplease confirm a new email for your user account. Click the following link.
-EditVerifyStatusDone: User account confirmed. Thank you!
-EditChangeSubject: Change user account
-EditChangeMessage: Hi @usershort,\n\nplease confirm that you want to change your user account. Click the following link.
-EditChangeStatusDone: User account changed. Thank you!
-EditRemoveSubject: Delete user account
-EditRemoveMessage: Hi @usershort,\n\nplease confirm that you want to delete your user account. Click the following link.
-EditRemoveStatusDone: User account deleted. Thank you!
+EditVerifySubject: Valideer gebruikersaccount
+EditVerifyMessage: Hallo @usershort,\n\ngelieve een nieuw e-mailadres te bevestigen voor je gebruikersaccount. Klik op volgende link.
+EditVerifyStatusDone: Gebruikersaccount bevestigd. Bedankt!
+EditChangeSubject: Gebruikersaccount wijzigen
+EditChangeMessage: Hallo @usershort,\n\ngelieve te bevestigen dat je jouw gebruikersaccount wil wijzigen. Klik op volgende link.
+EditChangeStatusDone: Gebruikersaccount gewijzigd. Bedankt!
+EditRemoveSubject: Gebruikersaccount verwijderen
+EditRemoveMessage: Hallo @usershort,\n\ngelieve te bevestigen dat je jouw gebruikersaccount wil verwijderen. Klik op volgende link.
+EditRemoveStatusDone: Gebruikersaccount verwijderd. Bedankt!
 EditWelcomeSubject: Welkom
 EditWelcomeMessage: Hallo @usershort,\n\nje gebruikersaccount is aangemaakt. Veel plezier met het aanpassen van je website.
-EditGoodbyeSubject: Goodbye
-EditGoodbyeMessage: Hi @usershort,\n\nyour user account has been deleted. Take care.
-EditVersionTitle: About this website
-EditVersionStatusNone: Datenstrom Yellow is for people who make websites.
-EditVersionStatusCheck: Checking for updates…
-EditVersionStatusDone: Your website is up to date.
-EditVersionStatusWarning: Updates available, please update your website.
-EditVersionStatusUpdates: Updates available, update now.
-EditVersionUpdateForce: Force update
-EditVersionUpdateModified: @software has been modified
+EditGoodbyeSubject: Tot ziens
+EditGoodbyeMessage: Hallo @usershort,\n\nJouw gebruikersaccount is verwijderd. Hou je goed.
+EditVersionTitle: Over deze website
+EditVersionStatusNone: Datenstrom Yellow is ontwikkeld voor websitebouwers.
+EditVersionStatusCheck: Updates aan het zoeken…
+EditVersionStatusDone: Je website is up to date.
+EditVersionStatusWarning: Updates beschikbaar, gelieve je website te updaten.
+EditVersionStatusUpdates: Updates beschikbaar, nu installeren.
+EditVersionUpdateForce: Update forceren
+EditVersionUpdateModified: @software is aangepast.
 EditUploadProgress: [Uploading file…]
 EditOkButton: Ok
 EditCancelButton: Annuleren
@@ -106,29 +106,29 @@ EditEdit: Bewerk pagina
 EditCreate: +
 EditDelete: -
 EditToolbarPreview: Voorbeeld
-EditToolbarFormat: Format
-EditToolbarHeading: Heading
-EditToolbarH1: Heading 1
-EditToolbarH2: Heading 2
-EditToolbarH3: Heading 3
-EditToolbarParagraph: Normal text
-EditToolbarPre: Source code
-EditToolbarQuote: Quote
-EditToolbarBold: Bold
-EditToolbarItalic: Italic
-EditToolbarStrikethrough: Strikethrough
+EditToolbarFormat: Formattering
+EditToolbarHeading: Hoofding
+EditToolbarH1: Hoofding 1
+EditToolbarH2: Hoofding 2
+EditToolbarH3: Hoofding 3
+EditToolbarParagraph: Normale tekst
+EditToolbarPre: Broncode
+EditToolbarQuote: Citaat
+EditToolbarBold: Vet
+EditToolbarItalic: Cursief
+EditToolbarStrikethrough: Doorstreept
 EditToolbarCode: Code
-EditToolbarList: List
-EditToolbarUl: • Unordered list
-EditToolbarOl: 1. Ordered list
-EditToolbarTl: ✓ Task list
+EditToolbarList: Lijst
+EditToolbarUl: • Ongesorteerde lijst
+EditToolbarOl: 1. Gesorteerde lijst
+EditToolbarTl: ✓ Takenlijst
 EditToolbarLink: Link
-EditToolbarFile: File
+EditToolbarFile: Bestand
 EditToolbarEmojiawesome: Emoji
-EditToolbarFontawesome: Icon
-EditToolbarDraft: Draft
-EditToolbarUndo: Undo
-EditToolbarRedo: Redo
+EditToolbarFontawesome: Icoon
+EditToolbarDraft: Concept
+EditToolbarUndo: Ongedaan maken
+EditToolbarRedo: Opnieuw
 EditToolbarMarkdown: Markdown
 EditToolbarHelp: Help
 EditUserHelp: Help
