@@ -27,7 +27,7 @@ The following settings can be configured in file `system/config/config.ini`:
 `Timezone` = default timezone  
 `Theme` = default theme  
 `MultiLanguageMode` = enable [multi language mode](https://developers.datenstrom.se/help/language-configuration#multi-language-mode), 1 or 0  
-`SafeMode` = enable [content restrictions](https://developers.datenstrom.se/help/security-configuration#content-restrictions), 1 or 0  
+`SafeMode` = enable [safe mode](https://developers.datenstrom.se/help/security-configuration#safe-mode) with restrictions, 1 or 0  
 
 These are the most important settings. For a complete list see [configuration file](https://github.com/datenstrom/yellow/blob/master/system/config/config.ini).
 
