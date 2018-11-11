@@ -1,10 +1,10 @@
 <?php
 // Googlemaps plugin, https://github.com/datenstrom/yellow-plugins/tree/master/googlemaps
-// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
+// Copyright (c) 2013-2018 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
 class YellowGooglemaps {
-    const VERSION = "0.6.1";
+    const VERSION = "0.7.1";
     public $yellow;         //access to API
     
     // Handle initialisation
@@ -14,10 +14,10 @@ class YellowGooglemaps {
         $this->yellow->config->setDefault("googlemapsStyle", "flexible");
     }
     
-    // Handle page content of custom block
-    public function onParseContentBlock($page, $name, $text, $shortcut) {
+    // Handle page content of shortcut
+    public function onParseContentShortcut($page, $name, $text, $type) {
         $output = null;
-        if ($name=="googlemaps" && $shortcut) {
+        if ($name=="googlemaps" && ($type=="block" || $type=="inline")) {
             list($address, $zoom, $style, $width, $height) = $this->yellow->toolbox->getTextArgs($text);
             if (empty($zoom)) $zoom = $this->yellow->config->get("googlemapsZoom");
             if (empty($style)) $style = $this->yellow->config->get("googlemapsStyle");

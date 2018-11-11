@@ -4,7 +4,7 @@
 // This file may be used and distributed under the terms of the public license.
 
 class YellowBlog {
-    const VERSION = "0.7.7";
+    const VERSION = "0.7.8";
     public $yellow;         //access to API
     
     // Handle initialisation
@@ -16,10 +16,10 @@ class YellowBlog {
         $this->yellow->config->setDefault("blogPaginationLimit", "5");
     }
     
-    // Handle page content of custom block
-    public function onParseContentBlock($page, $name, $text, $shortcut) {
+    // Handle page content of shortcut
+    public function onParseContentShortcut($page, $name, $text, $type) {
         $output = null;
-        if ($shortcut) {
+        if (substru($name, 0, 4)=="blog" && ($type=="block" || $type=="inline")) {
             switch($name) {
                 case "blogarchive": $output = $this->getShorcutBlogarchive($page, $name, $text); break;
                 case "blogauthors": $output = $this->getShorcutBlogauthors($page, $name, $text); break;

@@ -1,4 +1,4 @@
-Instagram plugin 0.7.6
+Instagram plugin 0.7.7
 ======================
 Embed Instagram photos. [See demo](https://developers.datenstrom.se/plugins/instagram).
 

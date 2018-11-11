@@ -1,4 +1,4 @@
-Update plugin 0.7.22
+Update plugin 0.7.23
 ===================
 Keep your website up to date.
 
@@ -16,11 +16,11 @@ Do not delete the [plugin files](update.ini), they are always required.
 
 The first option is to update your website in a [web browser](https://github.com/datenstrom/yellow-plugins/tree/master/edit). Log in with your user account. Go to the settings and check for updates. Your website will show when updates are available. Only the webmaster can update the website. The webmaster's email is defined in file `system/config/config.ini`.
 
-The second option is to update your website at the [command line](https://github.com/datenstrom/yellow-plugins/tree/master/command). Open a terminal window. Go to your installation folder, where the `yellow.php` is. Type `php yellow.php update`, you can add an optional feature and force the update if necessary. Deleted files can be found in the `system/trash` folder. See example below.
+The second option is to update your website at the [command line](https://github.com/datenstrom/yellow-plugins/tree/master/command). Open a terminal window. Go to your installation folder, where the `yellow.php` is. Type `php yellow.php update` followed by optional features. You can force the update if necessary. Deleted files can be found in the `system/trash` folder. See example below.
 
 ## How to add more features
 
-You can download [plugins](https://developers.datenstrom.se/plugins/) and [themes](https://developers.datenstrom.se/themes/), copy files to your web hosting. You can also add more features at the [command line](https://github.com/datenstrom/yellow-plugins/tree/master/command). Open a terminal window. Go to your installation folder, where the `yellow.php` is. Type `php yellow.php install` followed by a feature. Multiple features can be installed at once. See example below.
+You can download [plugins](https://developers.datenstrom.se/plugins/) and [themes](https://developers.datenstrom.se/themes/), copy files to your web hosting. You can also add more features at the [command line](https://github.com/datenstrom/yellow-plugins/tree/master/command). Open a terminal window. Go to your installation folder, where the `yellow.php` is. Type `php yellow.php install` followed by optional features. See example below.
 
 The plugin uses the [cURL library](https://github.com/curl/curl) by Daniel Stenberg to download files.
 
@@ -35,8 +35,8 @@ Updating website at the command line:
 Adding website features at the command line:
 
 `php yellow.php install`  
-`php yellow.php install YellowGallery YellowSearch YellowSitemap`  
-`php yellow.php uninstall YellowGallery YellowSearch YellowSitemap `  
+`php yellow.php install YellowGallery`  
+`php yellow.php uninstall YellowGallery`  
 
 ## Developer
 

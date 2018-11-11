@@ -1,4 +1,4 @@
-Emojiawesome plugin 0.7.3
+Emojiawesome plugin 0.7.4
 =========================
 Lots and lots of emoji.
 

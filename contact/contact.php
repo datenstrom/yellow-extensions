@@ -4,7 +4,7 @@
 // This file may be used and distributed under the terms of the public license.
 
 class YellowContact {
-    const VERSION = "0.7.4";
+    const VERSION = "0.7.5";
     public $yellow;         //access to API
     
     // Handle initialisation
@@ -14,10 +14,10 @@ class YellowContact {
         $this->yellow->config->setDefault("contactSpamFilter", "href=|url=");
     }
     
-    // Handle page content of custom block
-    public function onParseContentBlock($page, $name, $text, $shortcut) {
+    // Handle page content of shortcut
+    public function onParseContentShortcut($page, $name, $text, $type) {
         $output = null;
-        if ($name=="contact" && $shortcut) {
+        if ($name=="contact" && ($type=="block" || $type=="inline")) {
             list($location) = $this->yellow->toolbox->getTextArgs($text);
             if (empty($location)) $location = $this->yellow->config->get("contactLocation");
             $output = "<div class=\"".htmlspecialchars($name)."\">\n";

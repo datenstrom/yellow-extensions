@@ -4,7 +4,7 @@
 // This file may be used and distributed under the terms of the public license.
 
 class YellowTwitter {
-    const VERSION = "0.7.8";
+    const VERSION = "0.7.9";
     public $yellow;         //access to API
     
     // Handle initialisation
@@ -13,10 +13,10 @@ class YellowTwitter {
         $this->yellow->config->setDefault("twitterTheme", "light");
     }
     
-    // Handle page content of custom block
-    public function onParseContentBlock($page, $name, $text, $shortcut) {
+    // Handle page content of shortcut
+    public function onParseContentShortcut($page, $name, $text, $type) {
         $output = null;
-        if ($name=="twitter" && $shortcut) {
+        if ($name=="twitter" && ($type=="block" || $type=="inline")) {
             list($id, $theme, $style, $width, $height) = $this->yellow->toolbox->getTextArgs($text);
             if (empty($theme)) $theme = $this->yellow->config->get("twitterTheme");
             $language = $page->get("language");
@@ -34,7 +34,7 @@ class YellowTwitter {
                 $output .= " data-theme=\"".htmlspecialchars($theme)."\" data-lang=\"$language\" data-dnt=\"true\"></div>";
             }
         }
-        if ($name=="twitterfollow" && $shortcut) {
+        if ($name=="twitterfollow" && ($type=="block" || $type=="inline")) {
             list($id, $dummy, $style) = $this->yellow->toolbox->getTextArgs($text);
             $language = $page->get("language");
             if (!empty($style)) $output .= "<div class=\"".htmlspecialchars($style)."\">";

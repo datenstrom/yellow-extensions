@@ -4,7 +4,7 @@
 // This file may be used and distributed under the terms of the public license.
 
 class YellowSlider {
-    const VERSION = "0.7.6";
+    const VERSION = "0.7.7";
     public $yellow;         //access to API
     
     // Handle initialisation
@@ -14,10 +14,10 @@ class YellowSlider {
         $this->yellow->config->setDefault("sliderAutoplay", "0");
     }
     
-    // Handle page content of custom block
-    public function onParseContentBlock($page, $name, $text, $shortcut) {
+    // Handle page content of shortcut
+    public function onParseContentShortcut($page, $name, $text, $type) {
         $output = null;
-        if ($name=="slider" && $shortcut) {
+        if ($name=="slider" && ($type=="block" || $type=="inline")) {
             list($pattern, $style, $size, $autoplay) = $this->yellow->toolbox->getTextArgs($text);
             if (empty($style)) $style = $this->yellow->config->get("sliderStyle");
             if (empty($size)) $size = "100%";

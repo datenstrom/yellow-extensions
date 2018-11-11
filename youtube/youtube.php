@@ -1,10 +1,10 @@
 <?php
 // Youtube plugin, https://github.com/datenstrom/yellow-plugins/tree/master/youtube
-// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
+// Copyright (c) 2013-2018 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
 class YellowYoutube {
-    const VERSION = "0.7.1";
+    const VERSION = "0.7.2";
     public $yellow;         //access to API
     
     // Handle initialisation
@@ -13,10 +13,10 @@ class YellowYoutube {
         $this->yellow->config->setDefault("youtubeStyle", "flexible");
     }
     
-    // Handle page content of custom block
-    public function onParseContentBlock($page, $name, $text, $shortcut) {
+    // Handle page content of shortcut
+    public function onParseContentShortcut($page, $name, $text, $type) {
         $output = null;
-        if ($name=="youtube" && $shortcut) {
+        if ($name=="youtube" && ($type=="block" || $type=="inline")) {
             list($id, $style, $width, $height) = $this->yellow->toolbox->getTextArgs($text);
             if (empty($style)) $style = $this->yellow->config->get("youtubeStyle");
             $output = "<div class=\"".htmlspecialchars($style)."\">";

@@ -4,7 +4,7 @@
 // This file may be used and distributed under the terms of the public license.
 
 class YellowSearch {
-    const VERSION = "0.7.6";
+    const VERSION = "0.7.7";
     public $yellow;         //access to API
     
     // Handle initialisation
@@ -15,10 +15,10 @@ class YellowSearch {
         $this->yellow->config->setDefault("searchPageLength", "240");
     }
     
-    // Handle page content of custom block
-    public function onParseContentBlock($page, $name, $text, $shortcut) {
+    // Handle page content of shortcut
+    public function onParseContentShortcut($page, $name, $text, $type) {
         $output = null;
-        if ($name=="search" && $shortcut) {
+        if ($name=="search" && ($type=="block" || $type=="inline")) {
             list($location) = $this->yellow->toolbox->getTextArgs($text);
             if (empty($location)) $location = $this->yellow->config->get("searchLocation");
             $output = "<div class=\"".htmlspecialchars($name)."\" role=\"search\">\n";

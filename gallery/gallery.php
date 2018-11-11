@@ -4,7 +4,7 @@
 // This file may be used and distributed under the terms of the public license.
 
 class YellowGallery {
-    const VERSION = "0.7.7";
+    const VERSION = "0.7.8";
     public $yellow;         //access to API
 
     // Handle initialisation
@@ -13,10 +13,10 @@ class YellowGallery {
         $this->yellow->config->setDefault("galleryStyle", "photoswipe");
     }
     
-    // Handle page content of custom block
-    public function onParseContentBlock($page, $name, $text, $shortcut) {
+    // Handle page content of shortcut
+    public function onParseContentShortcut($page, $name, $text, $type) {
         $output = null;
-        if ($name=="gallery" && $shortcut) {
+        if ( $name=="gallery" && ($type=="block" || $type=="inline")) {
             list($pattern, $style, $size) = $this->yellow->toolbox->getTextArgs($text);
             if (empty($style)) $style = $this->yellow->config->get("galleryStyle");
             if (empty($size)) $size = "100%";

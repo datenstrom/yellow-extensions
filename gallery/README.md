@@ -1,4 +1,4 @@
-Gallery plugin 0.7.7
+Gallery plugin 0.7.8
 ====================
 Image gallery with popup. [See demo](https://developers.datenstrom.se/plugins/gallery).
 

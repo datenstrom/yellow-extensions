@@ -4,7 +4,7 @@
 // This file may be used and distributed under the terms of the public license.
 
 class YellowGooglecalendar {
-    const VERSION = "0.7.4";
+    const VERSION = "0.7.5";
     public $yellow;         //access to API
     
     // Handle initialisation
@@ -16,10 +16,10 @@ class YellowGooglecalendar {
         $this->yellow->config->setDefault("googlecalendarApiKey", "AIzaSyBC0iK5aceH8C5EguUsS98btnsDoA1PVSo");
     }
     
-    // Handle page content of custom block
-    public function onParseContentBlock($page, $name, $text, $shortcut) {
+    // Handle page content of shortcut
+    public function onParseContentShortcut($page, $name, $text, $type) {
         $output = null;
-        if ($name=="googlecalendar" && $shortcut) {
+        if ($name=="googlecalendar" && ($type=="block" || $type=="inline")) {
             list($id, $mode, $date, $style, $width, $height) = $this->yellow->toolbox->getTextArgs($text);
             list($timestamp, $entriesMax) = $this->getTimestampAndEntries($date);
             if (empty($mode)) $mode = $this->yellow->config->get("googlecalendarMode");

@@ -1,10 +1,10 @@
 <?php
 // Breadcrumbs plugin, https://github.com/datenstrom/yellow-plugins/tree/master/breadcrumbs
-// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
+// Copyright (c) 2013-2018 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
 class YellowBreadcrumbs {
-    const VERSION = "0.6.3";
+    const VERSION = "0.7.1";
     public $yellow;         //access to API
     
     // Handle initialisation
@@ -14,10 +14,10 @@ class YellowBreadcrumbs {
         $this->yellow->config->setDefault("breadcrumbsStyle", "breadcrumbs");
     }
     
-    // Handle page content of custom block
-    public function onParseContentBlock($page, $name, $text, $shortcut) {
+    // Handle page content of shortcut
+    public function onParseContentShortcut($page, $name, $text, $type) {
         $output = null;
-        if ($name=="breadcrumbs" && $shortcut) {
+        if ($name=="breadcrumbs" && ($type=="block" || $type=="inline")) {
             list($separator, $style) = $this->yellow->toolbox->getTextArgs($text);
             if (empty($separator)) $separator = $this->yellow->config->get("breadcrumbsSeparator");
             if (empty($style)) $style = $this->yellow->config->get("breadcrumbsStyle");
@@ -35,6 +35,6 @@ class YellowBreadcrumbs {
     
     // Handle page extra data
     public function onParsePageExtra($page, $name) {
-        return $this->onParseContentBlock($page, $name, "", true);
+        return $this->onParseContentShortcut($page, $name, "", "block");
     }
 }

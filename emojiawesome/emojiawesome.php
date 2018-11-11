@@ -4,7 +4,7 @@
 // This file may be used and distributed under the terms of the public license.
 
 class YellowEmojiawesome {
-    const VERSION = "0.7.3";
+    const VERSION = "0.7.4";
     public $yellow;         //access to API
     
     // Handle initialisation
@@ -14,10 +14,10 @@ class YellowEmojiawesome {
         $this->yellow->config->setDefault("emojiawesomeToolbarButtons", ":grinning: :smile: :angry: :frowning: :heart_eyes: :kissing_heart: :stuck_out_tongue_winking_eye: :joy: :heart: :fire: :sunny: :coffee: :ok_hand: :hand: :+1: :-1:");
     }
     
-    // Handle page content of custom block
-    public function onParseContentBlock($page, $name, $text, $shortcut) {
+    // Handle page content of shortcut
+    public function onParseContentShortcut($page, $name, $text, $type) {
         $output = null;
-        if ((empty($name) || $name=="ea") && $shortcut) {
+        if (($name=="ea" && $type=="inline") || $type=="symbol") {
             list($shortname, $style) = $this->yellow->toolbox->getTextArgs($text);
             if (preg_match("/ea-(.+)/", $shortname, $matches)) $shortname = strreplaceu("-", "_", $matches[1]);
             if ($this->isShortname($shortname)) {
@@ -49,7 +49,7 @@ class YellowEmojiawesome {
                 $cdn = $this->yellow->config->get("emojiawesomeCdn");
                 foreach ($this->getLookupData() as $entry) {
                     $class = $this->normaliseClass("ea-$entry[shortname]");
-                    $image = $entry[image];
+                    $image = $entry["image"];
                     $outputData .= ".$class {\n";
                     $outputData .= "    background-image: url(\"{$cdn}svg/$image.svg\");\n";
                     $outputData .= "}\n";
@@ -78,7 +78,7 @@ class YellowEmojiawesome {
         if ($convertShortcode) {
             $thisCompatible = $this;
             $callback = function ($matches) use ($thisCompatible) {
-                $output = $thisCompatible->onParseContentBlock(null, "", $matches[1], true);
+                $output = $thisCompatible->onParseContentShortcut(null, "", $matches[1], "symbol");
                 if (is_null($output)) $output = $matches[0];
                 return $output;
             };

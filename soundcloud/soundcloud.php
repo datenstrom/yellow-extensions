@@ -1,10 +1,10 @@
 <?php
 // Soundcloud plugin, https://github.com/datenstrom/yellow-plugins/tree/master/soundcloud
-// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
+// Copyright (c) 2013-2018 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
 class YellowSoundcloud {
-    const VERSION = "0.6.1";
+    const VERSION = "0.7.1";
     public $yellow;         //access to API
     
     // Handle initialisation
@@ -13,10 +13,10 @@ class YellowSoundcloud {
         $this->yellow->config->setDefault("soundcloudStyle", "soundcloud");
     }
     
-    // Handle page content of custom block
-    public function onParseContentBlock($page, $name, $text, $shortcut) {
+    // Handle page content of shortcut
+    public function onParseContentShortcut($page, $name, $text, $type) {
         $output = null;
-        if ($name=="soundcloud" && $shortcut) {
+        if ($name=="soundcloud" && ($type=="block" || $type=="inline")) {
             list($id, $style, $width, $height) = $this->yellow->toolbox->getTextArgs($text);
             if (empty($style)) $style = $this->yellow->config->get("soundcloudStyle");
             if (empty($width)) $width = "100%";

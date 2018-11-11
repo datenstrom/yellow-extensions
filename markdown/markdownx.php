@@ -4,7 +4,7 @@
 // This file may be used and distributed under the terms of the public license.
 
 class YellowMarkdownX {
-    const VERSION = "0.7.2";
+    const VERSION = "0.7.3";
     public $yellow;         //access to API
     
     // Handle initialisation
@@ -2687,71 +2687,70 @@ class YellowMarkdownExtraX extends ParsedownExtra {
         $this->page = $page;
         $this->idAttributes = array();
         $this->setSafeMode($page->safeMode);
-        $this->InlineTypes["@"][]= "EmailLink";
-        $this->inlineMarkerList .= "@";
+        $this->BlockTypes["["][] = "ShortcutText";
         $this->InlineTypes["["][]= "ShortcutText";
         $this->inlineMarkerList .= "[";
         $this->InlineTypes[":"][]= "ShortcutSymbol";
         $this->inlineMarkerList .= ":";
+        $this->InlineTypes["@"][]= "EmailLink";
+        $this->inlineMarkerList .= "@";
     }
     
-    // Handle inline links, normalise locations
-    protected function inlineLink($Excerpt) {
-        $Link = parent::inlineLink($Excerpt);
-        if ($Link) {
-            $href = $Link["element"]["attributes"]["href"];
-            if ($Excerpt["context"][0]=="!" && !preg_match("/^\w+:/", $href)) {
-                $href = $this->yellow->config->get("serverBase").$this->yellow->config->get("imageLocation").$href;
+    // Handle shortcuts, block style
+    protected function blockShortcutText($Line, $Block) {
+        $Block = null;
+        if (preg_match("/^\[(\w+)(.*?)\]\s*$/", $Line["text"], $matches)) {
+            $output = $this->page->parseContentShortcut($matches[1], trim($matches[2]), "block");
+            if (!is_null($output)) {
+                $Block = array(
+                    "element" => array("rawHtml" => $output, "allowRawHtmlInSafeMode" => true, "autobreak" => true),
+                    "extent" => strlen($matches[0]),
+                );
             }
-            $href = $this->yellow->lookup->normaliseLocation($href,
-                $this->page->location, $this->page->safeMode && $this->page->statusCode==200);
-            $Link["element"]["attributes"]["href"] = $href;
-        }
-        return $Link;
-    }
-    
-    // Handle email links, autolink emails
-    protected function inlineEmailLink($Excerpt) {
-        if ($this->urlsLinked &&
-            preg_match("/([\w\+\-\.]+@[\w\-\.]+\.[\w]{2,4})/", $Excerpt["context"], $matches, PREG_OFFSET_CAPTURE)) {
-            $email = $matches[1][0];
-            return array(
-                "extent" => strlen($matches[1][0]),
-                "position" => $matches[1][1],
-                "element" => array("name" => "a", "attributes" => array("href" => "mailto:$email"), "text" => $email),
-            );
-        }
-    }
-    
-    // Handle shortcuts, text style
-    protected function inlineShortcutText($Excerpt) {
-        if (preg_match("/\[(\w+)(.*?)\]/", $Excerpt["text"], $matches)) {
-            $output = $this->page->parseContentBlock($matches[1], trim($matches[2]), true);
-            if (is_null($output)) $output = htmlspecialchars($matches[0], ENT_NOQUOTES);
-            return array(
-                "element" => array("rawHtml" => $output, "allowRawHtmlInSafeMode" => true),
+        } elseif (preg_match("/^\[\-\-(.*?)\-\-\]\s*$/", $Line["text"], $matches)) {
+            $output = "<!--".htmlspecialchars($matches[1], ENT_NOQUOTES)."-->";
+            $Block = array(
+                "element" => array("rawHtml" => $output, "allowRawHtmlInSafeMode" => true, "autobreak" => true),
                 "extent" => strlen($matches[0]),
             );
+        }
+        return $Block;
+    }
+    
+    // Handle shortcuts, inline style
+    protected function inlineShortcutText($Excerpt) {
+        $Block = null;
+        if (preg_match("/\[(\w+)(.*?)\]/", $Excerpt["text"], $matches)) {
+            $output = $this->page->parseContentShortcut($matches[1], trim($matches[2]), "inline");
+            if (!is_null($output)) {
+                $Block = array(
+                    "element" => array("rawHtml" => $output, "allowRawHtmlInSafeMode" => true),
+                    "extent" => strlen($matches[0]),
+                );
+            }
         } elseif (preg_match("/\[\-\-(.*?)\-\-\]/", $Excerpt["text"], $matches)) {
             $output = "<!--".htmlspecialchars($matches[1], ENT_NOQUOTES)."-->";
-            if ($matches[1][0]=="-") $output = "";
-            return array(
+            $Block = array(
                  "element" => array("rawHtml" => $output, "allowRawHtmlInSafeMode" => true),
                  "extent" => strlen($matches[0]),
-             );
+            );
         }
+        return $Block;
     }
 
     // Handle shortcuts, symbol style
     protected function inlineShortcutSymbol($Excerpt) {
+        $Block = null;
         if (preg_match("/\:([\w\+\-\_]+)\:/", $Excerpt["text"], $matches)) {
-            $output = $this->page->parseContentBlock("", $matches[1], true);
-            if (is_null($output)) $output = htmlspecialchars($matches[0], ENT_NOQUOTES);
-            return array(
-                 "element" => array("rawHtml" => $output, "allowRawHtmlInSafeMode" => true),
-                 "extent" => strlen($matches[0]),
-             );
+            $output = $this->page->parseContentShortcut("", $matches[1], "symbol");
+            if (!is_null($output)) {
+                $Block = array(
+                    "element" => array("rawHtml" => $output, "allowRawHtmlInSafeMode" => true),
+                     "extent" => strlen($matches[0]),
+                );
+            }
         }
+        return $Block;
     }
     
     // Handle fenced code blocks
@@ -2761,13 +2760,9 @@ class YellowMarkdownExtraX extends ParsedownExtra {
             $name = preg_replace("/language-(.*)/", "$1", $Block["element"]["element"]["attributes"]["class"]);
             $name = preg_replace("/{(.*)}/", "$1", $name);
             $text = $Block["element"]["element"]["text"];
-            $output = $this->page->parseContentBlock($name, $text, false);
+            $output = $this->page->parseContentShortcut($name, $text, "code");
             if (!is_null($output)) {
-                $Block["element"] = array(
-                    "rawHtml" => $output,
-                    "allowRawHtmlInSafeMode" => true,
-                    "autobreak" => true,
-                );
+                $Block["element"] = array("rawHtml" => $output, "allowRawHtmlInSafeMode" => true, "autobreak" => true);
             }
         }
         return $Block;
@@ -2819,6 +2814,36 @@ class YellowMarkdownExtraX extends ParsedownExtra {
             $Block["element"]["attributes"] = array("id" => $this->getIdAttribute($text, $level));
         }
         return $Block;
+    }
+    
+    // Handle inline links, normalise locations
+    protected function inlineLink($Excerpt) {
+        $Link = parent::inlineLink($Excerpt);
+        if ($Link) {
+            $href = $Link["element"]["attributes"]["href"];
+            if ($Excerpt["context"][0]=="!" && !preg_match("/^\w+:/", $href)) {
+                $href = $this->yellow->config->get("serverBase").$this->yellow->config->get("imageLocation").$href;
+            }
+            $href = $this->yellow->lookup->normaliseLocation($href,
+                $this->page->location, $this->page->safeMode && $this->page->statusCode==200);
+            $Link["element"]["attributes"]["href"] = $href;
+        }
+        return $Link;
+    }
+    
+    // Handle email links, autolink emails
+    protected function inlineEmailLink($Excerpt) {
+        $Link = null;
+        if ($this->urlsLinked &&
+            preg_match("/([\w\+\-\.]+@[\w\-\.]+\.[\w]{2,4})/", $Excerpt["context"], $matches, PREG_OFFSET_CAPTURE)) {
+            $email = $matches[1][0];
+            $Link = array(
+                "extent" => strlen($matches[1][0]),
+                "position" => $matches[1][1],
+                "element" => array("name" => "a", "attributes" => array("href" => "mailto:$email"), "text" => $email),
+            );
+        }
+        return $Link;
     }
     
     // Return unique id attribute

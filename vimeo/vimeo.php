@@ -1,10 +1,10 @@
 <?php
 // Vimeo plugin, https://github.com/datenstrom/yellow-plugins/tree/master/vimeo
-// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
+// Copyright (c) 2013-2018 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
 class YellowVimeo {
-    const VERSION = "0.7.1";
+    const VERSION = "0.7.2";
     public $yellow;         //access to API
     
     // Handle initialisation
@@ -13,10 +13,10 @@ class YellowVimeo {
         $this->yellow->config->setDefault("vimeoStyle", "flexible");
     }
     
-    // Handle page content of custom block
-    public function onParseContentBlock($page, $name, $text, $shortcut) {
+    // Handle page content of shortcut
+    public function onParseContentShortcut($page, $name, $text, $type) {
         $output = null;
-        if ($name=="vimeo" && $shortcut) {
+        if ($name=="vimeo" && ($type=="block" || $type=="inline")) {
             list($id, $style, $width, $height) = $this->yellow->toolbox->getTextArgs($text);
             if (empty($style)) $style = $this->yellow->config->get("vimeoStyle");
             $output = "<div class=\"".htmlspecialchars($style)."\">";

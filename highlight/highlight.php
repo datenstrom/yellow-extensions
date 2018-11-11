@@ -4,7 +4,7 @@
 // This file may be used and distributed under the terms of the public license.
 
 class YellowHighlight {
-    const VERSION = "0.7.5";
+    const VERSION = "0.7.6";
     public $yellow;         //access to API
     
     // Handle initialisation
@@ -15,10 +15,10 @@ class YellowHighlight {
         $this->yellow->config->setDefault("highlightAutodetectLanguages", "html, css, javascript, php");
     }
     
-    // Handle page content of custom block
-    public function onParseContentBlock($page, $name, $text, $shortcut) {
+    // Handle page content of shortcut
+    public function onParseContentShortcut($page, $name, $text, $type) {
         $output = null;
-        if (!empty($name) && !$shortcut) {
+        if (!empty($name) && $type=="code") {
             list($language, $class, $id, $lineNumber) = $this->getHighlightInformation($name);
             if (!empty($language)) {
                 list($language, $text) = $this->highlight($language, $text);

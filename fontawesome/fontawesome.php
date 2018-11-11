@@ -4,7 +4,7 @@
 // This file may be used and distributed under the terms of the public license.
 
 class YellowFontawesome {
-    const VERSION = "0.7.3";
+    const VERSION = "0.7.4";
     public $yellow;         //access to API
     
     // Handle initialisation
@@ -12,11 +12,11 @@ class YellowFontawesome {
         $this->yellow = $yellow;
         $this->yellow->config->setDefault("fontawesomeToolbarButtons", ":fa-star: :fa-heart: :fa-exclamation-triangle: :fa-tag: :fa-comment: :fa-file-o: :fa-file-text-o: :fa-file-picture-o: :fa-envelope-o: :fa-phone: :fa-twitter: :fa-github: :fa-calendar: :fa-clock-o: :fa-map-marker: :fa-check:");
     }
-    
-    // Handle page content of custom block
-    public function onParseContentBlock($page, $name, $text, $shortcut) {
+
+    // Handle page content of shortcut
+    public function onParseContentShortcut($page, $name, $text, $type) {
         $output = null;
-        if ((empty($name) || $name=="fa") && $shortcut) {
+         if (($name=="fa" && $type=="inline") || $type=="symbol") {
             list($shortname, $style) = $this->yellow->toolbox->getTextArgs($text);
             if (preg_match("/fa-(.+)/", $shortname, $matches)) {
                 $shortname = $matches[1];

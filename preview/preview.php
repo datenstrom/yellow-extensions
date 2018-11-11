@@ -1,10 +1,10 @@
 <?php
 // Preview plugin, https://github.com/datenstrom/yellow-plugins/tree/master/preview
-// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
+// Copyright (c) 2013-2018 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
 class YellowPreview {
-    const VERSION = "0.7.4";
+    const VERSION = "0.7.5";
     public $yellow;         //access to API
 
     // Handle initialisation
@@ -14,10 +14,10 @@ class YellowPreview {
         $this->yellow->config->setDefault("previewDefaultFile", "preview-image.png");
     }
     
-    // Handle page content of custom block
-    public function onParseContentBlock($page, $name, $text, $shortcut) {
+    // Handle page content of shortcut
+    public function onParseContentShortcut($page, $name, $text, $type) {
         $output = null;
-        if ($name=="preview" && $shortcut) {
+        if ($name=="preview" && ($type=="block" || $type=="inline")) {
             list($location, $style, $size) = $this->yellow->toolbox->getTextArgs($text);
             if (empty($location)) $location = $page->location;
             if (empty($style)) $style = $this->yellow->config->get("previewStyle");
@@ -71,6 +71,6 @@ class YellowPreview {
 
     // Handle page extra data
     public function onParsePageExtra($page, $name) {
-        return $this->onParseContentBlock($page, $name, "", true);
+        return $this->onParseContentShortcut($page, $name, "", "block");
     }
 }

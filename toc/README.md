@@ -1,4 +1,4 @@
-TOC plugin 0.6.1
+TOC plugin 0.7.1
 ================
 Table of contents. [See demo](https://developers.datenstrom.se/plugins/toc).
 

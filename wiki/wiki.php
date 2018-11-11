@@ -4,7 +4,7 @@
 // This file may be used and distributed under the terms of the public license.
 
 class YellowWiki {
-    const VERSION = "0.7.7";
+    const VERSION = "0.7.8";
     public $yellow;         //access to API
     
     // Handle initialisation
@@ -17,10 +17,10 @@ class YellowWiki {
         $this->yellow->config->setDefault("wikiPaginationLimit", "30");
     }
 
-    // Handle page content of custom block
-    public function onParseContentBlock($page, $name, $text, $shortcut) {
+    // Handle page content of shortcut
+    public function onParseContentShortcut($page, $name, $text, $type) {
         $output = null;
-        if ($shortcut) {
+        if (substru($name, 0, 4)=="wiki" && ($type=="block" || $type=="inline")) {
             switch($name) {
                 case "wikiauthors": $output = $this->getShorcutWikiauthors($page, $name, $text); break;
                 case "wikipages":   $output = $this->getShorcutWikipages($page, $name, $text); break;

@@ -1,10 +1,10 @@
 <?php
 // Links plugin, https://github.com/datenstrom/yellow-plugins/tree/master/links
-// Copyright (c) 2013-2017 Datenstrom, https://datenstrom.se
+// Copyright (c) 2013-2018 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
 class YellowLinks {
-    const VERSION = "0.7.2";
+    const VERSION = "0.7.3";
     public $yellow;         //access to API
     
     // Handle initialisation
@@ -15,10 +15,10 @@ class YellowLinks {
         $this->yellow->config->setDefault("linksStyle", "entry-links");
     }
     
-    // Handle page content of custom block
-    public function onParseContentBlock($page, $name, $text, $shortcut) {
+    // Handle page content of shortcut
+    public function onParseContentShortcut($page, $name, $text, $type) {
         $output = null;
-        if ($name=="links" && $shortcut) {
+        if ($name=="links" && ($type=="block" || $type=="inline")) {
             $style = $this->yellow->config->get("linksStyle");
             $pages = $this->getLinkPages($page);
             $page->setLastModified($pages->getModified());
@@ -45,7 +45,7 @@ class YellowLinks {
     
     // Handle page extra data
     public function onParsePageExtra($page, $name) {
-        return $this->onParseContentBlock($page, $name, "", true);
+        return $this->onParseContentShortcut($page, $name, "", "block");
     }
     
     // Return link pages
