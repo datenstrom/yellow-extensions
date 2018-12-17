@@ -1,5 +1,6 @@
 ---
 Title: Contact
+TitleSlug: Contact
 Description: Contact
 Template: contact
 ---

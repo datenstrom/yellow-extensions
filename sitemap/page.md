@@ -1,5 +1,6 @@
 ---
 Title: Sitemap
+TitleSlug: Sitemap
 Description: Sitemap
 Template: sitemap
 ---

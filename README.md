@@ -148,7 +148,7 @@ Experimental plugins:
 * [YCSSG](https://github.com/dieli/yellow-extension-ycssg):
   Image gallery in CSS only.
 
-Obsolete plugins:
+Archived plugins:
 
 * [InlineAttachment](https://github.com/nibreh/yellow-plugin-inline-attachment): 
   Drag and drop image upload for editing a page.

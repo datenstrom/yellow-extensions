@@ -33,7 +33,7 @@ The following arguments are available, all but the first argument are optional:
 `Author` = show pages by a specific author, `[wikipages]` or `[wikichanges]` only  
 `Tag` = show pages with a specific tag, `[wikipages]` or `[wikichanges`] only  
 
-## How to configure a wiki?
+## How to configure a wiki
 
 The following settings can be configured in file `system/config/config.ini`:
 
