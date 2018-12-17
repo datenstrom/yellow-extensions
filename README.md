@@ -83,6 +83,8 @@ Official plugins:
 
 Experimental plugins:
 
+* [About](https://github.com/schulle4u/yellow-plugin-about):
+  Author profile for blog pages.
 * [Antispam](https://github.com/schulle4u/yellow-plugin-antispam):
   Email address obfuscator using ROT13 and CSS.
 * [Audio](https://github.com/schulle4u/yellow-plugin-audio):
