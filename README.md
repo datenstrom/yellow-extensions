@@ -83,11 +83,11 @@ Official plugins:
 
 Experimental plugins:
 
-* [About](https://github.com/schulle4u/yellow-plugin-about):
+* [About](https://github.com/schulle4u/yellow-plugins-schulle4u/tree/master/about):
   Author profile for blog pages.
-* [Antispam](https://github.com/schulle4u/yellow-plugin-antispam):
+* [Antispam](https://github.com/schulle4u/yellow-plugins-schulle4u/tree/master/antispam):
   Email address obfuscator using ROT13 and CSS.
-* [Audio](https://github.com/schulle4u/yellow-plugin-audio):
+* [Audio](https://github.com/schulle4u/yellow-plugins-schulle4u/tree/master/audio):
   HTML5 audio player.
 * [Burgermenu](https://github.com/richi/yellow-plugin-burger-menu): 
   A hamburger menu button.
@@ -105,7 +105,7 @@ Experimental plugins:
   Yellow plugin for easy FAQ handling.
 * [Fotorama](https://github.com/nogginfuel/yellow-plugin-fotorama): 
   A jQuery image gallery with carousel.
-* [Global](https://github.com/schulle4u/yellow-plugin-global): 
+* [Global](https://github.com/schulle4u/yellow-plugins-schulle4u/tree/master/global): 
   Include page content into another page.
 * [Imgpop](https://github.com/bsnosi/yellow-plugin-imgpop):
   CSS only image popup with dimmed background and subtitle.
@@ -121,27 +121,27 @@ Experimental plugins:
   Create a list of MP3/OGG/PDF media files.
 * [Minishare](https://github.com/GiovanniSalmeri/yellow-minishare):
   Light and accessible social-sharing links.
-* [MOTD](https://github.com/schulle4u/yellow-plugin-motd):
+* [MOTD](https://github.com/schulle4u/yellow-plugins-schulle4u/tree/master/motd):
   Message of the day.
 * [Pagetxt](https://github.com/richi/yellow-plugin-pagetxt):
   Overwrite language entries in a page.
-* [Podcast](https://github.com/schulle4u/yellow-plugin-podcast): 
+* [Podcast](https://github.com/schulle4u/yellow-plugins-schulle4u/tree/master/podcast): 
   A fork of the original feed plugin optimized for podcast publishing.
-* [Random](https://github.com/schulle4u/yellow-plugin-random): 
+* [Random](https://github.com/schulle4u/yellow-plugins-schulle4u/tree/master/random): 
   Display random pages from specified location.
-* [Shariff](https://github.com/schulle4u/yellow-plugin-shariff):
+* [Shariff](https://github.com/schulle4u/yellow-plugins-schulle4u/tree/master/shariff):
   Privacy-friendly social sharing buttons.
-* [Socialtags](https://github.com/schulle4u/yellow-plugin-socialtags):
+* [Socialtags](https://github.com/schulle4u/yellow-plugins-schulle4u/tree/master/socialtags):
   Adds Twitter and Open Graph meta tags.
-* [Spoiler](https://github.com/schulle4u/yellow-plugin-spoiler):
+* [Spoiler](https://github.com/schulle4u/yellow-plugins-schulle4u/tree/master/spoiler):
   Hide certain page elements.
 * [Streamlist](https://github.com/nibreh/yellow-plugin-streamlist):
   Stream your favorite radios in a playlist with HTML5 audio.
 * [Sublime](https://github.com/nashv/YellowBlogExtensions):
   Sublime Text 3 Extensions for blogs based on Yellow.
-* [Ticker](https://github.com/schulle4u/yellow-plugin-ticker): 
+* [Ticker](https://github.com/schulle4u/yellow-plugins-schulle4u/tree/master/ticker): 
   Feed parser using SimpleXML or SimplePie.
-* [TuneIn](https://github.com/schulle4u/yellow-plugin-tunein): 
+* [TuneIn](https://github.com/schulle4u/yellow-plugins-schulle4u/tree/master/tunein): 
   Embed radio stations from TuneIn.
 * [Video](https://github.com/nibreh/yellow-plugin-video): 
   HTML5 video player.
