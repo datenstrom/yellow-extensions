@@ -1,4 +1,4 @@
-Release plugin 0.7.16
+Release plugin 0.7.17
 ====================
 Create software releases.
 

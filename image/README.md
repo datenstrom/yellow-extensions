@@ -1,4 +1,4 @@
-Image plugin 0.7.8
+Image plugin 0.7.9
 ==================
 Images and thumbnails. [See demo](https://developers.datenstrom.se/plugins/image).
 

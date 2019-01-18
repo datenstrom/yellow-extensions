@@ -1,10 +1,10 @@
 <?php
 // Command plugin, https://github.com/datenstrom/yellow-plugins/tree/master/command
-// Copyright (c) 2013-2018 Datenstrom, https://datenstrom.se
+// Copyright (c) 2013-2019 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
 class YellowCommand {
-    const VERSION = "0.7.11";
+    const VERSION = "0.7.13";
     public $yellow;                     //access to API
     public $files;                      //number of files
     public $links;                      //number of links
@@ -107,6 +107,9 @@ class YellowCommand {
             foreach ($this->getSystemLocations() as $location) {
                 $statusCode = max($statusCode, $this->buildStaticFile($path, $location));
             }
+            foreach ($this->getExtraLocations() as $location) {
+                $statusCode = max($statusCode, $this->buildStaticFile($path, $location));
+            }
             $statusCode = max($statusCode, $this->buildStaticFile($path, "/error/", false, false, true));
         }
         return $statusCode;
@@ -167,6 +170,7 @@ class YellowCommand {
             $modified = time();
         }
         $fileName = $this->getStaticFile($path, $location, $statusCode);
+        if (is_file($fileName)) $this->yellow->toolbox->deleteFile($fileName);
         if (!$this->yellow->toolbox->createFile($fileName, $fileData, true) ||
             !$this->yellow->toolbox->modifyFile($fileName, $modified)) {
             $statusCode = 500;
@@ -181,6 +185,7 @@ class YellowCommand {
         $statusCode = 200;
         $modified = $this->yellow->toolbox->getFileModified($this->yellow->page->fileName);
         $fileName = $this->getStaticFile($path, $location, $statusCode);
+        if (is_file($fileName)) $this->yellow->toolbox->deleteFile($fileName);
         if (!$this->yellow->toolbox->copyFile($this->yellow->page->fileName, $fileName, true) ||
             !$this->yellow->toolbox->modifyFile($fileName, $modified)) {
             $statusCode = 500;
@@ -532,7 +537,23 @@ class YellowCommand {
         foreach ($fileNames as $fileName) {
             array_push($locations, $this->yellow->config->get("themeLocation").substru($fileName, $themeDirLength));
         }
-        array_push($locations, "/".$this->yellow->config->get("robotsFile"));
+        return $locations;
+    }
+
+    // Return extra locations
+    public function getExtraLocations() {
+        $locations = array();
+        $pathIgnore = "(".$this->yellow->config->get("staticDir")."|".
+            $this->yellow->config->get("cacheDir")."|".
+            $this->yellow->config->get("contentDir")."|".
+            $this->yellow->config->get("mediaDir")."|".
+            $this->yellow->config->get("systemDir").")";
+        $fileNames = $this->yellow->toolbox->getDirectoryEntriesRecursive(".", "/.*/", false, false);
+        foreach ($fileNames as $fileName) {
+            $fileName = substru($fileName, 2);
+            if (preg_match("#^$pathIgnore#", $fileName) || $fileName=="yellow.php") continue;
+            array_push($locations, "/".$fileName);
+        }
         return $locations;
     }
     

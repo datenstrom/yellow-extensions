@@ -47,7 +47,7 @@ The following files can be configured:
 
 `system/config/page-new-wiki.md` = content file for new wiki page  
 `system/themes/snippets/content-wiki.php` = source code for wiki page  
-`system/themes/snippets/content-wikipages.php` = source code for main page  
+`system/themes/snippets/content-wikipages.php` = source code for wiki main page  
 
 ## Example
 

@@ -1,4 +1,4 @@
-Core plugin 0.7.9
+Core plugin 0.7.10
 =================
 Core functionality for your website.
 

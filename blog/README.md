@@ -47,7 +47,7 @@ The following files can be configured:
 
 `system/config/page-new-blog.md` = content file for new blog page  
 `system/themes/snippets/content-blog.php` = source code for blog page  
-`system/themes/snippets/content-blogpages.php` = source code for main page  
+`system/themes/snippets/content-blogpages.php` = source code for blog main page  
 
 ## Example
 

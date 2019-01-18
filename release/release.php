@@ -1,10 +1,10 @@
 <?php
 // Release plugin, https://github.com/datenstrom/yellow-developers
-// Copyright (c) 2013-2018 Datenstrom, https://datenstrom.se
+// Copyright (c) 2013-2019 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
 class YellowRelease {
-    const VERSION = "0.7.16";
+    const VERSION = "0.7.17";
     public $yellow;         //access to API
     public $plugins;        //number of plugins
     public $themes;         //number of archives
@@ -153,7 +153,8 @@ class YellowRelease {
             $zip = new ZipArchive();
             list($softwareName, $softwareType) = $this->getSoftwareName($software);
             $fileNameZipArchive = $pathDestination."zip/$softwareName.zip";
-            if ($zip->open($fileNameZipArchive, ZIPARCHIVE::CREATE|ZIPARCHIVE::OVERWRITE)===true) {
+            if (is_file($fileNameZipArchive)) $this->yellow->toolbox->deleteFile($fileNameZipArchive);
+            if ($zip->open($fileNameZipArchive, ZIPARCHIVE::CREATE)===true) {
                 $modified = 0;
                 $fileNamesRequired = $this->getSoftwareEntries($pathSource);
                 $fileNamesFound = $this->yellow->toolbox->getDirectoryEntries($pathSource, "/.*/", true, false);

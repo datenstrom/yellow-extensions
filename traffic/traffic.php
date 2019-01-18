@@ -1,10 +1,10 @@
 <?php
 // Traffic plugin, https://github.com/datenstrom/yellow-plugins/tree/master/traffic
-// Copyright (c) 2013-2018 Datenstrom, https://datenstrom.se
+// Copyright (c) 2013-2019 Datenstrom, https://datenstrom.se
 // This file may be used and distributed under the terms of the public license.
 
 class YellowTraffic {
-    const VERSION = "0.7.8";
+    const VERSION = "0.7.9";
     public $yellow;         //access to API
     public $days;           //number of days
     public $views;          //number of views
@@ -89,8 +89,6 @@ class YellowTraffic {
             $staticUrl = $this->yellow->config->get("staticUrl");
             list($scheme, $address, $base) = $this->yellow->lookup->getUrlInformation($staticUrl);
             $locationSearch = $this->yellow->config->get("searchLocation");
-            $faviconFile = $this->yellow->config->get("faviconFile");
-            $robotsFile = $this->yellow->config->get("robotsFile");
             $spamFilter = $this->yellow->config->get("trafficSpamFilter");
             $locationDownload = $this->yellow->config->get("downloadLocation");
             $locationIgnore = "(".$this->yellow->config->get("mediaLocation")."|".$this->yellow->config->get("editLocation").")";
@@ -114,25 +112,21 @@ class YellowTraffic {
                                     continue;
                                 }
                                 $clients[$ip] = $clientsRequestThrottle;
+                                if ($status==206 || ($status>=301 && $status<=303)) continue;
                                 if (!$this->checkRequestArguments($method, $location, $referer)) continue;
                                 if (!preg_match("#^$base$locationFilter#", $location)) continue;
-                                if (!preg_match("#(mozilla|compatible)#i", $userAgent)) continue;
                                 if (preg_match("#$spamFilter#i", $referer.$userAgent)) continue;
-                                if ($status==206 || ($status>=301 && $status<=303)) continue;
-                                if (preg_match("#^$base(.*)$locationDownload#", $location)) {
+                                if (preg_match("#^$base$locationDownload#", $location)) {
                                     ++$files[$this->getUrl($scheme, $address, $base, $location)];
                                 }
-                                if ($locationFilter=="/") {
-                                    if (preg_match("#^$base(.*)$locationIgnore#", $location)) continue;
-                                    if (preg_match("#^$base(.*)/($faviconFile)$#", $location)) continue;
-                                    if (preg_match("#^$base(.*)/($robotsFile)$#", $location)) continue;
-                                }
+                                if (preg_match("#^$base$locationIgnore#", $location) && $locationFilter=="/") continue;
+                                if (preg_match("#^$base/robots\.txt#", $location) && $locationFilter=="/") continue;
                                 ++$content[$this->getUrl($scheme, $address, $base, $location)];
                                 ++$sites[$referer];
                                 ++$search[$this->getSearchUrl($scheme, $address, $base, $location, $locationSearch)];
                                 ++$this->views;
                             } else {
-                                if ($locationFilter!="/" && !preg_match("#^$base$locationFilter#", $location)) continue;
+                                if (!preg_match("#^$base$locationFilter#", $location)) continue;
                                 if (preg_match("#$spamFilter#i", $referer.$userAgent) && $status==404) continue;
                                 ++$errors[$this->getUrl($scheme, $address, $base, $location)." - ".$this->getStatusFormatted($status)];
                             }
