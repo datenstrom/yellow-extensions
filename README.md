@@ -127,7 +127,7 @@ Experimental plugins:
   Overwrite language entries in a page.
 * [Podcast](https://github.com/schulle4u/yellow-plugins-schulle4u/tree/master/podcast): 
   A fork of the original feed plugin optimized for podcast publishing.
-* [Private](https://github.com/schulle4u/yellow-plugins-schulle4u/tree/master/private):  
+* [Private](https://github.com/schulle4u/yellow-plugins-schulle4u/tree/master/private): 
   Create password-protected pages.
 * [Random](https://github.com/schulle4u/yellow-plugins-schulle4u/tree/master/random): 
   Display random pages from specified location.
