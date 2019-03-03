@@ -1,0 +1,167 @@
+# Datenstrom Yellow language file
+
+Language: ja
+LanguageDescription: 日本語
+LanguageTranslator: Yuhko Senuma
+
+BlogBy: by
+BlogTag: Tags:
+BlogMore: 全文を表示して見る…
+ContactName: 氏名:
+ContactEmail: 氏名:
+ContactMessage: 送信内容:
+ContactConsent: このウェブサイトに私のメッセージが保存されていることに同意します。
+ContactButton: 送信
+ContactStatusNone: ご意見・ご指摘・ご提案・ご要望・ご質問・お問合せ・等お寄せ下さい。
+ContactStatusIncomplete: 全ての項目にご入力下さい。
+ContactStatusInvalid: 正しいメールアドレスをご入力下さい。
+ContactStatusDone: メール送信を完了しました！
+ContactStatusError: メールを送信できませんでした。暫くしてからもう一度お試し下さい！
+DatePast: today, yesterday, @x days ago, 1 month ago, @x months ago, 1 year ago, @x years ago
+DateFuture: soon, tomorrow, in @x days, in 1 month, in @x months, in 1 year, in @x years
+DateMonths: １月, ２月, ３月, ４月, ５月, ６月, ７月, ８月, ９月, １０月, １１月, １２月
+DateWeekdays: 月曜日, 火曜日, 水曜日, 木曜日, 金曜日, 土曜日, 日曜日
+DateWeekstart: 月曜日
+DateFormatShort: F Y
+DateFormatMedium: Y-m-d
+DateFormatLong: Y-m-d H:i
+EditLoginTitle: ようこそ
+EditLoginEmail: メールアドレス:
+EditLoginPassword: パスワード:
+EditLoginForgot: パスワードをお忘れですか？
+EditLoginSignup: ユーザーアカウントを作成しますか？
+EditLoginButton: ログイン
+EditSignupTitle: ユーザーアカウントの作成
+EditSignupName: サイト名:
+EditSignupEmail: メールアドレス:
+EditSignupPassword: パスワード:
+EditSignupConsent: 私はこのウェブサイトが私の個人データを保存することに同意します。
+EditSignupButton: 作成
+EditSignupStatusNone: 新しいユーザーアカウントを作成出来ます。
+EditSignupStatusIncomplete: 全ての項目にご入力下さい。
+EditSignupStatusInvalid: 正しいメールアドレスをご入力下さい。
+EditSignupStatusWeak: 別のパスワードをご入力下さい。
+EditSignupStatusNext: ユーザーアカウントの有効化の為、メールをご確認下さい。
+EditForgotTitle: パスワード忘失申請
+EditForgotEmail: メールアドレス:
+EditForgotStatusNone: 新しいパスワードを作成する事が出来ます。
+EditForgotStatusInvalid: 正しいメールアドレスをご入力下さい。
+EditForgotStatusNext: ユーザーアカウントを回復する為にメールをご確認下さい。
+EditRecoverTitle: パスワード忘失申請
+EditRecoverPassword: パスワード:
+EditRecoverStatusPassword: 新しいパスワードをご入力下さい。
+EditRecoverStatusWeak: 別のパスワードをご入力下さい。
+EditSettingsTitle: 設定
+EditSettingsQuit: You can delete your user account anytime.
+EditSettingsMore: More…
+EditSettingsStatusInvalid: 正しいメールアドレスをご入力下さい。
+EditSettingsStatusTaken: 別のメールアドレスをご入力下さい。
+EditSettingsStatusWeak: 別のパスワードをご入力下さい。
+EditSettingsStatusNext: ユーザーアカウントを変更する為にメールをご確認下さい。
+EditQuitTitle: Delete user account
+EditQuitStatusNone: Please enter your name to confirm.
+EditQuitStatusMismatch: Please enter a different name.
+EditQuitStatusNext: User account will be deleted, please check your emails.
+EditConfirmSubject: ユーザーアカウントの確認
+EditConfirmMessage: こんにちは @usershort さん。\n\nユーザーアカウントについてのご確認です。宜しければ次のリンクをクリックして下さい。
+EditConfirmStatusDone: ユーザーアカウントが登録され、承認待ちです。有難うございました！
+EditApproveSubject: ユーザーアカウントの登録承認
+EditApproveMessage: こんにちは @usershort さん。\n\n新しいユーザーアカウント登録承認についてのご確認です。 @useraccount。 宜しければ次のリンクをクリックして下さい。
+EditApproveStatusDone: ユーザーアカウントが承認されました。有難うございました！
+EditReactivateSubject: Reactivate user account
+EditReactivateMessage: Hi @usershort,\n\nplease reactivate your user account. There were too many failed login attempts. Click the following link.
+EditReactivateStatusDone: User account reactivated. Thank you!
+EditRecoverSubject: ユーザーアカウントを復元
+EditRecoverMessage: こんにちは @usershort さん。\n\nパスワード忘失のご確認です。宜しければ次のリンクをクリックして下さい。
+EditRecoverStatusDone: ユーザーアカウントが回復しました。有難うございました！
+EditVerifySubject: ユーザーアカウントの確認
+EditVerifyMessage: こんにちは @usershort さん。\n\nユーザーアカウント情報の変更のご確認です。宜しければ次のリンクをクリックして下さい。
+EditVerifyStatusDone: ユーザーアカウントが確認されました。有難うございました！
+EditChangeSubject: ユーザーアカウントの変更
+EditChangeMessage: こんにちは @usershort さん。\n\nユーザーアカウントを変更する為に、次のリンクをクリックして下さい。
+EditChangeStatusDone: ユーザーアカウントが変更されました。有難うございました！
+EditRemoveSubject: Delete user account
+EditRemoveMessage: Hi @usershort,\n\nplease confirm that you want to delete your user account. Click the following link.
+EditRemoveStatusDone: User account deleted. Thank you!
+EditWelcomeSubject: ようこそ！
+EditWelcomeMessage: こんにちは @usershort さん。\n\nあなたのユーザーアカウントが作成されています。ログインしてウェブサイトを完成させて下さい。
+EditGoodbyeSubject: Goodbye
+EditGoodbyeMessage: Hi @usershort,\n\nyour user account has been deleted. Take care.
+EditVersionTitle: 最新バージョンの確認
+EditVersionStatusNone: Datenstrom Yellow でウェブサイトを作る
+EditVersionStatusCheck: アップデートの確認中…
+EditVersionStatusDone: 最新のバージョンです。
+EditVersionStatusWarning：利用可能なアップデート, あなたのウェブサイトを更新してください。
+EditVersionStatusUpdates： 利用可能なアップデート,今直ぐアップデートする。
+EditVersionUpdateForce: アップデートする！
+EditVersionUpdateModified: @extension が変更されました
+EditUploadProgress: [ファイルをアップロード中…]
+EditOkButton: Ok
+EditCancelButton: キャンセル
+EditCreateButton: 作成
+EditEditButton: 保存
+EditDeleteButton: 削除
+EditEdit: ページの編集
+EditCreate: +
+EditDelete: -
+EditToolbarPreview: プレビュー
+EditToolbarFormat: Format
+EditToolbarHeading: Heading
+EditToolbarH1: Heading 1
+EditToolbarH2: Heading 2
+EditToolbarH3: Heading 3
+EditToolbarParagraph: Normal text
+EditToolbarPre: Source code
+EditToolbarQuote: Quote
+EditToolbarBold: Bold
+EditToolbarItalic: Italic
+EditToolbarStrikethrough: Strikethrough
+EditToolbarCode: Code
+EditToolbarList: List
+EditToolbarUl: • Unordered list
+EditToolbarOl: 1. Ordered list
+EditToolbarTl: ✓ Task list
+EditToolbarLink: Link
+EditToolbarFile: File
+EditToolbarEmojiawesome: Emoji
+EditToolbarFontawesome: Icon
+EditToolbarDraft: Draft
+EditToolbarUndo: Undo
+EditToolbarRedo: Redo
+EditToolbarMarkdown: Markdown
+EditToolbarHelp: ヘルプ
+EditUserHelp: ヘルプ
+EditUserLogout: ログアウト
+Error404Title: ファイルが見つかりません
+Error404Text: 要求されたファイルが見つかりませんでした。 あらいやだ...
+Error430Title: Login failed
+Error430Text: The email or password is incorrect. [Please try again](javascript:yellow.action('login');).
+Error434Title: File not found
+Error434Text: The requested file was not found. [You can create this page](javascript:yellow.action('edit');).
+Error500Title: Server error
+Error500Text: Something went wrong. [yellow error]
+InstallTitle: こんにちは
+InstallExtension: どのサイト（ウェブ・ブログ・ウィキ）を作成しますか？
+InstallHomeTitle: ホーム
+InstallHomeText: インストール完了！\n\n[edit - このページを編集] するか、ＦＴＰソフトとテキストエディタをご使用下さい。
+InstallAboutTitle: について
+InstallAboutText: ウェブサイトを作る人のために。[edit - ログイン]。
+InstallFooterTitle: Footer
+InstallFooterText: [Made with Datenstrom Yellow](https://datenstrom.se/yellow/)
+PagePrevious: ← 前のページへ : @title
+PageNext: 次のページへ : @title →
+PaginationPrevious: ← 戻る
+PaginationNext: 次へ →
+SearchResultsNone: 検索キーワードをご入力下さい。
+SearchResultsEmpty: 検索結果が見つかりません。
+SearchSpecialChanges: 最近の更新
+SearchButton: 検索
+TimeFormatShort: H:i
+TimeFormatMedium: H:i:s
+TimeFormatLong: H:i:s T
+WikiTag: Tags:
+WikiSpecialPages: 全てのページ
+WikiSpecialChanges: 最近の更新状況
+YellowUrl: https://datenstrom.se/yellow/
+YellowHelpUrl: https://developers.datenstrom.se/help/
+YellowMarkdownUrl: https://developers.datenstrom.se/help/markdown-cheat-sheet

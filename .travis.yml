@@ -1,0 +1,17 @@
+language: php
+php:
+  - 7.3
+  - 7.2
+  - 7.1
+  - 7.0
+  - 5.6
+  - 5.5
+before_script: 
+  - git clone https://github.com/datenstrom/yellow.git yellow; cd yellow
+  - cp $TRAVIS_BUILD_DIR/zip/* system/extensions/
+  - rm system/extensions/contact.zip system/extensions/search.zip
+  - echo "StaticUrl:http://website/" >> system/settings/system.ini
+  - php yellow.php update
+  - php yellow.php about
+script: 
+  - php yellow.php build test

@@ -1,0 +1,22 @@
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<?php $this->yellow->layout("sidebar") ?>
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<?php if ($this->yellow->page->get("status")!="done"): ?>
+<p class="<?php echo $this->yellow->page->getHtml("status") ?>"><?php echo $this->yellow->text->getHtml("contactStatus".ucfirst($this->yellow->page->get("status"))) ?></p>
+<form class="contact-form" action="<?php echo $this->yellow->page->getLocation(true) ?>" method="post">
+<p class="contact-name"><label for="name"><?php echo $this->yellow->text->getHtml("contactName") ?></label><br /><input type="text" class="form-control" name="name" id="name" value="<?php echo htmlspecialchars($_REQUEST["name"]) ?>" /></p>
+<p class="contact-from"><label for="from"><?php echo $this->yellow->text->getHtml("contactEmail") ?></label><br /><input type="text" class="form-control" name="from" id="from" value="<?php echo htmlspecialchars($_REQUEST["from"]) ?>" /></p>
+<p class="contact-message"><label for="message"><?php echo $this->yellow->text->getHtml("contactMessage") ?></label><br /><textarea class="form-control" name="message" id="message" rows="7" cols="70"><?php echo htmlspecialchars($_REQUEST["message"]) ?></textarea></p>
+<p class="contact-consent"><input type="checkbox" name="consent" value="consent" id="consent"<?php echo $_REQUEST["consent"] ? " checked=\"checked\"" : "" ?>> <label for="consent"><?php echo $this->yellow->text->getHtml("contactConsent") ?></label></p>
+<input type="hidden" name="referer" value="<?php echo htmlspecialchars($_REQUEST["referer"]) ?>" />
+<input type="hidden" name="status" value="send" />
+<input type="submit" value="<?php echo $this->yellow->text->getHtml("contactButton") ?>" class="btn contact-btn" />
+</form>
+<?php else: ?>
+<p><?php echo $this->yellow->text->getHtml("contactStatusDone") ?><p>
+<?php endif ?>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>

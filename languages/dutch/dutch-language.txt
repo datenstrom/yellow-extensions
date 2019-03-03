@@ -1,0 +1,167 @@
+# Datenstrom Yellow language file
+
+Language: nl
+LanguageDescription: Nederlands (België)
+LanguageTranslator: Robin Vannieuwenhuijse
+
+BlogBy: door
+BlogTag: Labels:
+BlogMore: Lees meer…
+ContactName: Naam:
+ContactEmail: Email:
+ContactMessage: Bericht:
+ContactConsent: Ik ga ermee akkoord dat deze website mijn bericht opslaat.
+ContactButton: Verstuur bericht
+ContactStatusNone: Zeg hallo. Uw feedback is zeer welkom.
+ContactStatusIncomplete: Vul alle velden in.
+ContactStatusInvalid: Vul een geldig email.
+ContactStatusDone: Je email is succesvol verzonden. Bedankt!
+ContactStatusError: E-mail kon niet worden verzonden, probeer het later opnieuw!
+DatePast: vandaag, gisteren, @x dagen geleden, 1 maand geleden, @x maanden geleden, 1 jaar geleden, @x jaar geleden
+DateFuture: binnenkort, morgen, binnen @x dagen, binnen 1 maand, binnen @x maanden, binnen 1 jaar, binnen @x jaar
+DateMonths: januari, februari, maart, april, mei, juni, juli, augustus, september, oktober, november, december
+DateWeekdays: maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag
+DateWeekstart: maandag
+DateFormatShort: F Y
+DateFormatMedium: Y-m-d
+DateFormatLong: Y-m-d H:i
+EditLoginTitle: Welkom
+EditLoginEmail: E-mail:
+EditLoginPassword: Wachtwoord:
+EditLoginForgot: Wachtwoord vergeten?
+EditLoginSignup: Gebruikersaccount aanmaken?
+EditLoginButton: Aanmelden
+EditSignupTitle: Gebruikersaccount aanmaken
+EditSignupName: Naam:
+EditSignupEmail: E-mail:
+EditSignupPassword: Wachtwoord:
+EditSignupConsent: Ik ga ermee akkoord dat deze website mijn persoonlijke gegevens opslaat.
+EditSignupButton: Aanmaken
+EditSignupStatusNone: Hier kan je een nieuw gebruikersaccount aanmaken.
+EditSignupStatusIncomplete: Gelieve alle velden in te vullen.
+EditSignupStatusInvalid: Gelieve een geldig e-mailadres in te vullen.
+EditSignupStatusWeak: Gelieve een ander wachtwoord in te vullen.
+EditSignupStatusNext: Gebruikersaccount zal worden aangemaakt, gelieve je mail te bekijken.
+EditForgotTitle: Wachtwoord vergeten
+EditForgotEmail: E-mail:
+EditForgotStatusNone: Geen probleem, je kan een nieuw wachtwoord aanmaken.
+EditForgotStatusInvalid: Gelieve een geldig e-mailadres in te vullen.
+EditForgotStatusNext: Gebruikersaccount zal worden herstelt, gelieve je mail te bekijken.
+EditRecoverTitle: Wachtwoord vergeten
+EditRecoverPassword: Wachtwoord:
+EditRecoverStatusPassword: Gelieve een nieuw wachtwoord in te vullen.
+EditRecoverStatusWeak: Gelieve een ander wachtwoord in te vullen.
+EditSettingsTitle: Instellingen
+EditSettingsQuit: Je kan je gebruikersaccount op eender welk moment verwijderen.
+EditSettingsMore: Meer…
+EditSettingsStatusInvalid: Gelieve een geldig e-mailadres in te voeren.
+EditSettingsStatusTaken: Gelieve een ander e-mailadres in te voeren.
+EditSettingsStatusWeak: Gelieve een ander wachtwoord in te voeren.
+EditSettingsStatusNext: Gebruikersaccount zal worden gewijzigd, hou je mailbox in de gaten.
+EditQuitTitle: Gebruikersaccount verwijderen
+EditQuitStatusNone: Gelieve je naam op te geven ter verificatie.
+EditQuitStatusMismatch: Gelieve een andere naam op te geven.
+EditQuitStatusNext: Gebruikersaccount zal worden verwijderd, hou je mailbox in de gaten.
+EditConfirmSubject: Gebruikersaccount bevestigen
+EditConfirmMessage: Hallo @usershort,\n\ngelieve je gebruikersaccount te bevestigen. Klik op volgende link.
+EditConfirmStatusDone: Gebruikersaccount bevestigd en wachten op goedkeuring. Bedankt!
+EditApproveSubject: Gebruikersaccount toestaan
+EditApproveMessage: Hallo @usershort,\n\ngelieve de aanmaak van een nieuw gebruikersaccount voor @useraccount te bevestigen. Klik op volgende link.
+EditApproveStatusDone: Gebruikersaccount toegestaan. Bedankt!
+EditReactivateSubject: Gebruikersaccount heractiveren
+EditReactivateMessage: Hi @usershort,\n\nplease reactivate your user account. There were too many failed login attempts. Click the following link.
+EditReactivateStatusDone: Gebruikersaccount is opnieuw actief. Bedankt!
+EditRecoverSubject: Gebruikersaccount herstellen
+EditRecoverMessage: Hallo @usershort,\n\ngelieve te bevestigen dat je het wachtwoord vergeten bent. Klik op volgende link.
+EditRecoverStatusDone: Gebruikersaccount herstelt. Bedankt!
+EditVerifySubject: Valideer gebruikersaccount
+EditVerifyMessage: Hallo @usershort,\n\ngelieve een nieuw e-mailadres te bevestigen voor je gebruikersaccount. Klik op volgende link.
+EditVerifyStatusDone: Gebruikersaccount bevestigd. Bedankt!
+EditChangeSubject: Gebruikersaccount wijzigen
+EditChangeMessage: Hallo @usershort,\n\ngelieve te bevestigen dat je jouw gebruikersaccount wil wijzigen. Klik op volgende link.
+EditChangeStatusDone: Gebruikersaccount gewijzigd. Bedankt!
+EditRemoveSubject: Gebruikersaccount verwijderen
+EditRemoveMessage: Hallo @usershort,\n\ngelieve te bevestigen dat je jouw gebruikersaccount wil verwijderen. Klik op volgende link.
+EditRemoveStatusDone: Gebruikersaccount verwijderd. Bedankt!
+EditWelcomeSubject: Welkom
+EditWelcomeMessage: Hallo @usershort,\n\nje gebruikersaccount is aangemaakt. Veel plezier met het aanpassen van je website.
+EditGoodbyeSubject: Tot ziens
+EditGoodbyeMessage: Hallo @usershort,\n\nJouw gebruikersaccount is verwijderd. Hou je goed.
+EditVersionTitle: Over deze website
+EditVersionStatusNone: Datenstrom Yellow is ontwikkeld voor websitebouwers.
+EditVersionStatusCheck: Updates aan het zoeken…
+EditVersionStatusDone: Je website is up to date.
+EditVersionStatusWarning: Updates beschikbaar, gelieve je website te updaten.
+EditVersionStatusUpdates: Updates beschikbaar, nu installeren.
+EditVersionUpdateForce: Update forceren
+EditVersionUpdateModified: @extension is aangepast.
+EditUploadProgress: [Uploading file…]
+EditOkButton: Ok
+EditCancelButton: Annuleren
+EditCreateButton: Nieuw
+EditEditButton: Opslaan
+EditDeleteButton: Verwijderen
+EditEdit: Bewerk pagina
+EditCreate: +
+EditDelete: -
+EditToolbarPreview: Voorbeeld
+EditToolbarFormat: Formattering
+EditToolbarHeading: Hoofding
+EditToolbarH1: Hoofding 1
+EditToolbarH2: Hoofding 2
+EditToolbarH3: Hoofding 3
+EditToolbarParagraph: Normale tekst
+EditToolbarPre: Broncode
+EditToolbarQuote: Citaat
+EditToolbarBold: Vet
+EditToolbarItalic: Cursief
+EditToolbarStrikethrough: Doorstreept
+EditToolbarCode: Code
+EditToolbarList: Lijst
+EditToolbarUl: • Ongesorteerde lijst
+EditToolbarOl: 1. Gesorteerde lijst
+EditToolbarTl: ✓ Takenlijst
+EditToolbarLink: Link
+EditToolbarFile: Bestand
+EditToolbarEmojiawesome: Emoji
+EditToolbarFontawesome: Icoon
+EditToolbarDraft: Concept
+EditToolbarUndo: Ongedaan maken
+EditToolbarRedo: Opnieuw
+EditToolbarMarkdown: Markdown
+EditToolbarHelp: Help
+EditUserHelp: Help
+EditUserLogout: Afmelden
+Error404Title: Bestand niet gevonden
+Error404Text: Het gevraagde bestand is niet gevonden. Oh nee...
+Error430Title: Login failed
+Error430Text: The email or password is incorrect. [Please try again](javascript:yellow.action('login');).
+Error434Title: File not found
+Error434Text: The requested file was not found. [You can create this page](javascript:yellow.action('edit');).
+Error500Title: Server error
+Error500Text: Something went wrong. [yellow error]
+InstallTitle: Hallo
+InstallExtension: Wat wil je doen?
+InstallHomeTitle: Home
+InstallHomeText: Je website werkt!\n\n[edit - Je kan deze pagina bewerken] of gebruik maken van de teksteditor.
+InstallAboutTitle: Over
+InstallAboutText: Voor mensen die websites maken. [edit - Aanmelden].
+InstallFooterTitle: Footer
+InstallFooterText: [Gemaakt met Datenstrom Yellow](https://datenstrom.se/yellow/)
+PagePrevious: ← Vorige: @title
+PageNext: Volgende: @title →
+PaginationPrevious: ← Vorige
+PaginationNext: Volgende →
+SearchResultsNone: Voer een zoekterm in.
+SearchResultsEmpty: Geen resultaten gevonden.
+SearchSpecialChanges: Recente wijzigingen
+SearchButton: Zoek
+TimeFormatShort: H:i
+TimeFormatMedium: H:i:s
+TimeFormatLong: H:i:s T
+WikiTag: Labels:
+WikiSpecialPages: Alle pagina's
+WikiSpecialChanges: Recente wijzigingen
+YellowUrl: https://datenstrom.se/yellow/
+YellowHelpUrl: https://developers.datenstrom.se/help/
+YellowMarkdownUrl: https://developers.datenstrom.se/help/markdown-cheat-sheet

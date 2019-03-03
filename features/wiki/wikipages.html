@@ -1,0 +1,20 @@
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<?php $this->yellow->layout("sidebar") ?>
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleWiki") ?></h1>
+<ul>
+<?php foreach ($this->yellow->page->getPages() as $page): ?>
+<?php if ($this->yellow->page->get("wikipagesChronologicalOrder")): ?>
+<?php $sectionNew = htmlspecialchars($page->getDate("modified")) ?>
+<?php else: ?>
+<?php $sectionNew = htmlspecialchars(strtoupperu(substru($page->get("title"), 0, 1))) ?>
+<?php endif ?>
+<?php if ($section!=$sectionNew) { $section = $sectionNew; echo "</ul><h2>$section</h2><ul>\n"; } ?>
+<li><a href="<?php echo $page->getLocation(true) ?>"><?php echo $page->getHtml("title") ?></a></li>
+<?php endforeach ?>
+</ul>
+<?php $this->yellow->layout("pagination", $this->yellow->page->getPages()) ?>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
