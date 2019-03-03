@@ -80,10 +80,14 @@ The following features are experimental:
   Email address obfuscator using ROT13 and CSS.
 * [Audio](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/audio):
   HTML5 audio player.
+* [Comments](https://github.com/GiovanniSalmeri/yellow-comments):
+  Get in touch with users of your website directly.
 * [Example](https://github.com/schulle4u/yellow-plugin-example):
   Example plugin for developers.
 * [Include](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/include): 
   Include page content into another page.
+* [Minishare](https://github.com/GiovanniSalmeri/yellow-minishare):
+  Light and accessible social-sharing links.
 * [MOTD](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/motd):
   Message of the day.
 * [Podcast](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/podcast): 
@@ -92,6 +96,8 @@ The following features are experimental:
   Create password-protected pages.
 * [Random](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/random): 
   Display random pages from specified location.
+* [Selflink](https://github.com/GiovanniSalmeri/yellow-selflink):
+  Create internal links.
 * [Shariff](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/shariff):
   Privacy-friendly social sharing buttons.
 * [Socialtags](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/socialtags):
@@ -109,8 +115,6 @@ The following features are obsolete:
   A hamburger menu button.
 * [Cheetjs](https://github.com/nogginfuel/yellow-plugin-cheetjs): 
   Add easter eggs via key binds.
-* [Comments](https://github.com/GiovanniSalmeri/yellow-comments):
-  Get in touch with users of your website directly.
 * [Dynamiccss](https://github.com/richi/yellow-plugin-dynamiccss):
   A (very) small CSS preprocessor.
 * [Events](https://github.com/Xrizzy/yellow-plugin-events):
@@ -135,8 +139,6 @@ The following features are obsolete:
   WYSIWYG style toolbar for editing a page.
 * [Medialist](https://github.com/nibreh/yellow-plugin-medialist):
   Create a list of MP3/OGG/PDF media files.
-* [Minishare](https://github.com/GiovanniSalmeri/yellow-minishare):
-  Light and accessible social-sharing links.
 * [Pagetxt](https://github.com/richi/yellow-plugin-pagetxt):
   Overwrite language entries in a page.
 * [Skipto](https://github.com/schulle4u/yellow-plugin-skipto):
