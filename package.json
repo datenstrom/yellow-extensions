@@ -1,8 +1,0 @@
-{
-    "name": "yellow-extensions",
-    "dependencies": {
-        "minify": "matthiasmullie/minify",
-        "php-markdown": "michelf/php-markdown",
-        "photoswipe": "dimsemenov/photoswipe"
-    }
-}

@@ -1,4 +1,4 @@
-Release 0.8.3
+Release 0.8.5
 =============
 Create releases.
 
@@ -55,12 +55,12 @@ Update settings for a feature:
 # Datenstrom Yellow extension
 
 Extension: Example
-Version: 0.7.1
+Version: 0.8.3
 Description: Example feature for developers.
 Published: 2019-01-24 19:42:13
 Developer: Anna Svensson
 
-Example/example.php: system/extensions/example.php,create,update
+system/extensions/example.php: Example,example.php,create,update
 ~~~
 
 Update settings for a theme:
@@ -69,14 +69,14 @@ Update settings for a theme:
 # Datenstrom Yellow extension
 
 Extension: City
-Version: 0.7.1
+Version: 0.8.3
 Description: Example theme for designers.
 Published: 2019-01-24 19:42:13
 Designer: Anna Svensson
 
-City/city.php: system/extensions/city.php,create,update
-City/city.css: system/resources/city.css,create,update,careful
-City/city-icon.png: system/resources/city-icon.png,create
+system/extensions/city.php: City,city.php,create,update
+system/resources/city.css: City,city.css,create,update,careful
+system/resources/city-icon.png: City,city-icon.png,create
 ~~~
 
 ## Developer

@@ -4,7 +4,7 @@
 // This file may be used and distributed under the terms of the public license.
 
 class YellowRelease {
-    const VERSION = "0.8.3";
+    const VERSION = "0.8.5";
     const TYPE = "feature";
     public $yellow;         //access to API
     public $extensions;     //number of extensions
@@ -62,12 +62,7 @@ class YellowRelease {
     // Update release directory
     public function updateReleaseDirectory($path, $pathExtension) {
         $statusCode = 200;
-        $fileNameInformation = $path.$this->yellow->system->get("updateInformationFile"); //TODO: remove later, converts old format
         $fileNameExtension = $path.$this->yellow->system->get("updateExtensionFile");
-        if (is_file($fileNameInformation) && !$this->yellow->toolbox->renameFile($fileNameInformation, $fileNameExtension)) {
-            $statusCode = 500;
-            echo "ERROR updating files: Can't rename file '$fileNameInformation'!\n";
-        }
         if (is_file($fileNameExtension)) {
             list($statusCode, $extension, $version) = $this->getReleaseInformation($path);
             $statusCode = max($statusCode, $this->updateReleaseInformation($path, $extension, $version));
@@ -91,7 +86,10 @@ class YellowRelease {
             foreach ($this->yellow->toolbox->getTextLines($fileData) as $line) {
                 preg_match("/^\s*(.*?)\s*:\s*(.*?)\s*$/", $line, $matches);
                 if (!empty($matches[1]) && !empty($matches[2]) && strposu($matches[1], "/")) {
-                    list($dummy, $entry) = explode("/", $matches[1], 2);
+                    list($dummy, $entry) = explode(",", $matches[2], 3);
+                    if (ctype_upper($matches[1][0])) {  //TODO: remove later, converts old format
+                        list($dummy, $entry) = explode("/", $matches[1], 2);
+                    }
                     if (is_file($path.$entry)) {
                         $published = filemtime($path.$entry);
                         break;
@@ -100,17 +98,15 @@ class YellowRelease {
             }
             foreach ($this->yellow->toolbox->getTextLines($fileData) as $line) {
                 preg_match("/^\s*(.*?)\s*:\s*(.*?)\s*$/", $line, $matches);
-                if (lcfirst($matches[1])=="plugin") { //TODO: remove later, converts old format
-                    $line = "Extension: ".ucfirst($extension)."\n";
-                }
-                if (lcfirst($matches[1])=="theme") { //TODO: remove later, converts old format
-                    $line = "Extension: ".ucfirst($extension)."\n";
-                }
                 if (lcfirst($matches[1])=="extension") $line = "Extension: ".ucfirst($extension)."\n";
                 if (lcfirst($matches[1])=="version") $line = "Version: $version\n";
                 if (lcfirst($matches[1])=="published") $line = "Published: ".date("Y-m-d H:i:s", $published)."\n";
-                if (substru($matches[1], 0, 6)=="Yellow" && strposu($matches[1], "/")) { //TODO: remove later, converts old format
-                    $line = substru($matches[1], 6).": ".$matches[2]."\n";
+                if (!empty($matches[1]) && !empty($matches[2]) && strposu($matches[1], "/") && $extension!="update" && $extension!="core") {
+                    if (ctype_upper($matches[1][0])) {  //TODO: remove later, converts old format
+                        list($dummy, $entry) = explode("/", $matches[1], 2);
+                        list($fileName, $flags) = explode(",", $matches[2], 2);
+                        $line = "$fileName: $dummy,$entry,$flags\n";
+                    }
                 }
                 $fileDataNew .= $line;
             }
@@ -234,7 +230,7 @@ class YellowRelease {
             $fileData = $this->yellow->toolbox->readFile($fileNameWaffle);
             foreach ($this->yellow->toolbox->getTextLines($fileData) as $line) {
                 preg_match("/^\s*(.*?)\s*:\s*(.*?)\s*$/", $line, $matches);
-                if (!empty($matches[1]) && !empty($matches[2]) && preg_match("/^$extension\//i", $matches[1])) {
+                if (!empty($matches[1]) && !empty($matches[2]) && preg_match("/^$extension,/i", $matches[2])) {
                     if (!$found) {
                         $fileDataNew .= $waffle;
                         $found = true;
@@ -308,8 +304,11 @@ class YellowRelease {
         foreach ($this->yellow->toolbox->getTextLines($fileData) as $line) {
             preg_match("/^\s*(.*?)\s*:\s*(.*?)\s*$/", $line, $matches);
             if (!empty($matches[1]) && !empty($matches[2]) && strposu($matches[1], "/")) {
-                list($dummy, $entry) = explode("/", $matches[1], 2);
-                list($fileName, $flags) = explode(",", $matches[2], 2);
+                list($dummy, $entry, $flags) = explode(",", $matches[2], 3);
+                if (ctype_upper($matches[1][0])) {  //TODO: remove later, converts old format
+                    list($dummy, $entry) = explode("/", $matches[1], 2);
+                    list($fileName, $flags) = explode(",", $matches[2], 2);
+                }
                 if (!preg_match("/delete/i", $flags)) array_push($entries, "$path$entry");
             }
         }
@@ -325,6 +324,12 @@ class YellowRelease {
         foreach ($this->yellow->toolbox->getTextLines($fileData) as $line) {
             preg_match("/^\s*(.*?)\s*:\s*(.*?)\s*$/", $line, $matches);
             if (!empty($matches[1]) && !empty($matches[2]) && strposu($matches[1], "/")) {
+                if (ctype_upper($matches[1][0])) {  //TODO: remove later, converts old format
+                    list($dummy, $entry) = explode("/", $matches[1], 2);
+                    list($fileName, $flags) = explode(",", $matches[2], 2);
+                    $matches[1] = $fileName;
+                    $matches[2] = "$dummy,$entry,$flags";
+                }
                 $waffle .= "$matches[1]: $matches[2]\n";
             }
         }

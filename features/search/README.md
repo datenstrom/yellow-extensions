@@ -20,7 +20,7 @@ The search is available on your website as `http://website/search/`. It searches
 
 The following settings can be configured in file `system/settings/system.ini`:
 
-`Navigation` = navigation of the website, e.g. `navigation-search` shows a search field  
+`Navigation` = navigation of the website, e.g. `navigation`, `navigation-search`  
 `SearchLocation` = search location  
 `SearchPaginationLimit` = number of entries to show per page  
 `SearchPageLength` = maximum page length to show  

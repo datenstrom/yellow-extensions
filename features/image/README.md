@@ -51,7 +51,7 @@ Adding an image:
 Adding an image, different styles:
 
     [image picture.jpg Example left]
-    [image picture.jpg Example centre]
+    [image picture.jpg Example center]
     [image picture.jpg Example right]
 
 Adding an image, different sizes:

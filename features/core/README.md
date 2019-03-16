@@ -1,4 +1,4 @@
-Core 0.8.2
+Core 0.8.3
 ==========
 Core functionality for your website.
 
@@ -14,7 +14,7 @@ Do not delete the [extension files](extension.ini), they are always required.
 
 ## How to show website version
 
-You can use the [web browser](https://github.com/datenstrom/yellow-extensions/tree/master/features/edit) or the [command line](https://github.com/datenstrom/yellow-extensions/tree/master/features/command) to show the current version of your website. You can also use shortcuts to show information about the website. See example below.
+You can use the [web browser](https://github.com/datenstrom/yellow-extensions/tree/master/features/edit) or the [command line](https://github.com/datenstrom/yellow-extensions/tree/master/features/command) to show website version. You can open the [log file](https://developers.datenstrom.se/help/api#troubleshooting) to show system diagnostics. You can also use shortcuts to show the current website version. See example below.
 
 ## How to configure system settings
 

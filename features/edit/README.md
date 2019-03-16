@@ -1,4 +1,4 @@
-Edit 0.8.2
+Edit 0.8.3
 ==========
 Edit your website in a web browser. [See demo](https://developers.datenstrom.se).
 
@@ -35,7 +35,7 @@ The following settings can be configured in file `system/settings/system.ini`:
 `EditKeyboardShortcuts` = keyboard shortcuts and commands  
 `EditToolbarButtons` = toolbar buttons, `none` to disable  
 `EditEndOfLine` = line endings, e.g. `auto`, `lf`, `crlf`  
-`EditLoginRestrictions` = enable [login restrictions](https://developers.datenstrom.se/help/security-configuration#login-restrictions), 1 or 0  
+`EditLoginRestriction` = enable [login restriction](https://developers.datenstrom.se/help/security-configuration#login-restriction), 1 or 0  
 `EditLoginSessionTimeout` = login session in seconds  
 `EditBruteForceProtection` = number of failed login attempts  
 
