@@ -82,20 +82,14 @@ The following features are experimental:
   HTML5 audio player.
 * [Comments](https://github.com/GiovanniSalmeri/yellow-comments):
   Simple commenting system.
-* [Diary](https://github.com/GiovanniSalmeri/yellow-diary)
-  Events diary.
 * [Example](https://github.com/schulle4u/yellow-extension-example):
   Example extension for developers.
-* [Filelist](https://github.com/GiovanniSalmeri/yellow-filelist)
-  List of files for download.
 * [Include](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/include): 
   Include page content from other pages.
 * [Minishare](https://github.com/GiovanniSalmeri/yellow-minishare):
   Light and accessible social sharing links.
 * [Motd](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/motd):
   Message of the day.
-* [Openstreetmap](https://github.com/GiovanniSalmeri/yellow-openstreetmap)
-  Embed OpenStreetMap maps.
 * [Podcast](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/podcast): 
   Web feed optimized for podcast publishing.
 * [Private](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/private): 
