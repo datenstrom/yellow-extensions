@@ -43,6 +43,8 @@ The following features are available:
   Text formatting for humans.
 * [Matomo](https://github.com/datenstrom/yellow-extensions/tree/master/features/matomo): 
   Matomo web analytics.
+* [Meta](https://github.com/datenstrom/yellow-extensions/tree/master/features/meta):
+  Adds Twitter and Open Graph meta tags.
 * [Preview](https://github.com/datenstrom/yellow-extensions/tree/master/features/preview): 
   Show pages with image preview.
 * [Previousnext](https://github.com/datenstrom/yellow-extensions/tree/master/features/previousnext): 
@@ -100,8 +102,6 @@ The following features are experimental:
   Create internal links.
 * [Shariff](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/shariff):
   Privacy-friendly social sharing buttons.
-* [Socialtags](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/socialtags):
-  Adds Twitter and Open Graph meta tags.
 * [Spoiler](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/spoiler):
   Hide certain page elements.
 * [Ticker](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/ticker): 
@@ -143,6 +143,8 @@ The following features are obsolete:
   Overwrite language entries in a page.
 * [Skipto](https://github.com/schulle4u/yellow-plugin-skipto):
   Enhance keyboard navigation.
+* [Socialtags](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/socialtags):
+  Adds Twitter and Open Graph meta tags.
 * [Streamlist](https://github.com/nibreh/yellow-plugin-streamlist):
   Stream your favorite radios in a playlist with HTML5 audio.
 * [Sublime](https://github.com/nashv/YellowBlogExtensions):
