@@ -84,6 +84,8 @@ The following features are experimental:
   HTML5 audio player.
 * [Comments](https://github.com/GiovanniSalmeri/yellow-comments):
   Simple commenting system.
+* [Csv](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/csv):
+  CSV file parser.
 * [Example](https://github.com/schulle4u/yellow-extension-example):
   Example extension for developers.
 * [Include](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/include): 
