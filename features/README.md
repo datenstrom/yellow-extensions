@@ -86,14 +86,22 @@ The following features are experimental:
   Simple commenting system.
 * [Csv](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/csv):
   CSV file parser.
+* [Diary](https://github.com/GiovanniSalmeri/yellow-diary):
+  Events Diary.
 * [Example](https://github.com/schulle4u/yellow-extension-example):
   Example extension for developers.
+* [Filelist](https://github.com/GiovanniSalmeri/yellow-filelist):
+  Show a list of files for download.
 * [Include](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/include): 
   Include page content from other pages.
 * [Minishare](https://github.com/GiovanniSalmeri/yellow-minishare):
   Light and accessible social sharing links.
 * [Motd](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/motd):
   Message of the day.
+* [Openstreetmap](https://github.com/GiovanniSalmeri/yellow-openstreetmap):
+  Embed OpenStreetMap maps.
+* [Pinboard](https://github.com/GiovanniSalmeri/yellow-pinboard):
+  Pinboard for timed notices.
 * [Podcast](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/podcast): 
   Web feed optimized for podcast publishing.
 * [Private](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/private): 
