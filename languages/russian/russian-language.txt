@@ -11,9 +11,9 @@ BlogMore: Читать далее…
 ContactName: Имя:
 ContactEmail: Email:
 ContactMessage: Сообщение:
-ContactConsent: Я согласен, что этот сайт хранит мое сообщение.
+ContactConsent: Я согласен, что этот сайт сохранит мое сообщение.
 ContactButton: Отправить сообщение
-ContactStatusNone: Привет. Ваши отзывы очень приветствуются.
+ContactStatusNone: Скажи привет. Ваши отзывы приветствуются.
 ContactStatusIncomplete: Пожалуйста, заполните все поля.
 ContactStatusInvalid: Пожалуйста, укажите правильный Email.
 ContactStatusDone: Ваше письмо отправлено. Спасибо!
@@ -60,31 +60,31 @@ EditQuitStatusNone: Введите свое имя для подтвержден
 EditQuitStatusMismatch: Введите другое имя.
 EditQuitStatusNext: Учетная запись пользователя будет удалена, проверьте электронную почту.
 EditConfirmSubject: Подтверждение учетной записи
-EditConfirmMessage: Привет @usershort,\n\nпожалуйста, подтвердите свою учетную запись. Нажмите на ссылку.
+EditConfirmMessage: Привет @usershort,\n\nпожалуйста, подтвердите свою учетную запись. Нажмите на следующую ссылку.
 EditConfirmTitle: Учетная запись пользователя
 EditConfirmStatusDone: Учетная запись подтверждена и ждет одобрения. Спасибо!
 EditApproveSubject: Подтвердите учетную запись
-EditApproveMessage: Привет @usershort,\n\nпожалуйста, подтвердите новую учетную запись для @useraccount. Нажмите на ссылку.
+EditApproveMessage: Привет @usershort,\n\nпожалуйста, подтвердите новую учетную запись для @useraccount. Нажмите на следующую ссылку.
 EditApproveTitle: Учетная запись пользователя
 EditApproveStatusDone: Учетная запись подтверждена. Спасибо!
 EditReactivateSubject: Повторная активация учетной записи
-EditReactivateMessage: Привет @usershort,\n\nпожалуйста, повторно активируйте свою учетную запись. Было слишком много неудачных попыток входа в систему. Нажмите следующую ссылку.
+EditReactivateMessage: Привет @usershort,\n\nпожалуйста, повторно активируйте свою учетную запись. Было слишком много неудачных попыток входа в систему. Нажмите на следующую ссылку.
 EditReactivateTitle: Учетная запись пользователя
 EditReactivateStatusDone: Аккаунт пользователя активирован. Спасибо!
 EditVerifySubject: Подтверждение учетной записи
-EditVerifyMessage: Привет @usershort,\n\nпожалуйста, подтвердите новый email для своей учетной записи. Нажмите следующую ссылку.
+EditVerifyMessage: Привет @usershort,\n\nпожалуйста, подтвердите новый email для своей учетной записи. Нажмите на следующую ссылку.
 EditVerifyTitle: Учетная запись пользователя
 EditVerifyStatusDone: Учетная запись подтверждена. Спасибо!
 EditChangeSubject: Изменение учетной записи
-EditChangeMessage: Привет @usershort,\n\nподтвердите, что хотите изменить свою учетную запись. Нажмите следующую ссылку.
+EditChangeMessage: Привет @usershort,\n\nподтвердите, что хотите изменить свою учетную запись. Нажмите на следующую ссылку.
 EditChangeTitle: Учетная запись пользователя
 EditChangeStatusDone: Учетная запись изменена. Спасибо!
 EditRemoveSubject: Удалить учетную запись
-EditRemoveMessage: Привет @usershort,\n\nподтвердите, что хотите удалить свою учетную запись. Нажмите следующую ссылку.
+EditRemoveMessage: Привет @usershort,\n\nподтвердите, что хотите удалить свою учетную запись. Нажмите на следующую ссылку.
 EditRemoveTitle: Учетная запись пользователя
 EditRemoveStatusDone: Учетная запись удалена. Спасибо!
 EditRecoverSubject: Восстановление учетной записи
-EditRecoverMessage: Привет @usershort,\n\nподтвердите, что вы забыли свой пароль. Нажмите на ссылку.
+EditRecoverMessage: Привет @usershort,\n\nподтвердите, что вы забыли свой пароль. Нажмите на следующую ссылку.
 EditWelcomeSubject: Добро пожаловать
 EditWelcomeMessage: Привет @usershort,\n\nваша учетная запись создана. Получайте удовольствие редактируя сайт.
 EditGoodbyeSubject: До свидания
@@ -98,13 +98,13 @@ EditAccountStatusTaken: Пожалуйста, введите другой адр
 EditAccountStatusWeak: Пожалуйста, введите другой пароль.
 EditAccountStatusShort: Пожалуйста, введите более длинный пароль.
 EditAccountStatusNext: Учетная запись пользователя будет изменена, проверьте электронную почту.
-EditSystemTitle: System settings
-EditSystemSitename: Name of the website:
-EditSystemAuthor: Name of the webmaster:
-EditSystemEmail: Email of the webmaster:
-EditSystemInformation: The webmaster is the contact person and can approve new user accounts.
-EditSystemStatusNone: Here you can change system settings.
-EditSystemStatusInvalid: Please enter a valid email.
+EditSystemTitle: Системные настройки
+EditSystemSitename: Имя сайта:
+EditSystemAuthor: Имя автора:
+EditSystemEmail: Email автора:
+EditSystemInformation: Автор является контактным лицом и может утверждать новые учетные записи пользователей.
+EditSystemStatusNone: Здесь вы можете изменить настройки системы.
+EditSystemStatusInvalid: Пожалуйста, введите действительный email.
 EditUpdateTitle: Обновления
 EditUpdateStatusNone: Datenstrom Yellow предназначен для людей, создающих веб-сайты.
 EditUpdateStatusCheck: Проверка обновлений…
@@ -141,7 +141,7 @@ EditToolbarOl: 1. Упорядоченный список
 EditToolbarTl: ✓ Список заданий
 EditToolbarLink: Ссылка
 EditToolbarFile: Файл
-EditToolbarEmojiawesome: Emoji
+EditToolbarEmojiawesome: Эмо́дзи
 EditToolbarFontawesome: Иконка
 EditToolbarDraft: Черновик
 EditToolbarUndo: Отменить
@@ -156,12 +156,12 @@ EditMenuHelp: Помощь
 EditMenuLogout: Выход
 Error404Title: Файл не найден
 Error404Text: Запрашиваемый файл не найден. О нет...
-Error430Title: Login failed
-Error430Text: The email or password is incorrect. [Please try again](javascript:yellow.action('login');).
-Error434Title: File not found
-Error434Text: The requested file was not found. [You can create this page](javascript:yellow.action('edit');).
-Error500Title: Server error
-Error500Text: Something went wrong. [yellow error]
+Error430Title: Ошибка входа
+Error430Text: Неверный email или пароль. [Пожалуйста, попробуйте еще раз](javascript:yellow.action('login');).
+Error434Title: Файл не найден
+Error434Text: Запрашиваемый файл не найден. [Вы можете создать эту страницу](javascript:yellow.action('edit');).
+Error500Title: Ошибка сервера
+Error500Text: Что-то пошло не так. [yellow error]
 InstallTitle: Здравствуйте
 InstallExtension: Что вы хотите сделать?
 InstallExtensionWebsite: Веб-сайт
@@ -171,14 +171,14 @@ InstallHomeTitle: Главная
 InstallHomeText: Ваш сайт работает!\n\n[edit - Вы можете отредактировать эту страницу] или использовать ваш текстовый редактор.\n\nВы можете установить больше функций и тем.\n[Учить больше](https://extensions.datenstrom.se/help/).
 InstallAboutTitle: О компании
 InstallAboutText: Для людей которые делают сайты. [edit - Войти].
-InstallFooterTitle: Footer
+InstallFooterTitle: Подвал
 InstallFooterText: [Сделано с Datenstrom Yellow](https://datenstrom.se/yellow/)
-InstallDefaultTitle: Page
-InstallDefaultText: This is a new page.
-InstallBlogTitle: Blog page
-InstallBlogText: This is a new blog page.
-InstallWikiTitle: Wiki page
-InstallWikiText: This is a new wiki page.
+InstallDefaultTitle: Страница
+InstallDefaultText: Это новая страница.
+InstallBlogTitle: Страница блога
+InstallBlogText: Это новая страница блога.
+InstallWikiTitle: Wiki страница
+InstallWikiText: Это новая wiki страница.
 PagePrevious: ← Назад: @title
 PageNext: Далее: @title →
 PaginationPrevious: ← Назад
