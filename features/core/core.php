@@ -2577,7 +2577,9 @@ class YellowToolbox {
             $iterator = new RecursiveDirectoryIterator($path, RecursiveDirectoryIterator::SKIP_DOTS);
             $files = new RecursiveIteratorIterator($iterator, RecursiveIteratorIterator::CHILD_FIRST);
             foreach ($files as $file) {
-                if ($file->isDir()) {
+                if ($file->isLink()) {
+                    @unlink($file->getPathname());
+                } elseif ($file->isDir()) {
                     @rmdir($file->getRealPath());
                 } else {
                     @unlink($file->getRealPath());
