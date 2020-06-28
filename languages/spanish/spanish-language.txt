@@ -1,0 +1,200 @@
+# Datenstrom Yellow language file
+
+Language: es
+LanguageLocale: es_ES
+LanguageDescription: Español
+LanguageTranslator: Al Garcia, David Garcia
+
+BlogBy: por
+BlogTag: Etiquetas:
+BlogMore: Leer más…
+ContactName: Nombre:
+ContactEmail: Email:
+ContactMessage: Mensaje:
+ContactConsent: Doy mi consentimiento para que este sitio web almacene mi mensaje.
+ContactButton: Enviar mensaje
+ContactMailSpam: [Spam]
+ContactMailFooter: This email was sent via @sitename - @title
+ContactStatusNone: Di hola. Tus comentarios son bien recibidos.
+ContactStatusIncomplete: Por favor llena todos los campos.
+ContactStatusInvalid: Por favor introduce una dirección de email válida.
+ContactStatusReview: Please remove links from the message.
+ContactStatusDone: Enviaste un email. ¡Gracias!
+ContactStatusError: El email no pudo ser enviado, por favor intenta más tarde.
+CoreDatePast: today, yesterday, @x days ago, 1 month ago, @x months ago, 1 year ago, @x years ago, on @x
+CoreDateFuture: soon, tomorrow, in @x days, in 1 month, in @x months, in 1 year, in @x years, on @x
+CoreDateMonths: Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre
+CoreDateWeekdays: Lunes, Martes, Miércoles, Jueves, Viernes, Sábado, Domingo
+CoreDateWeekstart: Lunes
+CoreDateFormatShort: F Y
+CoreDateFormatMedium: d-m-Y
+CoreDateFormatLong: d-m-Y H:i
+CoreDraftStatusEmpty: No drafts found.
+CoreTimeFormatShort: H:i
+CoreTimeFormatMedium: H:i:s
+CoreTimeFormatLong: H:i:s T
+CorePaginationPrevious: ← Anterior
+CorePaginationNext: Siguiente →
+CoreError404Title: Archivo no encontrado
+CoreError404Text: El archivo solicitado no fue encontrado. Oh no...
+CoreError430Title: Login failed
+CoreError430Text: The email or password is incorrect. [Please try again](#data-action-login).
+CoreError434Title: File not found
+CoreError434Text: The requested file was not found. [You can create this page](#data-action-edit).
+CoreError500Title: Server error
+CoreError500Text: Something went wrong. [yellow error]
+EditLoginTitle: Bienvenido
+EditLoginEmail: Email:
+EditLoginPassword: Contraseña:
+EditLoginForgot: ¿Olvidaste tu contraseña?
+EditLoginSignup: ¿Crear una cuenta de usuario?
+EditLoginButton: Acceder
+EditSignupTitle: Crear una cuenta de usuario
+EditSignupName: Nombre:
+EditSignupEmail: Email:
+EditSignupPassword: Contraseña:
+EditSignupConsent: Doy mi consentimiento para que este sitio web almacene mis datos personales.
+EditSignupButton: Crear
+EditSignupStatusNone: Aquí podrás crear una nueva cuenta de usuario.
+EditSignupStatusIncomplete: Por favor llena todos los campos.
+EditSignupStatusInvalid: Por favor introduce una dirección de email válida.
+EditSignupStatusWeak: Por favor introduce una contraseña distinta.
+EditSignupStatusShort: Por favor introduce una contraseña más larga.
+EditSignupStatusNext: La cuenta de usuario será creada, por favor revisa tu email.
+EditForgotTitle: Olvidaste tu contraseña
+EditForgotEmail: Email:
+EditForgotStatusNone: No hay problema, puedes crear una nueva contraseña.
+EditForgotStatusInvalid: Por favor introduce una dirección de email válida.
+EditForgotStatusNext: La cuenta de usuario será recuperada, por favor revisa tu email.
+EditRecoverTitle: Olvidaste tu contraseña
+EditRecoverPassword: Contraseña:
+EditRecoverStatusPassword: Por favor introduce una nueva contraseña.
+EditRecoverStatusWeak: Por favor introduce una contraseña distinta.
+EditRecoverStatusShort: Por favor introduce una contraseña más larga.
+EditRecoverStatusDone: Cuenta de usuario recuperada. ¡Gracias!
+EditQuitTitle: Delete user account
+EditQuitStatusNone: Please enter your name to confirm.
+EditQuitStatusMismatch: Please enter a different name.
+EditQuitStatusNext: User account will be deleted, please check your emails.
+EditConfirmSubject: Confirmar cuenta de usuario
+EditConfirmMessage: Hola @usershort,\n\npor favor confirma tu cuenta. Haz click en el siguiente enlace.
+EditConfirmTitle: Cuenta de usuario
+EditConfirmStatusDone: Cuenta de usuario confirmada y espera la aprobación. ¡Gracias!
+EditApproveSubject: Aprobar cuenta de usuario
+EditApproveMessage: Hola @usershort,\n\npor favor aprueba la nueva cuenta para @useraccount. Haz click en el siguiente enlace.
+EditApproveTitle: Cuenta de usuario
+EditApproveStatusDone: Cuenta de usuario aprobada. ¡Gracias!
+EditReactivateSubject: Reactivate user account
+EditReactivateMessage: Hi @usershort,\n\nplease reactivate your user account. There were too many failed login attempts. Click the following link.
+EditReactivateTitle: Cuenta de usuario
+EditReactivateStatusDone: User account reactivated. Thank you!
+EditVerifySubject: Confirm user account
+EditVerifyMessage: Hi @usershort,\n\nplease confirm a new email for your user account. Click the following link.
+EditVerifyTitle: Cuenta de usuario
+EditVerifyStatusDone: User account confirmed. Thank you!
+EditChangeSubject: Change user account
+EditChangeMessage: Hi @usershort,\n\nplease confirm that you want to change your user account. Click the following link.
+EditChangeTitle: Cuenta de usuario
+EditChangeStatusDone: User account changed. Thank you!
+EditRemoveSubject: Delete user account
+EditRemoveMessage: Hi @usershort,\n\nplease confirm that you want to delete your user account. Click the following link.
+EditRemoveTitle: Cuenta de usuario
+EditRemoveStatusDone: User account deleted. Thank you!
+EditRecoverSubject: Recuperar cuenta de usuario
+EditRecoverMessage: Hola @usershort,\n\npor favor confirma que olvidaste tu contrasenna. Haz click en el siguiente enlace.
+EditWelcomeSubject: Bienvenido
+EditWelcomeMessage: Hola @usershort,\n\ntu cuenta de usuario ha sido creada. Diviértete editando el sitio web.
+EditGoodbyeSubject: Goodbye
+EditGoodbyeMessage: Hi @usershort,\n\nyour user account has been deleted. Take care.
+EditAccountTitle: User settings
+EditAccountInformation: You can delete your user account anytime.
+EditAccountMore: Read more…
+EditAccountStatusNone: Here you can change your user account.
+EditAccountStatusInvalid: Please enter a valid email.
+EditAccountStatusTaken: Please enter a different email.
+EditAccountStatusWeak: Please enter a different password.
+EditAccountStatusShort: Please enter a longer password.
+EditAccountStatusNext: User account will be changed, please check your emails.
+EditSystemTitle: System settings
+EditSystemSitename: Name of the website:
+EditSystemAuthor: Name of the webmaster:
+EditSystemEmail: Email of the webmaster:
+EditSystemInformation: The webmaster is the contact person and can approve new user accounts.
+EditSystemStatusNone: Here you can change system settings.
+EditSystemStatusInvalid: Please enter a valid email.
+EditUpdateTitle: Updates
+EditUpdateStatusNone: Datenstrom Yellow is for people who make small websites.
+EditUpdateStatusCheck: Checking for updates…
+EditUpdateStatusUpdates: Updates available, update now.
+EditUpdateStatusOk: Your website is up to date.
+EditUpdateModified: @extension has been modified
+EditUpdateForce: Force update
+EditOkButton: Ok
+EditCancelButton: Cancelar
+EditChangeButton: Cambiar
+EditCreateButton: Crear
+EditEditButton: Guardar
+EditDeleteButton: Borrar
+EditEdit: Editar página
+EditCreate: +
+EditDelete: -
+EditKeyboardLabels: Ctrl+, Alt+, Shift+, ⌘, ⌥, ⇧
+EditToolbarFormat: Format
+EditToolbarHeading: Heading
+EditToolbarH1: Heading 1
+EditToolbarH2: Heading 2
+EditToolbarH3: Heading 3
+EditToolbarParagraph: Normal text
+EditToolbarPre: Source code
+EditToolbarNotice: Notice
+EditToolbarQuote: Quote
+EditToolbarBold: Bold
+EditToolbarItalic: Italic
+EditToolbarStrikethrough: Strikethrough
+EditToolbarCode: Code
+EditToolbarList: List
+EditToolbarUl: • Unordered list
+EditToolbarOl: 1. Ordered list
+EditToolbarTl: ✓ Task list
+EditToolbarLink: Link
+EditToolbarFile: File
+EditToolbarEmojiawesome: Emoji
+EditToolbarFontawesome: Icon
+EditToolbarStatus: Status
+EditToolbarUndo: Undo
+EditToolbarRedo: Redo
+EditToolbarPreview: Preview
+EditToolbarMarkdown: Markdown
+EditToolbarHelp: Ayuda
+EditMailFooter: @sitename
+EditDataGenerated: Esta página se genera automáticamente.
+EditUploadProgress: [Subir archivo…]
+EditMenuSettings: Configuraciones
+EditMenuHelp: Ayuda
+EditMenuLogout: Salir
+EditYellowUrl: https://datenstrom.se/yellow/
+EditYellowHelpUrl: https://datenstrom.se/yellow/help/
+InstallTitle: Hola
+InstallExtension: ¿Qué quieres hacer?
+InstallExtensionWebsite: Sitio web
+InstallExtensionBlog: Blog
+InstallExtensionWiki: Wiki
+InstallHomeTitle: Inicio
+InstallHomeText: Tu sitio web funciona!\n\n[edit - Puedes editar esta página] o utilizar tu editor de texto.\n\nPuede instalar más características y temas.\n[Aprender mas](https://datenstrom.se/yellow/help/).
+InstallDefaultTitle: Page
+InstallDefaultText: This is a new page.
+InstallBlogTitle: Blog page
+InstallBlogText: This is a new blog page.
+InstallWikiTitle: Wiki page
+InstallWikiText: This is a new wiki page.
+InstallExampleImage: This is an example image
+PreviousnextPagePrevious: ← Anterior: @title
+PreviousnextPageNext: Siguiente: @title →
+SearchResultsNone: Introduce un término de búsqueda.
+SearchResultsEmpty: No se encontraron resultados.
+SearchSpecialChanges: Cambios recientes
+SearchButton: Buscar
+WikiModified: Última actualización el
+WikiTag: Etiquetas:
+WikiSpecialPages: Todas las páginas
+WikiSpecialChanges: Cambios recientes

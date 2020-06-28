@@ -1,0 +1,200 @@
+# Datenstrom Yellow language file
+
+Language: nl
+LanguageLocale: nl_BE
+LanguageDescription: Nederlands (België)
+LanguageTranslator: Robin Vannieuwenhuijse
+
+BlogBy: door
+BlogTag: Labels:
+BlogMore: Lees meer…
+ContactName: Naam:
+ContactEmail: Email:
+ContactMessage: Bericht:
+ContactConsent: Ik ga ermee akkoord dat deze website mijn bericht opslaat.
+ContactButton: Verstuur bericht
+ContactMailSpam: [Spam]
+ContactMailFooter: This email was sent via @sitename - @title
+ContactStatusNone: Zeg hallo. Uw feedback is zeer welkom.
+ContactStatusIncomplete: Vul alle velden in.
+ContactStatusInvalid: Vul een geldig email.
+ContactStatusReview: Please remove links from the message.
+ContactStatusDone: Je email is succesvol verzonden. Bedankt!
+ContactStatusError: E-mail kon niet worden verzonden, probeer het later opnieuw!
+CoreDatePast: vandaag, gisteren, @x dagen geleden, 1 maand geleden, @x maanden geleden, 1 jaar geleden, @x jaar geleden, op @x
+CoreDateFuture: binnenkort, morgen, binnen @x dagen, binnen 1 maand, binnen @x maanden, binnen 1 jaar, binnen @x jaar, op @x
+CoreDateMonths: januari, februari, maart, april, mei, juni, juli, augustus, september, oktober, november, december
+CoreDateWeekdays: maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag
+CoreDateWeekstart: maandag
+CoreDateFormatShort: F Y
+CoreDateFormatMedium: Y-m-d
+CoreDateFormatLong: Y-m-d H:i
+CoreTimeFormatShort: H:i
+CoreTimeFormatMedium: H:i:s
+CoreTimeFormatLong: H:i:s T
+CorePaginationPrevious: ← Vorige
+CorePaginationNext: Volgende →
+CoreError404Title: Bestand niet gevonden
+CoreError404Text: Het gevraagde bestand is niet gevonden. Oh nee...
+CoreError430Title: Login failed
+CoreError430Text: The email or password is incorrect. [Please try again](#data-action-login).
+CoreError434Title: File not found
+CoreError434Text: The requested file was not found. [You can create this page](#data-action-edit).
+CoreError500Title: Server error
+CoreError500Text: Something went wrong. [yellow error]
+DraftStatusEmpty: No drafts found.
+EditLoginTitle: Welkom
+EditLoginEmail: E-mail:
+EditLoginPassword: Wachtwoord:
+EditLoginForgot: Wachtwoord vergeten?
+EditLoginSignup: Gebruikersaccount aanmaken?
+EditLoginButton: Aanmelden
+EditSignupTitle: Gebruikersaccount aanmaken
+EditSignupName: Naam:
+EditSignupEmail: E-mail:
+EditSignupPassword: Wachtwoord:
+EditSignupConsent: Ik ga ermee akkoord dat deze website mijn persoonlijke gegevens opslaat.
+EditSignupButton: Aanmaken
+EditSignupStatusNone: Hier kan je een nieuw gebruikersaccount aanmaken.
+EditSignupStatusIncomplete: Gelieve alle velden in te vullen.
+EditSignupStatusInvalid: Gelieve een geldig e-mailadres in te vullen.
+EditSignupStatusWeak: Gelieve een ander wachtwoord in te vullen.
+EditSignupStatusShort: Gelieve een langer wachtwoord in te vullen.
+EditSignupStatusNext: Gebruikersaccount zal worden aangemaakt, gelieve je mail te bekijken.
+EditForgotTitle: Wachtwoord vergeten
+EditForgotEmail: E-mail:
+EditForgotStatusNone: Geen probleem, je kan een nieuw wachtwoord aanmaken.
+EditForgotStatusInvalid: Gelieve een geldig e-mailadres in te vullen.
+EditForgotStatusNext: Gebruikersaccount zal worden herstelt, gelieve je mail te bekijken.
+EditRecoverTitle: Wachtwoord vergeten
+EditRecoverPassword: Wachtwoord:
+EditRecoverStatusPassword: Gelieve een nieuw wachtwoord in te vullen.
+EditRecoverStatusWeak: Gelieve een ander wachtwoord in te vullen.
+EditRecoverStatusShort: Gelieve een langer wachtwoord in te vullen.
+EditRecoverStatusDone: Gebruikersaccount herstelt. Bedankt!
+EditQuitTitle: Gebruikersaccount verwijderen
+EditQuitStatusNone: Gelieve je naam op te geven ter verificatie.
+EditQuitStatusMismatch: Gelieve een andere naam op te geven.
+EditQuitStatusNext: Gebruikersaccount zal worden verwijderd, hou je mailbox in de gaten.
+EditConfirmSubject: Gebruikersaccount bevestigen
+EditConfirmMessage: Hallo @usershort,\n\ngelieve je gebruikersaccount te bevestigen. Klik op volgende link.
+EditConfirmTitle: Gebruikersaccount
+EditConfirmStatusDone: Gebruikersaccount bevestigd en wachten op goedkeuring. Bedankt!
+EditApproveSubject: Gebruikersaccount toestaan
+EditApproveMessage: Hallo @usershort,\n\ngelieve de aanmaak van een nieuw gebruikersaccount voor @useraccount te bevestigen. Klik op volgende link.
+EditApproveTitle: Gebruikersaccount
+EditApproveStatusDone: Gebruikersaccount toegestaan. Bedankt!
+EditReactivateSubject: Gebruikersaccount heractiveren
+EditReactivateMessage: Hi @usershort,\n\nplease reactivate your user account. There were too many failed login attempts. Click the following link.
+EditReactivateTitle: Gebruikersaccount
+EditReactivateStatusDone: Gebruikersaccount is opnieuw actief. Bedankt!
+EditVerifySubject: Valideer gebruikersaccount
+EditVerifyMessage: Hallo @usershort,\n\ngelieve een nieuw e-mailadres te bevestigen voor je gebruikersaccount. Klik op volgende link.
+EditVerifyTitle: Gebruikersaccount
+EditVerifyStatusDone: Gebruikersaccount bevestigd. Bedankt!
+EditChangeSubject: Gebruikersaccount wijzigen
+EditChangeMessage: Hallo @usershort,\n\ngelieve te bevestigen dat je jouw gebruikersaccount wil wijzigen. Klik op volgende link.
+EditChangeTitle: Gebruikersaccount
+EditChangeStatusDone: Gebruikersaccount gewijzigd. Bedankt!
+EditRemoveSubject: Gebruikersaccount verwijderen
+EditRemoveMessage: Hallo @usershort,\n\ngelieve te bevestigen dat je jouw gebruikersaccount wil verwijderen. Klik op volgende link.
+EditRemoveTitle: Gebruikersaccount
+EditRemoveStatusDone: Gebruikersaccount verwijderd. Bedankt!
+EditRecoverSubject: Gebruikersaccount herstellen
+EditRecoverMessage: Hallo @usershort,\n\ngelieve te bevestigen dat je het wachtwoord vergeten bent. Klik op volgende link.
+EditWelcomeSubject: Welkom
+EditWelcomeMessage: Hallo @usershort,\n\nje gebruikersaccount is aangemaakt. Veel plezier met het aanpassen van je website.
+EditGoodbyeSubject: Tot ziens
+EditGoodbyeMessage: Hallo @usershort,\n\nJouw gebruikersaccount is verwijderd. Hou je goed.
+EditAccountTitle: User settings
+EditAccountInformation: You can delete your user account anytime.
+EditAccountMore: Read more…
+EditAccountStatusNone: Here you can change your user account.
+EditAccountStatusInvalid: Gelieve een geldig e-mailadres in te voeren.
+EditAccountStatusTaken: Gelieve een ander e-mailadres in te voeren.
+EditAccountStatusWeak: Gelieve een ander wachtwoord in te voeren.
+EditAccountStatusShort: Gelieve een langer wachtwoord in te vullen.
+EditAccountStatusNext: Gebruikersaccount zal worden gewijzigd, hou je mailbox in de gaten.
+EditSystemTitle: System settings
+EditSystemSitename: Name of the website:
+EditSystemAuthor: Name of the webmaster:
+EditSystemEmail: Email of the webmaster:
+EditSystemInformation: The webmaster is the contact person and can approve new user accounts.
+EditSystemStatusNone: Here you can change system settings.
+EditSystemStatusInvalid: Please enter a valid email.
+EditUpdateTitle: Updates
+EditUpdateStatusNone: Datenstrom Yellow is voor mensen die kleine websites maken.
+EditUpdateStatusCheck: Updates aan het zoeken…
+EditUpdateStatusUpdates: Updates beschikbaar, nu installeren.
+EditUpdateStatusOk: Je website is up to date.
+EditUpdateModified: @extension is aangepast.
+EditUpdateForce: Update forceren
+EditOkButton: Ok
+EditCancelButton: Annuleren
+EditChangeButton: Veranderen
+EditCreateButton: Nieuw
+EditEditButton: Opslaan
+EditDeleteButton: Verwijderen
+EditEdit: Bewerk pagina
+EditCreate: +
+EditDelete: -
+EditKeyboardLabels: Ctrl+, Alt+, Shift+, ⌘, ⌥, ⇧
+EditToolbarFormat: Formattering
+EditToolbarHeading: Hoofding
+EditToolbarH1: Hoofding 1
+EditToolbarH2: Hoofding 2
+EditToolbarH3: Hoofding 3
+EditToolbarParagraph: Normale tekst
+EditToolbarPre: Broncode
+EditToolbarNotice: Kennisgeving
+EditToolbarQuote: Citaat
+EditToolbarBold: Vet
+EditToolbarItalic: Cursief
+EditToolbarStrikethrough: Doorstreept
+EditToolbarCode: Code
+EditToolbarList: Lijst
+EditToolbarUl: • Ongesorteerde lijst
+EditToolbarOl: 1. Gesorteerde lijst
+EditToolbarTl: ✓ Takenlijst
+EditToolbarLink: Link
+EditToolbarFile: Bestand
+EditToolbarEmojiawesome: Emoji
+EditToolbarFontawesome: Icoon
+EditToolbarStatus: Status
+EditToolbarUndo: Ongedaan maken
+EditToolbarRedo: Opnieuw
+EditToolbarPreview: Voorbeeld
+EditToolbarMarkdown: Markdown
+EditToolbarHelp: Help
+EditMailFooter: @sitename
+EditDataGenerated: This page is generated automatically.
+EditUploadProgress: [Uploading file…]
+EditMenuSettings: Instellingen
+EditMenuHelp: Help
+EditMenuLogout: Afmelden
+EditYellowUrl: https://datenstrom.se/yellow/
+EditYellowHelpUrl: https://datenstrom.se/yellow/help/
+InstallTitle: Hallo
+InstallExtension: Wat wil je doen?
+InstallExtensionWebsite: Website
+InstallExtensionBlog: Blog
+InstallExtensionWiki: Wiki
+InstallHomeTitle: Home
+InstallHomeText: Je website werkt!\n\n[edit - Je kan deze pagina bewerken] of gebruik maken van de teksteditor.\n\nYou can install more features and themes.\n[Learn more](https://datenstrom.se/yellow/help/).
+InstallDefaultTitle: Page
+InstallDefaultText: This is a new page.
+InstallBlogTitle: Blog page
+InstallBlogText: This is a new blog page.
+InstallWikiTitle: Wiki page
+InstallWikiText: This is a new wiki page.
+InstallExampleImage: This is an example image
+PreviousnextPagePrevious: ← Vorige: @title
+PreviousnextPageNext: Volgende: @title →
+SearchResultsNone: Voer een zoekterm in.
+SearchResultsEmpty: Geen resultaten gevonden.
+SearchSpecialChanges: Recente wijzigingen
+SearchButton: Zoek
+WikiModified: Laatst geupdate op
+WikiTag: Labels:
+WikiSpecialPages: Alle pagina's
+WikiSpecialChanges: Recente wijzigingen

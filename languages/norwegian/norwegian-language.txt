@@ -1,0 +1,200 @@
+# Datenstrom Yellow language file
+
+Language: nb
+LanguageLocale: nb_NO
+LanguageDescription: Norsk Bokmål
+LanguageTranslator: Per Arne Solvik
+
+BlogBy: av
+BlogTag: Tagger:
+BlogMore: Les mer…
+ContactName: Navn:
+ContactEmail: Epost:
+ContactMessage: Melding:
+ContactConsent: Jeg samtykker til at denne nettsiden lagrer min informasjon.
+ContactButton: Sende melding
+ContactMailSpam: [Spam]
+ContactMailFooter: Denne epost ble sendt av @sitename - @title
+ContactStatusNone: Si gjerne hei. Din tilbakemelding er velkommen.
+ContactStatusIncomplete: Vennligst fyll ut alla felt.
+ContactStatusInvalid: Vennligst angi en gyldig epost adresse.
+ContactStatusReview: Vennligst ta bort lenker fra meldingen.
+ContactStatusDone: Din epost er nå sendt. Takk!
+ContactStatusError: Epost kunne ikke sendes, vennligst prøv på nytt senere!
+CoreDatePast: i dag, i går, @x dager siden, en måned siden, @x måneder siden, ett år siden, @x år siden, den @x
+CoreDateFuture: snart, i morgen, om @x dager, om 1 måned, om @x måneder, om 1 år, om @x år, den @x
+CoreDateMonths: Januar, Februar, Mars, April, Mai, Juni, Juli, August, September, Oktober, November, Desember
+CoreDateWeekdays: Mandag, Tirsdag, Onsdag, Torsdag, Fredag, Lørdag, Søndag
+CoreDateWeekstart: Mandag
+CoreDateFormatShort: F Y
+CoreDateFormatMedium: Y-m-d
+CoreDateFormatLong: Y-m-d H:i
+CoreTimeFormatShort: H:i
+CoreTimeFormatMedium: H:i:s
+CoreTimeFormatLong: H:i:s T
+CorePaginationPrevious: ← Forrige
+CorePaginationNext: Nesta →
+CoreError404Title: Filen kunne ikke lokaliseres
+CoreError404Text: Den begärda filen kunde inte hittas. Å nej...
+CoreError430Title: Innlogging feilet
+CoreError430Text: Epost eller passord er ikke riktig. [Vennligst prøv på nytt](#data-action-login).
+CoreError434Title: Filen kunne ikke lokaliseres
+CoreError434Text: Filen kunne ikke lokaliseres. [You can create this page](#data-action-edit).
+CoreError500Title: Server feil
+CoreError500Text: Noe gikk galt. [yellow error]
+DraftStatusEmpty: Ingen utkast funnet.
+EditLoginTitle: Velkommen
+EditLoginEmail: Epost:
+EditLoginPassword: Passord:
+EditLoginForgot: Glemt passordet?
+EditLoginSignup: Lage brukerkonto?
+EditLoginButton: Logge inn
+EditSignupTitle: Lage brukerkonto
+EditSignupName: Navn:
+EditSignupEmail: Epost:
+EditSignupPassword: Passord:
+EditSignupConsent: Jeg samtykker til at denne nettsiden kan lagre mine personlige data.
+EditSignupButton: Registrer
+EditSignupStatusNone: Her kan du registrere en ny brukerkonto.
+EditSignupStatusIncomplete: Vennligst fyll ut alle feltene.
+EditSignupStatusInvalid: Vennligst fyll inn en gyldig epost adresse.
+EditSignupStatusWeak: Vennglist velg et annet passord.
+EditSignupStatusShort: Vennligst velg et lengre passord.
+EditSignupStatusNext: Din brukerkonto vil bli opprettet, vennligst sjekk din innboks.
+EditForgotTitle: Glemt passord
+EditForgotEmail: Epost:
+EditForgotStatusNone: Ikke noe problem, du kan lage et nytt passord.
+EditForgotStatusInvalid: Vennligst fyll inn en gyldig epost adresse.
+EditForgotStatusNext: Din brukerkonto blir gjenopprettet, vennligst sjekk din innboks.
+EditRecoverTitle: Glemt passordet ditt
+EditRecoverPassword: Passord:
+EditRecoverStatusPassword: Vennligst fyll inn et nytt passord.
+EditRecoverStatusWeak: Vennligst fyll inn et annet passord.
+EditRecoverStatusShort: Vennligst fyll inn et lengre passord.
+EditRecoverStatusDone: Din brukerkonto er gjenopprettet.
+EditQuitTitle: Slette brukerkonto
+EditQuitStatusNone: Vennligst fyll inn ditt navn for å bekrefte.
+EditQuitStatusMismatch: Vennligst fyll inn et annet navn.
+EditQuitStatusNext: Din brukerkonto vil bli slettet, vennligst sjekk din innboks.
+EditConfirmSubject: Bekreft brukerkonto
+EditConfirmMessage: Hei @usershort,\n\nvennligst bekreft din brukerkonto. Klikk følgende lenke.
+EditConfirmTitle: Brukerkonto
+EditConfirmStatusDone: Brukerkonto bekreftet og venter på godkjenning.
+EditApproveSubject: Godkjenn brukerkonto.
+EditApproveMessage: Hei @usershort,\n\nvennligst godkjenn ny brukerkonto for @useraccount. Klikk følgende lenke.
+EditApproveTitle: Brukerkonto
+EditApproveStatusDone: Brukerkonto godkjent. 
+EditReactivateSubject: Reaktiver brukerkonto
+EditReactivateMessage: Hei @usershort,\n\nvennligst reaktiver din brukerkonto. Det har vært for mange mislykkede innloggingsforsøk. Klikk følgende lenke.
+EditReactivateTitle: Brukerkonto
+EditReactivateStatusDone: Brukerkonto reaktivert.
+EditVerifySubject: Bekreft brukerkonto
+EditVerifyMessage: Hei @usershort,\n\nvennligst bekreft ny epost adresse for din brukerkonto. Klikk følgende lenke.
+EditVerifyTitle: Brukerkonto
+EditVerifyStatusDone: Brukerkonto bekreftet.
+EditChangeSubject: Endre brukerkonto
+EditChangeMessage: Hei @usershort,\n\nvennligst bekreft at du ønsker å endre din brukerkonto. Klikk følgende lenke.
+EditChangeTitle: Brukerkonto
+EditChangeStatusDone: Brukerkonto endret.
+EditRemoveSubject: Slette brukerkonto
+EditRemoveMessage: Hei @usershort,\n\nvennligst bekreft at du ønsker å slette din brukerkonto. Klikk følgende lenke.
+EditRemoveTitle: Brukerkonto
+EditRemoveStatusDone: Brukerkonto slettet.
+EditRecoverSubject: Gjenopprett brukerkonto
+EditRecoverMessage: Hei @usershort,\n\nvennligst bekreft at du har glemt ditt passord. Klikk følgende lenke.
+EditWelcomeSubject: Velkommen
+EditWelcomeMessage: Hei @usershort,\n\ndin brukerkonto har blitt opprettet.
+EditGoodbyeSubject: Adjø
+EditGoodbyeMessage: Hei @usershort,\n\ndin brukerkonto har blitt slettet.
+EditAccountTitle: Brukerinnstillinger
+EditAccountInformation: Du kan slette din brukerkonto når som helst.
+EditAccountMore: Les mer…
+EditAccountStatusNone: Her kan du endre din brukerkonto.
+EditAccountStatusInvalid: Vennligst fyll inn en gyldig epost adresse.
+EditAccountStatusTaken: Vennligst fyll inn en annen epost adresse.
+EditAccountStatusWeak: Vennligst fyll inn et annet passord.
+EditAccountStatusShort: Vennligst fyll inn et lengre passord.
+EditAccountStatusNext: Din brukerkonto er endret, vennligst sjekk din innboks.
+EditSystemTitle: Systeminnstillinger
+EditSystemSitename: Nettstedets navn:
+EditSystemAuthor: Nettstedets administrator:
+EditSystemEmail: Administrators epost:
+EditSystemInformation: Nettstedets administrator er kontaktpersonen som kan bekrefte brukerkontoer.
+EditSystemStatusNone: Her kan du endre systeminnstillinger.
+EditSystemStatusInvalid: Vennligst fyll inn en gyldig epost adresse.
+EditUpdateTitle: Oppdateringer
+EditUpdateStatusNone: Datenstrom Yellow er for folk som lager små nettsteder.
+EditUpdateStatusCheck: Ser etter oppdateringer…
+EditUpdateStatusUpdates: Oppdateringer tilgjengelig, oppdater nå.
+EditUpdateStatusOk: Ditt nettsted er oppdatert.
+EditUpdateModified: @extension har blitt modifisert
+EditUpdateForce: Tving oppdatering
+EditOkButton: Ok
+EditCancelButton: Avbryt
+EditChangeButton: Endre
+EditCreateButton: Lage
+EditEditButton: Lagre
+EditDeleteButton: Slett
+EditEdit: Rediger side
+EditCreate: +
+EditDelete: -
+EditKeyboardLabels: Ctrl+, Alt+, Shift+, ⌘, ⌥, ⇧
+EditToolbarFormat: Format
+EditToolbarHeading: Overskrift
+EditToolbarH1: Overskrift 1
+EditToolbarH2: Overskrift 2
+EditToolbarH3: Overskrift 3
+EditToolbarParagraph: Normal tekst
+EditToolbarPre: Kildekode
+EditToolbarNotice: Notis
+EditToolbarQuote: Sitat
+EditToolbarBold: Fet
+EditToolbarItalic: Kursiv
+EditToolbarStrikethrough: Gjennomstreking
+EditToolbarCode: Kode
+EditToolbarList: Liste
+EditToolbarUl: • Usortert liste
+EditToolbarOl: 1. Sortert liste
+EditToolbarTl: ✓ Oppgaveliste
+EditToolbarLink: Lenke
+EditToolbarFile: Fil
+EditToolbarEmojiawesome: Emoji
+EditToolbarFontawesome: Ikon
+EditToolbarStatus: Status
+EditToolbarUndo: Angre
+EditToolbarRedo: Gjenopprette
+EditToolbarPreview: Forhåndsvisning
+EditToolbarMarkdown: Markdown
+EditToolbarHelp: Hjelp
+EditMailFooter: @sitename
+EditDataGenerated: Denne siden genereres automatik.
+EditUploadProgress: [Laster opp fil…]
+EditMenuSettings: Instillinger
+EditMenuHelp: Hjelp
+EditMenuLogout: Logge ut
+EditYellowUrl: https://datenstrom.se/yellow/
+EditYellowHelpUrl: https://datenstrom.se/yellow/help/
+InstallTitle: Hei
+InstallExtension: Hva ønsker du å gjøre?
+InstallExtensionWebsite: Nettsted
+InstallExtensionBlog: Blogg
+InstallExtensionWiki: Wiki
+InstallHomeTitle: Hjem
+InstallHomeText: Ditt nettsted fungerer!\n\n[edit - Du kan redigere denne siden] eller benytte din teksteditor.\n\nDu kan installere flere funksjoner og tema.\n[Les mer](https://datenstrom.se/yellow/help/).
+InstallDefaultTitle: Side
+InstallDefaultText: Dette er en ny side.
+InstallBlogTitle: Bloggside
+InstallBlogText: Detta er en ny bloggside.
+InstallWikiTitle: Wikiside
+InstallWikiText: Dette er en ny wikiside.
+InstallExampleImage: Dette er et eksempelbilde
+PreviousnextPagePrevious: ← Forrige: @title
+PreviousnextPageNext: Nesta: @title →
+SearchResultsNone: Skriv et søkeord.
+SearchResultsEmpty: Kunne ikke finne noe.
+SearchSpecialChanges: De siste endringene
+SearchButton: Søk
+WikiModified: Sist oppdatert
+WikiTag: Tagger:
+WikiSpecialPages: Alle sider
+WikiSpecialChanges: Siste endringer

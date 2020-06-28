@@ -1,0 +1,200 @@
+# Datenstrom Yellow language file
+
+Language: de
+LanguageLocale: de_DE
+LanguageDescription: Deutsch
+LanguageTranslator: David Fehrmann
+
+BlogBy: von
+BlogTag: Tags:
+BlogMore: Lies mehr…
+ContactName: Name:
+ContactEmail: E-Mail:
+ContactMessage: Nachricht:
+ContactConsent: Ich stimme zu, dass diese Webseite meine Nachricht speichert.
+ContactButton: Nachricht absenden
+ContactMailSpam: [Spam]
+ContactMailFooter: Diese E-Mail wurde über @sitename verschickt - @title
+ContactStatusNone: Sag Hallo! Dein Feedback ist sehr willkommen.
+ContactStatusIncomplete: Bitte alle Felder ausfüllen.
+ContactStatusInvalid: Bitte eine gültige E-Mail angeben.
+ContactStatusReview: Bitte entferne Links aus der Nachricht.
+ContactStatusDone: Nachricht wurde versandt. Vielen Dank!
+ContactStatusError: Nachricht konnte nicht versandt werden, versuche es später erneut!
+CoreDatePast: heute, gestern, vor @x Tagen, vor 1 Monat, vor @x Monaten, vor 1 Jahr, vor @x Jahren, am @x
+CoreDateFuture: bald, morgen, in @x Tagen, in 1 Monat, in @x Monaten, in 1 Jahr, in @x Jahren, am @x
+CoreDateMonths: Januar, Februar, März, April, Mai, Juni, Juli, August, September, Oktober, November, Dezember
+CoreDateWeekdays: Montag, Dienstag, Mittwoch, Donnerstag, Freitag, Samstag, Sonntag
+CoreDateWeekstart: Montag
+CoreDateFormatShort: F Y
+CoreDateFormatMedium: d.m.Y
+CoreDateFormatLong: d.m.Y H:i
+CoreTimeFormatShort: H:i
+CoreTimeFormatMedium: H:i:s
+CoreTimeFormatLong: H:i:s T
+CorePaginationPrevious: ← Zurück
+CorePaginationNext: Weiter →
+CoreError404Title: Datei nicht gefunden
+CoreError404Text: Die angeforderte Datei wurde nicht gefunden. Oh nein...
+CoreError430Title: Anmeldung fehlgeschlagen
+CoreError430Text: E-Mail oder Kennwort ist falsch. [Bitte erneut versuchen](#data-action-login).
+CoreError434Title: Datei nicht gefunden
+CoreError434Text: Die angeforderte Datei wurde nicht gefunden. [Du kannst diese Seite erstellen](#data-action-edit).
+CoreError500Title: Serverfehler
+CoreError500Text: Etwas ist schief gelaufen. [yellow error]
+DraftStatusEmpty: Keine Entwürfe gefunden.
+EditLoginTitle: Willkommen
+EditLoginEmail: E-Mail:
+EditLoginPassword: Kennwort:
+EditLoginForgot: Kennwort vergessen?
+EditLoginSignup: Benutzerkonto erstellen?
+EditLoginButton: Anmelden
+EditSignupTitle: Benutzerkonto erstellen
+EditSignupName: Name:
+EditSignupEmail: E-Mail:
+EditSignupPassword: Kennwort:
+EditSignupConsent: Ich stimme zu, dass diese Webseite meine persönlichen Daten speichert.
+EditSignupButton: Erstellen
+EditSignupStatusNone: Hier kannst du ein neues Benutzerkonto erstellen.
+EditSignupStatusIncomplete: Bitte alle Felder ausfüllen.
+EditSignupStatusInvalid: Bitte eine gültige E-Mail angeben.
+EditSignupStatusWeak: Bitte ein anderes Kennwort angeben.
+EditSignupStatusShort: Bitte ein längeres Kennwort angeben.
+EditSignupStatusNext: Benutzerkonto wird erstellt, bitte überprüfe deine E-Mails.
+EditForgotTitle: Kennwort vergessen
+EditForgotEmail: E-Mail:
+EditForgotStatusNone: Kein Problem, du kannst ein neues Kennwort erstellen.
+EditForgotStatusInvalid: Bitte eine gültige E-Mail angeben.
+EditForgotStatusNext: Benutzerkonto wird wiederhergestellt, bitte überprüfe deine E-Mails.
+EditRecoverTitle: Kennwort vergessen
+EditRecoverPassword: Kennwort:
+EditRecoverStatusPassword: Bitte ein neues Kennwort angeben.
+EditRecoverStatusWeak: Bitte ein anderes Kennwort angeben.
+EditRecoverStatusShort: Bitte ein längeres Kennwort angeben.
+EditRecoverStatusDone: Benutzerkonto wurde wiederhergestellt. Vielen Dank!
+EditQuitTitle: Benutzerkonto löschen
+EditQuitStatusNone: Bitte gib deinen Namen zur Bestätigung ein.
+EditQuitStatusMismatch: Bitte gib einen anderen Namen ein.
+EditQuitStatusNext: Benutzerkonto wird gelöscht, bitte überprüfe deine E-Mails.
+EditConfirmSubject: Benutzerkonto bestätigen
+EditConfirmMessage: Hallo @usershort,\n\nbitte bestätige dein Benutzerkonto. Klicke auf den folgenden Link.
+EditConfirmTitle: Benutzerkonto
+EditConfirmStatusDone: Benutzerkonto wurde bestätigt und wartet auf Genehmigung. Vielen Dank!
+EditApproveSubject: Benutzerkonto genehmigen
+EditApproveMessage: Hallo @usershort,\n\nbitte genehmige ein neues Benutzerkonto für @useraccount. Klicke auf den folgenden Link.
+EditApproveTitle: Benutzerkonto
+EditApproveStatusDone: Benutzerkonto wurde genehmigt. Vielen Dank!
+EditReactivateSubject: Benutzerkonto reaktivieren
+EditReactivateMessage: Hallo @usershort,\n\nbitte reaktiviere dein Benutzerkonto. Es gab zu viele fehlgeschlagene Anmeldeversuche. Klicke auf den folgenden Link.
+EditReactivateTitle: Benutzerkonto
+EditReactivateStatusDone: Benutzerkonto wurde reaktiviert. Vielen Dank!
+EditVerifySubject: Benutzerkonto bestätigen
+EditVerifyMessage: Hallo @usershort,\n\nbitte bestätige eine neue E-Mail für dein Benutzerkonto. Klicke auf den folgenden Link.
+EditVerifyTitle: Benutzerkonto
+EditVerifyStatusDone: Benutzerkonto wurde bestätigt. Vielen Dank!
+EditChangeSubject: Benutzerkonto ändern
+EditChangeMessage: Hallo @usershort,\n\nbitte bestätige, dass du dein Benutzerkonto ändern möchtest. Klicke auf den folgenden Link.
+EditChangeTitle: Benutzerkonto
+EditChangeStatusDone: Benutzerkonto wurde geändert. Vielen Dank!
+EditRemoveSubject: Benutzerkonto löschen
+EditRemoveMessage: Hallo @usershort,\n\nbitte bestätige, dass du dein Benutzerkonto löschen möchtest. Klicke auf den folgenden Link.
+EditRemoveTitle: Benutzerkonto
+EditRemoveStatusDone: Benutzerkonto wurde gelöscht. Vielen Dank!
+EditRecoverSubject: Benutzerkonto wiederherstellen
+EditRecoverMessage: Hallo @usershort,\n\nbitte bestätige, dass du dein Kennwort vergessen hast. Klicke auf den folgenden Link.
+EditWelcomeSubject: Willkommen
+EditWelcomeMessage: Hallo @usershort,\n\ndein Benutzerkonto wurde erstellt. Viel Spass beim Bearbeiten der Webseite.
+EditGoodbyeSubject: Auf Wiedersehen
+EditGoodbyeMessage: Hallo @usershort,\n\ndein Benutzerkonto wurde gelöscht. Mach's gut.
+EditAccountTitle: Benutzereinstellungen
+EditAccountInformation: Du kannst dein Benutzerkonto jederzeit löschen.
+EditAccountMore: Lies mehr…
+EditAccountStatusNone: Hier kannst du dein Benutzerkonto ändern.
+EditAccountStatusInvalid: Bitte eine gültige E-Mail angeben.
+EditAccountStatusTaken: Bitte eine andere E-Mail angeben.
+EditAccountStatusWeak: Bitte ein anderes Kennwort angeben.
+EditAccountStatusShort: Bitte ein längeres Kennwort angeben.
+EditAccountStatusNext: Benutzerkonto wird geändert, bitte überprüfe deine E-Mails.
+EditSystemTitle: Systemeinstellungen
+EditSystemSitename: Name der Webseite:
+EditSystemAuthor: Name des Webmasters:
+EditSystemEmail: E-Mail des Webmasters:
+EditSystemInformation: Der Webmaster ist die Kontaktperson und kann neue Benutzerkonten genehmigen.
+EditSystemStatusNone: Hier kannst du Systemeinstellungen ändern.
+EditSystemStatusInvalid: Bitte eine gültige E-Mail angeben.
+EditUpdateTitle: Aktualisierungen
+EditUpdateStatusNone: Datenstrom Yellow ist für Menschen die kleine Webseiten machen.
+EditUpdateStatusCheck: Nach Aktualisierung suchen…
+EditUpdateStatusUpdates: Aktualisierung verfügbar, jetzt aktualisieren.
+EditUpdateStatusOk: Deine Webseite ist auf dem neusten Stand.
+EditUpdateModified: @extension wurde modifiziert
+EditUpdateForce: Aktualisierung erzwingen
+EditOkButton: Ok
+EditCancelButton: Abbruch
+EditChangeButton: Ändern
+EditCreateButton: Erzeugen
+EditEditButton: Speichern
+EditDeleteButton: Löschen
+EditEdit: Seite bearbeiten
+EditCreate: +
+EditDelete: -
+EditKeyboardLabels: Strg+, Alt+, Umschalt+, ⌘, ⌥, ⇧
+EditToolbarFormat: Format
+EditToolbarHeading: Überschrift
+EditToolbarH1: Überschrift 1
+EditToolbarH2: Überschrift 2
+EditToolbarH3: Überschrift 3
+EditToolbarParagraph: Normaler Text
+EditToolbarPre: Quellcode
+EditToolbarNotice: Hinweis
+EditToolbarQuote: Zitat
+EditToolbarBold: Fettschrift
+EditToolbarItalic: Kursiv
+EditToolbarStrikethrough: Durchgestrichen
+EditToolbarCode: Code
+EditToolbarList: Liste
+EditToolbarUl: • Unsortierte Liste
+EditToolbarOl: 1. Sortierte Liste
+EditToolbarTl: ✓ Aufgabenliste
+EditToolbarLink: Link
+EditToolbarFile: Datei
+EditToolbarEmojiawesome: Emoji
+EditToolbarFontawesome: Symbol
+EditToolbarStatus: Status
+EditToolbarUndo: Rückgängig
+EditToolbarRedo: Wiederholen
+EditToolbarPreview: Vorschau
+EditToolbarMarkdown: Markdown
+EditToolbarHelp: Hilfe
+EditMailFooter: @sitename
+EditDataGenerated: Diese Seite ist automatisch erstellt.
+EditUploadProgress: [Datei hochladen…]
+EditMenuSettings: Einstellungen
+EditMenuHelp: Hilfe
+EditMenuLogout: Abmelden
+EditYellowUrl: https://datenstrom.se/de/yellow/
+EditYellowHelpUrl: https://datenstrom.se/de/yellow/help/
+InstallTitle: Hallo
+InstallExtension: Was willst du machen?
+InstallExtensionWebsite: Webseite
+InstallExtensionBlog: Blog
+InstallExtensionWiki: Wiki
+InstallHomeTitle: Startseite
+InstallHomeText: Deine Webseite funktioniert!\n\n[edit - Du kannst diese Seite bearbeiten] oder einen Texteditor benutzen.\n\nDu kannst weitere Funktionen und Themen installieren.\n[Mehr erfahren](https://datenstrom.se/de/yellow/help/).
+InstallDefaultTitle: Seite
+InstallDefaultText: Dies ist eine neue Seite.
+InstallBlogTitle: Blogseite
+InstallBlogText: Dies ist eine neue Blogseite.
+InstallWikiTitle: Wikiseite
+InstallWikiText: Dies ist eine neue Wikiseite.
+InstallExampleImage: Das ist ein Beispielbild
+PreviousnextPagePrevious: ← Zurück: @title
+PreviousnextPageNext: Weiter: @title →
+SearchResultsNone: Bitte einen Suchbegriff eingeben.
+SearchResultsEmpty: Keine Treffer für diese Suchanfrage.
+SearchSpecialChanges: Letzte Änderungen
+SearchButton: Suchen
+WikiModified: Zuletzt aktualisiert am
+WikiTag: Tags:
+WikiSpecialPages: Alle Seiten
+WikiSpecialChanges: Letzte Änderungen

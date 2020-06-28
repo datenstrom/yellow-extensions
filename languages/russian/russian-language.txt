@@ -1,0 +1,200 @@
+# Datenstrom Yellow language file
+
+Language: ru
+LanguageLocale: ru_RU
+LanguageDescription: Русский
+LanguageTranslator: Сергей Ворон
+
+BlogBy: Автор
+BlogTag: Тэги:
+BlogMore: Читать далее…
+ContactName: Имя:
+ContactEmail: Email:
+ContactMessage: Сообщение:
+ContactConsent: Я согласен, что этот сайт сохранит мое сообщение.
+ContactButton: Отправить сообщение
+ContactMailSpam: [Спам]
+ContactMailFooter: Это письмо было отправлено через @sitename - @title
+ContactStatusNone: Скажи привет. Ваши отзывы приветствуются.
+ContactStatusIncomplete: Пожалуйста, заполните все поля.
+ContactStatusInvalid: Пожалуйста, укажите правильный Email.
+ContactStatusReview: Пожалуйста, удалите ссылки из сообщения.
+ContactStatusDone: Ваше письмо отправлено. Спасибо!
+ContactStatusError: Письмо не может быть отправлено, попробуйте еще раз позже!
+CoreDatePast: сегодня, вчера, @x дней назад, 1 месяц назад, @x месяцев назад, 1 год назад, @x лет назад, на @x
+CoreDateFuture: скоро, завтра, через @x дней, через 1 месяц, через @x месяцев, через 1 год, через @x лет, на @x
+CoreDateMonths: январь, февраль, март, апрель, май, июнь, июль, август, сентябрь, октябрь, ноябрь, декабрь
+CoreDateWeekdays: понедельник, вторник, среда, четверг, пятница, суббота, воскресенье
+CoreDateWeekstart: понедельник
+CoreDateFormatShort: F Y
+CoreDateFormatMedium: d.m.Y
+CoreDateFormatLong: d.m.Y H:i
+CoreTimeFormatShort: H:i
+CoreTimeFormatMedium: H:i:s
+CoreTimeFormatLong: H:i:s T
+CorePaginationPrevious: ← Назад
+CorePaginationNext: Далее →
+CoreError404Title: Файл не найден
+CoreError404Text: Запрашиваемый файл не найден. О нет...
+CoreError430Title: Ошибка входа
+CoreError430Text: Неверный email или пароль. [Пожалуйста, попробуйте еще раз](#data-action-login).
+CoreError434Title: Файл не найден
+CoreError434Text: Запрашиваемый файл не найден. [Вы можете создать эту страницу](#data-action-edit).
+CoreError500Title: Ошибка сервера
+CoreError500Text: Что-то пошло не так. [yellow error]
+DraftStatusEmpty: No drafts found.
+EditLoginTitle: Добро пожаловать
+EditLoginEmail: Email:
+EditLoginPassword: Пароль:
+EditLoginForgot: Забыли пароль?
+EditLoginSignup: Создать учетную запись?
+EditLoginButton: Войти
+EditSignupTitle: Создать учетную запись
+EditSignupName: Имя:
+EditSignupEmail: Email:
+EditSignupPassword: Пароль:
+EditSignupConsent: Я согласен, что этот сайт хранит мои личные данные.
+EditSignupButton: Создать
+EditSignupStatusNone: Здесь вы можете создать новую учетную запись.
+EditSignupStatusIncomplete: Пожалуйста, заполните все поля.
+EditSignupStatusInvalid: Пожалуйста, введите действительный адрес Email.
+EditSignupStatusWeak: Пожалуйста, введите другой пароль.
+EditSignupStatusShort: Пожалуйста, введите более длинный пароль.
+EditSignupStatusNext: Учетная запись создана, пожалуйста, проверьте ваш Email.
+EditForgotTitle: Забыли пароль
+EditForgotEmail: Email:
+EditForgotStatusNone: Нет проблем, вы можете создать новый пароль.
+EditForgotStatusInvalid: Пожалуйста, введите действительный адрес Email.
+EditForgotStatusNext: Учетная запись восстановлена, пожалуйста, проверьте ваш Email.
+EditRecoverTitle: Забыли пароль
+EditRecoverPassword: Пароль:
+EditRecoverStatusPassword: Пожалуйста, введите новый пароль.
+EditRecoverStatusWeak: Пожалуйста, введите другой пароль.
+EditRecoverStatusShort: Пожалуйста, введите более длинный пароль.
+EditRecoverStatusDone: Учетная запись восстановлена. Спасибо!
+EditQuitTitle: Удалить учетную запись пользователя
+EditQuitStatusNone: Введите свое имя для подтверждения.
+EditQuitStatusMismatch: Введите другое имя.
+EditQuitStatusNext: Учетная запись пользователя будет удалена, проверьте электронную почту.
+EditConfirmSubject: Подтверждение учетной записи
+EditConfirmMessage: Привет @usershort,\n\nпожалуйста, подтвердите свою учетную запись. Нажмите на следующую ссылку.
+EditConfirmTitle: Учетная запись пользователя
+EditConfirmStatusDone: Учетная запись подтверждена и ждет одобрения. Спасибо!
+EditApproveSubject: Подтвердите учетную запись
+EditApproveMessage: Привет @usershort,\n\nпожалуйста, подтвердите новую учетную запись для @useraccount. Нажмите на следующую ссылку.
+EditApproveTitle: Учетная запись пользователя
+EditApproveStatusDone: Учетная запись подтверждена. Спасибо!
+EditReactivateSubject: Повторная активация учетной записи
+EditReactivateMessage: Привет @usershort,\n\nпожалуйста, повторно активируйте свою учетную запись. Было слишком много неудачных попыток входа в систему. Нажмите на следующую ссылку.
+EditReactivateTitle: Учетная запись пользователя
+EditReactivateStatusDone: Аккаунт пользователя активирован. Спасибо!
+EditVerifySubject: Подтверждение учетной записи
+EditVerifyMessage: Привет @usershort,\n\nпожалуйста, подтвердите новый email для своей учетной записи. Нажмите на следующую ссылку.
+EditVerifyTitle: Учетная запись пользователя
+EditVerifyStatusDone: Учетная запись подтверждена. Спасибо!
+EditChangeSubject: Изменение учетной записи
+EditChangeMessage: Привет @usershort,\n\nподтвердите, что хотите изменить свою учетную запись. Нажмите на следующую ссылку.
+EditChangeTitle: Учетная запись пользователя
+EditChangeStatusDone: Учетная запись изменена. Спасибо!
+EditRemoveSubject: Удалить учетную запись
+EditRemoveMessage: Привет @usershort,\n\nподтвердите, что хотите удалить свою учетную запись. Нажмите на следующую ссылку.
+EditRemoveTitle: Учетная запись пользователя
+EditRemoveStatusDone: Учетная запись удалена. Спасибо!
+EditRecoverSubject: Восстановление учетной записи
+EditRecoverMessage: Привет @usershort,\n\nподтвердите, что вы забыли свой пароль. Нажмите на следующую ссылку.
+EditWelcomeSubject: Добро пожаловать
+EditWelcomeMessage: Привет @usershort,\n\nваша учетная запись создана. Получайте удовольствие редактируя сайт.
+EditGoodbyeSubject: До свидания
+EditGoodbyeMessage: Привет @usershort,\n\nваша учетная запись была удалена. Берегите себя.
+EditAccountTitle: Пользовательские настройки
+EditAccountInformation: Вы можете удалить свою учетную запись в любое время.
+EditAccountMore: Читать далее…
+EditAccountStatusNone: Здесь вы можете изменить свою учетную запись.
+EditAccountStatusInvalid: Пожалуйста, введите действительный адрес Email.
+EditAccountStatusTaken: Пожалуйста, введите другой адрес электронной почты.
+EditAccountStatusWeak: Пожалуйста, введите другой пароль.
+EditAccountStatusShort: Пожалуйста, введите более длинный пароль.
+EditAccountStatusNext: Учетная запись пользователя будет изменена, проверьте электронную почту.
+EditSystemTitle: Системные настройки
+EditSystemSitename: Имя сайта:
+EditSystemAuthor: Имя автора:
+EditSystemEmail: Email автора:
+EditSystemInformation: Автор является контактным лицом и может утверждать новые учетные записи пользователей.
+EditSystemStatusNone: Здесь вы можете изменить настройки системы.
+EditSystemStatusInvalid: Пожалуйста, введите действительный email.
+EditUpdateTitle: Обновления
+EditUpdateStatusNone: Datenstrom Yellow is for people who make small websites.
+EditUpdateStatusCheck: Проверка обновлений…
+EditUpdateStatusUpdates: Доступны обновления, обновите сейчас.
+EditUpdateStatusOk: Ваш сайт обновлен.
+EditUpdateModified: @extension был изменен
+EditUpdateForce: Принудительно обновить
+EditOkButton: Ok
+EditCancelButton: Отмена
+EditChangeButton: Изменить
+EditCreateButton: Создать
+EditEditButton: Сохранить
+EditDeleteButton: Удалить
+EditEdit: Редактировать
+EditCreate: +
+EditDelete: -
+EditKeyboardLabels: Ctrl+, Alt+, Shift+, ⌘, ⌥, ⇧
+EditToolbarFormat: Формат
+EditToolbarHeading: Заголовок
+EditToolbarH1: Заголовок 1
+EditToolbarH2: Заголовок 2
+EditToolbarH3: Заголовок 3
+EditToolbarParagraph: Обычный текст
+EditToolbarPre: Исходный код
+EditToolbarNotice: Уведомление
+EditToolbarQuote: Цитата
+EditToolbarBold: Жирный
+EditToolbarItalic: Курсивный
+EditToolbarStrikethrough: Зачеркнутый
+EditToolbarCode: Код
+EditToolbarList: Список
+EditToolbarUl: • Неупорядоченный список
+EditToolbarOl: 1. Упорядоченный список
+EditToolbarTl: ✓ Список заданий
+EditToolbarLink: Ссылка
+EditToolbarFile: Файл
+EditToolbarEmojiawesome: Эмо́дзи
+EditToolbarFontawesome: Иконка
+EditToolbarStatus: Статус
+EditToolbarUndo: Отменить
+EditToolbarRedo: Повторить
+EditToolbarPreview: Просмотр
+EditToolbarMarkdown: Markdown
+EditToolbarHelp: Помощь
+EditMailFooter: @sitename
+EditDataGenerated: Эта страница генерируется автоматически.
+EditUploadProgress: [Загрузка файла...]
+EditMenuSettings: Настройки
+EditMenuHelp: Помощь
+EditMenuLogout: Выход
+EditYellowUrl: https://datenstrom.se/yellow/
+EditYellowHelpUrl: https://datenstrom.se/yellow/help/
+InstallTitle: Здравствуйте
+InstallExtension: Что вы хотите сделать?
+InstallExtensionWebsite: Веб-сайт
+InstallExtensionBlog: Блог
+InstallExtensionWiki: Wiki
+InstallHomeTitle: Главная
+InstallHomeText: Ваш сайт работает!\n\n[edit - Вы можете отредактировать эту страницу] или использовать ваш текстовый редактор.\n\nВы можете установить больше функций и тем.\n[Учить больше](https://datenstrom.se/yellow/help/).
+InstallDefaultTitle: Страница
+InstallDefaultText: Это новая страница.
+InstallBlogTitle: Страница блога
+InstallBlogText: Это новая страница блога.
+InstallWikiTitle: Wiki страница
+InstallWikiText: Это новая wiki страница.
+InstallExampleImage: Это пример изображения
+PreviousnextPagePrevious: ← Назад: @title
+PreviousnextPageNext: Далее: @title →
+SearchResultsNone: Введите слово для поиска.
+SearchResultsEmpty: Ничего не найдено.
+SearchSpecialChanges: Последние изменения
+SearchButton: Искать
+WikiModified: Последнее обновление
+WikiTag: Тэги:
+WikiSpecialPages: Все страницы
+WikiSpecialChanges: Последние изменения

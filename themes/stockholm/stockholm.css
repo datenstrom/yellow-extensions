@@ -1,0 +1,364 @@
+/* Stockholm extension, https://github.com/datenstrom/yellow-extensions/tree/master/themes/stockholm */
+/* Copyright (c) 2013-2020 Datenstrom, https://datenstrom.se */
+/* This file may be used and distributed under the terms of the public license. */
+
+html, body, div, form, pre, span, tr, th, td, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 300;
+    src: url(stockholm-opensans-light.woff) format("woff");
+}
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url(stockholm-opensans-regular.woff) format("woff");
+}
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    src: url(stockholm-opensans-bold.woff) format("woff");
+}
+body {
+    margin: 1em;
+    background-color: #fff;
+    color: #666;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.5;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #111;
+    font-weight: 400;
+}
+h1 {
+    font-size: 2em;
+}
+hr {
+    height: 1px;
+    background: #ddd;
+    border: 0;
+}
+strong {
+    font-weight: bold;
+}
+code {
+    font-size: 1.1em;
+}
+a {
+    color: #07d;
+    text-decoration: none;
+}
+a:hover {
+    color: #07d;
+    text-decoration: underline;
+}
+
+/* Content */
+
+.content h1 {
+    margin: 1em 0;
+}
+.content h1 a {
+    color: #111;
+}
+.content h1 a:hover {
+    color: #111;
+    text-decoration: none;
+}
+.content img {
+    max-width: 100%;
+    height: auto;
+}
+.content form {
+    margin: 1em 0;
+}
+.content table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.content th {
+    text-align: left;
+    padding: 0.3em;
+}
+.content td {
+    text-align: left;
+    padding: 0.3em;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.content code,
+.content pre {
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 90%;
+}
+.content code {
+    padding: 0.15em 0.4em;
+    margin: 0;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+}
+.content pre > code {
+    padding: 0;
+    margin: 0;
+    white-space: pre;
+    background: transparent;
+    border: 0;
+    font-size: inherit;
+}
+.content pre {
+    padding: 1em;
+    overflow: auto;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+}
+.content blockquote {
+    margin-left: 0;
+    padding-left: 1em;
+    border-left: 1px solid #ddd;
+}
+.content .notice1 {
+    margin: 1em 0;
+    padding: 10px 1em;
+    background-color: #fffbf0;
+    border-left: 10px solid #fb0;
+}
+.content .notice2 {
+    margin: 1em 0;
+    padding: 10px 1em;
+    background-color: #fdf0f0;
+    border-left: 10px solid #d00;
+}
+.content .notice3,
+.content .notice4,
+.content .notice5,
+.content .notice6 {
+    margin: 1em 0;
+    padding: 10px 1em;
+    background-color: #f0f8fe;
+    border-left: 10px solid #08e;
+}
+.content .flexible {
+    position: relative;
+    padding-top: 0;
+    padding-bottom: 56.25%;
+}
+.content .flexible iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.content .task-list-item {
+    list-style-type: none;
+}
+.content .task-list-item input {
+    margin: 0 0.2em 0.25em -1.75em;
+    vertical-align: middle;
+}
+.content .toc {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.content .wikipages ul,
+.content .wikitags ul,
+.content .wikilinks ul {
+    padding: 0;
+    list-style: none;
+    column-width: 19em;
+}
+.content .entry-links .previous {
+    margin-right: 1em;
+}
+.content .pagination .previous {
+    margin-right: 1em;
+}
+.content .pagination {
+    margin: 1em 0;
+}
+.content .left {
+    float: left;
+    margin: 0 1em 0 0;
+}
+.content .center {
+    display: block;
+    margin: 0 auto;
+}
+.content .right {
+    float: right;
+    margin: 0 0 0 1em;
+}
+.content .rounded {
+    border-radius: 4px;
+}
+
+/* Header */
+
+.header {
+    margin: 2em 0;
+}
+.header .sitename {
+    display: block;
+    float: left;
+}
+.header .sitename h1 {
+    margin: 0;
+    font-size: 1em;
+    font-weight: 300;
+}
+.header .sitename h1 a {
+    color: #666;
+    border-bottom: solid 3px #fff;
+    text-decoration: none;
+    padding: 0.5em 0;
+}
+.header .sitename h1 a:hover {
+    color: #07d;
+    border-bottom: solid 3px #29f;
+}
+.header .sitename p {
+    margin-top: 0;
+    color: #666;
+}
+
+/* Navigation */
+
+.navigation {
+    display: block;
+    float: right;
+}
+.navigation a {
+    color: #666;
+    border-bottom: solid 3px #fff;
+    text-decoration: none;
+    padding: 0.5em 0;
+    margin: 0 0.5em;
+}
+.navigation a:hover {
+    color: #07d;
+    border-bottom: solid 3px #29f;
+}
+.navigation ul {
+    margin: 0 -0.5em;
+    padding: 0;
+    list-style: none;
+}
+.navigation li {
+    display: inline;
+}
+.navigation li a.active {
+    border-bottom: solid 3px #29f;
+}
+.navigation-banner {
+    clear: both;
+}
+
+/* Footer */
+
+.footer {
+    margin: 2em 0;
+}
+.footer .siteinfo a {
+    color: #07d;
+}
+.footer .siteinfo a:hover {
+    color: #07d;
+    text-decoration: underline;
+}
+
+/* Forms and buttons */
+
+.form-control {
+    margin: 0;
+    padding: 2px 4px;
+    display: inline-block;
+    min-width: 7em;
+    background-color: #fff;
+    color: #666;
+    background-image: linear-gradient(to bottom, #fff, #fff);
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-family: inherit;
+    font-weight: normal;
+    line-height: normal;
+}
+.btn {
+    margin: 0;
+    padding: 4px 22px;
+    display: inline-block;
+    min-width: 7em;
+    background-color: #eaeaea;
+    color: #333333;
+    background-image: linear-gradient(to bottom, #f8f8f8, #e1e1e1);
+    border: 1px solid #bbb;
+    border-color: #c1c1c1 #c1c1c1 #aaaaaa;
+    border-radius: 4px;
+    outline-offset: -2px;
+    font-size: 0.9em;
+    font-family: inherit;
+    font-weight: normal;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+.btn:hover,
+.btn:focus,
+.btn:active {
+    color: #333333;
+    background-image: none;
+    text-decoration: none;
+}
+.btn:active {
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive and print */
+
+.page {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+@media screen and (min-width: 62em) {
+    body {
+        width: 60em;
+        margin: 1em auto;
+    }
+    .page {
+        margin: 0;
+        max-width: none;
+    }
+}
+@media screen and (max-width: 32em) {
+    body {
+        margin: 0.5em;
+        font-size: 0.9em;
+    }
+    .content h1,
+    .content h2 {
+        font-size: 1.5em;
+    }
+}
+@media print {
+    .page {
+        border: none !important;
+    }
+}

@@ -1,0 +1,20 @@
+# Datenstrom Yellow tests, https://travis-ci.org/datenstrom
+
+language: php
+php:
+  - 7.4
+  - 7.3
+  - 7.2
+  - 7.1
+  - 7.0
+  - 5.6
+before_script: 
+  - git clone https://github.com/datenstrom/yellow.git yellow; cd yellow
+  - cp $TRAVIS_BUILD_DIR/zip/* system/extensions/
+  - php yellow.php update
+  - echo "Build:exclude" > content/contact/page.md 
+  - echo "Build:exclude" > content/search/page.md
+  - echo "CoreStaticUrl:http://website/" >> system/settings/system.ini
+  - php yellow.php about
+script: 
+  - php yellow.php build test

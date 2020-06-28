@@ -1,0 +1,12 @@
+<?php $this->yellow->layout("header") ?>
+<div class="<?php echo "content".($this->yellow->content->shared("sidebar") ? " with-sidebar" : "") ?>">
+<div class="sidebar" role="complementary">
+<?php if ($page = $this->yellow->content->shared("sidebar")) $this->yellow->page->setPage("sidebar", $page) ?>
+<?php if ($this->yellow->page->isPage("sidebar")) echo $this->yellow->page->getPage("sidebar")->getContent() ?>
+</div>
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<?php echo $this->yellow->page->getContent() ?>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
