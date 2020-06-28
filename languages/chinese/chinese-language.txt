@@ -21,7 +21,7 @@ ContactStatusInvalid: 请输入一个有效的e-mail地址
 ContactStatusReview: 请从邮件中删除链接
 ContactStatusDone: 您的信息已发送。非常感谢！
 ContactStatusError: 信息无法发送，请稍后再试！
-CoreDatePast: 今天, 昨天, @x 天前, 1 个月前, @x 个月前, 1 年前, @x 年前, 在 @x
+CoreDatePast: 今天, 昨天, @x 天前, 1 个月前, @x 个月前, 1 年前, @x 年前, 在 @x 前
 CoreDateFuture: 很快, 明天, 在 @x 天后, 在 1 月后, 在 @x 月后, 在 1 年后, 在 @x 年后, 在 @x 后
 CoreDateMonths: 一月, 二月, 三月, 四月, 五月, 六月, 七月, 八月, 九月, 十月, 十一月, 十二月
 CoreDateWeekdays: 星期一, 星期二, 星期三, 星期四, 星期五, 星期六, 星期日
