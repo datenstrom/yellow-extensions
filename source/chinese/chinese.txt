@@ -12,7 +12,7 @@ BlogMore: 阅读全文…
 BreadcrumbDescription: Breadcrumb (面包屑)导航插件.
 BundleDescription: Bundle插件捆包CSS文件.
 ChineseDescription: Chinese/简体中文 with language 'zh-CN'.
-CommandDescription: 网站的命令行插件.
+CommandDescription: 网站的命令行功能.
 ContactDescription: 邮件联系插件提供联系页面.
 ContactName: 姓名:
 ContactEmail: 邮箱:
