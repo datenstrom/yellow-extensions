@@ -4,23 +4,23 @@ Language: zh-CN
 LanguageLocale: zh_CN
 LanguageDescription: 简体中文
 LanguageTranslator: Hyson Lee
-BerlinDescription: Berlin is a theme inspired by Dieter Rams.
-BlogDescription: Blog for your website.
+BerlinDescription: Berlin是一个漂亮的主题，灵感来自Dieter Rams.
+BlogDescription: 你网站的博客.
 BlogBy: 作者:
 BlogTag: 标签:
 BlogMore: 阅读全文…
-BreadcrumbDescription: Breadcrumb navigation.
-BundleDescription: Bundle website files.
+BreadcrumbDescription: Breadcrumb (面包屑)导航插件.
+BundleDescription: Bundle插件捆包CSS文件.
 ChineseDescription: Chinese/简体中文 with language 'zh-CN'.
-CommandDescription: Command line of the website.
-ContactDescription: Email contact page.
+CommandDescription: 网站的命令行插件.
+ContactDescription: 邮件联系插件提供联系页面.
 ContactName: 姓名:
 ContactEmail: 邮箱:
 ContactMessage: 信息:
 ContactConsent: 我同意这个网站存储我的信息。
 ContactButton: 发送
 ContactMailSpam: [Spam]
-ContactMailFooter: This email was sent via @sitename - @title
+ContactMailFooter: 这封邮件发送自 @sitename - @title
 ContactStatusNone: 您好！非常感谢您的反馈
 ContactStatusIncomplete: 请填写完所有栏位
 ContactStatusInvalid: 请输入一个有效的e-mail地址
@@ -49,17 +49,17 @@ CoreError434Title: 文件未找到
 CoreError434Text: 请求的文件未找到。[你可以创建这个页面](#data-action-edit).
 CoreError500Title: 服务器错误
 CoreError500Text: 出错了. [yellow error]
-CzechDescription: Czech/Čeština with language 'cs'.
-DanishDescription: Danish/Dansk with language 'da'.
-DisqusDescription: Show Disqus comments on blog.
-DraftDescription: Support for draft pages.
+CzechDescription: 捷克语/Čeština with language 'cs'.
+DanishDescription: 丹麦语/Dansk with language 'da'.
+DisqusDescription: Disqus插件在博客显示评论.
+DraftDescription: Draft插件支持草稿页面.
 DraftStatusEmpty: 未找到草稿。
-DutchDescription: Dutch/Nederlands (België) with language 'nl'.
+DutchDescription: 荷兰语/Nederlands (België) with language 'nl'.
 EditDescription: 在网络浏览器中编辑您的网站。
 EditLoginTitle: 欢迎
 EditLoginEmail: 邮箱:
 EditLoginPassword: 密码:
-EditLoginForgot: 忘了密码？
+EditLoginForgot: 忘记密码？
 EditLoginSignup: 创建新帐号？
 EditLoginButton: 登入
 EditSignupTitle: 创建用户帐号
@@ -70,22 +70,22 @@ EditSignupConsent: 我同意这个网站存储我的个人资料。
 EditSignupButton: 提交注册
 EditSignupStatusNone: 可以创建一个新帐号
 EditSignupStatusIncomplete: 请填写完所有栏位
-EditSignupStatusInvalid: 请输入一个有效的e-mail地址
-EditSignupStatusWeak: 请输入一个不同的密码
-EditSignupStatusShort: 请输入一更长的密码
+EditSignupStatusInvalid: 请输入有效的电子邮件
+EditSignupStatusWeak: 请输入不同的密码
+EditSignupStatusShort: 请输入更长的密码
 EditSignupStatusNext: 新帐号即将创建完成，请查收确认邮件
 EditForgotTitle: 忘了密码
 EditForgotEmail: 邮箱:
 EditForgotStatusNone: 没关系，你可以创建一个新密码
-EditForgotStatusInvalid: 请输入一个有效的e-mail地址
+EditForgotStatusInvalid: 请输入有效的电子邮件
 EditForgotStatusNext: 用户帐号即将重置，请查收确认邮件
-EditRecoverTitle: 忘了密码
+EditRecoverTitle: 忘记密码
 EditRecoverPassword: 密码:
-EditRecoverStatusPassword: 请输入一个新密码
-EditRecoverStatusWeak: 请输入一个不同的密码
-EditRecoverStatusShort: 请输入一更长的密码
+EditRecoverStatusPassword: 请输入新密码
+EditRecoverStatusWeak: 请输入不同的密码
+EditRecoverStatusShort: 请输入更长的密码
 EditRecoverStatusDone: 用户帐号已重置，谢谢！
-EditQuitTitle: 删除用户帐号
+EditQuitTitle: 删除帐号
 EditQuitStatusNone: 请输入用户名以确认。
 EditQuitStatusMismatch: 请输入一个不同的用户名。
 EditQuitStatusNext: 用户帐号将被删除，请查收您的邮件。
@@ -109,7 +109,7 @@ EditChangeSubject: 更改用户帐号
 EditChangeMessage: 您好 @usershort,\n\n确定要更改您的用户帐号，请点击以下的链接。
 EditChangeTitle: 用户帐号
 EditChangeStatusDone: 用户帐号已更改，谢谢！
-EditRemoveSubject: Delete user account
+EditRemoveSubject: 删除帐号
 EditRemoveMessage: 您好 @usershort,\n\n请确认删除你的帐号。点击以下链接。
 EditRemoveTitle: 用户帐号
 EditRemoveStatusDone: 用户帐号已删除。谢谢！
@@ -123,18 +123,18 @@ EditAccountTitle: 用户设置
 EditAccountInformation: 你可以随时删除你的用户帐号。
 EditAccountMore: 了解更多…
 EditAccountStatusNone: 您可以在此处更改您的用户帐户。
-EditAccountStatusInvalid: 请输入一个有效的e-mail地址
-EditAccountStatusTaken: 请输入一不同的e-mail地址
-EditAccountStatusWeak: 请输入一个不同的密码
-EditAccountStatusShort: 请输入一更长的密码
+EditAccountStatusInvalid: 请输入有效的电子邮件
+EditAccountStatusTaken: 请输入不同的电子邮件
+EditAccountStatusWeak: 请输入不同的密码
+EditAccountStatusShort: 请输入更长的密码
 EditAccountStatusNext: 用户帐号将被更改，请查看您的电子邮件
 EditSystemTitle: 系统设置
 EditSystemSitename: 网站名:
 EditSystemAuthor: 管理员:
 EditSystemEmail: 管理员邮箱:
 EditSystemInformation: 网站管理员可以批准新的用户帐号。
-EditSystemStatusNone: 在此你可以修改系统设置。
-EditSystemStatusInvalid: 请输入一个有效的邮箱地址。
+EditSystemStatusNone: 在此您可以修改系统设置。
+EditSystemStatusInvalid: 请输入有效的电子邮箱。
 EditUpdateTitle: 更新
 EditUpdateStatusNone: Datenstrom Yellow 适合于制作小型网站的人们。
 EditUpdateStatusCheck: 正在检查更新…
@@ -146,7 +146,7 @@ EditChangeButton: 更改
 EditCreateButton: 创建
 EditEditButton: 保存
 EditDeleteButton: 删除
-EditUpdateButton: Update
+EditUpdateButton: 更新
 EditEdit: 编辑页面
 EditCreate: + 新建
 EditDelete: - 删除
@@ -180,27 +180,27 @@ EditToolbarMarkdown: Markdown
 EditToolbarHelp: 帮助
 EditMailFooter: @sitename
 EditDataGenerated: 此页面自动生成。
-EditUploadProgress: [上传文件…]
+EditUploadProgress: [文件上传中…]
 EditMenuSettings: 设置
 EditMenuHelp: 帮助
 EditMenuLogout: 登出
 EditYellowUrl: https://datenstrom.se/yellow/
 EditYellowHelpUrl: https://datenstrom.se/yellow/help/
-EmojiawesomeDescription: Lots and lots of emoji.
-EnglishDescription: English/English with language 'en'.
-FeedDescription: Feed with recent changes.
-FontawesomeDescription: Icons and symbols.
-FrenchDescription: French/Français with language 'fr'.
-GalleryDescription: Image gallery with popup.
-GermanDescription: German/Deutsch with language 'de'.
+EmojiawesomeDescription: Emoji插件提供很多很多的表情符号.
+EnglishDescription: 英文/English with language 'en'.
+FeedDescription: Feed插件订阅最近更新的文章.
+FontawesomeDescription: Fa插件提供图标和符号.
+FrenchDescription: 法语/Français with language 'fr'.
+GalleryDescription: 带图片弹窗的相册插件.
+GermanDescription: 德语/Deutsch with language 'de'.
 GooglecalendarDescription: Embed Google calendar.
-GooglemapDescription: Embed Google map.
-HelpDescription: Help for your website.
-HighlightDescription: Highlight source code.
-HungarianDescription: Hungarian/Magyar with language 'hu'.
-ImageDescription: Images and thumbnails.
+GooglemapDescription: 嵌入Google日历的插件.
+HelpDescription: Help插件提供网站帮助.
+HighlightDescription: 高亮显示源代码的插件.
+HungarianDescription: 匈牙利语/Magyar with language 'hu'.
+ImageDescription: 处理图片和缩略图的插件.
 ImageDefaultAlt: 图片无描述
-InstagramDescription: Embed Instagram photos.
+InstagramDescription: 嵌入Instagram图片的插件.
 InstallTitle: 你好
 InstallExtension: 打算用来做什么呢？
 InstallExtensionWebsite: 网站
@@ -208,7 +208,7 @@ InstallExtensionBlog: 博客
 InstallExtensionWiki: 维基
 InstallHomeTitle: 首页
 InstallHomeTitleContent: 你的网站已正常运行！
-InstallHomeText: [image photo.jpg Example rounded]\n\n[edit - You can edit this page]. The help gives you more information about how to create small web pages, blogs and wikis. [Learn more](https://datenstrom.se/yellow/help/).
+InstallHomeText: [image photo.jpg 图片示例 rounded]\n\n[edit - 您可以编辑此页面]. 该帮助为您提供有关如何创建小型网页，博客和Wiki的更多信息. [了解更多](https://datenstrom.se/yellow/help/).
 InstallDefaultTitle: 页面
 InstallDefaultText: 这是一个新的页面。
 InstallBlogTitle: 博客页面
@@ -216,38 +216,38 @@ InstallBlogText: 这是一个新的博客页面。
 InstallWikiTitle: 维基页面
 InstallWikiText: 这是一个新的维基页面。
 InstallExampleImage: 这是一个范例图片
-ItalianDescription: Italian/Italiano with language 'it'.
-JapaneseDescription: Japanese/日本語 with language 'ja'.
-MarkdownDescription: Text formatting for humans.
-MetaDescription: Meta data for social media sites.
-NorwegianDescription: Norwegian/Norsk Bokmål with language 'nb'.
-ParisDescription: Paris is an elegant theme.
-PolishDescription: Polish/Polski with language 'pl'.
-PortugueseDescription: Portuguese/Português with language 'pt'.
-PreviousnextDescription: Show links to previous/next page.
+ItalianDescription: 意大利语/Italiano with language 'it'.
+JapaneseDescription: 日语/日本語 with language 'ja'.
+MarkdownDescription: 方便人们阅读的文本格式化插件.
+MetaDescription: Meta插件为社交分享网站优化信息头.
+NorwegianDescription: 挪威语/Norsk Bokmål with language 'nb'.
+ParisDescription: Paris是一个优雅的主题.
+PolishDescription: 波兰语/Polski with language 'pl'.
+PortugueseDescription: 葡萄牙语/Português with language 'pt'.
+PreviousnextDescription: 显示上/下一页面链接的插件.
 PreviousnextPagePrevious: ← 上一页 @title
 PreviousnextPageNext: 下一页 @title →
-PublishDescription: Package and publish extensions.
-RussianDescription: Russian/Русский with language 'ru'.
-SearchDescription: Full-text search.
+PublishDescription: 提供打包与发布扩展的功能.
+RussianDescription: 俄语/Русский with language 'ru'.
+SearchDescription: 全文搜索.
 SearchResultsNone: 请输入搜索关键字
 SearchResultsEmpty: 搜索查无结果
 SearchSpecialChanges: 最近更改
 SearchButton: 搜索
-SitemapDescription: Sitemap with all pages.
-SliderDescription: Image gallery with slider.
-SlovakDescription: Slovak/Slovenčina with language 'sk'.
-SoundcloudDescription: Embed Soundcloud audio tracks.
-SpanishDescription: Spanish/Español with language 'es'.
-StockholmDescription: Stockholm is a clean theme.
-SwedishDescription: Swedish/Svenska with language 'sv'.
-TocDescription: Table of contents.
-TrafficDescription: Create traffic analytics from web server log files.
-TwitterDescription: Embed Twitter messages.
+SitemapDescription: 生成网站地图.
+SliderDescription: 带滑动条的图片相册.
+SlovakDescription: 斯洛伐克语/Slovenčina with language 'sk'.
+SoundcloudDescription: 嵌入Soundcloud网站音轨的插件.
+SpanishDescription: 西班牙语/Español with language 'es'.
+StockholmDescription: Stockholm是一个简洁的主题.
+SwedishDescription: 瑞典语/Svenska with language 'sv'.
+TocDescription: 内容目录插件.
+TrafficDescription: 流量插件从Web服务器日志分析网站流量.
+TwitterDescription: 嵌入Twitter推文.
 UpdateDescription: 使您的网站保持最新。
-WikiDescription: Wiki for your website.
+WikiDescription: 您网站的Wiki.
 WikiModified: 最后更新
 WikiTag: 标签:
 WikiSpecialPages: 所有页面
 WikiSpecialChanges: 最近更改
-YoutubeDescription: Embed Youtube videos.
+YoutubeDescription: 嵌入Youtube网站视频.
