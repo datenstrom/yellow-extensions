@@ -193,8 +193,8 @@ FontawesomeDescription: Fa插件提供图标和符号.
 FrenchDescription: 法语/Français with language 'fr'.
 GalleryDescription: 带图片弹窗的相册插件.
 GermanDescription: 德语/Deutsch with language 'de'.
-GooglecalendarDescription: Embed Google calendar.
-GooglemapDescription: 嵌入Google日历的插件.
+GooglecalendarDescription: 嵌入Google日历的插件.
+GooglemapDescription: 嵌入Google地图的插件.
 HelpDescription: Help插件提供网站帮助.
 HighlightDescription: 高亮显示源代码的插件.
 HungarianDescription: 匈牙利语/Magyar with language 'hu'.
