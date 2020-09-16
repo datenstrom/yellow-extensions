@@ -30,8 +30,8 @@ wymusic 0.8.4
 插入歌单：
 
 需提前安装网易云音乐歌单插件`wymusicl`[歌单扩展](https://github.com/hysonlee/yellow-extensions/raw/master/zip/wymusic.zip)。  
-歌单默认`width`是310像素；
-歌单默认`height`是430像素，设为90即精简模式（不显示歌曲明细）；设32即迷你无图模式同歌曲。
+歌单默认`width`是310像素。  
+歌单默认`height`是430像素。设为90即精简模式（不显示歌曲明细）；设32即迷你无图模式同歌曲。
 
     [wymusicl 5237302650]
     [wymusicl 5237302650 - 1] - 歌单自动播放
