@@ -29,11 +29,13 @@ wymusic 0.8.4
 
 插入歌单：
 
-需提前安装网易云音乐歌单插件`wymusicl`[歌单扩展](https://github.com/hysonlee/yellow-extensions/raw/master/zip/wymusic.zip)。
+需提前安装网易云音乐歌单插件`wymusicl`[歌单扩展](https://github.com/hysonlee/yellow-extensions/raw/master/zip/wymusic.zip)。  
+歌单默认`width`是310像素；
+歌单默认`height`是430像素，设为90即精简模式（不显示歌曲明细）；设32即迷你无图模式同歌曲。
 
     [wymusicl 5237302650]
     [wymusicl 5237302650 - 1] - 歌单自动播放
-    [wymusicl 5237302650 - 1 - 90] - 将`height`设为90即精简模式（不显示歌曲明细）；设32即迷你无图模式同上。
+    [wymusicl 5237302650 - 1 - 90] - 歌单精简模式并自动播放
 
 ## 其他设置
 
@@ -49,7 +51,11 @@ PS3.已下架的歌曲推荐将存档歌曲上传服务器`media/audios/`后，�
 
 [下载扩展](https://github.com/hysonlee/yellow-extensions/raw/master/zip/wymusic.zip)并将zip压缩包复制到您网站的`system/extensions`文件夹，Safari浏览器右键保存。
 
-如后续打好包上传并被Yellow官方收录后，也可以在CLI模式下安装：切换到`yellow.php`所在的路径，`php yellow.php install wymusic`。
+若后续打好包上传并被Yellow官方收录后，也可以在CLI模式下安装：切换到`yellow.php`所在的路径，`php yellow.php install wymusic`。
+
+## 安装
+
+将您网站`system/extensions`目录下的`wymusic.php`和`wymusicl.php`删除即卸载，也可在CLI模式完成卸载：shell切换到`yellow.php`所在的目录，`php yellow.php uninstall wymusicl`。
 
 ## 开发
 
