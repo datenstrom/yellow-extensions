@@ -3,58 +3,58 @@
 Language: pl
 LanguageLocale: pl_PL
 LanguageDescription: Polski
-LanguageTranslator: Paweł Klockiewicz
-BerlinDescription: Berlin is a theme inspired by Dieter Rams.
-BlogDescription: Blog for your website.
+LanguageTranslator: Paweł Klockiewicz, Kanbeq
+BerlinDescription: Berlin to motyw zainspirowany Dieter Rams.
+BlogDescription: System blogowania dla Twojej strony.
 BlogBy: przez
 BlogTag: Tagi:
 BlogMore: Czytaj dalej…
-BreadcrumbDescription: Breadcrumb navigation.
-BundleDescription: Bundle website files.
-ChineseDescription: Chinese/简体中文 with language 'zh-CN'.
-CommandDescription: Command line of the website.
-ContactDescription: Email contact page.
+BreadcrumbDescription: Nawigacja okruszkowa (breadcrumb).
+BundleDescription: Połącz pliki strony internetowej w zestawy.
+ChineseDescription: Chiński/简体中文 z językiem 'zh-CN'.
+CommandDescription: Wiersz poleceń witryny.
+ContactDescription: Strona kontaktowa e-mail.
 ContactName: Nazwa:
 ContactEmail: Email:
 ContactMessage: Wiadomość:
-ContactConsent: Zgadzam się, że ta witryna przechowuje moją wiadomość.
+ContactConsent: Zgadzam się na przechowywanie mojej wiadomości przez tę witrynę.
 ContactButton: Wyślij wiadomość
 ContactMailSpam: [Płotka]
-ContactMailFooter: This email was sent via @sitename - @title
+ContactMailFooter: Ten e-mail został wysłany za pośrednictwem @sitename - @title
 ContactStatusNone: Przywitaj się. Twoja opinia jest mile widziana.
-ContactStatusIncomplete: Prosimy wypełnić wszystkie pola.
-ContactStatusInvalid: Prosimy wprowadzić poprawny email.
-ContactStatusReview: Please remove links from the message.
+ContactStatusIncomplete: Wypełnij wszystkie pola.
+ContactStatusInvalid: Wprowadź poprawny adres email.
+ContactStatusReview: Usuń linki z wiadomości.
 ContactStatusDone: Wiadomość została wysłana. Dziękujemy!
-ContactStatusError: Wiadomość nie mogła zostać wysłana. Prosimy spróbować ponownie później!
+ContactStatusError: Wiadomość nie mogła zostać wysłana. Prosimy spróbować ponownie później.
 CoreDescription: Podstawowa funkcjonalność strony internetowej.
-CoreDatePast: today, yesterday, @x days ago, 1 month ago, @x months ago, 1 year ago, @x years ago, on @x
-CoreDateFuture: soon, tomorrow, in @x days, in 1 month, in @x months, in 1 year, in @x years, on @x
+CoreDatePast: dzisiaj, wczoraj, @x dni temu, miesiąc temu, @x miesiące(-ęcy) temu, rok temu, @x lat(-a) temu, @x
+CoreDateFuture: wkrótce, jutro, za @x dni, za miesiąc, za @x miesiące(-y), za rok, za @x lat(-a), @x
 CoreDateMonths: styczeń, luty, marzec, kwiecień, maj, czerwiec, lipiec, sierpień, wrzesień, październik, listopad, grudzień
 CoreDateWeekdays: poniedziałek, wtorek, środa, czwartek, piątek, sobota, niedziela
 CoreDateWeekstart: poniedziałek
 CoreDateFormatShort: F Y
-CoreDateFormatMedium: Y-m-d
-CoreDateFormatLong: Y-m-d H:i
+CoreDateFormatMedium: d-m-Y
+CoreDateFormatLong: d-m-Y H:i
 CoreTimeFormatShort: H:i
 CoreTimeFormatMedium: H:i:s
 CoreTimeFormatLong: H:i:s T
-CorePaginationPrevious: ← Poprzednie
-CorePaginationNext: Następne →
+CorePaginationPrevious: ← Poprzednia
+CorePaginationNext: Następna →
 CoreError404Title: Nie znaleziono pliku
 CoreError404Text: Żądany plik nie został znaleziony. O nie...
-CoreError430Title: Login failed
-CoreError430Text: The email or password is incorrect. [Please try again](#data-action-login).
-CoreError434Title: File not found
-CoreError434Text: The requested file was not found. [You can create this page](#data-action-edit).
-CoreError500Title: Server error
-CoreError500Text: Something went wrong. [yellow error]
-CzechDescription: Czech/Čeština with language 'cs'.
-DanishDescription: Danish/Dansk with language 'da'.
-DisqusDescription: Show Disqus comments on blog.
-DraftDescription: Support for draft pages.
-DraftStatusEmpty: No drafts found.
-DutchDescription: Dutch/Nederlands (België) with language 'nl'.
+CoreError430Title: Logowanie nie powiodło się
+CoreError430Text: Adres e-mail lub hasło jest nieprawidłowe. [Spróbuj ponownie](#data-action-login).
+CoreError434Title: Nie znaleziono pliku
+CoreError434Text: Żądany plik nie został znaleziony. [Możesz stworzyć tę stronę](#data-action-edit).
+CoreError500Title: Błąd serwera
+CoreError500Text: Coś poszło nie tak. [yellow error]
+CzechDescription: Czeski/Čeština z językiem 'cs'.
+DanishDescription: Duński/Dansk z językiem 'da'.
+DisqusDescription: Pokaż komentarze Disqus na blogu.
+DraftDescription: Obsługa wersji roboczych stron.
+DraftStatusEmpty: Nie znaleziono wersji roboczych.
+DutchDescription: Holenderski/Nederlands (België) z językiem 'nl'.
 EditDescription: Edytuj swoją witrynę w przeglądarce internetowej.
 EditLoginTitle: Witaj
 EditLoginEmail: Email:
@@ -78,29 +78,29 @@ EditForgotTitle: Zapomniane hasło
 EditForgotEmail: Email:
 EditForgotStatusNone: Nie ma problemu, możesz utworzyć nowe hasło.
 EditForgotStatusInvalid: Proszę podać poprawny adres email.
-EditForgotStatusNext:  Konto użytkownika zostanie przywrócone, proszę sprawdzić pocztę.
+EditForgotStatusNext: Konto użytkownika zostanie przywrócone, proszę sprawdzić pocztę.
 EditRecoverTitle: Zapomniane hasło
 EditRecoverPassword: Hasło:
 EditRecoverStatusPassword: Prosze podać nowe hasło.
 EditRecoverStatusWeak: Proszę podać inne hasło.
 EditRecoverStatusShort: Proszę podać dłuższe hasło.
 EditRecoverStatusDone: Konto użytkownika zostało przywrócone. Dziękujemy!
-EditQuitTitle: Delete user account
-EditQuitStatusNone: Please enter your name to confirm.
-EditQuitStatusMismatch: Please enter a different name.
-EditQuitStatusNext: User account will be deleted, please check your emails.
-EditConfirmSubject: Potwierdzenie konta użytkownika
-EditConfirmMessage: Hej @usershort!\n\nProsimy potwierdzić swoje konto. Kliknij w poniższy link.
+EditQuitTitle: Usuń konto użytkownika
+EditQuitStatusNone: Wpisz nazwę konta, aby potwierdzić.
+EditQuitStatusMismatch: Wpisz inną nazwę.
+EditQuitStatusNext: Konto użytkownika zostanie usunięte, proszę sprawdzić pocztę.
+EditConfirmSubject: Potwierdzenie założenia konta użytkownika
+EditConfirmMessage: Hej @usershort!\n\nPotwierdź założenie konta klikając w poniższy link.
 EditConfirmTitle: Konto użytkownika
-EditConfirmStatusDone: Konto użytkownika zostało potwierdzone i czeka na aktywację. Dziękujemy!
+EditConfirmStatusDone: Założenie konta zostało potwierdzone i czeka na aktywację. Dziękujemy!
 EditApproveSubject: Zatwierdzenie konta użytkownika
 EditApproveMessage: Hej @usershort!\n\nProsimy zatwierdzić konto użytkownika @useraccount. Kliknij w poniższy link.
 EditApproveTitle: Konto użytkownika
 EditApproveStatusDone: Konto użytkownika zostało zatwierdzone. Dziękujemy!
-EditReactivateSubject: Reactivate user account
-EditReactivateMessage: Hi @usershort,\n\nplease reactivate your user account. There were too many failed login attempts. Click the following link.
-EditReactivateTitle: Konto użytkownika
-EditReactivateStatusDone: User account reactivated. Thank you!
+EditReactivateSubject: Ponownie aktywuj konto użytkownika
+EditReactivateMessage: Hej @usershort,\n\nproszę ponownie aktywować swoje konto użytkownika. Zarejestrowaliśmy zbyt wiele nieudanych prób logowania. Kliknij w poniższy link.
+EditReactivateTitle: Ponowna aktywacja konta użytkownika
+EditReactivateStatusDone: Konto użytkownika zostało ponownie aktywowane. Dziękujemy!
 EditVerifySubject: Potwierdzenie konta użytkownika
 EditVerifyMessage: Hej @usershort!\n\nProsimy o potwierdzenie nowego maila dla Twojego konta. Kliknij w poniższy link.
 EditVerifyTitle: Konto użytkownika
@@ -109,34 +109,34 @@ EditChangeSubject: Zmiana konta użytkownika
 EditChangeMessage: Hej @usershort!\n\nProsimy o potwierdzenie, że chcesz dokonać zmian w Twoim koncie. Kliknij w poniższy link.
 EditChangeTitle: Konto użytkownika
 EditChangeStatusDone: Konto użytkownika zostało zmienione. Dziękujemy!
-EditRemoveSubject: Delete user account
-EditRemoveMessage: Hi @usershort,\n\nplease confirm that you want to delete your user account. Click the following link.
-EditRemoveTitle: Konto użytkownika
-EditRemoveStatusDone: User account deleted. Thank you!
+EditRemoveSubject: Usuwanie konta użytkownika
+EditRemoveMessage: Hej @usershort,\n\npotwierdź, że chcesz usunąć swoje konto użytkownika. Kliknij w poniższy link.
+EditRemoveTitle: Usuwanie konta użytkownika
+EditRemoveStatusDone: Konto użytkownika zostało usunięte. Dziękujemy!
 EditRecoverSubject: Odzyskiwanie konta użytkownika
 EditRecoverMessage: Hej @usershort!\n\nProsimy o potwierdzenie, że zapomniałeś/aś hasła. Kliknij w poniższy link.
 EditWelcomeSubject: Powitanie
 EditWelcomeMessage: Hej @usershort!\n\nTwoje konto użytkownika zostało utworzone. Miłej edycji strony.
-EditGoodbyeSubject: Goodbye
-EditGoodbyeMessage: Hi @usershort,\n\nyour user account has been deleted. Take care.
+EditGoodbyeSubject: Do widzenia
+EditGoodbyeMessage: Hej @usershort,\n\nTwoje konto użytkownika zostało usunięte. Trzymaj się.
 EditAccountTitle: Ustawienia użytkownika
-EditAccountInformation: You can delete your user account anytime.
-EditAccountMore: Read more…
-EditAccountStatusNone: Tutaj możesz zmienić swoje konto użytkownika.
-EditAccountStatusInvalid: Proszę podać poprawny adres email.
-EditAccountStatusTaken: Proszę podać inny email.
-EditAccountStatusWeak: Proszę podać inne hasło.
-EditAccountStatusShort: Proszę podać dłuższe hasło.
+EditAccountInformation: W każdej chwili możesz usunąć swoje konto użytkownika.
+EditAccountMore: Dowiedz się więcej…
+EditAccountStatusNone: Tutaj możesz zmienić ustawienia swojego konta.
+EditAccountStatusInvalid: Podaj poprawny adres email.
+EditAccountStatusTaken: Podaj inny email.
+EditAccountStatusWeak: Podaj inne hasło.
+EditAccountStatusShort: Podaj dłuższe hasło.
 EditAccountStatusNext: Konto użytkownika zostanie zmienione, proszę sprawdzić pocztę.
-EditSystemTitle: System settings
-EditSystemSitename: Name of the website:
-EditSystemAuthor: Name of the webmaster:
-EditSystemEmail: Email of the webmaster:
-EditSystemInformation: The webmaster can approve new user accounts.
-EditSystemStatusNone: Here you can change system settings.
-EditSystemStatusInvalid: Please enter a valid email.
+EditSystemTitle: Ustawienia systemowe
+EditSystemSitename: Nazwa strony internetowej:
+EditSystemAuthor: Nazwa webmastera:
+EditSystemEmail: Email webmastera:
+EditSystemInformation: Webmaster może zatwierdzać nowe konta użytkowników.
+EditSystemStatusNone: Tutaj możesz zmienić ustawienia systemowe.
+EditSystemStatusInvalid: Podaj poprawny adres email.
 EditUpdateTitle: Aktualizacje
-EditUpdateStatusNone: Datenstrom Yellow jest dla ludzi, którzy tworzą małe strony internetowe.
+EditUpdateStatusNone: Datenstrom Yellow jest dla tych, którzy tworzą małe strony internetowe.
 EditUpdateStatusCheck: Sprawdzanie aktualizacji…
 EditUpdateStatusUpdates: Dostępne są następujące aktualizacje:
 EditUpdateStatusOk: Twoja strona jest aktualna.
@@ -151,31 +151,31 @@ EditEdit: Edytuj stronę
 EditCreate: +
 EditDelete: -
 EditKeyboardLabels: Ctrl+, Alt+, Shift+, ⌘, ⌥, ⇧
-EditToolbarFormat: Format
-EditToolbarHeading: Heading
-EditToolbarH1: Heading 1
-EditToolbarH2: Heading 2
-EditToolbarH3: Heading 3
-EditToolbarParagraph: Normal text
-EditToolbarPre: Source code
-EditToolbarNotice: Notice
-EditToolbarQuote: Quote
-EditToolbarBold: Bold
-EditToolbarItalic: Italic
-EditToolbarStrikethrough: Strikethrough
-EditToolbarCode: Code
-EditToolbarList: List
-EditToolbarUl: • Unordered list
-EditToolbarOl: 1. Ordered list
-EditToolbarTl: ✓ Task list
+EditToolbarFormat: Formatowanie
+EditToolbarHeading: Nagłówek
+EditToolbarH1: Nagłówek 1
+EditToolbarH2: Nagłówek 2
+EditToolbarH3: Nagłówek 3
+EditToolbarParagraph: Normalny tekst
+EditToolbarPre: Kod źródłowy
+EditToolbarNotice: Ostrzeżenie
+EditToolbarQuote: Cytat
+EditToolbarBold: Pogrubienie
+EditToolbarItalic: Kursywa
+EditToolbarStrikethrough: Przekreślenie
+EditToolbarCode: Kod
+EditToolbarList: Lista
+EditToolbarUl: • Lista punktowana
+EditToolbarOl: 1. Lista numerowana
+EditToolbarTl: ✓ Lista zadań
 EditToolbarLink: Link
-EditToolbarFile: File
+EditToolbarFile: Plik
 EditToolbarEmojiawesome: Emoji
-EditToolbarFontawesome: Icon
+EditToolbarFontawesome: Ikona
 EditToolbarStatus: Status
-EditToolbarUndo: Undo
-EditToolbarRedo: Redo
-EditToolbarPreview: Preview
+EditToolbarUndo: Cofnij
+EditToolbarRedo: Ponów
+EditToolbarPreview: Poodgląd
 EditToolbarMarkdown: Markdown
 EditToolbarHelp: Pomoc
 EditMailFooter: @sitename
@@ -186,68 +186,68 @@ EditMenuHelp: Pomoc
 EditMenuLogout: Wyloguj
 EditYellowUrl: https://datenstrom.se/yellow/
 EditYellowHelpUrl: https://datenstrom.se/yellow/help/
-EmojiawesomeDescription: Lots and lots of emoji.
-EnglishDescription: English/English with language 'en'.
-FeedDescription: Feed with recent changes.
-FontawesomeDescription: Icons and symbols.
-FrenchDescription: French/Français with language 'fr'.
-GalleryDescription: Image gallery with popup.
-GermanDescription: German/Deutsch with language 'de'.
-GooglecalendarDescription: Embed Google calendar.
-GooglemapDescription: Embed Google map.
-HelpDescription: Help for your website.
-HighlightDescription: Highlight source code.
-HungarianDescription: Hungarian/Magyar with language 'hu'.
-ImageDescription: Images and thumbnails.
-ImageDefaultAlt: Image without description
-InstagramDescription: Embed Instagram photos.
-InstallTitle: Cześć
+EmojiawesomeDescription: Całe mnóstwo emoji.
+EnglishDescription: Angielski/English z językiem 'en'.
+FeedDescription: RSS z ostatnimi zmianami.
+FontawesomeDescription: Ikony i symbole.
+FrenchDescription: Francuski/Français z językiem 'fr'.
+GalleryDescription: Galeria zdjęć z wyskakującym okienkiem.
+GermanDescription: Niemiecki/Deutsch z językiem 'de'.
+GooglecalendarDescription: Osadzanie Kalendarza Google.
+GooglemapDescription: Osadzanie Map Google.
+HelpDescription: Pomoc dla Twojej strony.
+HighlightDescription: Podświetl kod źródłowy.
+HungarianDescription: Węgierski/Magyar z językiem 'hu'.
+ImageDescription: Obrazy i miniatury.
+ImageDefaultAlt: Obraz bez opisu
+InstagramDescription: Osadzanie zdjęć z Instagrama.
+InstallTitle: Witaj
 InstallExtension: Co chcesz stworzyć?
-InstallExtensionWebsite: Stronie internetowej
+InstallExtensionWebsite: Zwykłą stronę internetową
 InstallExtensionBlog: Blog
 InstallExtensionWiki: Wiki
-InstallHomeTitle: Home
+InstallHomeTitle: Strona główna
 InstallHomeTitleContent: Twoja strona działa!
-InstallHomeText: [image photo.jpg Example rounded]\n\n[edit - You can edit this page]. The help gives you more information about how to create small web pages, blogs and wikis. [Learn more](https://datenstrom.se/yellow/help/).
-InstallDefaultTitle: Page
-InstallDefaultText: This is a new page.
-InstallBlogTitle: Blog page
-InstallBlogText: This is a new blog page.
-InstallWikiTitle: Wiki page
-InstallWikiText: This is a new wiki page.
-InstallExampleImage: This is an example image
-ItalianDescription: Italian/Italiano with language 'it'.
-JapaneseDescription: Japanese/日本語 with language 'ja'.
-MarkdownDescription: Text formatting for humans.
-MetaDescription: Meta data for social media sites.
-NorwegianDescription: Norwegian/Norsk Bokmål with language 'nb'.
-ParisDescription: Paris is an elegant theme.
-PolishDescription: Polish/Polski with language 'pl'.
-PortugueseDescription: Portuguese/Português with language 'pt'.
-PreviousnextDescription: Show links to previous/next page.
-PreviousnextPagePrevious: ← Poprzednia: @title
-PreviousnextPageNext: Następna: @title →
-PublishDescription: Package and publish extensions.
-RussianDescription: Russian/Русский with language 'ru'.
-SearchDescription: Full-text search.
+InstallHomeText: [image photo.jpg Example rounded]\n\n[edit - Możesz edytować tę stronę]. Pomoc zawiera więcej informacji na temat tworzenia małych stron internetowych, blogów i wiki. [Dowiedz się więcej...](https://datenstrom.se/yellow/help/).
+InstallDefaultTitle: Strona
+InstallDefaultText: To jest nowa strona.
+InstallBlogTitle: Strona bloga
+InstallBlogText: To jest nowa strona bloga.
+InstallWikiTitle: Strona wiki
+InstallWikiText: To jest nowa strona wiki.
+InstallExampleImage: To jest przykładowe zdjęcie
+ItalianDescription: Włoski/Italiano z językiem 'it'.
+JapaneseDescription: Japoński/日本語 z językiem 'ja'.
+MarkdownDescription: Formatowanie tekstu dla ludzi.
+MetaDescription: Metadane dla serwisów społecznościowych.
+NorwegianDescription: Norweski/Norsk Bokmål z językiem 'nb'.
+ParisDescription: Paris to elegancki motyw.
+PolishDescription: Polski/Polski z językiem 'pl'.
+PortugueseDescription: Portugalski/Português z językiem 'pt'.
+PreviousnextDescription: Pokaż linki do poprzedniej/następnej strony.
+PreviousnextPagePrevious: ← Poprzednie: @title
+PreviousnextPageNext: Następne: @title →
+PublishDescription: Pakuj i publikuj rozszerzenia.
+RussianDescription: Rosyjski/Русский z językiem 'ru'.
+SearchDescription: Wyszukiwanie pełnotekstowe.
 SearchResultsNone: Wpisz szukaną frazę.
 SearchResultsEmpty: Nie znaleziono wyników.
 SearchSpecialChanges: Ostatnie zmiany
 SearchButton: Szukaj
-SitemapDescription: Sitemap with all pages.
-SliderDescription: Image gallery with slider.
-SlovakDescription: Slovak/Slovenčina with language 'sk'.
-SoundcloudDescription: Embed Soundcloud audio tracks.
-SpanishDescription: Spanish/Español with language 'es'.
-StockholmDescription: Stockholm is a clean theme.
-SwedishDescription: Swedish/Svenska with language 'sv'.
-TocDescription: Table of contents.
-TrafficDescription: Create traffic analytics from web server log files.
-TwitterDescription: Embed Twitter messages.
+SitemapDescription: Mapa witryny ze wszystkimi stronami.
+SliderDescription: Galeria zdjęć z suwakiem.
+SlovakDescription: Słowacki/Slovenčina z językiem 'sk'.
+SoundcloudDescription: Osadzanie ścieżek dźwiękowych z Soundcloud'a.
+SpanishDescription: Hiszpański/Español z językiem 'es'.
+StockholmDescription: Stockholm to czysty (podstawowy) motyw.
+SwedishDescription: Szwedzki/Svenska z językiem 'sv'.
+TocDescription: Spis treści.
+TrafficDescription: Twórz analizy ruchu na podstawie plików dziennika serwera internetowego.
+TwitterDescription: Osadzanie wiadomości z Twittera.
 UpdateDescription: Aktualizuj swoją witrynę.
-WikiDescription: Wiki for your website.
+WikiDescription: Wiki dla Twojej strony.
 WikiModified: Ostatnia aktualizacja
 WikiTag: Tagi:
 WikiSpecialPages: Wszystkie strony
 WikiSpecialChanges: Ostatnie zmiany
-YoutubeDescription: Embed Youtube videos.
+YoutubeDescription: Osadzanie filmów z YouTube.
