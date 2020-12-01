@@ -43,14 +43,14 @@ CorePaginationPrevious: ← Poprzednia
 CorePaginationNext: Następna →
 CoreError404Title: Nie znaleziono pliku
 CoreError404Text: Żądany plik nie został znaleziony. O nie...
-CoreError420Title: Page not public
-CoreError420Text: The requested page is not public. [yellow error]
+CoreError420Title: Strona nie jest publiczna
+CoreError420Text: Żądana strona nie jest publiczna. [yellow error]
 CoreError430Title: Logowanie nie powiodło się
 CoreError430Text: Adres e-mail lub hasło jest nieprawidłowe. [Spróbuj ponownie](#data-action-login).
-CoreError434Title: Page not found
-CoreError434Text: The requested page was not found. [You can create this page](#data-action-edit).
-CoreError435Title: Page not found
-CoreError435Text: The requested page has been deleted. [You can restore this page](#data-action-restore).
+CoreError434Title: Nie znaleziono strony
+CoreError434Text: Żądana strona nie została znaleziona. [Możesz utworzyć tę stronę](#data-action-edit).
+CoreError435Title: Nie znaleziono strony
+CoreError435Text: Żądana strona została usunięta. [Możesz przywrócić tę stronę](#data-action-restore).
 CoreError500Title: Błąd serwera
 CoreError500Text: Coś poszło nie tak. [yellow error]
 CzechDescription: Czeski/Čeština z językiem 'cs'.
@@ -180,7 +180,7 @@ EditToolbarFontawesome: Ikona
 EditToolbarStatus: Status
 EditToolbarUndo: Cofnij
 EditToolbarRedo: Ponów
-EditToolbarPreview: Poodgląd
+EditToolbarPreview: Podgląd
 EditToolbarMarkdown: Markdown
 EditToolbarHelp: Pomoc
 EditMailFooter: @sitename
