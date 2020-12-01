@@ -10,4 +10,4 @@ Polish/Polski z językiem 'pl'.
 
 ## Tłumacz
 
-Paweł Klockiewicz. [Wezwać pomoc](https://datenstrom.se/yellow/help/).
+Paweł Klockiewicz. [Wezwij pomoc](https://datenstrom.se/yellow/help/).
