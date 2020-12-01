@@ -2,7 +2,7 @@
 
 Więcej funkcji, języków i motywów do Datenstrom Yellow.
 
-## Features
+## Funkcje
 
 * [About](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/about):
   Profil autora stron bloga. Opracowano przez Steffen'a Schultz'a.
@@ -103,7 +103,7 @@ Więcej funkcji, języków i motywów do Datenstrom Yellow.
 * [Youtube](https://github.com/datenstrom/yellow-extensions/tree/master/source/youtube): 
   Osadzanie filmów z YouTube. Opracowano przez Datenstrom.
 
-## Languages
+## Języki
 
 * [Chinese](https://github.com/datenstrom/yellow-extensions/tree/master/source/chinese): Chiński/简体中文 z językiem 'zh'. Przetłumaczone przez Hyson Lee.
 * [Czech](https://github.com/datenstrom/yellow-extensions/tree/master/source/czech): Czeski/Čeština z językiem 'cs'. Przetłumaczone przez Ufo Vyhuleny.
@@ -123,7 +123,7 @@ Więcej funkcji, języków i motywów do Datenstrom Yellow.
 * [Spanish](https://github.com/datenstrom/yellow-extensions/tree/master/source/spanish): Hiszpański/Español z językiem 'es'. Przetłumaczone przez Al Garcia, David Garcia.
 * [Swedish](https://github.com/datenstrom/yellow-extensions/tree/master/source/swedish): Szwedzki/Svenska z językiem 'sv'. Przetłumaczone przez Adam Engel.
 
-## Themes
+## Motywy
 
 * [Berlin](https://github.com/datenstrom/yellow-extensions/tree/master/source/berlin): 
   Berlin to motyw zainspirowany Dieter Rams. Zaprojektowany przez Datenstrom.
@@ -132,7 +132,7 @@ Więcej funkcji, języków i motywów do Datenstrom Yellow.
 * [Stockholm](https://github.com/datenstrom/yellow-extensions/tree/master/source/stockholm): 
   Stockholm to czysty (podstawowy) motyw. Zaprojektowany przez Datenstrom.
 
-Wasz pytania? [Uzyskaj pomoc](https://datenstrom.se/yellow/help/) i [współpracuj](https://datenstrom.se/yellow/help/contributing-guidelines).
+Masz pytania? [Uzyskaj pomoc](https://datenstrom.se/yellow/help/) i [współpracuj](https://datenstrom.se/yellow/help/contributing-guidelines).
 
 <p>
 <a href="README-de.md"><img src="https://raw.githubusercontent.com/datenstrom/yellow-extensions/master/source/help/language-de.png" width="15" height="15" alt="Deutsch">&nbsp; Deutsch</a>&nbsp;
