@@ -116,7 +116,7 @@ Fler funktioner, språk och teman för Datenstrom Yellow.
 * [Italian](https://github.com/datenstrom/yellow-extensions/tree/master/source/italian): Italienska/Italiano med språket "it". Översatt av Giovanni Salmeri.
 * [Japanese](https://github.com/datenstrom/yellow-extensions/tree/master/source/japanese): Japanska/日本語 med språket "ja". Översatt av Yuhko Senuma.
 * [Norwegian](https://github.com/datenstrom/yellow-extensions/tree/master/source/norwegian): Norska/Norsk med språket "nb". Översatt av Per Arne Solvik.
-* [Polish](https://github.com/datenstrom/yellow-extensions/tree/master/source/polish): Polska/Polski med språket "pl". Översatt av Paweł Klockiewicz.
+* [Polish](https://github.com/datenstrom/yellow-extensions/tree/master/source/polish): Polska/Polski med språket "pl". Översatt av Paweł Klockiewicz och Kanbeq.
 * [Portuguese](https://github.com/datenstrom/yellow-extensions/tree/master/source/portuguese): Portugisiska/Português med språket "pt". Översatt av Al Garcia.
 * [Russian](https://github.com/datenstrom/yellow-extensions/tree/master/source/russian): Ryska/Русский med språket "ru". Översatt av Сергей Ворон.
 * [Slovak](https://github.com/datenstrom/yellow-extensions/tree/master/source/slovak): Slovakiska/Slovenčina med språket "sk". Översatt av Ádám Tuba.
