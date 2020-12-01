@@ -137,5 +137,6 @@ Do you have questions? [Get help](https://datenstrom.se/yellow/help/) and [contr
 <p>
 <a href="README-de.md"><img src="https://raw.githubusercontent.com/datenstrom/yellow-extensions/master/source/help/language-de.png" width="15" height="15" alt="Deutsch">&nbsp; Deutsch</a>&nbsp;
 <a href="README.md"><img src="https://raw.githubusercontent.com/datenstrom/yellow-extensions/master/source/help/language-en.png" width="15" height="15" alt="English">&nbsp; English</a>&nbsp;
+<a href="README-pl.md"><img src="https://raw.githubusercontent.com/datenstrom/yellow-extensions/master/source/help/language-pl.png" width="15" height="15" alt="Polski">&nbsp; Polski</a>&nbsp;
 <a href="README-sv.md"><img src="https://raw.githubusercontent.com/datenstrom/yellow-extensions/master/source/help/language-sv.png" width="15" height="15" alt="Svenska">&nbsp; Svenska</a>&nbsp;
 </p>
