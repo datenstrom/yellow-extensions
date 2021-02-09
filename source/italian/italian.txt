@@ -4,27 +4,27 @@ Language: it
 LanguageLocale: it_IT
 LanguageDescription: Italiano
 LanguageTranslator: Giovanni Salmeri
-BerlinDescription: Berlin is a theme inspired by Dieter Rams.
-BlogDescription: Blog for your website.
+BerlinDescription: Berlin è un tema ispirato da Dieter Rams.
+BlogDescription: Blog per il tuo sito.
 BlogBy: di
 BlogTag: Tag:
 BlogMore: Leggi di più…
-BreadcrumbDescription: Breadcrumb navigation.
-BundleDescription: Bundle website files.
-ChineseDescription: Chinese/简体中文 with language 'zh'.
-CommandDescription: Command line of the website.
-ContactDescription: Email contact page.
+BreadcrumbDescription: Percorso di navigazione.
+BundleDescription: Aggrega i file del sito.
+ChineseDescription: Cinese/简体中文 con lingua 'zh'.
+CommandDescription: Linea di comando del sito.
+ContactDescription: Pagina di contatto.
 ContactName: Nome:
 ContactEmail: Email:
 ContactMessage: Messaggio:
 ContactConsent: Acconsento alla registrazione del mio messaggio in questo sito.
 ContactButton: Invia il messaggio
 ContactMailSpam: [Spam]
-ContactMailFooter: Questa messaggio è stata inviata tramite @sitename - @title
+ContactMailFooter: Questo messaggio è stata inviato tramite @sitename - @title
 ContactStatusNone: I tuoi commenti sono benvenuti!
 ContactStatusIncomplete: Compila per favore tutti i campi.
 ContactStatusInvalid: Inserisci per favore un indirizzo email valido.
-ContactStatusReview: Rimuovere per favore i collegamenti dal messaggio.
+ContactStatusReview: Rimuovi per favore i collegamenti dal messaggio.
 ContactStatusDone: Il tuo messaggio è stato inviato con successo. Grazie!
 ContactStatusError: C'è stato un problema nell'invio del messaggio. Riprova per favore più tardi.
 CoreDescription: Funzionalità di base del sito web.
@@ -44,8 +44,8 @@ CorePaginationPrevious: ← Precedente
 CorePaginationNext: Successivo →
 CoreError404Title: Pagina non trovata
 CoreError404Text: La pagina richiesta non è stata trovata. Oh no...
-CoreError420Title: Page not public
-CoreError420Text: The requested page is not public. [yellow error]
+CoreError420Title: Pagina non pubblica
+CoreError420Text: La pagina richiesta non è pubblica . [yellow error]
 CoreError430Title: Accesso non riuscito
 CoreError430Text: L'indirizzo email o la password non è corretto. [Per favore riprova](#data-action-login).
 CoreError434Title: Pagina non trovata
@@ -54,20 +54,20 @@ CoreError435Title: Pagina non trovata
 CoreError435Text: La pagina richiesta è stata eliminata. [Puoi ripristinare questa pagina](#data-action-restore).
 CoreError500Title: Errore del server
 CoreError500Text: Qualcosa non ha funzionato. [yellow error]
-CzechDescription: Czech/Čeština with language 'cs'.
-DanishDescription: Danish/Dansk with language 'da'.
-DisqusDescription: Show Disqus comments on blog.
-DraftDescription: Support for draft pages.
-DraftStatusEmpty: No drafts found.
-DraftPageError: Please log in.
-DutchDescription: Dutch/Nederlands with language 'nl'.
+CzechDescription: Ceco/Čeština con lingua 'cs'.
+DanishDescription: Danese/Dansk con lingua 'da'.
+DisqusDescription: Mostra commenti Disqus nel blog.
+DraftDescription: Supporto per pagine in bozza.
+DraftStatusEmpty: Non c'è nessuna bozza.
+DraftPageError: Per favore accedi.
+DutchDescription: Olandese/Nederlands con lingua 'nl'.
 EditDescription: Modifica il tuo sito web in un browser web.
 EditLoginTitle: Benvenuto!
 EditLoginEmail: Email:
 EditLoginPassword: Password:
 EditLoginForgot: Recupera la tua password
 EditLoginSignup: Crea un nuovo account utente
-EditLoginButton: Entra
+EditLoginButton: Accedi
 EditSignupTitle: Crea un nuovo account utente
 EditSignupName: Nome:
 EditSignupEmail: Email:
@@ -79,7 +79,7 @@ EditSignupStatusIncomplete: Compila per favore tutti i campi.
 EditSignupStatusInvalid: Inserisci per favore un indirizzo email valido.
 EditSignupStatusWeak: Inserisci per favore una password diversa.
 EditSignupStatusShort: Inserisci per favore una password più lunga.
-EditSignupStatusNext: Verrà creato un nuovo account utente, un'email per la verifica verrà inviata al relativo indirizzo.
+EditSignupStatusNext: Verrà creato un nuovo account utente, un messaggio di verifica verrà inviata al relativo indirizzo.
 EditForgotTitle: Recupera la password
 EditForgotEmail: Email:
 EditForgotStatusNone: Nessun problema, puoi creare una nuova password.
@@ -134,15 +134,15 @@ EditAccountStatusTaken: Inserisci per favore un indirizzo email diverso.
 EditAccountStatusWeak: Inserisci per favore una password diversa.
 EditAccountStatusShort: Inserisci per favore una password più lunga.
 EditAccountStatusNext: L'account utente sarà modificato, controlla per favore la tua posta elettronica.
-EditConfigureTitle: Website
-EditConfigureSitename: Name of the website:
-EditConfigureAuthor: Name of the webmaster:
-EditConfigureEmail: Email of the webmaster:
-EditConfigureInformation: The webmaster can approve new user accounts.
-EditConfigureStatusNone: Here you can configure your website.
-EditConfigureStatusInvalid: Please enter a valid email.
+EditConfigureTitle: Sito
+EditConfigureSitename: Nome del sito:
+EditConfigureAuthor: Nome del gestore del sito:
+EditConfigureEmail: Email del gestore del sito:
+EditConfigureInformation: Il gestore del sito può approvare nuovi account degli utenti.
+EditConfigureStatusNone: Qui puoi configurare il tuo sito.
+EditConfigureStatusInvalid: Inserisci per favore un indirizzo email valido.
 EditUpdateTitle: Aggiornamenti
-EditUpdateStatusNone: Datenstrom Yellow è per le persone che creano piccoli siti web.
+EditUpdateStatusNone: Datenstrom Yellow è per le persone che creano siti web.
 EditUpdateStatusCheck: Controllo degli aggiornamenti in corso…
 EditUpdateStatusUpdates: Sono disponibili i seguenti aggiornamenti:
 EditUpdateStatusOk: Il tuo sito è aggiornato.
@@ -152,7 +152,7 @@ EditChangeButton: Cambia
 EditCreateButton: Crea
 EditEditButton: Salva
 EditDeleteButton: Elimina
-EditUpdateButton: Aggiornare
+EditUpdateButton: Aggiorna
 EditEdit: Modifica la pagina
 EditCreate: +
 EditDelete: -
@@ -192,21 +192,21 @@ EditMenuHelp: Aiuto
 EditMenuLogout: Esci
 EditYellowUrl: https://datenstrom.se/yellow/
 EditYellowHelpUrl: https://datenstrom.se/yellow/help/
-EmojiawesomeDescription: Lots and lots of emoji.
-EnglishDescription: English/English with language 'en'.
-FeedDescription: Feed with recent changes.
-FontawesomeDescription: Icons and symbols.
-FrenchDescription: French/Français with language 'fr'.
-GalleryDescription: Image gallery with popup.
-GermanDescription: German/Deutsch with language 'de'.
-GooglecalendarDescription: Embed Google calendar.
-GooglemapDescription: Embed Google map.
-HelpDescription: Help for your website.
-HighlightDescription: Highlight source code.
-HungarianDescription: Hungarian/Magyar with language 'hu'.
-ImageDescription: Images and thumbnails.
-ImageDefaultAlt: Image without description
-InstagramDescription: Embed Instagram photos.
+EmojiawesomeDescription: Tantissime emoji.
+EnglishDescription: Inglese/English con lingua 'en'.
+FeedDescription: Flusso con le modifiche recenti.
+FontawesomeDescription: Icone e simboli.
+FrenchDescription: Francese/Français con lingua 'fr'.
+GalleryDescription: Galleria di immagini con popup.
+GermanDescription: Tedesco/Deutsch con lingua 'de'.
+GooglecalendarDescription: Inserisci un calendario Google.
+GooglemapDescription: Inserisci una mappa Google.
+HelpDescription: Aiuto per il tuo sito.
+HighlightDescription: Evidenzia sintatticamente il codice sorgente.
+HungarianDescription: Ungherese/Magyar con lingua 'hu'.
+ImageDescription: Immagini e miniature.
+ImageDefaultAlt: Immagine senza descrizione
+InstagramDescription: Inserisci fotografie Instagram.
 InstallTitle: Ciao
 InstallExtension: Che cosa vuoi fare?
 InstallExtensionWebsite: Sito web
@@ -214,46 +214,46 @@ InstallExtensionBlog: Blog
 InstallExtensionWiki: Wiki
 InstallHomeTitle: Inizio
 InstallHomeTitleContent: Il tuo sito è attivo!
-InstallHomeText: [image photo.jpg Example rounded]\n\n[edit - You can edit this page]. The help gives you more information about how to create small web pages, blogs and wikis. [Learn more](https://datenstrom.se/yellow/help/).
-InstallDefaultTitle: Page
-InstallDefaultText: This is a new page.
-InstallBlogTitle: Blog page
-InstallBlogText: This is a new blog page.
-InstallWikiTitle: Wiki page
-InstallWikiText: This is a new wiki page.
-InstallExampleImage: This is an example image
-ItalianDescription: Italian/Italiano with language 'it'.
-JapaneseDescription: Japanese/日本語 with language 'ja'.
-MarkdownDescription: Text formatting for humans.
-MetaDescription: Meta data for social media sites.
-NorwegianDescription: Norwegian/Norsk with language 'nb'.
-ParisDescription: Paris is an elegant theme.
-PolishDescription: Polish/Polski with language 'pl'.
-PortugueseDescription: Portuguese/Português with language 'pt'.
-PreviousnextDescription: Show links to previous/next page.
+InstallHomeText: [image photo.jpg Esempio]\n\n[edit - Puoi modificare questa pagina]. L'aiuto ti dà ulteriori nformazioni su come creare pagine web, blog e wiki. [Per saperne di più](https://datenstrom.se/yellow/help/).
+InstallDefaultTitle: Pagina
+InstallDefaultText: Questa è una nuova pagina.
+InstallBlogTitle: Pagina di blog
+InstallBlogText: Questa è una nuova pagina di blog.
+InstallWikiTitle: Pagina di wiki
+InstallWikiText: Questa è una nuova pagina di wiki.
+InstallExampleImage: Questa è un'immagine di esempio
+ItalianDescription: Italiano/Italiano con lingua 'it'.
+JapaneseDescription: Giapponese/日本語 con lingua 'ja'.
+MarkdownDescription: Formattazione del testo facile.
+MetaDescription: Metadati per i siti social.
+NorwegianDescription: Norvegese/Norsk con lingua 'nb'.
+ParisDescription: Paris è un tema elegante.
+PolishDescription: Polacco/Polski con lingua 'pl'.
+PortugueseDescription: Portoghese/Português con lingua 'pt'.
+PreviousnextDescription: Mostra collegamenti alla pagina precedente e successiva.
 PreviousnextPagePrevious: ← Precedente: @title
 PreviousnextPageNext: Successivo: @title →
-PublishDescription: Package and publish extensions.
-RussianDescription: Russian/Русский with language 'ru'.
-SearchDescription: Full-text search.
+PublishDescription: Prepara e pubblica il pacchetto dell'estensione.
+RussianDescription: Russo/Русский con lingua 'ru'.
+SearchDescription: Ricerca globale.
 SearchResultsNone: Inserisci il termine da cercare.
 SearchResultsEmpty: Nessun risultato trovato.
 SearchSpecialChanges: Modifiche recenti
 SearchButton: Cerca
-SitemapDescription: Sitemap with all pages.
-SliderDescription: Image gallery with slider.
-SlovakDescription: Slovak/Slovenčina with language 'sk'.
-SoundcloudDescription: Embed Soundcloud audio tracks.
-SpanishDescription: Spanish/Español with language 'es'.
-StockholmDescription: Stockholm is a clean theme.
-SwedishDescription: Swedish/Svenska with language 'sv'.
-TocDescription: Table of contents.
-TrafficDescription: Create traffic analytics from web server log files.
-TwitterDescription: Embed Twitter messages.
+SitemapDescription: Mappa del sito con tutte le pagine.
+SliderDescription: Galleria di immagini a scorrimento.
+SlovakDescription: Slovacco/Slovenčina con lingua 'sk'.
+SoundcloudDescription: Inserisci brani audio Soundcloud.
+SpanishDescription: Spagnolo/Español con lingua 'es'.
+StockholmDescription: Stockholm è un tema pulito.
+SwedishDescription: Svedese/Svenska con lingua 'sv'.
+TocDescription: Indice.
+TrafficDescription: Genera analisi del traffico dai file del server.
+TwitterDescription: Inserisci messaggi Twitter.
 UpdateDescription: Mantieni aggiornato il tuo sito web.
-WikiDescription: Wiki for your website.
+WikiDescription: Wiki per il tuo sito.
 WikiModified: Ultimo aggiornamento il
 WikiTag: Tag:
 WikiSpecialPages: Tutte le pagine
 WikiSpecialChanges: Modifiche recenti
-YoutubeDescription: Embed Youtube videos.
+YoutubeDescription: Inserisci video Youtube.
