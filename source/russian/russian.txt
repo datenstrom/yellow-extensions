@@ -4,16 +4,16 @@ Language: ru
 LanguageLocale: ru_RU
 LanguageDescription: Русский
 LanguageTranslator: Сергей Ворон
-BerlinDescription: Berlin is a theme inspired by Dieter Rams.
-BlogDescription: Blog for your website.
+BerlinDescription: Берлин - это тема, вдохновленная Dieter Rams.
+BlogDescription: Блог для вашего сайта.
 BlogBy: Автор
 BlogTag: Тэги:
 BlogMore: Читать далее…
-BreadcrumbDescription: Breadcrumb navigation.
-BundleDescription: Bundle website files.
+BreadcrumbDescription: Навигационная цепочка.
+BundleDescription: Объединение файлов веб-сайта.
 ChineseDescription: Chinese/简体中文 with language 'zh'.
-CommandDescription: Command line of the website.
-ContactDescription: Email contact page.
+CommandDescription: Командная строка сайта.
+ContactDescription: Страница контактов.
 ContactName: Имя:
 ContactEmail: Email:
 ContactMessage: Сообщение:
@@ -44,22 +44,22 @@ CorePaginationPrevious: ← Назад
 CorePaginationNext: Далее →
 CoreError404Title: Файл не найден
 CoreError404Text: Запрашиваемый файл не найден. О нет...
-CoreError420Title: Page not public
-CoreError420Text: The requested page is not public. [yellow error]
+CoreError420Title: Страница не доступна
+CoreError420Text: Запрошенная страница не является общедоступной. [ошибка yellow]
 CoreError430Title: Ошибка входа
 CoreError430Text: Неверный email или пароль. [Пожалуйста, попробуйте еще раз](#data-action-login).
-CoreError434Title: Page not found
-CoreError434Text: The requested page was not found. [You can create this page](#data-action-edit).
-CoreError435Title: Page not found
-CoreError435Text: The requested page has been deleted. [You can restore this page](#data-action-restore).
+CoreError434Title: Страница не найдена
+CoreError434Text: Запрошенная страница не найдена. [Вы можете создать эту страницу](#data-action-edit).
+CoreError435Title: Страница не найдена
+CoreError435Text: Запрошенная страница удалена. [Вы можете восстановить эту страницу](#data-action-restore).
 CoreError500Title: Ошибка сервера
 CoreError500Text: Что-то пошло не так. [yellow error]
 CzechDescription: Czech/Čeština with language 'cs'.
 DanishDescription: Danish/Dansk with language 'da'.
-DisqusDescription: Show Disqus comments on blog.
-DraftDescription: Support for draft pages.
-DraftStatusEmpty: No drafts found.
-DraftPageError: Please log in.
+DisqusDescription: Показывать комментарии Disqus в блоге.
+DraftDescription: Поддержка черновиков страниц.
+DraftStatusEmpty: Черновиков не найдено.
+DraftPageError: Пожалуйста, войдите.
 DutchDescription: Dutch/Nederlands with language 'nl'.
 EditDescription: Отредактируйте свой сайт в веб-браузере.
 EditLoginTitle: Добро пожаловать
@@ -142,7 +142,7 @@ EditConfigureInformation: Автор является может утвержд�
 EditConfigureStatusNone: Здесь вы можете настроить свой сайт.
 EditConfigureStatusInvalid: Пожалуйста, введите действительный email.
 EditUpdateTitle: Обновления
-EditUpdateStatusNone: Datenstrom Yellow is for people who make small websites.
+EditUpdateStatusNone: Datenstrom Yellow для людей, которые создают небольшие веб-сайты.
 EditUpdateStatusCheck: Проверка обновлений…
 EditUpdateStatusUpdates: Доступны следующие обновления:
 EditUpdateStatusOk: Ваш сайт обновлен.
@@ -192,21 +192,21 @@ EditMenuHelp: Помощь
 EditMenuLogout: Выход
 EditYellowUrl: https://datenstrom.se/yellow/
 EditYellowHelpUrl: https://datenstrom.se/yellow/help/
-EmojiawesomeDescription: Lots and lots of emoji.
+EmojiawesomeDescription: Множество смайлов.
 EnglishDescription: English/English with language 'en'.
-FeedDescription: Feed with recent changes.
-FontawesomeDescription: Icons and symbols.
+FeedDescription: Лента с последними изменениями.
+FontawesomeDescription: Иконки и символы.
 FrenchDescription: French/Français with language 'fr'.
-GalleryDescription: Image gallery with popup.
+GalleryDescription: Галерея изображений в всплывающем окне.
 GermanDescription: German/Deutsch with language 'de'.
-GooglecalendarDescription: Embed Google calendar.
-GooglemapDescription: Embed Google map.
-HelpDescription: Help for your website.
-HighlightDescription: Highlight source code.
+GooglecalendarDescription: Вставить календарь Google.
+GooglemapDescription: Вставить карту Google.
+HelpDescription: Помощь для вашего сайта.
+HighlightDescription: Подсветка исходного кода.
 HungarianDescription: Hungarian/Magyar with language 'hu'.
-ImageDescription: Images and thumbnails.
+ImageDescription: Изображения и миниатюры.
 ImageDefaultAlt: Изображение без описания
-InstagramDescription: Embed Instagram photos.
+InstagramDescription: Вставить фото из Instagram.
 InstallTitle: Здравствуйте
 InstallExtension: Что вы хотите сделать?
 InstallExtensionWebsite: Веб-сайт
@@ -214,7 +214,7 @@ InstallExtensionBlog: Блог
 InstallExtensionWiki: Wiki
 InstallHomeTitle: Главная
 InstallHomeTitleContent: Ваш сайт работает!
-InstallHomeText: [image photo.jpg Example rounded]\n\n[edit - You can edit this page]. The help gives you more information about how to create small web pages, blogs and wikis. [Learn more](https://datenstrom.se/yellow/help/).
+InstallHomeText: [image photo.jpg Example rounded]\n\n[редактировать - Вы можете изменить эту страницу]. Справка дает вам больше информации о том, как создавать небольшие веб-страницы, блоги и вики. [Узнать больше](https://datenstrom.se/yellow/help/).
 InstallDefaultTitle: Страница
 InstallDefaultText: Это новая страница.
 InstallBlogTitle: Страница блога
@@ -224,36 +224,36 @@ InstallWikiText: Это новая wiki страница.
 InstallExampleImage: Это пример изображения
 ItalianDescription: Italian/Italiano with language 'it'.
 JapaneseDescription: Japanese/日本語 with language 'ja'.
-MarkdownDescription: Text formatting for humans.
-MetaDescription: Meta data for social media sites.
+MarkdownDescription: Форматирование текста для людей.
+MetaDescription: Мета-данные для сайтов социальных сетей.
 NorwegianDescription: Norwegian/Norsk with language 'nb'.
-ParisDescription: Paris is an elegant theme.
+ParisDescription: Париж - элегантная тема.
 PolishDescription: Polish/Polski with language 'pl'.
 PortugueseDescription: Portuguese/Português with language 'pt'.
-PreviousnextDescription: Show links to previous/next page.
+PreviousnextDescription: Показать ссылки на предыдущую/следующую страницу.
 PreviousnextPagePrevious: ← Назад: @title
 PreviousnextPageNext: Далее: @title →
-PublishDescription: Package and publish extensions.
+PublishDescription: Упаковка и публикация расширений.
 RussianDescription: Russian/Русский with language 'ru'.
-SearchDescription: Full-text search.
+SearchDescription: Полнотекстовый поиск.
 SearchResultsNone: Введите слово для поиска.
 SearchResultsEmpty: Ничего не найдено.
 SearchSpecialChanges: Последние изменения
 SearchButton: Искать
-SitemapDescription: Sitemap with all pages.
-SliderDescription: Image gallery with slider.
+SitemapDescription: Карта сайта со всеми страницами.
+SliderDescription: Галерея изображений со слайдером.
 SlovakDescription: Slovak/Slovenčina with language 'sk'.
-SoundcloudDescription: Embed Soundcloud audio tracks.
+SoundcloudDescription: Вставить аудио Soundcloud.
 SpanishDescription: Spanish/Español with language 'es'.
-StockholmDescription: Stockholm is a clean theme.
+StockholmDescription: Стокгольм - чистая тема.
 SwedishDescription: Swedish/Svenska with language 'sv'.
-TocDescription: Table of contents.
-TrafficDescription: Create traffic analytics from web server log files.
-TwitterDescription: Embed Twitter messages.
-UpdateDescription: Держите свой сайт в актуальном
-WikiDescription: Wiki for your website.
+TocDescription: Оглавление.
+TrafficDescription: Создать аналитику трафика из файлов журнала веб-сервера.
+TwitterDescription: Вставить сообщения Twitter.
+UpdateDescription: Держите свой сайт в актуальном состоянии
+WikiDescription: Wiki для вашего сайта.
 WikiModified: Последнее обновление
 WikiTag: Тэги:
 WikiSpecialPages: Все страницы
 WikiSpecialChanges: Последние изменения
-YoutubeDescription: Embed Youtube videos.
+YoutubeDescription: Вставить видео с Youtube.
