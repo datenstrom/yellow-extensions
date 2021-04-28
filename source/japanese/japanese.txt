@@ -19,15 +19,15 @@ ContactEmail: メールアドレス:
 ContactMessage: 送信内容:
 ContactConsent: このウェブサイトに私のメッセージが保存されていることに同意します。
 ContactButton: 送信
-ContactMailSpam: [Spam]
-ContactMailFooter: This email was sent via @sitename - @title
+ContactMailSpam: [スパム]
+ContactMailFooter: このメールは @sitename - @title から送信されました。
 ContactStatusNone: ご意見・ご指摘・ご提案・ご要望・ご質問・お問合せ・等お寄せ下さい。
 ContactStatusIncomplete: 全ての項目にご入力下さい。
 ContactStatusInvalid: 正しいメールアドレスをご入力下さい。
 ContactStatusReview: メッセージからリンクを削除してください。
 ContactStatusDone: メール送信を完了しました！
 ContactStatusError: メールを送信できませんでした。暫くしてからもう一度お試し下さい！
-CoreDescription: Webサイトのコア機能。
+CoreDescription: Core functionality of the website.
 CoreDatePast: 今日, 昨日, @x 日前, １ヶ月前, @x ヶ月前, １年前, @x 年前, on @x
 CoreDateFuture: 直前, 明日, @x 日以内, １ヶ月以内, @x ヶ月以内, １年以内, @x 年以内, on @x
 CoreDateMonthsNominative: １月, ２月, ３月, ４月, ５月, ６月, ７月, ８月, ９月, １０月, １１月, １２月
@@ -40,18 +40,18 @@ CoreDateFormatLong: Y-m-d H:i
 CoreTimeFormatShort: H:i
 CoreTimeFormatMedium: H:i:s
 CoreTimeFormatLong: H:i:s T
-CorePaginationPrevious: ← 戻る
+CorePaginationPrevious: ← 前へ
 CorePaginationNext: 次へ →
 CoreError404Title: ファイルが見つかりません
-CoreError404Text: 要求されたファイルが見つかりませんでした。 あらいやだ...
-CoreError420Title: Page not public
-CoreError420Text: The requested page is not public. [yellow error]
+CoreError404Text: 要求されたファイルは見つかりませんでした。 あらいやだ...
+CoreError420Title: ページは公開されていません
+CoreError420Text: 要求されたページは非公開です。 [yellow error]
 CoreError430Title: ログインに失敗しました。
-CoreError430Text: メールアドレスかパスワードが間違っています。 [Please try again](#data-action-login).
-CoreError434Title: Page not found.
-CoreError434Text: The requested page was not found. [You can create this page](#data-action-edit).
-CoreError435Title: Page not found
-CoreError435Text: The requested page has been deleted. [You can restore this page](#data-action-restore).
+CoreError430Text: メールアドレスかパスワードが間違っています。 [再度試みる](#data-action-login).
+CoreError434Title: ページが見つかりません。
+CoreError434Text: 要求されたページは見つかりません。 [このページを作成できます](#data-action-edit).
+CoreError435Title: ページが見つかりません
+CoreError435Text: 要求されたページは削除されました。 [このページを復元できます](#data-action-restore).
 CoreError500Title: サーバーエラー
 CoreError500Text: 問題が発生しました。[yellow error]
 CzechDescription: Czech/Čeština with language 'cs'.
@@ -59,9 +59,9 @@ DanishDescription: Danish/Dansk with language 'da'.
 DisqusDescription: Show Disqus comments on blog.
 DraftDescription: Support for draft pages.
 DraftStatusEmpty: 下書きはありません。
-DraftPageError: Please log in.
+DraftPageError: ログインしてください。
 DutchDescription: Dutch/Nederlands with language 'nl'.
-EditDescription: WebブラウザーでWebサイトを編集します。
+EditDescription: Edit your website in a web browser.
 EditLoginTitle: ようこそ
 EditLoginEmail: メールアドレス:
 EditLoginPassword: パスワード:
@@ -100,11 +100,11 @@ EditConfirmMessage: こんにちは @usershort さん。\n\nユーザーアカ�
 EditConfirmTitle: ユーザーアカウント
 EditConfirmStatusDone: ユーザーアカウントが登録され、承認待ちです。有難うございました！
 EditApproveSubject: ユーザーアカウントの登録承認
-EditApproveMessage: こんにちは @usershort さん。\n\n新しいユーザーアカウント登録承認についてのご確認です。 @useraccount。 宜しければ次のリンクをクリックして下さい。
+EditApproveMessage: こんにちは @usershort さん。\n\n新しいユーザーアカウント登録承認についてのご確認です。 @useraccount。 よろしければ次のリンクをクリックしてください。
 EditApproveTitle: ユーザーアカウント
 EditApproveStatusDone: ユーザーアカウントが承認されました。有難うございました！
 EditReactivateSubject: ユーザーアカウントの再アクティブ化
-EditReactivateMessage: Hi @usershort,\n\nplease reactivate your user account. There were too many failed login attempts. Click the following link.
+EditReactivateMessage: こんにちは @usershort さん。\n\nユーザーアカウントを再度有効にしてください。ログイン操作に何度も失敗しました。以下のリンクをクリックしてください。
 EditReactivateTitle: ユーザーアカウント
 EditReactivateStatusDone: ユーザーアカウントは再アクティブ化されました。有り難うございました！
 EditVerifySubject: ユーザーアカウントの確認
@@ -116,15 +116,15 @@ EditChangeMessage: こんにちは @usershort さん。\n\nユーザーアカウ
 EditChangeTitle: ユーザーアカウント
 EditChangeStatusDone: ユーザーアカウントが変更されました。有難うございました！
 EditRemoveSubject: ユーザーアカウントの削除
-EditRemoveMessage: Hi @usershort,\n\nplease confirm that you want to delete your user account. Click the following link.
+EditRemoveMessage: こんにちは @usershort さん。\n\nユーザーアカウントを本当に削除しますか。以下のリンクをクリックしてください。
 EditRemoveTitle: ユーザーアカウント
 EditRemoveStatusDone: ユーザーアカウントは削除されました。有り難うございました！
 EditRecoverSubject: ユーザーアカウントを復元
 EditRecoverMessage: こんにちは @usershort さん。\n\nパスワード忘失のご確認です。宜しければ次のリンクをクリックして下さい。
 EditWelcomeSubject: ようこそ！
 EditWelcomeMessage: こんにちは @usershort さん。\n\nあなたのユーザーアカウントが作成されています。ログインしてウェブサイトを完成させて下さい。
-EditGoodbyeSubject: Goodbye
-EditGoodbyeMessage: Hi @usershort,\n\nyour user account has been deleted. Take care.
+EditGoodbyeSubject: さようなら
+EditGoodbyeMessage: こんにちは @usershort さん,\n\nユーザーアカウントが削除されました。おげんきで。
 EditAccountTitle: ユーザー設定
 EditAccountInformation: いつでもユーザーアカウントを削除できます。
 EditAccountMore: （削除する）
@@ -140,11 +140,11 @@ EditConfigureAuthor: 管理者名:
 EditConfigureEmail: Eメール:
 EditConfigureInformation: 管理者は新しいユーザーアカウントを承認できます。
 EditConfigureStatusNone: ここでシステム設定を変更できます。
-EditConfigureStatusInvalid: Please enter a valid email.
+EditConfigureStatusInvalid: 有効なメールアドレスを入力してください。
 EditUpdateTitle: 更新情報
 EditUpdateStatusNone: Datenstrom Yellow で小さなウェブサイトを作る
 EditUpdateStatusCheck: アップデートの確認中…
-EditUpdateStatusUpdates： 以下の更新が利用可能です:
+EditUpdateStatusUpdates: 以下の更新が利用可能です:
 EditUpdateStatusOk: 最新のバージョンです。
 EditOkButton: Ok
 EditCancelButton: キャンセル
@@ -231,8 +231,8 @@ ParisDescription: Paris is an elegant theme.
 PolishDescription: Polish/Polski with language 'pl'.
 PortugueseDescription: Portuguese/Português with language 'pt'.
 PreviousnextDescription: Show links to previous/next page.
-PreviousnextPagePrevious: ← 前のページへ : @title
-PreviousnextPageNext: 次のページへ : @title →
+PreviousnextPagePrevious: ← 前へ: @title
+PreviousnextPageNext: 次へ: @title →
 PublishDescription: Package and publish extensions.
 RussianDescription: Russian/Русский with language 'ru'.
 SearchDescription: Full-text search.
