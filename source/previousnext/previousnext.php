@@ -33,7 +33,7 @@ class YellowPreviousnext {
                     $text = preg_replace("/@title/i", $pageNext->get("title"), $this->yellow->language->getText("PreviousnextPageNext"));
                     $output .= "<a class=\"next\" href=\"".$pageNext->getLocation(true)."\">".htmlspecialchars($text)."</a>";
                 }
-                $output .= "<p>\n";
+                $output .= "</p>\n";
                 $output .="</div>\n";
             }
         }
