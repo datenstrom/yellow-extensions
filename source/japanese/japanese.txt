@@ -3,12 +3,12 @@
 Language: ja
 LanguageLocale: ja_JP
 LanguageDescription: 日本語
-LanguageTranslator: Yuhko Senuma, masco
+LanguageTranslator: Yuhko Senuma, Tomonori Ikeda
 BerlinDescription: Berlin is a theme inspired by Dieter Rams.
 BlogDescription: Blog for your website.
 BlogBy: by
-BlogTag: Tags:
-BlogMore: 全文を表示して見る…
+BlogTag: タグ:
+BlogMore: 全文を表示する…
 BreadcrumbDescription: Breadcrumb navigation.
 BundleDescription: Bundle website files.
 ChineseDescription: Chinese/简体中文 with language 'zh'.
@@ -34,7 +34,7 @@ CoreDateMonthsNominative: １月, ２月, ３月, ４月, ５月, ６月, ７月
 CoreDateMonthsGenitive: １月, ２月, ３月, ４月, ５月, ６月, ７月, ８月, ９月, １０月, １１月, １２月
 CoreDateWeekdays: 月曜日, 火曜日, 水曜日, 木曜日, 金曜日, 土曜日, 日曜日
 CoreDateWeekstart: 月曜日
-CoreDateFormatShort: F Y
+CoreDateFormatShort: Y-m
 CoreDateFormatMedium: Y-m-d
 CoreDateFormatLong: Y-m-d H:i
 CoreTimeFormatShort: H:i
@@ -157,31 +157,31 @@ EditEdit: ページの編集
 EditCreate: +
 EditDelete: -
 EditKeyboardLabels: Ctrl+, Alt+, Shift+, ⌘, ⌥, ⇧
-EditToolbarFormat: Format
-EditToolbarHeading: Heading
-EditToolbarH1: Heading 1
-EditToolbarH2: Heading 2
-EditToolbarH3: Heading 3
-EditToolbarParagraph: Normal text
-EditToolbarPre: Source code
-EditToolbarNotice: Notice
-EditToolbarQuote: Quote
-EditToolbarBold: Bold
-EditToolbarItalic: Italic
-EditToolbarStrikethrough: Strikethrough
-EditToolbarCode: Code
-EditToolbarList: List
-EditToolbarUl: • Unordered list
-EditToolbarOl: 1. Ordered list
-EditToolbarTl: ✓ Task list
-EditToolbarLink: Link
-EditToolbarFile: File
-EditToolbarEmojiawesome: Emoji
-EditToolbarFontawesome: Icon
-EditToolbarStatus: Status
+EditToolbarFormat: フォーマット
+EditToolbarHeading: 見出し
+EditToolbarH1: 見出し1
+EditToolbarH2: 見出し2
+EditToolbarH3: 見出し3
+EditToolbarParagraph: ノーマル
+EditToolbarPre: ソース
+EditToolbarNotice: 通知
+EditToolbarQuote: 引用
+EditToolbarBold: 太字
+EditToolbarItalic: 斜体
+EditToolbarStrikethrough: 取り消し線
+EditToolbarCode: コード
+EditToolbarList: リスト
+EditToolbarUl: • 通常リスト
+EditToolbarOl: 1. 番号リスト
+EditToolbarTl: ✓ タスクリスト
+EditToolbarLink: リンク
+EditToolbarFile: ファイル
+EditToolbarEmojiawesome: 絵文字
+EditToolbarFontawesome: アイコン
+EditToolbarStatus: ステータス
 EditToolbarUndo: Undo
 EditToolbarRedo: Redo
-EditToolbarPreview: Preview
+EditToolbarPreview: プレビュー
 EditToolbarMarkdown: Markdown
 EditToolbarHelp: ヘルプ
 EditMailFooter: @sitename
@@ -214,14 +214,14 @@ InstallExtensionBlog: ブログ
 InstallExtensionWiki: ウィキ
 InstallHomeTitle: ホーム
 InstallHomeTitleContent: インストール完了！
-InstallHomeText: [image photo.jpg Example rounded]\n\n[edit - You can edit this page]. The help gives you more information about how to create small web pages, blogs and wikis. [Learn more](https://datenstrom.se/yellow/help/).
-InstallDefaultTitle: Page
-InstallDefaultText: This is a new page.
-InstallBlogTitle: Blog page
-InstallBlogText: This is a new blog page.
-InstallWikiTitle: Wiki page
-InstallWikiText: This is a new wiki page.
-InstallExampleImage: This is an example image
+InstallHomeText: [image photo.jpg Example rounded]\n\n[edit - このページを編集できます]。 ヘルプは、小規模なウェブページ、小規模なブログ、小規模なウィキの作成についてさらに情報を提供します。 [より詳しく](https://datenstrom.se/yellow/help/).
+InstallDefaultTitle: ページ
+InstallDefaultText: 新しいページです。
+InstallBlogTitle: ブログページ
+InstallBlogText: 新しいブログのページです。
+InstallWikiTitle: ウィキページ
+InstallWikiText: 新しいウィキのページです。
+InstallExampleImage: これは画像の例です。
 ItalianDescription: Italian/Italiano with language 'it'.
 JapaneseDescription: Japanese/日本語 with language 'ja'.
 MarkdownDescription: Text formatting for humans.
@@ -253,7 +253,7 @@ TwitterDescription: Embed Twitter messages.
 UpdateDescription: ウェブサイトを最新の状態に保ちます。
 WikiDescription: Wiki for your website.
 WikiModified: 最終更新日
-WikiTag: Tags:
+WikiTag: タグ:
 WikiSpecialPages: 全てのページ
 WikiSpecialChanges: 最近の更新状況
 YoutubeDescription: Embed Youtube videos.
