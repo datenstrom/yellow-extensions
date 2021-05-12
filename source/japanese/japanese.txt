@@ -43,12 +43,12 @@ CoreTimeFormatLong: H:i:s T
 CorePaginationPrevious: ← 前へ
 CorePaginationNext: 次へ →
 CoreError404Title: ファイルが見つかりません
-CoreError404Text: 要求されたファイルは見つかりませんでした。 あらいやだ...
-CoreError420Title: ページは公開されていません
+CoreError404Text: 要求されたファイルは見つかりませんでした。あらいやだ･･････
+CoreError420Title: ページが公開されていません
 CoreError420Text: 要求されたページは非公開です。 [yellow error]
-CoreError430Title: ログインに失敗しました。
+CoreError430Title: ログインに失敗しました
 CoreError430Text: メールアドレスかパスワードが間違っています。 [再度試みる](#data-action-login).
-CoreError434Title: ページが見つかりません。
+CoreError434Title: ページが見つかりません
 CoreError434Text: 要求されたページは見つかりません。 [このページを作成できます](#data-action-edit).
 CoreError435Title: ページが見つかりません
 CoreError435Text: 要求されたページは削除されました。 [このページを復元できます](#data-action-restore).
@@ -143,7 +143,7 @@ EditConfigureStatusNone: ここでシステム設定を変更できます。
 EditConfigureStatusInvalid: 有効なメールアドレスを入力してください。
 EditUpdateTitle: 更新情報
 EditUpdateStatusNone: Datenstrom Yellow で小さなウェブサイトを作る
-EditUpdateStatusCheck: アップデートの確認中…
+EditUpdateStatusCheck: アップデートの確認中･･････
 EditUpdateStatusUpdates: 以下の更新が利用可能です:
 EditUpdateStatusOk: 最新のバージョンです。
 EditOkButton: Ok
@@ -179,8 +179,8 @@ EditToolbarFile: ファイル
 EditToolbarEmojiawesome: 絵文字
 EditToolbarFontawesome: アイコン
 EditToolbarStatus: ステータス
-EditToolbarUndo: Undo
-EditToolbarRedo: Redo
+EditToolbarUndo: 元に戻す
+EditToolbarRedo: やり直す
 EditToolbarPreview: プレビュー
 EditToolbarMarkdown: Markdown
 EditToolbarHelp: ヘルプ
