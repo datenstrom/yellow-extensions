@@ -59,7 +59,7 @@ DanishDescription: Duński/Dansk z językiem 'da'.
 DisqusDescription: Pokaż komentarze Disqus na blogu.
 DraftDescription: Obsługa wersji roboczych stron.
 DraftStatusEmpty: Nie znaleziono wersji roboczych.
-DraftPageError: Please log in.
+DraftPageError: Proszę się zalogować.
 DutchDescription: Holenderski/Nederlands z językiem 'nl'.
 EditDescription: Edytuj swoją witrynę w przeglądarce internetowej.
 EditLoginTitle: Witaj
@@ -134,7 +134,7 @@ EditAccountStatusTaken: Podaj inny email.
 EditAccountStatusWeak: Podaj inne hasło.
 EditAccountStatusShort: Podaj dłuższe hasło.
 EditAccountStatusNext: Konto użytkownika zostanie zmienione, proszę sprawdzić pocztę.
-EditConfigureTitle: Website
+EditConfigureTitle: Strona
 EditConfigureSitename: Nazwa strony internetowej:
 EditConfigureAuthor: Nazwa webmastera:
 EditConfigureEmail: Email webmastera:
